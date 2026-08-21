@@ -385,6 +385,28 @@ figcaption{
 }
 @media (max-width:620px){ .motor__g{grid-template-columns:1fr} }
 
+/* -- Circuito animado ------------------------------------------- */
+.carril rect{fill:var(--surface); stroke:none}
+.ruta{stroke:var(--accent); stroke-width:1.6; opacity:.22; stroke-dasharray:5 5}
+.pulso{fill:var(--accent)}
+.pulso-halo{fill:var(--accent); opacity:.16}
+.pulso,.pulso-halo{
+  offset-path:path("M193,82 L340,82 L487,192 L634,82 L781,302 L928,302 L1075,82");
+  offset-rotate:0deg;
+  animation:recorrido 7.5s ease-in-out infinite;
+}
+.pulso-halo{animation-delay:-.12s}
+@keyframes recorrido{
+  0%{offset-distance:0%; opacity:0}
+  5%{opacity:1}
+  92%{opacity:1}
+  100%{offset-distance:100%; opacity:0}
+}
+@media (prefers-reduced-motion:reduce){
+  .pulso,.pulso-halo{animation:none; opacity:0}
+  .ruta{opacity:.4; stroke-dasharray:none}
+}
+
 /* -- Logotipos ------------------------------------------------- */
 :root{
   --logo-deenex:url("data:image/webp;base64,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");
@@ -1101,59 +1123,30 @@ figcaption{
   <h2>Ninguna falla de un componente detiene el servicio de comedor.</h2>
   <div class="figwrap">
   <figure>
-    <svg viewBox="0 0 1160 330" role="img" aria-label="El circuito del colaborador de punta a punta: ingreso, menú, pago, comprobante con QR, cocina, retiro y feedback, con el nivel de servicio comprometido en cada tramo y las tres vías alternativas ante falla de pagos, mensajería o dispositivo KDS.">
-      <defs><marker id="a2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="currentColor"/></marker></defs>
-      <!-- integraciones arriba -->
-      <text x="20" y="24" class="svg-ink3" font-family="var(--f-mono)" font-size="10.5" letter-spacing="1.4">INTEGRACIONES</text>
-      <rect x="358" y="34" width="118" height="26" rx="2" class="svg-box" stroke-width="1"/><text x="417" y="51" text-anchor="middle" class="svg-ink2" font-size="11">Mercado Pago</text>
-      <rect x="523" y="34" width="118" height="26" rx="2" class="svg-box" stroke-width="1"/><text x="582" y="51" text-anchor="middle" class="svg-ink2" font-size="11">WhatsApp</text>
-      <rect x="28" y="34" width="118" height="26" rx="2" class="svg-box" stroke-width="1"/><text x="87" y="51" text-anchor="middle" class="svg-ink2" font-size="11">Directorio</text>
-      <line x1="87" y1="60" x2="87" y2="120" class="svg-line" stroke-width="1.2" stroke-dasharray="3 3"/>
-      <line x1="417" y1="60" x2="417" y2="120" class="svg-line" stroke-width="1.2" stroke-dasharray="3 3"/>
-      <line x1="582" y1="60" x2="582" y2="120" class="svg-line" stroke-width="1.2" stroke-dasharray="3 3"/>
-      <!-- etapas -->
-      
-      <g class="svg-box" stroke-width="1.2">
-        <rect x="28" y="122" width="118" height="52" rx="3"/><rect x="193" y="122" width="118" height="52" rx="3"/>
-        <rect x="358" y="122" width="118" height="52" rx="3"/><rect x="523" y="122" width="118" height="52" rx="3"/>
-        <rect x="688" y="122" width="118" height="52" rx="3"/><rect x="853" y="122" width="118" height="52" rx="3"/>
-        <rect x="1018" y="122" width="118" height="52" rx="3"/>
-      </g>
-      <g text-anchor="middle" class="svg-ink" font-size="12.5" font-family="var(--f-body)">
-        <text x="87" y="145">Ingreso</text><text x="252" y="145">Menú y ficha</text><text x="417" y="145">Pago</text><text x="582" y="145">Comprobante</text><text x="747" y="145">Cocina · KDS</text><text x="912" y="145">Retiro</text><text x="1077" y="145">Feedback</text>
-      </g>
-      <g text-anchor="middle" class="svg-ink3" font-size="10" font-family="var(--f-mono)">
-        <text x="87" y="163">código OTP</text><text x="252" y="163">por edificio</text><text x="417" y="163">sin redirección</text><text x="582" y="163">QR por WhatsApp</text><text x="747" y="163">por franja</text><text x="912" y="163">QR validado</text><text x="1077" y="163">y a los reportes</text>
-      </g>
-      <g class="svg-line" stroke-width="1.4" marker-end="url(#a2)">
-        <line x1="146" y1="148" x2="188" y2="148"/><line x1="311" y1="148" x2="353" y2="148"/>
-        <line x1="476" y1="148" x2="518" y2="148"/><line x1="641" y1="148" x2="683" y2="148"/>
-        <line x1="806" y1="148" x2="848" y2="148"/><line x1="971" y1="148" x2="1013" y2="148"/>
-      </g>
-      <!-- SLA -->
-      <g text-anchor="middle" font-family="var(--f-mono)" font-size="11" class="svg-acc">
-        <text x="252" y="196">cambio &lt; 2 h</text><text x="417" y="196">error &lt; 1%</text><text x="582" y="196">&lt; 60 s</text><text x="747" y="196">&lt; 30 s</text><text x="912" y="196">KDS 99%</text>
-      </g>
-      <text x="20" y="196" class="svg-ink3" font-family="var(--f-mono)" font-size="10.5" letter-spacing="1.4">SLA</text>
-      <!-- contingencias -->
-      <line x1="20" y1="216" x2="1140" y2="216" class="svg-line" stroke-width="1" stroke-dasharray="2 4"/>
-      <text x="20" y="240" class="svg-ink3" font-family="var(--f-mono)" font-size="10.5" letter-spacing="1.4">SI FALLA</text>
-      <g class="svg-line" stroke-width="1.1" stroke-dasharray="3 3">
-        <line x1="417" y1="216" x2="417" y2="248"/><line x1="582" y1="216" x2="582" y2="248"/><line x1="747" y1="216" x2="747" y2="248"/>
-      </g>
-      <g stroke-dasharray="4 3" class="svg-line" stroke-width="1.2">
-        <rect x="358" y="250" width="118" height="58" rx="3" fill="none"/>
-        <rect x="523" y="250" width="118" height="58" rx="3" fill="none"/>
-        <rect x="688" y="250" width="118" height="58" rx="3" fill="none"/>
-      </g>
-      <g text-anchor="middle" class="svg-ink2" font-size="11" font-family="var(--f-body)">
-        <text x="417" y="270">Retiro habilitado con</text><text x="417" y="285">pedido registrado y</text><text x="417" y="300">regularización posterior</text>
-        <text x="582" y="270">Canal alternativo en</text><text x="582" y="285">la app: el QR sigue</text><text x="582" y="300">en el detalle del pedido</text>
-        <text x="747" y="270">Comanda impresa en</text><text x="747" y="285">el punto y vista de cocina</text><text x="747" y="300">en otro navegador</text>
-      </g>
-    </svg>
-    <figcaption>Cada tramo tiene su nivel de servicio declarado y su vía alternativa provista por Deenex. Toda la línea corre sobre disponibilidad mensual ≥ 99,5% y respuesta de app &lt; 3 s en P95.</figcaption>
-  </figure>
+      <svg viewBox="0 0 1160 400" role="img" aria-label="El circuito del pedido cruzando tres actores: el colaborador ingresa, elige y paga; la plataforma procesa el pago y emite el comprobante con QR; la cocina recibe la comanda ordenada por franja y produce; el colaborador retira validando el QR. Cada tramo lleva su nivel de servicio comprometido.">
+        <defs><marker id="cflecha" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="currentColor"/></marker></defs>
+        <g class="carril"><rect x="120" y="40" width="1020" height="84" rx="4"/><rect x="120" y="150" width="1020" height="84" rx="4"/><rect x="120" y="260" width="1020" height="84" rx="4"/></g>
+        <g class="svg-ink3" font-family="var(--f-mono)" font-size="10" letter-spacing="1.2">
+          <text x="8" y="86">COLABORADOR</text><text x="8" y="196">PLATAFORMA</text><text x="8" y="306">COCINA</text>
+        </g>
+        <path d="M193,82 L340,82 L487,192 L634,82 L781,302 L928,302 L1075,82" fill="none" class="ruta"/>
+        <line x1="256" y1="82" x2="271" y2="82" class="svg-line" stroke-width="1.4" marker-end="url(#cflecha)"/><line x1="403" y1="82" x2="418" y2="192" class="svg-line" stroke-width="1.4" marker-end="url(#cflecha)"/><line x1="550" y1="192" x2="565" y2="82" class="svg-line" stroke-width="1.4" marker-end="url(#cflecha)"/><line x1="697" y1="82" x2="712" y2="302" class="svg-line" stroke-width="1.4" marker-end="url(#cflecha)"/><line x1="844" y1="302" x2="859" y2="302" class="svg-line" stroke-width="1.4" marker-end="url(#cflecha)"/><line x1="991" y1="302" x2="1006" y2="82" class="svg-line" stroke-width="1.4" marker-end="url(#cflecha)"/>
+        <rect x="130" y="56" width="126" height="52" rx="4" class="svg-box" stroke-width="1.3"/><rect x="277" y="56" width="126" height="52" rx="4" class="svg-box" stroke-width="1.3"/><rect x="424" y="166" width="126" height="52" rx="4" class="svg-box-acc" stroke-width="1.3"/><rect x="571" y="56" width="126" height="52" rx="4" class="svg-box" stroke-width="1.3"/><rect x="718" y="276" width="126" height="52" rx="4" class="svg-box" stroke-width="1.3"/><rect x="865" y="276" width="126" height="52" rx="4" class="svg-box" stroke-width="1.3"/><rect x="1012" y="56" width="126" height="52" rx="4" class="svg-box" stroke-width="1.3"/>
+        <text x="193" y="80" text-anchor="middle" class="svg-ink" font-size="12.5">Ingreso</text><text x="193" y="96" text-anchor="middle" class="svg-ink3" font-size="9.5" font-family="var(--f-mono)">c&#243;digo de un solo uso</text><text x="340" y="80" text-anchor="middle" class="svg-ink" font-size="12.5">Men&#250; y ficha</text><text x="340" y="96" text-anchor="middle" class="svg-ink3" font-size="9.5" font-family="var(--f-mono)">por edificio y franja</text><text x="487" y="190" text-anchor="middle" class="svg-ink" font-size="12.5">Pago</text><text x="487" y="206" text-anchor="middle" class="svg-ink3" font-size="9.5" font-family="var(--f-mono)">sin redirecci&#243;n</text><text x="634" y="80" text-anchor="middle" class="svg-ink" font-size="12.5">Comprobante</text><text x="634" y="96" text-anchor="middle" class="svg-ink3" font-size="9.5" font-family="var(--f-mono)">QR por WhatsApp</text><text x="781" y="300" text-anchor="middle" class="svg-ink" font-size="12.5">Comanda</text><text x="781" y="316" text-anchor="middle" class="svg-ink3" font-size="9.5" font-family="var(--f-mono)">ordenada por franja</text><text x="928" y="300" text-anchor="middle" class="svg-ink" font-size="12.5">Producci&#243;n</text><text x="928" y="316" text-anchor="middle" class="svg-ink3" font-size="9.5" font-family="var(--f-mono)">por estaci&#243;n</text><text x="1075" y="80" text-anchor="middle" class="svg-ink" font-size="12.5">Retiro</text><text x="1075" y="96" text-anchor="middle" class="svg-ink3" font-size="9.5" font-family="var(--f-mono)">QR validado</text>
+        <circle class="pulso-halo" r="13" cx="0" cy="0"/>
+        <circle class="pulso" r="6" cx="0" cy="0"/>
+        <g font-family="var(--f-mono)" font-size="11" class="svg-acc" text-anchor="middle">
+          <text x="340" y="140">cambio de men&#250; &lt; 2 h</text>
+          <text x="487" y="240">error de pagos &lt; 1%</text>
+          <text x="634" y="140">comprobante &lt; 60 s</text>
+          <text x="781" y="252">comanda al KDS &lt; 30 s</text>
+          <text x="1075" y="140">KDS operativo 99%</text>
+        </g>
+        <line x1="120" y1="368" x2="1140" y2="368" class="svg-line" stroke-width="1" stroke-dasharray="3 4"/>
+        <text x="120" y="388" class="svg-ink3" font-size="10.5" font-family="var(--f-mono)" letter-spacing="1.1">TODA LA L&#205;NEA CORRE SOBRE DISPONIBILIDAD MENSUAL DEL 99,5% Y RESPUESTA DE APP MENOR A 3 SEGUNDOS EN P95</text>
+      </svg>
+      <figcaption>El pedido cruza tres actores y vuelve al colaborador. El punto naranja recorre la ruta real: lo que se ve moverse es un pedido, desde el ingreso hasta el retiro validado.</figcaption>
+    </figure>
   </div>
 </section>
 
