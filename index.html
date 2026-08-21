@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow, noarchive">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Deenex × Mercado Libre</title>
@@ -386,6 +387,11 @@ figcaption{
 
 /* -- Circuito animado ------------------------------------------- */
 .carril rect{fill:var(--surface); stroke:none}
+.leyenda text{fill:var(--ink-3); font-family:var(--f-mono); font-size:10px; letter-spacing:1.2px}
+.lg-colab{fill:var(--ink-2)}
+.lg-plat{fill:var(--accent)}
+.lg-cocina{fill:var(--ink-3)}
+
 .ruta{stroke:var(--accent); stroke-width:1.6; opacity:.22; stroke-dasharray:5 5}
 .pulso{fill:var(--accent)}
 .pulso-halo{fill:var(--accent); opacity:.16}
@@ -1129,11 +1135,22 @@ figcaption{
   <p class="lead">Toda la l&#237;nea corre sobre disponibilidad mensual del <strong>99,5%</strong> y respuesta de app menor a <strong>3 segundos</strong> en P95. Cada tramo lleva adem&#225;s su propio compromiso.</p>
   <div class="figwrap">
   <figure>
-      <svg viewBox="0 0 1160 356" role="img" aria-label="El circuito del pedido cruzando tres actores: el colaborador ingresa, elige y paga; la plataforma procesa el pago y emite el comprobante con QR; la cocina recibe la comanda ordenada por franja y produce; el colaborador retira validando el QR. Cada tramo lleva su nivel de servicio comprometido.">
+      <svg viewBox="0 -40 1160 396" role="img" aria-label="El circuito del pedido cruzando tres actores: el colaborador ingresa, elige y paga; la plataforma procesa el pago y emite el comprobante con QR; la cocina recibe la comanda ordenada por franja y produce; el colaborador retira validando el QR. Cada tramo lleva su nivel de servicio comprometido.">
         <defs><marker id="cflecha" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="currentColor"/></marker></defs>
         <g class="carril"><rect x="120" y="40" width="1020" height="84" rx="4"/><rect x="120" y="150" width="1020" height="84" rx="4"/><rect x="120" y="260" width="1020" height="84" rx="4"/></g>
-        <g class="svg-ink3" font-family="var(--f-mono)" font-size="10" letter-spacing="1.2">
-          <text x="8" y="86">COLABORADOR</text><text x="8" y="196">PLATAFORMA</text><text x="8" y="306">COCINA</text>
+        
+        <g class="leyenda">
+          <rect x="120" y="-26" width="10" height="10" rx="2" class="lg-colab"/>
+          <text x="138" y="-17">COLABORADOR</text>
+          <rect x="272" y="-26" width="10" height="10" rx="2" class="lg-plat"/>
+          <text x="290" y="-17">PLATAFORMA</text>
+          <rect x="416" y="-26" width="10" height="10" rx="2" class="lg-cocina"/>
+          <text x="434" y="-17">COCINA</text>
+        </g>
+        <g class="barra-carril">
+          <rect x="120" y="40" width="3" height="84" class="lg-colab"/>
+          <rect x="120" y="150" width="3" height="84" class="lg-plat"/>
+          <rect x="120" y="260" width="3" height="84" class="lg-cocina"/>
         </g>
         <path d="M193,82 L340,82 L487,192 L634,82 L781,302 L928,302 L1075,82" fill="none" class="ruta"/>
         <line x1="256" y1="82" x2="271" y2="82" class="svg-line" stroke-width="1.4" marker-end="url(#cflecha)"/><line x1="403" y1="82" x2="418" y2="192" class="svg-line" stroke-width="1.4" marker-end="url(#cflecha)"/><line x1="550" y1="192" x2="565" y2="82" class="svg-line" stroke-width="1.4" marker-end="url(#cflecha)"/><line x1="697" y1="82" x2="712" y2="302" class="svg-line" stroke-width="1.4" marker-end="url(#cflecha)"/><line x1="844" y1="302" x2="859" y2="302" class="svg-line" stroke-width="1.4" marker-end="url(#cflecha)"/><line x1="991" y1="302" x2="1006" y2="82" class="svg-line" stroke-width="1.4" marker-end="url(#cflecha)"/>
