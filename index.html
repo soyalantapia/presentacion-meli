@@ -281,6 +281,29 @@ figcaption{
 .contacto a:hover{border-bottom-color:var(--accent-ink)}
 .foot-note{font-family:var(--f-mono); font-size:10.5px; color:var(--ink-3); line-height:1.6; letter-spacing:.02em}
 
+/* -- Pagina de cierre ------------------------------------------- */
+.slide--final{justify-content:center}
+.final{display:flex; flex-direction:column; gap:0; max-width:960px}
+.final__marca{margin-bottom:56px}
+.final__linea{
+  font-family:var(--f-display); font-weight:900;
+  font-size:clamp(26px,3.1vw,44px); line-height:1.14; letter-spacing:-.025em;
+  color:var(--ink); max-width:24ch; margin:0 0 64px; text-wrap:balance;
+}
+.final__linea em{font-style:normal; color:var(--accent-ink)}
+.final__pie{
+  display:grid; grid-template-columns:repeat(3,1fr); gap:36px;
+  border-top:1px solid var(--hair-2); padding-top:22px;
+}
+.final__dato{font-size:13.5px; line-height:1.65; color:var(--ink-2); margin:0}
+.final__dato a{color:var(--accent-ink); text-decoration:none; border-bottom:1px solid var(--hair-2)}
+.final__dato a:hover{border-bottom-color:var(--accent)}
+@media (max-width:1080px){
+  .final__marca{margin-bottom:34px}
+  .final__linea{margin-bottom:38px}
+  .final__pie{grid-template-columns:1fr; gap:22px}
+}
+
 /* -- Logotipos ------------------------------------------------- */
 :root{
   --logo-deenex:url("data:image/webp;base64,UklGRmgKAABXRUJQVlA4WAoAAAAYAAAANgIAnAAAQUxQSDQHAAAB8FZrb95s27YJgiEIQiAYQhgcZnCYQc2gYeAyyM7AEAJBEAxhPT/2Vokdq2l+RcQEUIuOR0u/4oABV5FS8jPF2fOtQiklp3m6Ybzd1ujdHeOvWw58y/h/ybO7Zfx/CXzPAFAC3zMAZP8DiEnJNgIkXH4CpbcSIA++ZwDycPcMQMJNA5DppgFkvmlAwk0DeN41IHzTQJ1vGsDjroHHXQPPuwbyXQP5UluycjIdHlfakRZDvGvA3zUq3zSwuZsGnncN+LuGuJsGnncNTNee3+xWrjxfYHl/2fkC25eLjjPM768498QXWK4396j4Cv3F5h4VypoHWUrZ5FzKtfaoUNbkaKzs57iUegqYrirZtUJZk6NBOx9L7W65qtDg4mjs/iV9VXfRZSYD+ldP8Jdc8WREfnVUGplSw5qQ2g2apAxHhaRkVWp4ejMlPR8wJ+18WPFkSH51U10bAQ1rCtotGmj9QQVKr0LD4Y0TqMt+LNDyQcWTMYN0gnA2tZ98kLhBzG9o1mHeLUOb6JhE9uStk3w2clZ4DsK/o6KrbieGVuigYBCiVx/1bEo/6Sj40XBV4bmTqILF6NUFvJXEDYE/oKSD3yVAm8lktHURT+ZPP+Ew5CG4T0h0ZQ8WjbDRWHooJ5NPDPMI6GOvQ9whQxvJaOR7qCez9OMbqG4wtOiqUzG0QmajpQNM55LODOv5icJVFbJqU7HhXO0gnEvsZ2oB8+ltCoo6eEWANpPhKHWwnEvoh5uo7uyKhopOPnOiETadq+1t5zL345rAOppJh/TRA9pApqOlvdpF3n86SvL+1Abmcyh596CipKv8AUO7kvF8e+AeqFldoWZ3q+4UArXrRIXyQVax9ai2N1sK62DI6+DfBGgTdRHL0WNZ2oumQhwMFZ24v4lGqI8Xjh6Lb2+xVeXBcFUh/eUB7fwFuPb+2AplMBR1YCJiaDN9AbQ1txkLcTC06QoRZY3wV7A0J9aqPBivQ6QZ2khfQWwO1kIZDC266kQjpA77s2l8e2wtxMG4qsIGLevaNQa3N5mr8lgo6NQLfQnUnjcXymCoHCT8NUhzwV6Ig+GDAn0N2xeyqCqPhdIhmb6H9QtxmwZlME6O4C/i1VzqwO/uDtv83tNhNKkQe0p+bz6A/AGJLpX9+bD9y3GUVJU72j8dQetuQt/E8pXQpkEZDNe9/FeRvhOuGsSxUNwp0++DoqryWKjsIvwLoaJBGYzfJdBPhKsGcSy07CD0G6GoqjyWf3eo7kdCRYMyFJYdsH4Zr++FqwZxJBm7+h8JRVXlcUzYV1xnqzFKc9FQtGpQxiE74dmVLzBesJSrGsRR/IvdfT+8osHRSHNzB7w7HVZ493ZoVlXuIPLe7giW/bZe3ANNjgbN+w6o2R2o2QNo0aB0EKjDjANTF+5RYRD35TjRII5gxpGVOwiCVgfj22NbkVdVHoAcgtKcL2h3MHN7ZCxaNNjO74GDY1u+oOXBLM1VcznR6M+H61HVNcQZyioHD6Y0t5mL/GgyDl+bcY8KZWayZG2u2IuWsczQ5kUHv9cjayuUxZMpPZrPBnMyFNEIO9GJ26ng0M2TMWN7yWDkR/KANhF5HZ7t1UDmLO3NFqM0Dq4aISJadfCN1eTInIz2vcloG0aGNvwfV520tTgyaOzA2WyqgwjQZvpr1CE1VJhMKu1tZDOKgxAV/42KrnIr4smmAe3/sRqVITygTfSWqwqllUJGlQ5SF+FIPkbCke1x7SaHA72GoRV+R0mHaLqADucuDvXHHNsexW4O/aPJqkCfbrrKhmPpwdmNygllRYBW6GOvw2q4jA43OhvuRnrgej5JISr+jBYdvNke6DGbYeuB4sk9oM2kdKITZ7R/0GU4HeqmdEHldOJHDK2whrwOT5vN6JNtx/VswkdZlUi/6uAbEDbHP+hzo7ORfnIfNJ+N/yRAK7SjqzpxxwEPYzzR6WI9Ws9LVGEPijqkFiCzIfyGXv3plH5SL07OZfrgAW2mfYsO3AKQ2QjuiW6FzEf+XPgdQ807cdWVNiDRAtOzot98Pn/6Cd3QciruXVYl2jvpENsAhAfnYkHX/nzygJycCb0N0ArvRpuu8gcv0daPgCePy8eCzoUanUvDUbGUhidF0R5DvmgnVWl4ffcq2pn290WfPtDz6zNIGJCbwrNU9B9auZBn+QhYJx6j9yHElNet4iz5ciNKn5k90xXPry+ALzmiINYrdNXzYjx/2RGxWG6lS38xHF97wW6Z7hmVbxqJ7hlC17l/P30FfJ0x3udvINE9Y6V7hvA9ozLdM2a6ZyS6ZyS6ZyS6ZyS63F16P1su0s/QVnWmW4Yw3TJWR3eMGum3aKbCdMeokX6ONsqO7hjF0y/SPsXTb9I6xdOv0jR1meh3aZgSHf0yrVKSox+nRWqJTL9Pc5TFO/qJWkLW6B39TG1QtxxnR7/VoVXZ8hLD5OgX6/Nol5RSCLOf2NHvElZQOCBMAgAA0C8AnQEqNwKdAD5RJo9Eo6IhlYpUwDgFBLS3cLGvLn8PxoPPLIXA3+G/kp/APF3/APwA/ADpAP4z9iez/7P/mgPzr+gflV/AL7TRf9RP4x74/f4DkRFWxHuAy74QaOWx6R9I+kfSPpH0j6P7uXAYgMQGEhN8O5HcjuR3I7kdyOhvyF2/RIF2IGvuR0HFxKQwjbVuvnCEIudUmVlnjMj87GxKCaizaPQP2Ctw0BkQD86VENOJ0+2UQYTTOVnGMJ15LWOPEVdLbhdoVsOPD0bFM7N5KZLfi/jfgLK1zn8kaXiJITlR7V5DEeMBlbg+xIjqp8xFn/sPnQ6qXkH9DnhZ9S7SQcyKHjTqt+uEjDs3oa2LQ7rXaUbFYV5vCoBgoy2oed4S9oLlbFx4fAwRDHxUb1BSkmKd2qsdoMBO6neF3Qxnci0yDhImVIZ2CKhnvywpQz4q+W5ddiqRg8/of0P5xobBiAxAYgMQGIDEBU3WosdPDADLvq59tpcXI7kdyO5HcjuR3I6AAAD+j2LqLOzciL89j4x/31+SfgvCEARHuucyHISFGv5QK+oopIWwNOiQhZ0SGrgSRiK1X/wstNgSdC/cn8WWtnMGc2Vr+lHgSZ+9iLKyfxcMEhPJvovb74KmMTgSgQRBsbnzBCpjLGOW1wyVwxtGI2qH3P82jD/z/KRcuvx0LopE35MLAf5ofodzlLZXghmUA4mAWbHiXBzzF3NQH6hjRRgrSCmCbWFu/BF5gRwUd1LnsYwgAaNSqwOE2WU50vNQveHsAAAARVhJRroAAABFeGlmAABJSSoACAAAAAYAEgEDAAEAAAABAAAAGgEFAAEAAABWAAAAGwEFAAEAAABeAAAAKAEDAAEAAAACAAAAEwIDAAEAAAABAAAAaYcEAAEAAABmAAAAAAAAAEgAAAABAAAASAAAAAEAAAAGAACQBwAEAAAAMDIxMAGRBwAEAAAAAQIDAACgBwAEAAAAMDEwMAGgAwABAAAA//8AAAKgBAABAAAANwIAAAOgBAABAAAAnQAAAAAAAAA=");
@@ -397,7 +420,7 @@ figcaption{
     <div class="rail__group">Entrada</div>
     <a href="#s1"><i class="n">01</i><span>Portada</span></a>
     <a href="#s2"><i class="n">02</i><span>Quiénes somos</span></a>
-    <div class="rail__group">Qué van a tener</div>
+    <div class="rail__group">Qu&#233; van a tener</div>
     <a href="#s3"><i class="n">03</i><span>El ecosistema</span></a>
     <a href="#s4"><i class="n">04</i><span>La app del colaborador</span></a>
     <a href="#s5"><i class="n">05</i><span>El panel de Facilities</span></a>
@@ -405,26 +428,27 @@ figcaption{
     <a href="#s7"><i class="n">07</i><span>El KDS en cocina</span></a>
     <div class="rail__group">El giro</div>
     <a href="#s8"><i class="n">08</i><span>El informe de producción</span></a>
-    <div class="rail__group">Cómo funciona</div>
+    <div class="rail__group">C&#243;mo funciona</div>
     <a href="#s9"><i class="n">09</i><span>Arquitectura y datos</span></a>
     <a href="#s10"><i class="n">10</i><span>Los ocho módulos</span></a>
     <a href="#s11"><i class="n">11</i><span>El circuito y sus SLA</span></a>
     <a href="#s12"><i class="n">12</i><span>Continuidad</span></a>
-    <div class="rail__group">Cómo se opera</div>
+    <div class="rail__group">C&#243;mo se opera</div>
     <a href="#s13"><i class="n">13</i><span>Implementación</span></a>
     <a href="#s14"><i class="n">14</i><span>Equipo y niveles de servicio</span></a>
     <a href="#s15"><i class="n">15</i><span>Soporte técnico</span></a>
     <a href="#s16"><i class="n">16</i><span>Los catorce indicadores</span></a>
     <a href="#s17"><i class="n">17</i><span>Reversibilidad</span></a>
-    <a href="#s18"><i class="n">18</i><span>Inversión</span></a>
     <div class="rail__group">Siguientes pasos</div>
+    <a href="#s18"><i class="n">18</i><span>Inversión</span></a>
     <a href="#s19"><i class="n">19</i><span>Tiempos</span></a>
     <a href="#s20"><i class="n">20</i><span>Onboarding</span></a>
     <a href="#s21"><i class="n">21</i><span>Casos de referencia</span></a>
-    <a href="#s22"><i class="n">22</i><span>Seamos pioneros</span></a>
     <div class="rail__group">Cierre</div>
+    <a href="#s22"><i class="n">22</i><span>Seamos pioneros</span></a>
     <a href="#s23"><i class="n">23</i><span>Lo que declaramos</span></a>
     <a href="#s24"><i class="n">24</i><span>El pedido</span></a>
+    <a href="#s25"><i class="n">25</i><span>Cierre</span></a>
   </div>
 </nav>
 
@@ -432,7 +456,7 @@ figcaption{
 
 <!-- 01 ─────────────────────────────────────────────────────────── -->
 <section class="slide" id="s1">
-  <span class="slide__no">01 / 24</span>
+  <span class="slide__no">01 / 25</span>
   <div class="cover">
     <div class="cover__l">
       <div class="lockup">
@@ -460,7 +484,7 @@ figcaption{
 
 <!-- 02 ─────────────────────────────────────────────────────────── -->
 <section class="slide" id="s2">
-  <span class="slide__no">02 / 24</span>
+  <span class="slide__no">02 / 25</span>
   <p class="eyebrow">Quiénes somos · un minuto</p>
   <h2>Mercado Libre define el comedor como un factor de calidad de vida laboral y productividad operativa.</h2>
   <p class="lead">Hoy esa operación se estima. Puede medirse. Un comedor que sabe cuántas personas van a comer antes de que lleguen, que produce contra un número y no contra una intuición, y que le devuelve a cada colaborador los minutos que hoy pierde esperando. <strong>No es un proyecto a construir: es una plataforma que ya está en producción.</strong></p>
@@ -476,7 +500,7 @@ figcaption{
 
 <!-- 03 ─────────────────────────────────────────────────────────── -->
 <section class="slide" id="s3">
-  <span class="slide__no">03 / 24</span>
+  <span class="slide__no">03 / 25</span>
   <p class="eyebrow">Qué van a tener</p>
   <h2>Todo esto es una sola plataforma, y es la misma en los cuatro países.</h2>
   <div class="figwrap">
@@ -536,7 +560,7 @@ figcaption{
 
 <!-- 04 ─────────────────────────────────────────────────────────── -->
 <section class="slide" id="s4">
-  <span class="slide__no">04 / 24</span>
+  <span class="slide__no">04 / 25</span>
   <p class="eyebrow">Qué van a tener</p>
   <h2>El colaborador pide desde su puesto de trabajo y retira mostrando un código.</h2>
   <div class="g3" style="margin-top:26px">
@@ -606,7 +630,7 @@ figcaption{
 
 <!-- 05 ─────────────────────────────────────────────────────────── -->
 <section class="slide" id="s5">
-  <span class="slide__no">05 / 24</span>
+  <span class="slide__no">05 / 25</span>
   <p class="eyebrow">Qué van a tener</p>
   <h2>Facilities publica menús, precios y franjas sin abrirnos un ticket.</h2>
   <div class="g2" style="margin-top:22px">
@@ -628,7 +652,7 @@ figcaption{
 
 <!-- 06 ─────────────────────────────────────────────────────────── -->
 <section class="slide" id="s6">
-  <span class="slide__no">06 / 24</span>
+  <span class="slide__no">06 / 25</span>
   <p class="eyebrow">Qué van a tener</p>
   <h2>Dashboard de datos en tiempo real.</h2>
   <p class="lead">No es un informe que se genera y se manda: es <strong>acceso permanente a toda la información del negocio</strong>, actualizada al minuto. El análisis de datos de consumo es una línea de servicio propia de Deenex, no un módulo de este contrato, y la consecuencia práctica es que <strong>un corte de información nuevo es configuración, no desarrollo.</strong></p>
@@ -645,7 +669,7 @@ figcaption{
 
 <!-- 07 ─────────────────────────────────────────────────────────── -->
 <section class="slide" id="s7">
-  <span class="slide__no">07 / 24</span>
+  <span class="slide__no">07 / 25</span>
   <p class="eyebrow">Qué van a tener</p>
   <h2>La cocina ve el pedido antes de que el colaborador llegue al mostrador.</h2>
   <p class="lead">La plataforma habla directo con la pantalla de cocina: el pedido pagado se transmite al KDS en menos de 30 segundos, o 15 dentro de la ventana de 11 a 14, <strong>sin recarga manual y sin sistema intermedio</strong>. Nadie vuelve a tipear un pedido.</p>
@@ -719,7 +743,7 @@ figcaption{
 
 <!-- 08 ─────────────────────────────────────────────────────────── -->
 <section class="slide" id="s8">
-  <span class="slide__no">08 / 24</span>
+  <span class="slide__no">08 / 25</span>
   <p class="eyebrow">El giro</p>
   <div class="g2" style="align-items:center">
     <div>
@@ -749,7 +773,7 @@ figcaption{
 <!-- 09 ─────────────────────────────────────────────────────────── -->
 
 <section class="slide" id="s9">
-  <span class="slide__no">09 / 24</span>
+  <span class="slide__no">09 / 25</span>
   <p class="eyebrow">Cómo funciona</p>
   <h2>La arquitectura no cambia entre países.</h2>
   <p class="lead">Tres preguntas definen si esta plataforma aguanta un contrato de dos años en cuatro países: dónde vive la información y cómo está separada, qué pasa entre las once y las dos, y qué hay que tocar para sumar una operación nueva. El resto de este bloque se apoya en lo que sigue.</p>
@@ -824,7 +848,7 @@ figcaption{
 
 <!-- 10 ─────────────────────────────────────────────────────────── -->
 <section class="slide" id="s10">
-  <span class="slide__no">10 / 24</span>
+  <span class="slide__no">10 / 25</span>
   <p class="eyebrow">Cómo funciona</p>
   <h2>Los ocho módulos, con su estado real.</h2>
   <p>Todo el desarrollo señalado está incluido en la implementación y <strong>no se factura como desarrollo a medida</strong>.</p>
@@ -848,7 +872,7 @@ figcaption{
 
 <!-- 11 ─────────────────────────────────────────────────────────── -->
 <section class="slide" id="s11">
-  <span class="slide__no">11 / 24</span>
+  <span class="slide__no">11 / 25</span>
   <p class="eyebrow">Cómo funciona · para IT</p>
   <h2>Ninguna falla de un componente detiene el servicio de comedor.</h2>
   <div class="figwrap">
@@ -911,7 +935,7 @@ figcaption{
 
 <!-- 12 ─────────────────────────────────────────────────────────── -->
 <section class="slide" id="s12">
-  <span class="slide__no">12 / 24</span>
+  <span class="slide__no">12 / 25</span>
   <p class="eyebrow">Cómo funciona</p>
   <h2>La cocina sigue produciendo aunque falle el dispositivo, la red o la pasarela.</h2>
   <p class="lead">Cada punto de falla tiene una vía alternativa <strong>ya definida y provista por Deenex</strong>, no un plan pendiente de escribir después de la firma.</p>
@@ -928,7 +952,7 @@ figcaption{
 
 <!-- 13 ─────────────────────────────────────────────────────────── -->
 <section class="slide" id="s13">
-  <span class="slide__no">13 / 24</span>
+  <span class="slide__no">13 / 25</span>
   <p class="eyebrow">Cómo se opera</p>
   <h2>Cada etapa cierra contra criterios verificables, no contra el calendario.</h2>
   <div class="figwrap">
@@ -970,7 +994,7 @@ figcaption{
 
 <!-- 14 ─────────────────────────────────────────────────────────── -->
 <section class="slide" id="s14">
-  <span class="slide__no">14 / 24</span>
+  <span class="slide__no">14 / 25</span>
   <p class="eyebrow">Cómo se opera</p>
   <h2>Un interlocutor con capacidad de decidir, no un comité.</h2>
   <div class="g2" style="margin-top:20px">
@@ -999,7 +1023,7 @@ figcaption{
 
 <!-- 15 ─────────────────────────────────────────────────────────── -->
 <section class="slide" id="s15">
-  <span class="slide__no">15 / 24</span>
+  <span class="slide__no">15 / 25</span>
   <p class="eyebrow">Cómo se opera</p>
   <h2>Soporte técnico</h2>
   <p class="lead">Facilities abre un caso con un botón dentro del panel. Del otro lado no hay una casilla genérica: hay un equipo con niveles, plazos comprometidos y acceso directo a quien escribe el código.</p>
@@ -1067,7 +1091,7 @@ figcaption{
 
 <!-- 16 ─────────────────────────────────────────────────────────── -->
 <section class="slide" id="s16">
-  <span class="slide__no">16 / 24</span>
+  <span class="slide__no">16 / 25</span>
   <p class="eyebrow">Cómo se opera</p>
   <h2>Medimos y reportamos los catorce. Lo que proponemos acordar es sobre cuáles aplica el régimen de consecuencias.</h2>
   <div class="tw" style="margin-top:14px">
@@ -1096,7 +1120,7 @@ figcaption{
 
 <!-- 17 ─────────────────────────────────────────────────────────── -->
 <section class="slide" id="s17">
-  <span class="slide__no">17 / 24</span>
+  <span class="slide__no">17 / 25</span>
   <p class="eyebrow">Cómo se opera</p>
   <h2>Pueden terminar este contrato cualquier día sin que el comedor se interrumpa.</h2>
   <div class="g2" style="margin-top:20px">
@@ -1124,7 +1148,7 @@ figcaption{
 
 <!-- Siguientes pasos - Inversion -->
 <section class="slide" id="s18">
-  <span class="slide__no">18 / 24</span>
+  <span class="slide__no">18 / 25</span>
   <p class="eyebrow">Siguientes pasos</p>
   <h2>Qu&eacute; incluye el servicio y qu&eacute; se factura aparte.</h2>
   <p class="lead">La estructura de la inversi&oacute;n, para que Compras y Finanzas sepan qu&eacute; est&aacute;n comprando antes de abrir el sobre econ&oacute;mico.</p>
@@ -1157,7 +1181,7 @@ figcaption{
 
 <!-- Siguientes pasos - Tiempos -->
 <section class="slide" id="s19">
-  <span class="slide__no">19 / 24</span>
+  <span class="slide__no">19 / 25</span>
   <p class="eyebrow">Siguientes pasos</p>
   <h2>De la firma al r&eacute;gimen en 24 semanas, y qu&eacute; necesitamos de ustedes en cada tramo.</h2>
   <p class="lead">Los plazos que comprometemos dependen de definiciones que solo Mercado Libre puede tomar. Las declaramos con su fecha y su consecuencia, para que puedan planificarse en vez de descubrirse.</p>
@@ -1184,7 +1208,7 @@ figcaption{
 
 <!-- Siguientes pasos - Onboarding -->
 <section class="slide" id="s20">
-  <span class="slide__no">20 / 24</span>
+  <span class="slide__no">20 / 25</span>
   <p class="eyebrow">Siguientes pasos</p>
   <h2>La adopci&oacute;n se define en cuatro semanas por site, no en una campa&ntilde;a regional.</h2>
   <p class="lead">El objetivo depende del cambio de h&aacute;bito de miles de personas, no de la tecnolog&iacute;a. Por eso se trata como un plan con actividades, responsables y medici&oacute;n propia, concentrado en la ventana donde el h&aacute;bito se forma y repetido en cada apertura.</p>
@@ -1216,7 +1240,7 @@ figcaption{
 
 <!-- 18 ─────────────────────────────────────────────────────────── -->
 <section class="slide" id="s21">
-  <span class="slide__no">21 / 24</span>
+  <span class="slide__no">21 / 25</span>
   <p class="eyebrow">Casos de referencia y experiencia</p>
   <h2>Dos plataformas en producción que se pueden abrir hoy desde el navegador.</h2>
   <p class="lead">Los dos casos que presentamos <strong>no son comedores corporativos</strong>. Son operaciones gastronómicas de escala cuya exigencia técnica es la misma que plantea este servicio: muchos puntos gestionados en simultáneo, integración con el sistema de cada punto, autogestión del catálogo por parte del cliente y operación continua con niveles comprometidos. La comparabilidad que ofrecemos es de exigencia operativa, y la declaramos como tal para que la ponderen con ese criterio.</p>
@@ -1250,7 +1274,7 @@ figcaption{
 </section>
 <!-- 19 ─────────────────────────────────────────────────────────── -->
 <section class="slide" id="s22">
-  <span class="slide__no">22 / 24</span>
+  <span class="slide__no">22 / 25</span>
   <p class="eyebrow">Siguientes pasos · más allá del alcance</p>
   <h2>Seamos pioneros.</h2>
   <p class="lead">La ficha de plato lleva foto. Proponemos ir un paso más, no por innovar, sino porque es la palanca más directa sobre el único objetivo que ninguna de las dos partes controla sola: <strong>la tasa de adopción digital del 80%</strong>.</p>
@@ -1283,7 +1307,7 @@ figcaption{
 </section>
 
 <section class="slide" id="s23">
-  <span class="slide__no">23 / 24</span>
+  <span class="slide__no">23 / 25</span>
   <p class="eyebrow eyebrow--q">Lo que declaramos</p>
   <h2>Cuatro cosas que no nos convienen y que iban a aparecer igual en la evaluación.</h2>
   <p class="lead">Preferimos que aparezcan acá, con su tratamiento al lado.</p>
@@ -1299,7 +1323,7 @@ figcaption{
 <!-- 20 ─────────────────────────────────────────────────────────── -->
 
 <section class="slide" id="s24">
-  <span class="slide__no">24 / 24</span>
+  <span class="slide__no">24 / 25</span>
   <p class="eyebrow">Cierre</p>
   <div class="g2" style="align-items:center; gap:48px">
     <div>
@@ -1321,12 +1345,7 @@ figcaption{
         <span class="lockup__x">×</span>
         <span class="meliplate" style="padding:7px 10px"><span class="melimark" style="width:102px;height:25px" role="img" aria-label="Mercado Libre"></span></span>
       </div>
-      <div class="contacto">
-        <p class="card__k" style="margin-bottom:6px">Contacto</p>
-        <p><strong>Alan Tapia</strong> · <strong>Joaquín Lombardi</strong> — Dirección<br>
-        <span class="fill">correo</span> · <span class="fill">teléfono</span> · <a href="https://deenex.tech" target="_blank" rel="noopener">deenex.tech</a></p>
       </div>
-    </div>
     <div>
       <figure>
         <svg class="wf" viewBox="0 0 640 500" role="img" aria-label="El ecosistema completo en una imagen: el panel de administración de Facilities al fondo, la pantalla de cocina KDS al frente y la aplicación del colaborador en el teléfono, las tres sobre una misma plataforma.">
@@ -1395,6 +1414,32 @@ figcaption{
     </table>
   </div>
   <p class="foot-note" style="margin-top:16px">Deenex Technologies S.A.S. · Propuesta Técnica, Versión 1.0, agosto de 2026 · Confidencial. Este material no contiene precios, tarifas ni valores económicos de ningún tipo. La Propuesta Económica se presenta en documento separado.</p>
+</section>
+
+<section class="slide slide--final" id="s25">
+  <span class="slide__no">25 / 25</span>
+  <div class="final">
+    <div class="lockup final__marca">
+      <span class="brandmark" style="width:158px;height:44px" role="img" aria-label="Deenex Technologies"></span>
+      <span class="lockup__x" style="font-size:22px">&#215;</span>
+      <span class="meliplate" style="padding:11px 16px"><span class="melimark" style="width:150px;height:37px" role="img" aria-label="Mercado Libre"></span></span>
+    </div>
+    <p class="final__linea">Un contrato de dos a&#241;os en cuatro pa&#237;ses se sostiene sobre lo que se acord&#243; con precisi&#243;n, <em>no sobre lo que se prometi&#243; sin condiciones.</em></p>
+    <div class="final__pie">
+      <div>
+        <p class="card__k">Responsables de la cuenta</p>
+        <p class="final__dato"><strong>Alan Tapia</strong> &#183; <strong>Joaqu&#237;n Lombardi</strong><br><span class="fill">correo</span> &#183; <span class="fill">tel&#233;fono</span></p>
+      </div>
+      <div>
+        <p class="card__k">Verificable hoy, sin pedirnos nada</p>
+        <p class="final__dato"><a href="https://app.lafabrica.com.ar" target="_blank" rel="noopener">app.lafabrica.com.ar</a><br><a href="https://app.monti.deenex.tech" target="_blank" rel="noopener">app.monti.deenex.tech</a></p>
+      </div>
+      <div>
+        <p class="card__k">Deenex Technologies</p>
+        <p class="final__dato"><a href="https://deenex.tech" target="_blank" rel="noopener">deenex.tech</a><br>Agosto de 2026 &#183; Confidencial</p>
+      </div>
+    </div>
+  </div>
 </section>
 
 </main>
