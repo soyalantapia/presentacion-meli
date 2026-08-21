@@ -109,6 +109,11 @@ strong{color:var(--ink); font-weight:600}
   font-family:var(--f-mono); font-weight:400; font-size:8px; letter-spacing:.1em;
   color:var(--ink-3); vertical-align:super; margin-left:5px; text-transform:uppercase;
 }
+/* Los logotipos nunca se encogen: con flex-shrink por defecto el ancho se
+   comprimia y la marca quedaba flotando dentro de una caja de altura fija.
+   Si no entran a lo ancho, el lockup baja de renglon en vez de aplastarse. */
+.brandmark,.melimark,.meliplate{flex-shrink:0}
+.lockup{flex-wrap:wrap; row-gap:12px}
 .lockup__x{font-family:var(--f-display); font-size:17px; color:var(--accent); line-height:1}
 .logoslot{
   display:inline-flex; align-items:center; justify-content:center; gap:7px;
@@ -396,6 +401,7 @@ figcaption{
 }
 @media (prefers-reduced-motion:reduce){
   .pulso,.pulso-halo,.fogonazo{animation:none; opacity:0}
+  .accion span::before,.via-alt{animation:none}
   .ruta{opacity:.4; stroke-dasharray:none}
 }
 
@@ -408,7 +414,8 @@ figcaption{
 .via-x{stroke:var(--ink-3); stroke-width:1.6; stroke-linecap:round}
 .via-flecha{stroke:var(--hair-2); stroke-width:1.4; color:var(--hair-2); marker-end:url(#viaflecha)}
 .via-tenue{opacity:.35; stroke-dasharray:3 3}
-.via-alt{stroke:var(--accent); stroke-width:1.8; color:var(--accent); marker-end:url(#viaflecha); stroke-dasharray:5 4}
+.via-alt{stroke:var(--accent); stroke-width:1.8; color:var(--accent); marker-end:url(#viaflecha); stroke-dasharray:5 4; animation:marcha 1.6s linear infinite}
+@keyframes marcha{to{stroke-dashoffset:-18}}
 .via-alt-t{fill:var(--accent-ink); font-size:10px; font-family:var(--f-mono); letter-spacing:.6px}
 
 .accion{
@@ -416,7 +423,11 @@ figcaption{
   display:flex; flex-direction:column; gap:5px;
 }
 .accion span{font-family:var(--f-mono); font-size:10.5px; line-height:1.45; color:var(--ink-2)}
-.accion span::before{content:"→ "; color:var(--accent-ink)}
+.accion span::before{content:"→ "; color:var(--accent-ink); display:inline-block; animation:empuje 3.4s ease-in-out infinite}
+.accion span:nth-of-type(2)::before{animation-delay:0s}
+.accion span:nth-of-type(3)::before{animation-delay:.22s}
+.accion span:nth-of-type(4)::before{animation-delay:.44s}
+@keyframes empuje{0%,68%,100%{transform:translateX(0)}76%{transform:translateX(4px)}86%{transform:translateX(0)}}
 .accion-k{
   font-size:9.5px !important; letter-spacing:.14em; text-transform:uppercase;
   color:var(--ink-3) !important; margin-bottom:2px;
@@ -582,6 +593,9 @@ figcaption{
   .nocambia__g{grid-template-columns:repeat(2,1fr); gap:16px}
 }
 @media (max-width:560px){
+  .lockup .brandmark{width:96px!important; height:26px!important}
+  .lockup .melimark{width:100px!important; height:25px!important}
+  .meliplate{padding:6px 9px}
   .paises{grid-template-columns:repeat(2,1fr); gap:8px}
   .nocambia__g{grid-template-columns:1fr; gap:14px}
 }
@@ -771,7 +785,7 @@ figcaption{
 
 <nav class="rail" aria-label="Índice de la presentación">
   <div class="rail__brand">
-    <span class="brandmark" style="width:76px;height:21px" role="img" aria-label="Deenex Technologies"></span>
+    <span class="brandmark" style="width:62px;height:17px" role="img" aria-label="Deenex Technologies"></span>
     <span class="lockup__x" style="font-size:11px; margin:0 7px">×</span>
     <span class="meliplate" style="padding:5px 7px"><span class="melimark" style="width:65px;height:16px" role="img" aria-label="Mercado Libre"></span></span>
   </div>
@@ -819,7 +833,7 @@ figcaption{
   <div class="cover">
     <div class="cover__l">
       <div class="lockup">
-        <span class="brandmark" style="width:123px;height:34px" role="img" aria-label="Deenex Technologies"></span>
+        <span class="brandmark" style="width:110px;height:30px" role="img" aria-label="Deenex Technologies"></span>
         <span class="lockup__x">×</span>
         <span class="meliplate"><span class="melimark" style="width:118px;height:29px" role="img" aria-label="Mercado Libre"></span></span>
       </div>
@@ -1173,7 +1187,6 @@ figcaption{
   <div class="eco">
     <div class="eco__col">
       <div class="paises"><div class="pais pais--act"><span class="pais__n">Argentina</span><span class="pais__e">En alcance</span></div><div class="pais pais--act"><span class="pais__n">Colombia</span><span class="pais__e">En alcance</span></div><div class="pais pais--act"><span class="pais__n">Chile</span><span class="pais__e">En alcance</span></div><div class="pais pais--act"><span class="pais__n">Uruguay</span><span class="pais__e">En alcance</span></div><div class="pais pais--act"><span class="pais__n">México</span><span class="pais__e">En alcance</span></div><div class="pais pais--act"><span class="pais__n">Brasil</span><span class="pais__e">En alcance</span></div><div class="pais pais--mas" role="img" aria-label="Agregar mas paises"><span class="pais__mas" aria-hidden="true">+</span><span class="pais__e">Agregar más países</span></div></div>
-      <p class="sumar">Podés sumar los países que quieras: la plataforma ya soporta el alcance. Habilitar una operación nueva es un alta de cinco pasos, sin desarrollo.</p>
     </div>
     <div class="figwrap">
   <figure>
@@ -1209,6 +1222,8 @@ figcaption{
   </figure>
   </div>
   </div>
+
+    <p class="sumar">Sumar un país es un alta de cinco pasos. La plataforma ya soporta el alcance, sin una línea de desarrollo.</p>
 
   <div class="nocambia">
     <p class="nocambia__t">Lo que no cambia</p>
@@ -1676,7 +1691,7 @@ figcaption{
   <span class="slide__no">23 / 23</span>
   <div class="final">
     <div class="lockup final__marca">
-      <span class="brandmark" style="width:158px;height:44px" role="img" aria-label="Deenex Technologies"></span>
+      <span class="brandmark" style="width:140px;height:38px" role="img" aria-label="Deenex Technologies"></span>
       <span class="lockup__x" style="font-size:22px">&#215;</span>
       <span class="meliplate" style="padding:11px 16px"><span class="melimark" style="width:150px;height:37px" role="img" aria-label="Mercado Libre"></span></span>
     </div>
