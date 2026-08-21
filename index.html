@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow, noarchive">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Deenex × Mercado Libre</title>
@@ -457,6 +456,43 @@ figcaption{
 @media (max-width:1080px){ .flow{grid-template-columns:1fr; gap:26px} .flow__phone{max-width:230px} .flow__d{max-width:none} }
 @media (prefers-reduced-motion:reduce){ .flow__screen{transition:none} .flow__bar{display:none} }
 
+/* Ecosistema tecnico: paises en alcance, activables y el mas */
+.paises{display:grid; grid-template-columns:repeat(7,1fr); gap:10px; margin-top:22px}
+.pais{
+  border:1px solid var(--hair); border-radius:4px; background:var(--surface);
+  padding:14px 12px; display:flex; flex-direction:column; gap:7px; min-height:82px;
+  justify-content:center;
+}
+.pais__n{font-family:var(--f-display); font-weight:700; font-size:15px; color:var(--ink); line-height:1.1}
+.pais__e{font-family:var(--f-mono); font-size:8.5px; letter-spacing:.11em; text-transform:uppercase; color:var(--ink-3); line-height:1.3}
+.pais--act{border-left:2px solid var(--accent)}
+.pais--act .pais__e{color:var(--accent-ink)}
+.pais--pot{border-style:dashed; border-color:var(--hair-2)}
+.pais--mas{
+  border-style:dashed; border-color:var(--accent); background:var(--accent-wash);
+  align-items:center; text-align:center; gap:5px;
+}
+.pais__mas{
+  font-family:var(--f-display); font-weight:900; font-size:26px; line-height:1;
+  color:var(--accent-ink);
+}
+.pais--mas .pais__e{color:var(--accent-ink)}
+.nocambia{margin-top:22px; border-top:1px solid var(--hair-2); padding-top:18px}
+.nocambia__t{
+  font-family:var(--f-mono); font-size:10px; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--accent-ink); margin:0 0 14px;
+}
+.nocambia__g{display:grid; grid-template-columns:repeat(4,1fr); gap:20px}
+.fijo p:last-child{font-size:13px; line-height:1.5; color:var(--ink-2); margin:0}
+@media (max-width:1080px){
+  .paises{grid-template-columns:repeat(4,1fr)}
+  .nocambia__g{grid-template-columns:repeat(2,1fr); gap:16px}
+}
+@media (max-width:560px){
+  .paises{grid-template-columns:repeat(2,1fr); gap:8px}
+  .nocambia__g{grid-template-columns:1fr; gap:14px}
+}
+
 @media (min-width:1700px){
   .deck{max-width:1924px}
   .slide{padding:76px 92px}
@@ -634,7 +670,8 @@ figcaption{
     <a href="#s20"><i class="n">20</i><span>Casos de referencia</span></a>
     <div class="rail__group">Cierre</div>
     <a href="#s21"><i class="n">21</i><span>Seamos pioneros</span></a>
-    <a href="#s22"><i class="n">22</i><span>Cierre</span></a>
+    <a href="#s22"><i class="n">22</i><span>Lo que firmamos</span></a>
+    <a href="#s23"><i class="n">23</i><span>Cierre</span></a>
   </div>
 </nav>
 
@@ -958,8 +995,8 @@ figcaption{
 <section class="slide" id="s8">
   <span class="slide__no">08 / 23</span>
   <p class="eyebrow">Cómo funciona</p>
-  <h2>La arquitectura no cambia entre países.</h2>
-  <p class="lead">Tres preguntas definen si esta plataforma aguanta un contrato de dos años en cuatro países: dónde vive la información y cómo está separada, qué pasa entre las once y las dos, y qué hay que tocar para sumar una operación nueva. El resto de este bloque se apoya en lo que sigue.</p>
+  <h2>El ecosistema técnico.</h2>
+  <p class="lead">Cuatro capas, tres integraciones obligatorias y un modelo de datos único. La aplicación del colaborador, el panel de Facilities, la pantalla de cocina y la reportería corren sobre la misma plataforma, con la seguridad atravesándola de punta a punta.</p>
   <div class="figwrap">
   <figure>
     <svg viewBox="0 0 1160 448" role="img" aria-label="Una sola arquitectura para las cuatro operaciones. A la izquierda, lo que cambia en cada país: la cuenta de mercado de la pasarela, la moneda, las plantillas de mensajería y la jerarquía de edificios. A la derecha, lo que no cambia: las capas de acceso, servicios, integraciones y datos, idénticas en los cuatro países, con la seguridad como banda transversal.">
@@ -1019,13 +1056,14 @@ figcaption{
       <rect x="396" y="394" width="736" height="34" rx="3" class="svg-box" stroke-width="1" stroke-dasharray="4 3"/>
       <text x="412" y="415" class="svg-ink2" font-size="12" font-family="var(--f-body)">Seguridad transversal · cifrado en tránsito y en reposo · privilegio mínimo con doble factor · incidentes notificados dentro de las 24 horas</text>
     </svg>
-    <figcaption>Las cuatro operaciones entran a la misma plataforma. Lo que se configura por país es la cuenta de mercado de la pasarela, la moneda, las plantillas de mensajería y la jerarquía de edificios; las cuatro capas y las tres integraciones son idénticas. Por eso sumar una operación es un alta de cinco pasos y no un proyecto nuevo.</figcaption>
+    <figcaption>Las cuatro operaciones entran a la misma plataforma: las capas, las integraciones y el modelo de datos son idénticos en todas.</figcaption>
   </figure>
   </div>
-  <div class="g3" style="margin-top:24px">
-    <div class="card"><p class="card__k">Dónde vive la información</p><h3>Separada de todo otro cliente.</h3><p>La información de Mercado Libre queda aislada del resto de la cartera de Deenex, y es propiedad exclusiva de Mercado Libre. <strong>No alimenta modelos propios de Deenex ni ningún agregado</strong>, y lo firmamos. El modelo concreto de aislamiento se acuerda con IT en la incubación.</p></div>
-    <div class="card"><p class="card__k">Qué pasa de 11 a 14</p><h3>La capa de aplicación escala sola.</h3><p>La demanda del comedor se concentra en tres horas. La capa de servicios escala horizontalmente en ese pico y vuelve a bajar después, sin intervención. El dimensionamiento se hizo sobre un techo declarado de 12.000 pedidos diarios, que contempla desayunos, almuerzos y meriendas.</p></div>
-    <div class="card"><p class="card__k">Qué toca sumar un país</p><h3>Configuración, no desarrollo.</h3><p>Cambia la cuenta de mercado de Mercado Pago, las plantillas de mensajería y la jerarquía de sites. <strong>No cambia una línea de código ni el modelo de datos.</strong> Es lo que hace que escalar a una operación nueva sea una afirmación verificable y no una intención.</p></div>
+  <div class="paises"><div class="pais pais--act"><span class="pais__n">Argentina</span><span class="pais__e">En alcance</span></div><div class="pais pais--act"><span class="pais__n">Colombia</span><span class="pais__e">En alcance</span></div><div class="pais pais--act"><span class="pais__n">Chile</span><span class="pais__e">En alcance</span></div><div class="pais pais--act"><span class="pais__n">Uruguay</span><span class="pais__e">En alcance</span></div><div class="pais pais--pot"><span class="pais__n">México</span><span class="pais__e">Podés activar</span></div><div class="pais pais--pot"><span class="pais__n">Brasil</span><span class="pais__e">Podés activar</span></div><div class="pais pais--mas" role="img" aria-label="Agregar mas paises"><span class="pais__mas" aria-hidden="true">+</span><span class="pais__e">Agregar más países</span></div></div>
+  <p class="wfcap">Habilitar una operación nueva es un alta de cinco pasos.</p>
+  <div class="nocambia">
+    <p class="nocambia__t">Lo que no cambia</p>
+    <div class="nocambia__g"><div class="fijo"><p class="card__k">Las cuatro capas</p><p>Acceso, servicios, integraciones y datos. La misma pila para cada operación.</p></div><div class="fijo"><p class="card__k">Las tres integraciones</p><p>Mercado Pago, WhatsApp Business y el directorio de colaboradores.</p></div><div class="fijo"><p class="card__k">El modelo de datos</p><p>País, edificio, piso y punto gastronómico. Una sola jerarquía.</p></div><div class="fijo"><p class="card__k">El código</p><p>Ni una línea distinta entre una operación y otra.</p></div></div>
   </div>
 </section>
 
@@ -1521,7 +1559,7 @@ figcaption{
   </div>
 </section>
 
-<section class="slide" id="s22">
+<section class="slide" id="s23">
   <span class="slide__no">23 / 23</span>
   <p class="eyebrow">Cierre</p>
   <div class="g2" style="align-items:center; gap:48px">
