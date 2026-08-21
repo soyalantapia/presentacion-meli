@@ -1,5 +1,7 @@
-<title>Deenex × Mercado Libre</title>
+<!DOCTYPE html>
 <meta name="robots" content="noindex, nofollow, noarchive">
+<meta charset="utf-8">
+<title>Deenex × Mercado Libre</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Chivo:wght@400;700;900&family=Chivo+Mono:wght@400;500&display=swap">
@@ -21,7 +23,7 @@
 }
 
 *,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth}
+html,body{scroll-behavior:smooth}
 body{
   margin:0; background:var(--ground); color:var(--ink);
   font-family:var(--f-body); font-size:16px; line-height:1.55;
@@ -72,9 +74,9 @@ body{
 }
 
 /* ── Deck ────────────────────────────────────────────────────────── */
-.deck{margin-left:224px; scroll-snap-type:y proximity; }
+.deck{margin-left:224px}
 .slide{
-  min-height:100vh; scroll-margin-top:8px; scroll-snap-align:start;
+  min-height:100vh; scroll-margin-top:8px;
   padding:64px 68px; border-bottom:1px solid var(--hair);
   display:flex; flex-direction:column; justify-content:center;
   position:relative;
@@ -387,7 +389,7 @@ figcaption{
   <span class="slide__no">02 / 19</span>
   <p class="eyebrow">Quiénes somos · un minuto</p>
   <h2>Mercado Libre define el comedor como un factor de calidad de vida laboral y productividad operativa.</h2>
-  <p class="lead">Hoy esa operación se estima. Deenex opera una plataforma de gestión gastronómica en producción, y a partir de la lámina 09 se recorre el circuito completo del comedor, tramo por tramo, con el nivel de servicio comprometido en cada uno.</p>
+  <p class="lead">Hoy esa operación se estima. Puede medirse. Un comedor que sabe cuántas personas van a comer antes de que lleguen, que produce contra un número y no contra una intuición, y que le devuelve a cada colaborador los minutos que hoy pierde esperando. <strong>No es un proyecto a construir: es una plataforma que ya está en producción.</strong></p>
   <div class="videoframe" style="margin-top:26px">
     <iframe src="https://player.vimeo.com/video/1216392655?title=0&amp;byline=0&amp;portrait=0&amp;dnt=1"
             title="¿Qué es Deenex? — video institucional, 1:09"
@@ -1151,6 +1153,19 @@ figcaption{
     }, { rootMargin: '-45% 0px -45% 0px' });
     slides.forEach(function(s){ io.observe(s); });
   }
+
+  links.forEach(function(a){
+    a.addEventListener('click', function(ev){
+      var el = document.getElementById(a.getAttribute('href').slice(1));
+      if (!el) return;
+      ev.preventDefault();
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      el.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+      history.replaceState(null, '', a.getAttribute('href'));
+      links.forEach(function(x){ x.classList.remove('is-on'); });
+      a.classList.add('is-on');
+    });
+  });
 
   document.addEventListener('keydown', function(ev){
     if (ev.key !== 'ArrowDown' && ev.key !== 'ArrowUp' && ev.key !== 'PageDown' && ev.key !== 'PageUp') return;
