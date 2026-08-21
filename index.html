@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow, noarchive">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Deenex × Mercado Libre</title>
+<meta name="robots" content="noindex, nofollow, noarchive">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Chivo:wght@400;700;900&family=Chivo+Mono:wght@400;500&display=swap">
@@ -444,21 +443,39 @@ figcaption{
 
 /* El índice lateral pasa a barra superior */
 @media (max-width:1080px){
+  /* Barra de pestanas al pie, como una app: fija abajo y deslizable a lo ancho */
   .rail{
-    position:sticky; inset:0 auto auto 0; width:100%; height:auto;
-    flex-direction:row; align-items:center; gap:14px; padding:9px 16px;
-    border-right:0; border-bottom:1px solid var(--hair);
-    overflow-x:auto; -webkit-overflow-scrolling:touch;
+    position:fixed; inset:auto 0 0 0; width:100%; height:auto; z-index:60;
+    flex-direction:row; align-items:stretch; gap:0; padding:0;
+    border-right:0; border-bottom:0; border-top:1px solid var(--hair);
+    background:var(--surface);
+    padding-bottom:env(safe-area-inset-bottom, 0px);
+    box-shadow:0 -8px 24px rgba(0,0,0,.35);
+    overflow:hidden;
   }
-  .rail__brand{border:0; padding:0; flex:0 0 auto; flex-wrap:nowrap}
-  .rail__brand .meliplate,.rail__brand .lockup__x{display:none}
-  .rail__group{display:none}
-  .rail__nav{display:flex; gap:2px; padding:0; overflow-x:auto; flex:1 1 auto}
-  .rail a{padding:8px 11px; min-height:38px; align-items:center; white-space:nowrap}
-  .rail a span:not(.n){display:none}
-  .rail .n{flex:none; font-size:11.5px}
-  .deck{margin-left:0}
-  .slide{padding:44px 26px; min-height:auto; scroll-margin-top:60px}
+  .rail__brand,.rail__group{display:none}
+  .rail__nav{
+    display:flex; gap:0; padding:0 4px; flex:1 1 auto;
+    overflow-x:auto; overflow-y:hidden;
+    scroll-snap-type:x proximity; -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+  }
+  .rail__nav::-webkit-scrollbar{display:none}
+  .rail a{
+    flex:0 0 auto; display:flex; flex-direction:column; align-items:center; justify-content:center;
+    gap:2px; padding:8px 13px 7px; min-height:56px; min-width:62px;
+    border-radius:0; border-top:2px solid transparent; white-space:nowrap;
+    scroll-snap-align:center; text-align:center;
+  }
+  .rail a span:not(.n){
+    display:block; font-size:10.5px; line-height:1.2; max-width:96px;
+    overflow:hidden; text-overflow:ellipsis;
+  }
+  .rail .n{flex:none; font-size:10px; opacity:.75}
+  .rail a.is-on{background:var(--accent-wash); border-top-color:var(--accent); color:var(--ink)}
+  .rail a:hover{background:transparent}
+  .deck{margin-left:0; padding-bottom:calc(64px + env(safe-area-inset-bottom, 0px))}
+  .slide{padding:44px 26px; min-height:auto; scroll-margin-top:12px}
   .cover{grid-template-columns:1fr; gap:30px}
   .cover > div:last-child{max-width:300px}
   .cover__hero{margin-top:30px}
@@ -473,6 +490,16 @@ figcaption{
   h2{font-size:clamp(22px,5vw,30px)}
   p.lead{font-size:16.5px}
   .figwrap figure svg{min-width:780px}
+
+  /* Tipografia movil: el cuerpo venia a 13,5px, por debajo del piso comodo
+     de lectura. 84 de 89 elementos de texto estaban bajo 14px. */
+  .slide p:not([class]){font-size:15px; line-height:1.6}
+  .card p{font-size:14.5px; line-height:1.55}
+  .ask p,.ask li{font-size:14.5px; line-height:1.55}
+  td{font-size:14.5px}
+  th{font-size:10.5px}
+  .stat__l{font-size:10.5px; line-height:1.5}
+  figcaption{font-size:11px; line-height:1.55}
   .wfbox{overflow-x:auto}
   .wfbox svg.wf{min-width:680px}
   figcaption{font-size:10px}
@@ -482,7 +509,7 @@ figcaption{
 
 /* Teléfono */
 @media (max-width:560px){
-  .slide{padding:30px 16px; scroll-margin-top:56px}
+  .slide{padding:30px 16px; scroll-margin-top:12px}
   .cover{gap:24px}
   .cover > div:last-child{max-width:240px; margin:0 auto}
   .cover__hero{font-size:clamp(30px,10vw,42px); margin:24px 0 20px; max-width:none}
@@ -502,6 +529,32 @@ figcaption{
 }
 
 /* Teléfono apaisado: pedir pantalla completa no tiene sentido */
+/* ── Tablet vertical: hay 713px de ancho util y las grillas colapsaban a una
+   sola columna, alargando cada lamina sin necesidad. Se recuperan dos columnas. */
+@media (min-width:700px) and (max-width:1080px){
+  .g2{grid-template-columns:1fr 1fr; gap:26px}
+  .g3{grid-template-columns:repeat(3,1fr); gap:16px}
+  .g4{grid-template-columns:repeat(2,1fr); gap:16px}
+  .cover{grid-template-columns:1.25fr .75fr; gap:32px; align-items:center}
+  .cover > div:last-child{max-width:260px; margin:0 auto}
+  .slide p:not([class]){font-size:15px; line-height:1.6}
+  .card p{font-size:14px}
+}
+
+/* ── Telefono apaisado: la barra del indice se comia el 19% de la pantalla y la
+   portada ocupaba tres pantallas de alto pese a sobrar ancho. */
+@media (max-height:520px) and (orientation:landscape){
+  .rail{padding:4px 12px; gap:10px}
+  .rail a{padding:3px 7px; font-size:11.5px}
+  .rail .n{font-size:9.5px}
+  .rail__brand .wordmark{font-size:12px}
+  .cover{grid-template-columns:1.2fr .8fr; gap:24px; align-items:center}
+  .cover > div:last-child{max-width:160px; margin:0 auto}
+  .cover__hero{font-size:clamp(24px,4.4vw,34px); margin:18px 0 16px}
+  .g2{grid-template-columns:1fr 1fr; gap:20px}
+  .stats{gap:16px}
+}
+
 @media (max-height:520px) and (orientation:landscape){
   .slide{min-height:auto; padding:28px 22px}
 }
@@ -542,7 +595,6 @@ figcaption{
     <a href="#s20"><i class="n">20</i><span>Casos de referencia</span></a>
     <div class="rail__group">Cierre</div>
     <a href="#s21"><i class="n">21</i><span>Seamos pioneros</span></a>
-    <a href="#s22"><i class="n">22</i><span>Cierre</span></a>
   </div>
 </nav>
 
@@ -943,6 +995,7 @@ figcaption{
       </tbody>
     </table>
   </div>
+  <p class="panhint">Deslizá para ver la tabla completa</p>
   <p class="foot-note" style="margin-top:14px">Lo que ya está construido es el tramo donde se concentra el riesgo: compra, comprobante con QR y validación en el punto de retiro, probado bajo concentración horaria severa.</p>
 </section>
 
@@ -1085,6 +1138,7 @@ figcaption{
         </tbody>
       </table>
     </div>
+  <p class="panhint">Deslizá para ver la tabla completa</p>
     <div>
       <div class="g2" style="gap:14px">
         <div class="card"><p class="card__k">Severidad 1</p><div class="stat__v" style="font-size:26px">30 / 15 min</div><p style="margin-top:8px">Respuesta inicial estándar y en ventana, con cobertura 24×7 los 7 días</p></div>
@@ -1191,6 +1245,7 @@ figcaption{
       </tbody>
     </table>
   </div>
+  <p class="panhint">Deslizá para ver la tabla completa</p>
   <p class="foot-note" style="margin-top:14px">Sobre los compartidos se propone revisión conjunta: se miden y reportan con la misma rigurosidad y, ante un desvío sostenido, se convoca un análisis con las áreas involucradas y se acuerda un plan con responsables de ambas partes.</p>
 </section>
 
@@ -1219,6 +1274,7 @@ figcaption{
         </tbody>
       </table>
     </div>
+  <p class="panhint">Deslizá para ver la tabla completa</p>
   </div>
 </section>
 
@@ -1275,6 +1331,7 @@ figcaption{
       </tbody>
     </table>
   </div>
+  <p class="panhint">Deslizá para ver la tabla completa</p>
   <div class="g3" style="margin-top:24px">
     <div class="card"><p class="card__k">Semana 4</p><h3>El plan con fechas.</h3><p>Cronograma de rollout con fechas calendario por pa&iacute;s, m&aacute;s el plan de contingencia y la primera versi&oacute;n del plan de salida.</p></div>
     <div class="card" style="border-color:var(--accent)"><p class="card__k" style="color:var(--accent-ink)">Semana 8 &middot; puerta de decisi&oacute;n</p><h3>Ustedes autorizan, o no arranca.</h3><p>Mercado Libre eval&uacute;a la performance del piloto contra los indicadores. Sin esa autorizaci&oacute;n expresa, el rollout regional no comienza.</p></div>
@@ -1300,6 +1357,7 @@ figcaption{
       </tbody>
     </table>
   </div>
+  <p class="panhint">Deslizá para ver la tabla completa</p>
   <div class="g2" style="margin-top:24px">
     <div class="card">
       <p class="card__k">Lo que consume del equipo de Mercado Libre</p>
@@ -1417,13 +1475,31 @@ figcaption{
   var byId = {};
   links.forEach(function(a){ byId[a.getAttribute('href').slice(1)] = a; });
 
+  var nav = document.querySelector('.rail__nav');
+  var tocando = false, temporizador;
+  if (nav) {
+    ['pointerdown','touchstart','wheel'].forEach(function(ev){
+      nav.addEventListener(ev, function(){
+        tocando = true; clearTimeout(temporizador);
+        temporizador = setTimeout(function(){ tocando = false; }, 2200);
+      }, {passive:true});
+    });
+  }
+  function centrarPestana(a){
+    if (!nav || tocando) return;
+    if (window.innerWidth > 1080) return;           // solo con la barra al pie
+    var r = a.getBoundingClientRect(), n = nav.getBoundingClientRect();
+    var destino = nav.scrollLeft + (r.left - n.left) - (n.width - r.width) / 2;
+    nav.scrollTo({ left: destino, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+  }
+
   if ('IntersectionObserver' in window) {
     var io = new IntersectionObserver(function(entries){
       entries.forEach(function(e){
         if (!e.isIntersecting) return;
         links.forEach(function(a){ a.classList.remove('is-on'); });
         var a = byId[e.target.id];
-        if (a) a.classList.add('is-on');
+        if (a) { a.classList.add('is-on'); centrarPestana(a); }
       });
     }, { rootMargin: '-45% 0px -45% 0px' });
     slides.forEach(function(s){ io.observe(s); });
