@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Deenex × Mercado Libre</title>
-<meta name="robots" content="noindex, nofollow, noarchive">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Chivo:wght@400;700;900&family=Chivo+Mono:wght@400;500&display=swap">
@@ -398,6 +399,18 @@ figcaption{
   .ruta{opacity:.4; stroke-dasharray:none}
 }
 
+/* -- Vias alternativas ------------------------------------------ */
+.via{width:100%; height:auto; display:block; margin:14px 0 12px}
+.via-caja{fill:var(--surface); stroke:var(--hair-2); stroke-width:1}
+.via-rota{stroke-dasharray:3 3; opacity:.55}
+.via-t{fill:var(--ink); font-size:11px; font-family:var(--f-body)}
+.via-t-rota{fill:var(--ink-3)}
+.via-x{stroke:var(--ink-3); stroke-width:1.6; stroke-linecap:round}
+.via-flecha{stroke:var(--hair-2); stroke-width:1.4; color:var(--hair-2); marker-end:url(#viaflecha)}
+.via-tenue{opacity:.35; stroke-dasharray:3 3}
+.via-alt{stroke:var(--accent); stroke-width:1.8; color:var(--accent); marker-end:url(#viaflecha); stroke-dasharray:5 4}
+.via-alt-t{fill:var(--accent-ink); font-size:10px; font-family:var(--f-mono); letter-spacing:.6px}
+
 /* -- Logotipos ------------------------------------------------- */
 :root{
   --logo-deenex:url("data:image/webp;base64,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");
@@ -421,6 +434,15 @@ figcaption{
 .clientplate{display:flex; align-items:center; justify-content:center; background:transparent; border-radius:3px; padding:0; height:48px}
 .clientplate--bg{background:#FFFFFF; padding:5px 9px}
 .clientplate img{max-height:36px; max-width:100%; width:auto; height:auto; display:block; object-fit:contain}
+
+/* -- Diagrama del ecosistema ------------------------------------- */
+.flow{stroke-dasharray:7 7; animation:flowdash 1.5s linear infinite}
+.flow--hot{animation-duration:.85s}
+@keyframes flowdash{to{stroke-dashoffset:-14}}
+.halo{animation:halo 2.6s ease-in-out infinite}
+@keyframes halo{0%,100%{opacity:.16}50%{opacity:.5}}
+.spark{offset-path:path("M770 120 L830 78"); animation:spark 1.9s cubic-bezier(.45,0,.55,1) infinite}
+@keyframes spark{0%{offset-distance:0%; opacity:0}15%{opacity:1}85%{opacity:1}100%{offset-distance:100%; opacity:0}}
 
 /* ── Responsive ──────────────────────────────────────────────────── */
 /* ── Responsive ──────────────────────────────────────────────────── */
@@ -743,6 +765,10 @@ figcaption{
 </nav>
 
 <main class="deck">
+<svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute">
+  <defs><marker id="viaflecha" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="currentColor"/></marker></defs>
+</svg>
+
 
 <!-- 01 ─────────────────────────────────────────────────────────── -->
 <section class="slide" id="s1">
@@ -810,53 +836,63 @@ figcaption{
   <h2>Todo esto es una sola plataforma, y es la misma en todos los países.</h2>
   <div class="figwrap">
   <figure>
-    <svg class="fig-ancha" viewBox="0 0 1160 420" role="img" aria-label="Mapa del ecosistema: los colaboradores acceden por app móvil y web a una plataforma única que integra Mercado Pago, WhatsApp Business y el directorio de colaboradores, y alimenta el KDS de cocina, el panel de Facilities y la reportería.">
-      <defs><marker id="a1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="currentColor"/></marker></defs>
-      <!-- personas -->
-      <text x="20" y="30" class="svg-ink3" font-family="var(--f-mono)" font-size="11" letter-spacing="1.4">5.400 COLABORADORES</text>
-      <rect x="20" y="44" width="180" height="52" rx="3" class="svg-box" stroke-width="1"/>
-      <text x="110" y="68" text-anchor="middle" class="svg-ink" font-size="13" font-family="var(--f-body)">App móvil</text>
-      <text x="110" y="85" text-anchor="middle" class="svg-ink3" font-size="11" font-family="var(--f-mono)">iOS · Android</text>
-      <rect x="20" y="110" width="180" height="52" rx="3" class="svg-box" stroke-width="1"/>
-      <text x="110" y="134" text-anchor="middle" class="svg-ink" font-size="13" font-family="var(--f-body)">App web</text>
-      <text x="110" y="151" text-anchor="middle" class="svg-ink3" font-size="11" font-family="var(--f-mono)">navegador del puesto</text>
-      <line x1="200" y1="70" x2="392" y2="130" class="svg-line" stroke-width="1.4" marker-end="url(#a1)"/>
-      <line x1="200" y1="136" x2="392" y2="150" class="svg-line" stroke-width="1.4" marker-end="url(#a1)"/>
-      <!-- plataforma -->
-      <rect x="400" y="60" width="330" height="190" rx="3" class="svg-box-acc" stroke-width="1.4"/>
-      <text x="565" y="88" text-anchor="middle" class="svg-acc" font-size="11" font-family="var(--f-mono)" letter-spacing="1.4">PLATAFORMA ÚNICA</text>
-      <text x="565" y="116" text-anchor="middle" class="svg-ink" font-size="15" font-family="var(--f-display)" font-weight="700">Una arquitectura,</text>
-      <text x="565" y="138" text-anchor="middle" class="svg-ink" font-size="15" font-family="var(--f-display)" font-weight="700">cada operación</text>
-      <text x="565" y="172" text-anchor="middle" class="svg-ink2" font-size="12" font-family="var(--f-body)">País · edificio · piso · punto gastronómico</text>
-      <text x="565" y="192" text-anchor="middle" class="svg-ink2" font-size="12" font-family="var(--f-body)">Cada colaborador ve la oferta de su edificio</text>
-      <text x="565" y="222" text-anchor="middle" class="svg-ink3" font-size="11" font-family="var(--f-mono)">Alta de una operación nueva: 5 pasos, sin desarrollo</text>
-      <!-- integraciones -->
-      <text x="400" y="298" class="svg-ink3" font-family="var(--f-mono)" font-size="11" letter-spacing="1.4">INTEGRACIONES OBLIGATORIAS</text>
-      <rect x="400" y="312" width="100" height="44" rx="3" class="svg-box" stroke-width="1"/>
-      <text x="450" y="332" text-anchor="middle" class="svg-ink" font-size="12">Mercado</text><text x="450" y="347" text-anchor="middle" class="svg-ink" font-size="12">Pago</text>
-      <rect x="515" y="312" width="100" height="44" rx="3" class="svg-box" stroke-width="1"/>
-      <text x="565" y="332" text-anchor="middle" class="svg-ink" font-size="12">WhatsApp</text><text x="565" y="347" text-anchor="middle" class="svg-ink" font-size="12">Business</text>
-      <rect x="630" y="312" width="100" height="44" rx="3" class="svg-box" stroke-width="1"/>
-      <text x="680" y="332" text-anchor="middle" class="svg-ink" font-size="12">Directorio</text><text x="680" y="347" text-anchor="middle" class="svg-ink" font-size="12">de RRHH</text>
-      <line x1="450" y1="312" x2="450" y2="256" class="svg-line" stroke-width="1.4" marker-end="url(#a1)"/>
-      <line x1="565" y1="312" x2="565" y2="256" class="svg-line" stroke-width="1.4" marker-end="url(#a1)"/>
-      <line x1="680" y1="312" x2="680" y2="256" class="svg-line" stroke-width="1.4" marker-end="url(#a1)"/>
-      <!-- salidas -->
-      <line x1="730" y1="110" x2="922" y2="70" class="svg-accs" stroke-width="1.6" marker-end="url(#a1)"/>
-      <text x="826" y="80" text-anchor="middle" class="svg-acc" font-size="10.5" font-family="var(--f-mono)">pedido pagado · &lt; 30 s</text>
-      <line x1="730" y1="155" x2="922" y2="155" class="svg-line" stroke-width="1.4" marker-end="url(#a1)"/>
-      <text x="826" y="149" text-anchor="middle" class="svg-ink3" font-size="10.5" font-family="var(--f-mono)">autogestión</text>
-      <line x1="730" y1="200" x2="922" y2="240" class="svg-line" stroke-width="1.4" marker-end="url(#a1)"/>
-      <text x="826" y="236" text-anchor="middle" class="svg-ink3" font-size="10.5" font-family="var(--f-mono)">tiempo real</text>
-      <rect x="930" y="44" width="210" height="52" rx="3" class="svg-box-acc" stroke-width="1.4"/>
-      <text x="1035" y="68" text-anchor="middle" class="svg-ink" font-size="13">KDS en cocina</text>
-      <text x="1035" y="85" text-anchor="middle" class="svg-acc" font-size="11" font-family="var(--f-mono)">provisto e instalado por Deenex</text>
-      <rect x="930" y="129" width="210" height="52" rx="3" class="svg-box" stroke-width="1"/>
-      <text x="1035" y="153" text-anchor="middle" class="svg-ink" font-size="13">Panel de Facilities</text>
-      <text x="1035" y="170" text-anchor="middle" class="svg-ink3" font-size="11" font-family="var(--f-mono)">sin intervención técnica</text>
-      <rect x="930" y="214" width="210" height="52" rx="3" class="svg-box" stroke-width="1"/>
-      <text x="1035" y="238" text-anchor="middle" class="svg-ink" font-size="13">Reportería y tablero</text>
-      <text x="1035" y="255" text-anchor="middle" class="svg-ink3" font-size="11" font-family="var(--f-mono)">tiempo real · acceso directo</text>
+    <svg viewBox="0 0 1160 450" role="img" aria-label="Mapa del ecosistema: los colaboradores acceden desde la aplicacion movil en iOS y Android o desde el navegador del puesto de trabajo a una plataforma unica, que integra la pasarela de pagos, la mensajeria y el directorio de colaboradores, y alimenta el KDS de cocina, el panel de Facilities y la reporteria.">
+      <defs>
+        <marker id="ec" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="currentColor"/></marker>
+        <marker id="ecA" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--accent)"/></marker>
+      </defs>
+
+      <text x="20" y="26" class="svg-ink3" font-family="var(--f-mono)" font-size="10.5" letter-spacing="1.4">5.400 COLABORADORES</text>
+      <g class="svg-box" stroke-width="1.1"><rect x="20" y="40" width="238" height="80" rx="4"/><rect x="20" y="134" width="238" height="80" rx="4"/></g>
+      <g class="svg-line" stroke-width="1.4" fill="none">
+        <rect x="42" y="54" width="26" height="52" rx="5"/><line x1="50" y1="61" x2="60" y2="61"/><line x1="49" y1="99" x2="61" y2="99"/>
+        <rect x="38" y="150" width="36" height="30" rx="3"/><line x1="38" y1="159" x2="74" y2="159"/>
+      </g>
+      <g class="svg-line" fill="currentColor" stroke="none"><circle cx="44" cy="154.5" r="1.6"/><circle cx="50" cy="154.5" r="1.6"/><circle cx="56" cy="154.5" r="1.6"/></g>
+      <text x="88" y="76" class="svg-ink" font-size="13.5" font-family="var(--f-body)">App movil</text>
+      <text x="88" y="96" class="svg-acc" font-size="11" font-family="var(--f-mono)">iOS &#183; Android</text>
+      <text x="88" y="170" class="svg-ink" font-size="13.5" font-family="var(--f-body)">App web</text>
+      <text x="88" y="190" class="svg-acc" font-size="11" font-family="var(--f-mono)">navegador del puesto</text>
+
+      <line x1="258" y1="80" x2="410" y2="128" class="svg-line flow" stroke-width="1.6" marker-end="url(#ec)"/>
+      <line x1="258" y1="174" x2="410" y2="166" class="svg-line flow" stroke-width="1.6" marker-end="url(#ec)"/>
+
+      <rect x="418" y="52" width="352" height="206" rx="4" class="svg-box-acc" stroke-width="1.5"/>
+      <text x="594" y="82" text-anchor="middle" class="svg-acc" font-size="10.5" font-family="var(--f-mono)" letter-spacing="1.4">PLATAFORMA UNICA</text>
+      <text x="594" y="116" text-anchor="middle" class="svg-ink" font-size="16" font-family="var(--f-display)" font-weight="700">Una arquitectura,</text>
+      <text x="594" y="139" text-anchor="middle" class="svg-ink" font-size="16" font-family="var(--f-display)" font-weight="700">todas las operaciones</text>
+      <line x1="452" y1="158" x2="736" y2="158" class="svg-line" stroke-width="1"/>
+      <text x="594" y="182" text-anchor="middle" class="svg-ink2" font-size="12" font-family="var(--f-body)">Pais &#183; edificio &#183; piso &#183; punto gastronomico</text>
+      <text x="594" y="203" text-anchor="middle" class="svg-ink2" font-size="12" font-family="var(--f-body)">Cada colaborador ve la oferta de su edificio</text>
+      <text x="594" y="234" text-anchor="middle" class="svg-acc" font-size="11" font-family="var(--f-mono)">Alta de una operacion nueva: cinco pasos</text>
+
+      <rect x="836" y="36" width="304" height="84" rx="4" class="halo" fill="var(--accent)" opacity=".16"/>
+      <rect x="836" y="36" width="304" height="84" rx="4" class="svg-box-acc" stroke-width="1.5"/>
+      <rect x="836" y="130" width="304" height="84" rx="4" class="svg-box" stroke-width="1.1"/>
+      <rect x="836" y="224" width="304" height="84" rx="4" class="svg-box" stroke-width="1.1"/>
+      <text x="988" y="70" text-anchor="middle" class="svg-ink" font-size="14" font-family="var(--f-body)">KDS en cocina</text>
+      <text x="988" y="92" text-anchor="middle" class="svg-acc" font-size="11" font-family="var(--f-mono)">provisto e instalado por Deenex</text>
+      <text x="988" y="164" text-anchor="middle" class="svg-ink" font-size="14" font-family="var(--f-body)">Panel de Facilities</text>
+      <text x="988" y="186" text-anchor="middle" class="svg-ink3" font-size="11" font-family="var(--f-mono)">sin intervencion tecnica</text>
+      <text x="988" y="258" text-anchor="middle" class="svg-ink" font-size="14" font-family="var(--f-body)">Reporteria y tablero</text>
+      <text x="988" y="280" text-anchor="middle" class="svg-ink3" font-size="11" font-family="var(--f-mono)">acceso directo, tiempo real</text>
+
+      <line x1="770" y1="120" x2="830" y2="78" class="svg-accs flow flow--hot" stroke-width="1.9" marker-end="url(#ecA)"/>
+      <circle r="3.4" fill="var(--accent)" class="spark"/>
+      <text x="796" y="106" text-anchor="middle" class="svg-acc" font-size="10.5" font-family="var(--f-mono)">&lt; 30 s</text>
+      <line x1="770" y1="158" x2="830" y2="170" class="svg-line flow" stroke-width="1.5" marker-end="url(#ec)"/>
+      <line x1="770" y1="196" x2="830" y2="264" class="svg-line flow" stroke-width="1.5" marker-end="url(#ec)"/>
+
+      <text x="418" y="316" class="svg-ink3" font-family="var(--f-mono)" font-size="10.5" letter-spacing="1.4">INTEGRACIONES</text>
+      <g class="svg-line" stroke-width="1.4" stroke-dasharray="3 4"><line x1="478" y1="330" x2="478" y2="264"/><line x1="594" y1="330" x2="594" y2="264"/><line x1="710" y1="330" x2="710" y2="264"/></g>
+      <g class="svg-box" stroke-width="1.1"><rect x="418" y="330" width="120" height="88" rx="4"/><rect x="534" y="330" width="120" height="88" rx="4"/><rect x="650" y="330" width="120" height="88" rx="4"/></g>
+      <g class="svg-line" stroke-width="1.5" fill="none">
+        <rect x="464" y="350" width="28" height="19" rx="3"/><line x1="464" y1="357" x2="492" y2="357"/>
+        <path d="M580 370 v-14 a4 4 0 0 1 4-4 h20 a4 4 0 0 1 4 4 v10 a4 4 0 0 1-4 4 h-16 z"/>
+        <circle cx="710" cy="354" r="6"/><path d="M700 370 a10 10 0 0 1 20 0"/>
+      </g>
+      <g text-anchor="middle" class="svg-ink" font-size="12.5" font-family="var(--f-body)"><text x="478" y="392">Pasarela de pagos</text><text x="594" y="392">Mensajeria</text><text x="710" y="392">Directorio</text></g>
+      <g text-anchor="middle" class="svg-ink3" font-size="10" font-family="var(--f-mono)"><text x="478" y="408">tarjeta tokenizada</text><text x="594" y="408">tres hitos del pedido</text><text x="710" y="408">alta y baja del acceso</text></g>
     </svg>
     <figcaption>Una sola plataforma cubre el ciclo completo del servicio. Lo que cambia entre países es la configuración de mercado de la integración de pagos y la jerarquía de sites, no la arquitectura.</figcaption>
   </figure>
@@ -1178,13 +1214,49 @@ figcaption{
   <h2>La cocina sigue produciendo aunque falle el dispositivo, la red o la pasarela.</h2>
   <p class="lead">Cada punto de falla tiene una vía alternativa <strong>ya definida y provista por Deenex</strong>, no un plan pendiente de escribir después de la firma.</p>
   <div class="g3" style="margin-top:24px">
-    <div class="card"><p class="card__k">Falla el dispositivo KDS</p><h3>La comanda se imprime en el mismo punto.</h3><p>Deenex provee la impresora como parte del equipamiento de cada cocina, y la vista de cocina se abre desde cualquier navegador autorizado del site. El servicio continúa mientras se ejecuta la reposición.</p></div>
-    <div class="card"><p class="card__k">Cae la pasarela de pagos</p><h3>El retiro se habilita igual.</h3><p>Aviso inmediato a Facilities e IT, estado del servicio visible en la aplicación, y retiro con pedido registrado y regularización posterior. El procedimiento se acuerda antes del puesta en producción.</p></div>
-    <div class="card"><p class="card__k">Cae el canal de mensajería</p><h3>El QR no depende del mensaje.</h3><p>Las notificaciones se conmutan a un canal alternativo dentro de la aplicación, y el código sigue accesible desde el detalle del pedido. La validación en el mostrador no cambia.</p></div>
+    <div class="card"><p class="card__k">Falla el dispositivo KDS</p><h3>La comanda se imprime en el mismo punto.</h3><svg class="via" viewBox="0 0 300 112" role="img" aria-label="La plataforma env&#237;a la comanda a la pantalla de cocina; si la pantalla falla, la comanda llega a la cocina por la impresora del punto.">
+        <rect x="0" y="8" width="82" height="32" rx="3" class="via-caja"/>
+        <text x="41" y="28" text-anchor="middle" class="via-t">Plataforma</text>
+        <rect x="109" y="8" width="82" height="32" rx="3" class="via-caja via-rota"/>
+        <text x="150" y="28" text-anchor="middle" class="via-t via-t-rota">Pantalla KDS</text>
+        <line x1="130" y1="14" x2="170" y2="34" class="via-x"/><line x1="170" y1="14" x2="130" y2="34" class="via-x"/>
+        <rect x="218" y="8" width="82" height="32" rx="3" class="via-caja"/>
+        <text x="259" y="28" text-anchor="middle" class="via-t">Cocina</text>
+        <line x1="82" y1="24" x2="103" y2="24" class="via-flecha"/>
+        <line x1="191" y1="24" x2="212" y2="24" class="via-flecha via-tenue"/>
+        <path d="M41,44 C41,86 259,86 259,48" fill="none" class="via-alt"/>
+        <text x="150" y="106" text-anchor="middle" class="via-alt-t">impresora en el punto</text>
+      </svg><p>Deenex provee la impresora. La vista de cocina tambi&#233;n se abre desde cualquier navegador autorizado del site.</p></div>
+    <div class="card"><p class="card__k">Cae la pasarela de pagos</p><h3>El retiro se habilita igual.</h3><svg class="via" viewBox="0 0 300 112" role="img" aria-label="El pedido pasa por el pago antes del retiro; si la pasarela cae, el pedido queda registrado y se regulariza el cobro despu&#233;s.">
+        <rect x="0" y="8" width="82" height="32" rx="3" class="via-caja"/>
+        <text x="41" y="28" text-anchor="middle" class="via-t">Pedido</text>
+        <rect x="109" y="8" width="82" height="32" rx="3" class="via-caja via-rota"/>
+        <text x="150" y="28" text-anchor="middle" class="via-t via-t-rota">Pago</text>
+        <line x1="130" y1="14" x2="170" y2="34" class="via-x"/><line x1="170" y1="14" x2="130" y2="34" class="via-x"/>
+        <rect x="218" y="8" width="82" height="32" rx="3" class="via-caja"/>
+        <text x="259" y="28" text-anchor="middle" class="via-t">Retiro</text>
+        <line x1="82" y1="24" x2="103" y2="24" class="via-flecha"/>
+        <line x1="191" y1="24" x2="212" y2="24" class="via-flecha via-tenue"/>
+        <path d="M41,44 C41,86 259,86 259,48" fill="none" class="via-alt"/>
+        <text x="150" y="106" text-anchor="middle" class="via-alt-t">pedido registrado, cobro posterior</text>
+      </svg><p>Aviso inmediato a Facilities e IT, con el estado del servicio visible en la aplicaci&#243;n.</p></div>
+    <div class="card"><p class="card__k">Cae el canal de mensajer&#237;a</p><h3>El QR no depende del mensaje.</h3><svg class="via" viewBox="0 0 300 112" role="img" aria-label="El comprobante con QR viaja por WhatsApp; si el canal cae, el c&#243;digo sigue accesible desde el detalle del pedido en la aplicaci&#243;n.">
+        <rect x="0" y="8" width="82" height="32" rx="3" class="via-caja"/>
+        <text x="41" y="28" text-anchor="middle" class="via-t">Pago</text>
+        <rect x="109" y="8" width="82" height="32" rx="3" class="via-caja via-rota"/>
+        <text x="150" y="28" text-anchor="middle" class="via-t via-t-rota">WhatsApp</text>
+        <line x1="130" y1="14" x2="170" y2="34" class="via-x"/><line x1="170" y1="14" x2="130" y2="34" class="via-x"/>
+        <rect x="218" y="8" width="82" height="32" rx="3" class="via-caja"/>
+        <text x="259" y="28" text-anchor="middle" class="via-t">QR</text>
+        <line x1="82" y1="24" x2="103" y2="24" class="via-flecha"/>
+        <line x1="191" y1="24" x2="212" y2="24" class="via-flecha via-tenue"/>
+        <path d="M41,44 C41,86 259,86 259,48" fill="none" class="via-alt"/>
+        <text x="150" y="106" text-anchor="middle" class="via-alt-t">detalle del pedido en la app</text>
+      </svg><p>La validaci&#243;n en el mostrador no cambia.</p></div>
   </div>
   <div class="card" style="margin-top:20px; border-color:var(--accent)">
     <p class="card__k" style="color:var(--accent-ink)">Lo que hace comprometible el plazo urgente de 2 días</p>
-    <p><strong>Stock de repuestos constituido en cada país antes del puesta en producción de esa operación.</strong> Sin stock local, el plazo de reposición comprometido no es alcanzable con provisión internacional, y el KDS fuera de servicio en horario de comedor es no conformidad crítica.</p>
+    <p><strong>Stock de repuestos constituido en cada país antes de la puesta en producción de esa operación.</strong> Sin stock local, el plazo de reposición comprometido no es alcanzable con provisión internacional, y el KDS fuera de servicio en horario de comedor es no conformidad crítica.</p>
   </div>
 </section>
 
@@ -1242,7 +1314,7 @@ figcaption{
         <tbody>
           <tr><td class="k">Account Manager dedicada</td><td>Exclusiva · 9:00 a 18:00 ART días hábiles. Español, portugués e inglés</td></tr>
           <tr><td class="k">Líder Técnico de cuenta</td><td>Exclusiva · horario comercial más escalamiento. Decide sobre arquitectura e integraciones</td></tr>
-          <tr><td class="k">Soporte técnico</td><td>3 posiciones, incorporadas antes del puesta en producción piloto, con guardia rotativa 24×7 para severidad 1</td></tr>
+          <tr><td class="k">Soporte técnico</td><td>3 posiciones, incorporadas antes de la puesta en producción piloto, con guardia rotativa 24×7 para severidad 1</td></tr>
           <tr><td class="k">Dirección</td><td>Joaquín Lombardi · Alan Tapia. Revisión semestral con Compras e IT</td></tr>
         </tbody>
       </table>
