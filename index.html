@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow, noarchive">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Deenex × Mercado Libre</title>
+<meta name="robots" content="noindex, nofollow, noarchive">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Chivo:wght@400;700;900&family=Chivo+Mono:wght@400;500&display=swap">
@@ -632,9 +631,9 @@ figcaption{
   h2{font-size:clamp(22px,5vw,30px)}
   p.lead{font-size:16.5px}
   .figwrap figure svg{min-width:780px}
+  .figwrap svg.fig-ancha{min-width:1100px}
   /* A 780px un viewBox de 1160 escala a 0,67 y el texto de 10,5px
      renderiza a 6,4-7,1px, ilegible. A 1100px queda en ~10px. */
-  .figwrap svg[viewBox^="0 0 1160"]{min-width:1100px}
 
   /* Tipografia movil: el cuerpo venia a 13,5px, por debajo del piso comodo
      de lectura. 84 de 89 elementos de texto estaban bajo 14px. */
@@ -740,7 +739,6 @@ figcaption{
     <a href="#s21"><i class="n">21</i><span>Casos de referencia</span></a>
     <div class="rail__group">Cierre</div>
     <a href="#s22"><i class="n">22</i><span>Seamos pioneros</span></a>
-    <a href="#s23"><i class="n">23</i><span>Cierre</span></a>
   </div>
 </nav>
 
@@ -812,7 +810,7 @@ figcaption{
   <h2>Todo esto es una sola plataforma, y es la misma en todos los países.</h2>
   <div class="figwrap">
   <figure>
-    <svg viewBox="0 0 1160 420" role="img" aria-label="Mapa del ecosistema: los colaboradores acceden por app móvil y web a una plataforma única que integra Mercado Pago, WhatsApp Business y el directorio de colaboradores, y alimenta el KDS de cocina, el panel de Facilities y la reportería.">
+    <svg class="fig-ancha" viewBox="0 0 1160 420" role="img" aria-label="Mapa del ecosistema: los colaboradores acceden por app móvil y web a una plataforma única que integra Mercado Pago, WhatsApp Business y el directorio de colaboradores, y alimenta el KDS de cocina, el panel de Facilities y la reportería.">
       <defs><marker id="a1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="currentColor"/></marker></defs>
       <!-- personas -->
       <text x="20" y="30" class="svg-ink3" font-family="var(--f-mono)" font-size="11" letter-spacing="1.4">5.400 COLABORADORES</text>
@@ -991,7 +989,7 @@ figcaption{
   <h2>La cocina ve el pedido antes de que el colaborador llegue al mostrador.</h2>
   <p class="lead">La plataforma habla directo con la pantalla de cocina: el pedido pagado se transmite al KDS en menos de 30 segundos, o 15 dentro de la ventana de 11 a 14, <strong>sin recarga manual y sin sistema intermedio</strong>. Nadie vuelve a tipear un pedido.</p>
   <div class="wfbox" style="margin-top:22px; padding:0; overflow:hidden">
-    <svg class="wf" viewBox="0 0 1160 420" role="img" aria-label="Esquema de la pantalla de cocina: barra superior con el punto gastronómico y la franja activa, y cinco comandas en columna, cada una con número de pedido, cronómetro, ítems y su estado de preparación.">
+    <svg class="wf fig-ancha" viewBox="0 0 1160 420" role="img" aria-label="Esquema de la pantalla de cocina: barra superior con el punto gastronómico y la franja activa, y cinco comandas en columna, cada una con número de pedido, cronómetro, ítems y su estado de preparación.">
       <rect x="0" y="0" width="1160" height="420" fill="var(--surface)"/>
       <rect x="0" y="0" width="1160" height="46" fill="var(--raised)"/>
       <line x1="0" y1="46" x2="1160" y2="46" class="wf-line" stroke-width="1"/>
@@ -1057,7 +1055,7 @@ figcaption{
   <h2>El KDS no es una pantalla que lista pedidos en orden de llegada.</h2>
   <p class="lead">La cocina no decide sola en qu&#233; orden producir. El motor secuencia las comandas contra la hora de retiro comprometida, las rutea a la estaci&#243;n que corresponde y agrupa lo que conviene producir junto. <strong>Se desarrolla como parte de la implementaci&#243;n.</strong></p>
   <figure class="motor__fig">
-      <svg viewBox="0 0 960 200" role="img" aria-label="Las comandas entran en el orden en que se pagaron, con franjas de retiro mezcladas. El motor las reordena por franja y agrupa en una misma tanda las que comparten horario.">
+      <svg class="fig-ancha" viewBox="0 0 960 200" role="img" aria-label="Las comandas entran en el orden en que se pagaron, con franjas de retiro mezcladas. El motor las reordena por franja y agrupa en una misma tanda las que comparten horario.">
         <defs><marker id="mflecha" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="currentColor"/></marker></defs>
         <text x="0" y="24" class="svg-ink3" font-family="var(--f-mono)" font-size="10.5" letter-spacing="1.3">COMO ENTRAN &#183; ORDEN DE LLEGADA</text>
         <rect x="0" y="44" width="248" height="22" rx="3" class="wf-frame" stroke-width="1"/><rect x="12" y="51" width="34" height="8" rx="2" class="wf-blk"/><text x="236" y="59" text-anchor="end" class="svg-ink2" font-size="11" font-family="var(--f-mono)">13:30</text><rect x="0" y="74" width="248" height="22" rx="3" class="wf-frame" stroke-width="1"/><rect x="12" y="81" width="34" height="8" rx="2" class="wf-blk"/><text x="236" y="89" text-anchor="end" class="svg-ink2" font-size="11" font-family="var(--f-mono)">12:00</text><rect x="0" y="104" width="248" height="22" rx="3" class="wf-frame" stroke-width="1"/><rect x="12" y="111" width="34" height="8" rx="2" class="wf-blk"/><text x="236" y="119" text-anchor="end" class="svg-ink2" font-size="11" font-family="var(--f-mono)">13:00</text><rect x="0" y="134" width="248" height="22" rx="3" class="wf-frame" stroke-width="1"/><rect x="12" y="141" width="34" height="8" rx="2" class="wf-blk"/><text x="236" y="149" text-anchor="end" class="svg-ink2" font-size="11" font-family="var(--f-mono)">12:00</text><rect x="0" y="164" width="248" height="22" rx="3" class="wf-frame" stroke-width="1"/><rect x="12" y="171" width="34" height="8" rx="2" class="wf-blk"/><text x="236" y="179" text-anchor="end" class="svg-ink2" font-size="11" font-family="var(--f-mono)">12:30</text>
@@ -1137,7 +1135,7 @@ figcaption{
   <p class="lead">El pedido cruza tres actores y vuelve al colaborador. El punto naranja recorre la ruta real: lo que se ve moverse es un pedido, desde el ingreso hasta el retiro validado.</p>
   <div class="figwrap">
   <figure>
-      <svg viewBox="114 -40 1032 396" role="img" aria-label="El circuito del pedido cruzando tres actores: el colaborador ingresa, elige y paga; la plataforma procesa el pago y emite el comprobante con QR; la cocina recibe la comanda ordenada por franja y produce; el colaborador retira validando el QR. Cada tramo lleva su nivel de servicio comprometido.">
+      <svg class="fig-ancha" viewBox="114 -40 1032 396" role="img" aria-label="El circuito del pedido cruzando tres actores: el colaborador ingresa, elige y paga; la plataforma procesa el pago y emite el comprobante con QR; la cocina recibe la comanda ordenada por franja y produce; el colaborador retira validando el QR. Cada tramo lleva su nivel de servicio comprometido.">
         <defs><marker id="cflecha" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="currentColor"/></marker></defs>
         <g class="carril"><rect x="120" y="40" width="1020" height="84" rx="4"/><rect x="120" y="150" width="1020" height="84" rx="4"/><rect x="120" y="260" width="1020" height="84" rx="4"/></g>
         
@@ -1197,7 +1195,7 @@ figcaption{
   <h2>Cada etapa cierra contra criterios verificables, no contra el calendario.</h2>
   <div class="figwrap">
   <figure>
-    <svg viewBox="0 0 1160 250" role="img" aria-label="Cronograma de 24 semanas: incubación en las semanas 1 a 4, puesta en producción piloto de la 5 a la 8, y rollout regional priorizado por dotación entre las semanas 9 y 24, con Argentina, Colombia, Chile y Uruguay solapados.">
+    <svg class="fig-ancha" viewBox="0 0 1160 250" role="img" aria-label="Cronograma de 24 semanas: incubación en las semanas 1 a 4, puesta en producción piloto de la 5 a la 8, y rollout regional priorizado por dotación entre las semanas 9 y 24, con Argentina, Colombia, Chile y Uruguay solapados.">
       <g class="svg-line" stroke-width="1">
         <line x1="240" y1="42" x2="240" y2="212"/><line x1="393" y1="42" x2="393" y2="212"/>
         <line x1="546" y1="42" x2="546" y2="212"/><line x1="699" y1="42" x2="699" y2="212"/>
@@ -1270,7 +1268,7 @@ figcaption{
   <p class="lead">Facilities abre un caso con un botón dentro del panel. Del otro lado no hay una casilla genérica: hay un equipo con niveles, plazos comprometidos y acceso directo a quien escribe el código.</p>
   <div class="figwrap">
   <figure>
-    <svg viewBox="0 0 1160 430" role="img" aria-label="Circuito de soporte: Facilities abre un caso con un botón del panel de administración; el caso entra a Intercom como canal único y se clasifica en tres niveles: mesa de ayuda con respuesta en 4 horas hábiles, soporte técnico con guardia 24 por 7 para severidad 2, y Líder Técnico con dirección que se activa automáticamente en severidad 1; el equipo de desarrollo devuelve el diagnóstico al soporte que gestiona el ticket y de ahí vuelve al mismo caso en el panel.">
+    <svg class="fig-ancha" viewBox="0 0 1160 430" role="img" aria-label="Circuito de soporte: Facilities abre un caso con un botón del panel de administración; el caso entra a Intercom como canal único y se clasifica en tres niveles: mesa de ayuda con respuesta en 4 horas hábiles, soporte técnico con guardia 24 por 7 para severidad 2, y Líder Técnico con dirección que se activa automáticamente en severidad 1; el equipo de desarrollo devuelve el diagnóstico al soporte que gestiona el ticket y de ahí vuelve al mismo caso en el panel.">
       <defs>
         <marker id="as" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="currentColor"/></marker>
         <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--accent)"/></marker>
