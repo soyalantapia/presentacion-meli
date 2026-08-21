@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow, noarchive">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Deenex × Mercado Libre</title>
@@ -392,17 +393,22 @@ figcaption{
 .pulso,.pulso-halo{
   offset-path:path("M193,82 L340,82 L487,192 L634,82 L781,302 L928,302 L1075,82");
   offset-rotate:0deg;
-  animation:recorrido 7.5s ease-in-out infinite;
+  animation:recorrido 8.5s linear infinite;
 }
 .pulso-halo{animation-delay:-.12s}
 @keyframes recorrido{
   0%{offset-distance:0%; opacity:0}
-  5%{opacity:1}
-  92%{opacity:1}
+  3%{opacity:1}
+  82%{opacity:1}
+  85%{offset-distance:100%; opacity:0}
   100%{offset-distance:100%; opacity:0}
 }
+.fogonazo{fill:var(--accent); opacity:0; animation:fogonazo 8.5s linear infinite}
+@keyframes fogonazo{
+  0%{opacity:0} 1.5%{opacity:.22} 7%{opacity:.22} 14%{opacity:0} 100%{opacity:0}
+}
 @media (prefers-reduced-motion:reduce){
-  .pulso,.pulso-halo{animation:none; opacity:0}
+  .pulso,.pulso-halo,.fogonazo{animation:none; opacity:0}
   .ruta{opacity:.4; stroke-dasharray:none}
 }
 
@@ -1120,9 +1126,10 @@ figcaption{
   <span class="slide__no">10 / 23</span>
   <p class="eyebrow">Cómo funciona · para IT</p>
   <h2>Ninguna falla de un componente detiene el servicio de comedor.</h2>
+  <p class="lead">Toda la l&#237;nea corre sobre disponibilidad mensual del <strong>99,5%</strong> y respuesta de app menor a <strong>3 segundos</strong> en P95. Cada tramo lleva adem&#225;s su propio compromiso.</p>
   <div class="figwrap">
   <figure>
-      <svg viewBox="0 0 1160 400" role="img" aria-label="El circuito del pedido cruzando tres actores: el colaborador ingresa, elige y paga; la plataforma procesa el pago y emite el comprobante con QR; la cocina recibe la comanda ordenada por franja y produce; el colaborador retira validando el QR. Cada tramo lleva su nivel de servicio comprometido.">
+      <svg viewBox="0 0 1160 356" role="img" aria-label="El circuito del pedido cruzando tres actores: el colaborador ingresa, elige y paga; la plataforma procesa el pago y emite el comprobante con QR; la cocina recibe la comanda ordenada por franja y produce; el colaborador retira validando el QR. Cada tramo lleva su nivel de servicio comprometido.">
         <defs><marker id="cflecha" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="currentColor"/></marker></defs>
         <g class="carril"><rect x="120" y="40" width="1020" height="84" rx="4"/><rect x="120" y="150" width="1020" height="84" rx="4"/><rect x="120" y="260" width="1020" height="84" rx="4"/></g>
         <g class="svg-ink3" font-family="var(--f-mono)" font-size="10" letter-spacing="1.2">
@@ -1132,7 +1139,7 @@ figcaption{
         <line x1="256" y1="82" x2="271" y2="82" class="svg-line" stroke-width="1.4" marker-end="url(#cflecha)"/><line x1="403" y1="82" x2="418" y2="192" class="svg-line" stroke-width="1.4" marker-end="url(#cflecha)"/><line x1="550" y1="192" x2="565" y2="82" class="svg-line" stroke-width="1.4" marker-end="url(#cflecha)"/><line x1="697" y1="82" x2="712" y2="302" class="svg-line" stroke-width="1.4" marker-end="url(#cflecha)"/><line x1="844" y1="302" x2="859" y2="302" class="svg-line" stroke-width="1.4" marker-end="url(#cflecha)"/><line x1="991" y1="302" x2="1006" y2="82" class="svg-line" stroke-width="1.4" marker-end="url(#cflecha)"/>
         <rect x="130" y="56" width="126" height="52" rx="4" class="svg-box" stroke-width="1.3"/><rect x="277" y="56" width="126" height="52" rx="4" class="svg-box" stroke-width="1.3"/><rect x="424" y="166" width="126" height="52" rx="4" class="svg-box-acc" stroke-width="1.3"/><rect x="571" y="56" width="126" height="52" rx="4" class="svg-box" stroke-width="1.3"/><rect x="718" y="276" width="126" height="52" rx="4" class="svg-box" stroke-width="1.3"/><rect x="865" y="276" width="126" height="52" rx="4" class="svg-box" stroke-width="1.3"/><rect x="1012" y="56" width="126" height="52" rx="4" class="svg-box" stroke-width="1.3"/>
         <text x="193" y="80" text-anchor="middle" class="svg-ink" font-size="12.5">Ingreso</text><text x="193" y="96" text-anchor="middle" class="svg-ink3" font-size="9.5" font-family="var(--f-mono)">c&#243;digo de un solo uso</text><text x="340" y="80" text-anchor="middle" class="svg-ink" font-size="12.5">Men&#250; y ficha</text><text x="340" y="96" text-anchor="middle" class="svg-ink3" font-size="9.5" font-family="var(--f-mono)">por edificio y franja</text><text x="487" y="190" text-anchor="middle" class="svg-ink" font-size="12.5">Pago</text><text x="487" y="206" text-anchor="middle" class="svg-ink3" font-size="9.5" font-family="var(--f-mono)">sin redirecci&#243;n</text><text x="634" y="80" text-anchor="middle" class="svg-ink" font-size="12.5">Comprobante</text><text x="634" y="96" text-anchor="middle" class="svg-ink3" font-size="9.5" font-family="var(--f-mono)">QR por WhatsApp</text><text x="781" y="300" text-anchor="middle" class="svg-ink" font-size="12.5">Comanda</text><text x="781" y="316" text-anchor="middle" class="svg-ink3" font-size="9.5" font-family="var(--f-mono)">ordenada por franja</text><text x="928" y="300" text-anchor="middle" class="svg-ink" font-size="12.5">Producci&#243;n</text><text x="928" y="316" text-anchor="middle" class="svg-ink3" font-size="9.5" font-family="var(--f-mono)">por estaci&#243;n</text><text x="1075" y="80" text-anchor="middle" class="svg-ink" font-size="12.5">Retiro</text><text x="1075" y="96" text-anchor="middle" class="svg-ink3" font-size="9.5" font-family="var(--f-mono)">QR validado</text>
-        <circle class="pulso-halo" r="13" cx="0" cy="0"/>
+        <rect class="fogonazo" x="130" y="56" width="126" height="52" rx="4" style="animation-delay:0.0s"/><rect class="fogonazo" x="277" y="56" width="126" height="52" rx="4" style="animation-delay:0.89s"/><rect class="fogonazo" x="424" y="166" width="126" height="52" rx="4" style="animation-delay:2.01s"/><rect class="fogonazo" x="571" y="56" width="126" height="52" rx="4" style="animation-delay:3.12s"/><rect class="fogonazo" x="718" y="276" width="126" height="52" rx="4" style="animation-delay:4.73s"/><rect class="fogonazo" x="865" y="276" width="126" height="52" rx="4" style="animation-delay:5.62s"/><rect class="fogonazo" x="1012" y="56" width="126" height="52" rx="4" style="animation-delay:7.22s"/><circle class="pulso-halo" r="13" cx="0" cy="0"/>
         <circle class="pulso" r="6" cx="0" cy="0"/>
         <g font-family="var(--f-mono)" font-size="11" class="svg-acc" text-anchor="middle">
           <text x="340" y="140">cambio de men&#250; &lt; 2 h</text>
@@ -1141,8 +1148,6 @@ figcaption{
           <text x="781" y="252">comanda al KDS &lt; 30 s</text>
           <text x="1075" y="140">KDS operativo 99%</text>
         </g>
-        <line x1="120" y1="368" x2="1140" y2="368" class="svg-line" stroke-width="1" stroke-dasharray="3 4"/>
-        <text x="120" y="388" class="svg-ink3" font-size="10.5" font-family="var(--f-mono)" letter-spacing="1.1">TODA LA L&#205;NEA CORRE SOBRE DISPONIBILIDAD MENSUAL DEL 99,5% Y RESPUESTA DE APP MENOR A 3 SEGUNDOS EN P95</text>
       </svg>
       <figcaption>El pedido cruza tres actores y vuelve al colaborador. El punto naranja recorre la ruta real: lo que se ve moverse es un pedido, desde el ingreso hasta el retiro validado.</figcaption>
     </figure>
