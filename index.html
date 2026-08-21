@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow, noarchive">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Deenex × Mercado Libre</title>
+<meta name="robots" content="noindex, nofollow, noarchive">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Chivo:wght@400;700;900&family=Chivo+Mono:wght@400;500&display=swap">
@@ -246,6 +245,7 @@ figcaption{
   margin-top:12px; line-height:1.5; letter-spacing:.01em;
 }
 .figwrap{overflow-x:auto}
+.panhint{display:none}
 .svg-ink{fill:var(--ink)} .svg-ink2{fill:var(--ink-2)} .svg-ink3{fill:var(--ink-3)}
 .svg-acc{fill:var(--accent-ink)} .svg-accs{stroke:var(--accent)}
 .svg-box{fill:var(--surface); stroke:var(--hair-2)}
@@ -654,6 +654,11 @@ figcaption{
   p.lead{font-size:16.5px}
   .figwrap figure svg{min-width:780px}
   .figwrap svg.fig-ancha{min-width:1100px}
+  .panhint{
+    display:block; margin:8px 2px 0; font-family:var(--f-mono); font-size:10px;
+    letter-spacing:.1em; text-transform:uppercase; color:var(--ink-3);
+  }
+  .panhint::before{content:"→  "; color:var(--accent-ink)}
   /* A 780px un viewBox de 1160 escala a 0,67 y el texto de 10,5px
      renderiza a 6,4-7,1px, ilegible. A 1100px queda en ~10px. */
 
@@ -684,7 +689,7 @@ figcaption{
   .stats{grid-template-columns:1fr; gap:14px; margin-top:0}
   .stat{padding-top:10px}
   .stat__v,.stat__v--long{font-size:25px}
-  .stat__l{font-size:9px; margin-top:6px}
+  .stat__l{font-size:10px; margin-top:6px}
   .lockup{gap:12px}
   .g2,.g3,.g4{gap:14px}
   p{font-size:15px}
@@ -710,7 +715,10 @@ figcaption{
 /* ── Telefono apaisado: la barra del indice se comia el 19% de la pantalla y la
    portada ocupaba tres pantallas de alto pese a sobrar ancho. */
 @media (max-height:520px) and (orientation:landscape){
-  .rail{padding:4px 12px; gap:10px}
+  .rail{inset:auto 10px calc(8px + env(safe-area-inset-bottom, 0px)) 10px; border-radius:16px}
+  .rail a{min-height:40px; padding:5px 11px 4px; margin:4px 1px; border-radius:11px}
+  .rail a span:not(.n){font-size:9.5px}
+  .deck{padding-bottom:calc(66px + env(safe-area-inset-bottom, 0px))}
   .rail a{padding:3px 7px; font-size:11.5px}
   .rail .n{font-size:9.5px}
   .rail__brand .wordmark{font-size:12px}
