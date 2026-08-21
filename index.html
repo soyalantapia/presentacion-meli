@@ -1,0 +1,867 @@
+<title>Deenex × Mercado Libre</title>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Chivo:wght@400;700;900&family=Chivo+Mono:wght@400;500&display=swap">
+
+<style>
+/* ── Tokens · dark-first ─────────────────────────────────────────── */
+:root{
+  --ground:#12151A; --surface:#171B21; --raised:#1D222A;
+  --hair:#262D36; --hair-2:#36414F;
+  --ink:#F4F2EF; --ink-2:#A6AFB9; --ink-3:#808A96;
+  --accent:#FF6A13; --accent-ink:#FF8438; --accent-wash:rgba(255,106,19,.10);
+  --ok:#6FCF97; --partial:#F0B429; --pending:#7E8FA6;
+  --shadow:0 1px 0 rgba(255,255,255,.03) inset;
+  --f-display:"Chivo","Archivo",system-ui,sans-serif;
+  --f-body:"Archivo",system-ui,-apple-system,sans-serif;
+  --f-mono:"Chivo Mono",ui-monospace,"SFMono-Regular",monospace;
+}
+@media (prefers-color-scheme:light){
+  :root:not([data-theme="dark"]){
+    --ground:#FBFAF8; --surface:#FFFFFF; --raised:#F5F3EF;
+    --hair:#E4E0D9; --hair-2:#C8C2B7;
+    --ink:#14181D; --ink-2:#5A636D; --ink-3:#666E77;
+    --accent:#D9530A; --accent-ink:#B8440A; --accent-wash:rgba(217,83,10,.07);
+    --ok:#2E8B5C; --partial:#A9761A; --pending:#5E6E88;
+    --shadow:0 1px 0 rgba(0,0,0,.02) inset;
+  }
+}
+:root[data-theme="light"]{
+  --ground:#FBFAF8; --surface:#FFFFFF; --raised:#F5F3EF;
+  --hair:#E4E0D9; --hair-2:#C8C2B7;
+  --ink:#14181D; --ink-2:#5A636D; --ink-3:#666E77;
+  --accent:#D9530A; --accent-ink:#B8440A; --accent-wash:rgba(217,83,10,.07);
+  --ok:#2E8B5C; --partial:#A9761A; --pending:#5E6E88;
+  --shadow:0 1px 0 rgba(0,0,0,.02) inset;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--ground); color:var(--ink);
+  font-family:var(--f-body); font-size:16px; line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{animation:none!important; transition:none!important}
+}
+:focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:2px}
+
+/* ── Index rail ──────────────────────────────────────────────────── */
+.rail{
+  position:fixed; inset:0 auto 0 0; width:224px; z-index:40;
+  background:var(--surface); border-right:1px solid var(--hair);
+  display:flex; flex-direction:column; padding:22px 0 16px;
+}
+.rail__brand{
+  padding:0 20px 16px; border-bottom:1px solid var(--hair);
+  display:flex; align-items:center; flex-wrap:wrap; gap:2px;
+}
+.rail__meta{
+  padding:12px 20px; font-family:var(--f-mono); font-size:10px;
+  letter-spacing:.06em; color:var(--ink-3); text-transform:uppercase;
+}
+.rail__nav{flex:1; overflow-y:auto; padding:4px 10px 0}
+.rail__group{
+  font-family:var(--f-mono); font-size:9.5px; letter-spacing:.14em;
+  text-transform:uppercase; color:var(--ink-3);
+  padding:14px 10px 6px;
+}
+.rail a{
+  display:flex; gap:9px; align-items:baseline;
+  padding:5px 10px; border-radius:3px; text-decoration:none;
+  color:var(--ink-2); font-size:12.5px; line-height:1.3;
+}
+.rail a:hover{background:var(--raised); color:var(--ink)}
+.rail a.is-on{color:var(--ink); background:var(--accent-wash)}
+.rail a.is-on .n{color:var(--accent-ink)}
+.rail .n{
+  font-family:var(--f-mono); font-size:10px; color:var(--ink-3);
+  font-variant-numeric:tabular-nums; flex:0 0 16px;
+}
+.rail__foot{
+  padding:12px 20px 0; border-top:1px solid var(--hair);
+  font-family:var(--f-mono); font-size:9.5px; letter-spacing:.05em;
+  color:var(--ink-3); line-height:1.5;
+}
+
+/* ── Deck ────────────────────────────────────────────────────────── */
+.deck{margin-left:224px; scroll-snap-type:y proximity; }
+.slide{
+  min-height:100vh; scroll-snap-align:start;
+  padding:64px 68px; border-bottom:1px solid var(--hair);
+  display:flex; flex-direction:column; justify-content:center;
+  position:relative;
+}
+.slide__no{
+  position:absolute; top:26px; right:34px;
+  font-family:var(--f-mono); font-size:11px; color:var(--ink-3);
+  font-variant-numeric:tabular-nums; letter-spacing:.08em;
+}
+.eyebrow{
+  font-family:var(--f-mono); font-size:10.5px; letter-spacing:.16em;
+  text-transform:uppercase; color:var(--accent-ink); margin:0 0 14px;
+}
+.eyebrow--q{color:var(--ink-3)}
+h1{
+  font-family:var(--f-display); font-weight:900; font-size:clamp(29px,3.4vw,46px);
+  line-height:1.04; letter-spacing:-.02em; margin:0 0 22px; text-wrap:balance; max-width:16ch;
+}
+h2{
+  font-family:var(--f-display); font-weight:700; font-size:clamp(25px,2.9vw,38px);
+  line-height:1.1; letter-spacing:-.015em; margin:0 0 16px; text-wrap:balance;
+}
+h3{
+  font-family:var(--f-display); font-weight:700; font-size:16px;
+  letter-spacing:-.005em; margin:0 0 7px;
+}
+p{margin:0 0 14px; max-width:66ch; color:var(--ink-2)}
+p.lead{font-size:19px; line-height:1.5; color:var(--ink); max-width:62ch}
+strong{color:var(--ink); font-weight:600}
+.rule{height:1px; background:var(--hair); border:0; margin:26px 0}
+
+/* ── Lockup ──────────────────────────────────────────────────────── */
+.lockup{display:flex; align-items:center; gap:22px; margin:0 0 auto}
+.wordmark{
+  font-family:var(--f-display); font-weight:900; font-size:22px;
+  letter-spacing:-.03em; color:var(--ink); line-height:1; white-space:nowrap;
+}
+.wordmark sup{
+  font-family:var(--f-mono); font-weight:400; font-size:8px; letter-spacing:.1em;
+  color:var(--ink-3); vertical-align:super; margin-left:5px; text-transform:uppercase;
+}
+.lockup__x{font-family:var(--f-display); font-size:17px; color:var(--accent); line-height:1}
+.logoslot{
+  display:inline-flex; align-items:center; justify-content:center; gap:7px;
+  height:38px; min-width:150px; padding:0 14px;
+  border:1px dashed var(--hair-2); border-radius:3px;
+  font-family:var(--f-mono); font-size:8.5px; letter-spacing:.13em;
+  text-transform:uppercase; color:var(--ink-3); text-align:center; line-height:1.3;
+}
+.logoslot--sm{height:26px; min-width:104px; font-size:7.5px; padding:0 9px}
+
+/* ── Cover ───────────────────────────────────────────────────────── */
+.cover{display:grid; grid-template-columns:1.3fr .7fr; gap:60px; align-items:stretch}
+.cover__l{display:flex; flex-direction:column; gap:0}
+.cover__hero{
+  font-family:var(--f-display); font-weight:900; font-size:clamp(24px,2.7vw,37px);
+  line-height:1.12; letter-spacing:-.025em; color:var(--ink);
+  margin:40px 0 26px; max-width:27ch; text-wrap:balance;
+}
+.cover__hero em{font-style:normal; color:var(--accent-ink)}
+.cover__doc{
+  border-top:1px solid var(--hair); padding-top:16px; margin-bottom:34px;
+  display:flex; flex-wrap:wrap; gap:6px 26px; align-items:baseline;
+}
+.cover__doc h1{
+  font-family:var(--f-body); font-weight:600; font-size:14.5px; letter-spacing:0;
+  line-height:1.4; margin:0; max-width:44ch; color:var(--ink-2);
+}
+.cover__ref{font-family:var(--f-mono); font-size:10px; color:var(--ink-3); letter-spacing:.06em}
+.stats{display:grid; grid-template-columns:repeat(4,1fr); gap:26px; margin-top:auto}
+.stat{border-top:1px solid var(--hair-2); padding-top:13px}
+.stat__v{
+  font-family:var(--f-display); font-weight:900; font-size:clamp(21px,2.3vw,30px);
+  line-height:1; letter-spacing:-.025em; font-variant-numeric:tabular-nums;
+}
+.stat__l{font-family:var(--f-mono); font-size:9.5px; line-height:1.45; color:var(--ink-3); margin-top:9px; letter-spacing:.02em}
+
+/* ── Slots (pendientes) ──────────────────────────────────────────── */
+.slot{
+  border:1px dashed var(--hair-2); border-radius:3px; background:var(--surface);
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  gap:8px; padding:26px 20px; text-align:center; min-height:150px;
+}
+.slot__tag{
+  font-family:var(--f-mono); font-size:9.5px; letter-spacing:.16em;
+  text-transform:uppercase; color:var(--accent-ink);
+  border:1px solid var(--accent-ink); border-radius:2px; padding:2px 7px;
+}
+.slot__t{font-family:var(--f-body); font-size:13px; color:var(--ink-2); max-width:34ch; line-height:1.45}
+.slot--phone{aspect-ratio:9/17; min-height:0; padding:20px 14px}
+.slot--wide{min-height:260px}
+.slot--video{min-height:0; aspect-ratio:16/9}
+
+/* ── Grids & cards ───────────────────────────────────────────────── */
+.g2{display:grid; grid-template-columns:1fr 1fr; gap:34px; align-items:start}
+.g3{display:grid; grid-template-columns:repeat(3,1fr); gap:22px}
+.g4{display:grid; grid-template-columns:repeat(4,1fr); gap:18px}
+.card{
+  background:var(--surface); border:1px solid var(--hair); border-radius:3px;
+  padding:18px 18px 16px; box-shadow:var(--shadow);
+}
+.card p{font-size:13.5px; margin:0; color:var(--ink-2)}
+.card__k{
+  font-family:var(--f-mono); font-size:10px; letter-spacing:.12em;
+  text-transform:uppercase; color:var(--ink-3); margin:0 0 9px;
+}
+
+/* ── Tables ──────────────────────────────────────────────────────── */
+.tw{overflow-x:auto; border:1px solid var(--hair); border-radius:3px}
+table{border-collapse:collapse; width:100%; min-width:640px; font-size:13.5px}
+th{
+  text-align:left; font-family:var(--f-mono); font-weight:500; font-size:10px;
+  letter-spacing:.13em; text-transform:uppercase; color:var(--ink-3);
+  padding:11px 14px; border-bottom:1px solid var(--hair); background:var(--surface);
+  white-space:nowrap;
+}
+td{padding:11px 14px; border-bottom:1px solid var(--hair); color:var(--ink-2); vertical-align:top}
+tr:last-child td{border-bottom:0}
+td.k{color:var(--ink); font-weight:500; white-space:nowrap}
+td.num{font-family:var(--f-mono); font-variant-numeric:tabular-nums; white-space:nowrap; color:var(--ink)}
+.sec{font-family:var(--f-mono); font-size:11px; color:var(--ink-3); white-space:nowrap}
+
+.tag{
+  display:inline-block; font-family:var(--f-mono); font-size:9.5px;
+  letter-spacing:.1em; text-transform:uppercase; padding:2px 7px;
+  border-radius:2px; border:1px solid currentColor; white-space:nowrap;
+}
+.tag--ok{color:var(--ok)} .tag--partial{color:var(--partial)} .tag--dev{color:var(--pending)}
+.tag--c{color:var(--accent-ink)} .tag--s{color:var(--pending)}
+
+/* ── Figures ─────────────────────────────────────────────────────── */
+figure{margin:0}
+figure svg{width:100%; height:auto; display:block; color:var(--ink-2)}
+figcaption{
+  font-family:var(--f-mono); font-size:10.5px; color:var(--ink-3);
+  margin-top:12px; line-height:1.5; letter-spacing:.01em;
+}
+.figwrap{overflow-x:auto}
+.svg-ink{fill:var(--ink)} .svg-ink2{fill:var(--ink-2)} .svg-ink3{fill:var(--ink-3)}
+.svg-acc{fill:var(--accent-ink)} .svg-accs{stroke:var(--accent)}
+.svg-box{fill:var(--surface); stroke:var(--hair-2)}
+.svg-box-acc{fill:var(--accent-wash); stroke:var(--accent)}
+.svg-line{stroke:var(--hair-2)}
+
+/* ── Quote ───────────────────────────────────────────────────────── */
+.quote{
+  font-family:var(--f-display); font-weight:400; font-size:clamp(20px,2.3vw,30px);
+  line-height:1.32; letter-spacing:-.012em; color:var(--ink);
+  max-width:24ch; margin:0;
+}
+.quote em{color:var(--accent-ink); font-style:normal; font-weight:700}
+.attrib{font-family:var(--f-mono); font-size:10.5px; color:var(--ink-3); margin-top:18px; letter-spacing:.04em}
+
+/* ── Declarations ────────────────────────────────────────────────── */
+.dec{display:flex; gap:16px; padding:16px 0; border-top:1px solid var(--hair)}
+.dec:last-child{border-bottom:1px solid var(--hair)}
+.dec__n{font-family:var(--f-mono); font-size:11px; color:var(--accent-ink); flex:0 0 22px; padding-top:3px}
+.dec__b{flex:1}
+.dec__b h3{margin-bottom:4px}
+.dec__b p{font-size:13.5px; margin:0}
+
+.ask{border:1px solid var(--accent); border-radius:3px; background:var(--accent-wash); padding:24px 26px}
+.ask ol{margin:12px 0 0; padding-left:20px; color:var(--ink-2); font-size:14px}
+.ask li{margin-bottom:6px}
+
+.foot-note{font-family:var(--f-mono); font-size:10.5px; color:var(--ink-3); line-height:1.6; letter-spacing:.02em}
+
+/* ── Responsive ──────────────────────────────────────────────────── */
+@media (max-width:1080px){
+  .rail{
+    position:sticky; inset:0 auto auto 0; width:100%; height:auto;
+    flex-direction:row; align-items:center; gap:14px; padding:10px 18px;
+    border-right:0; border-bottom:1px solid var(--hair); overflow-x:auto;
+  }
+  .rail__brand{border:0; padding:0; flex:0 0 auto; flex-wrap:nowrap}
+  .rail__brand .logoslot,.rail__brand .lockup__x{display:none}
+  .rail__brand .wordmark{font-size:14px}
+  .rail__meta,.rail__foot,.rail__group{display:none}
+  .rail__nav{display:flex; gap:2px; padding:0; overflow-x:auto}
+  .rail a{padding:4px 8px; white-space:nowrap}
+  .rail a span:not(.n){display:none}
+  .rail .n{flex:none; font-size:11px}
+  .deck{margin-left:0}
+  .slide{padding:44px 26px; min-height:auto}
+  .cover{grid-template-columns:1fr; gap:30px}
+  .g2,.g3,.g4{grid-template-columns:1fr; gap:18px}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .slot--phone{aspect-ratio:auto; min-height:180px}
+}
+</style>
+
+<nav class="rail" aria-label="Índice de la presentación">
+  <div class="rail__brand">
+    <span class="wordmark" style="font-size:15px">deenex</span>
+    <span class="lockup__x" style="font-size:12px; margin:0 6px">×</span>
+    <span class="logoslot logoslot--sm">Logo MELI</span>
+  </div>
+  <div class="rail__meta">Propuesta Técnica · v1<br>Agosto 2026 · Confidencial</div>
+  <div class="rail__nav" id="nav">
+    <div class="rail__group">Entrada</div>
+    <a href="#s1"><i class="n">01</i><span>Portada</span></a>
+    <a href="#s2"><i class="n">02</i><span>El servicio, en un minuto</span></a>
+    <div class="rail__group">Qué van a tener</div>
+    <a href="#s3"><i class="n">03</i><span>El ecosistema</span></a>
+    <a href="#s4"><i class="n">04</i><span>La app del colaborador</span></a>
+    <a href="#s5"><i class="n">05</i><span>El panel de Facilities</span></a>
+    <a href="#s6"><i class="n">06</i><span>Reportería</span></a>
+    <div class="rail__group">El giro</div>
+    <a href="#s7"><i class="n">07</i><span>El informe de producción</span></a>
+    <div class="rail__group">Cómo funciona</div>
+    <a href="#s8"><i class="n">08</i><span>El circuito y sus SLA</span></a>
+    <a href="#s9"><i class="n">09</i><span>Los ocho módulos</span></a>
+    <a href="#s10"><i class="n">10</i><span>Arquitectura y datos</span></a>
+    <a href="#s11"><i class="n">11</i><span>Continuidad</span></a>
+    <div class="rail__group">Cómo se opera</div>
+    <a href="#s12"><i class="n">12</i><span>Implementación</span></a>
+    <a href="#s13"><i class="n">13</i><span>Equipo y niveles de servicio</span></a>
+    <a href="#s14"><i class="n">14</i><span>Los catorce indicadores</span></a>
+    <a href="#s15"><i class="n">15</i><span>Reversibilidad</span></a>
+    <div class="rail__group">Cierre</div>
+    <a href="#s16"><i class="n">16</i><span>Lo que declaramos</span></a>
+    <a href="#s17"><i class="n">17</i><span>El pedido</span></a>
+  </div>
+  <div class="rail__foot">Sin precios · Punto 2<br>La económica va aparte</div>
+</nav>
+
+<main class="deck">
+
+<!-- 01 ─────────────────────────────────────────────────────────── -->
+<section class="slide" id="s1">
+  <span class="slide__no">01 / 17</span>
+  <div class="cover">
+    <div class="cover__l">
+      <div class="lockup">
+        <span class="wordmark">deenex<sup>Technologies</sup></span>
+        <span class="lockup__x">×</span>
+        <span class="logoslot">Logotipo<br>Mercado Libre</span>
+      </div>
+      <p class="cover__hero">Este alcance no pide construir una plataforma: pide adaptar una que ya funciona y <em>operarla con disciplina en cuatro países.</em></p>
+      <div class="cover__doc">
+        <h1>Propuesta Técnica · Plataforma de Gestión de Experiencia Gastronómica Corporativa</h1>
+        <span class="cover__ref">Alcance Técnico Versión 2026 · 5 de agosto de 2026</span>
+      </div>
+      <div class="stats">
+        <div class="stat"><div class="stat__v">+250</div><div class="stat__l">puntos gastronómicos operando hoy sobre la plataforma</div></div>
+        <div class="stat"><div class="stat__v">99,7%</div><div class="stat__l">de uptime real, sobre la meta mínima de 99,5% del punto 9.1</div></div>
+        <div class="stat"><div class="stat__v">+5.000</div><div class="stat__l">pedidos en un mismo día, en un entorno de +15.000 personas</div></div>
+        <div class="stat"><div class="stat__v">4</div><div class="stat__l">países sobre una misma integración de pagos y una sola arquitectura</div></div>
+      </div>
+    </div>
+    <div class="slot slot--phone">
+      <span class="slot__tag">Pendiente</span>
+      <p class="slot__t">Mockup de la app en un teléfono. Pantalla de menú por edificio y franja.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 02 ─────────────────────────────────────────────────────────── -->
+<section class="slide" id="s2">
+  <span class="slide__no">02 / 17</span>
+  <p class="eyebrow">El servicio, en un minuto</p>
+  <h2>Mercado Libre define el comedor como un factor de calidad de vida laboral y productividad operativa.</h2>
+  <p class="lead">Hoy esa operación se estima. Lo que sigue es cómo se mide.</p>
+  <div class="slot slot--video" style="margin-top:22px">
+    <span class="slot__tag">Pendiente</span>
+    <p class="slot__t">Video de 45 a 60 segundos: el circuito completo de punta a punta, del pedido al retiro.<br><strong>Recomendado:</strong> reproducirlo desde tu equipo en la sala, a calidad completa, y dejar acá solo la versión comprimida.</p>
+  </div>
+</section>
+
+<!-- 03 ─────────────────────────────────────────────────────────── -->
+<section class="slide" id="s3">
+  <span class="slide__no">03 / 17</span>
+  <p class="eyebrow">Qué van a tener</p>
+  <h2>Todo esto es una sola plataforma, y es la misma en los cuatro países.</h2>
+  <div class="figwrap">
+  <figure>
+    <svg viewBox="0 0 1160 420" role="img" aria-label="Mapa del ecosistema: los colaboradores acceden por app móvil y web a una plataforma única que integra Mercado Pago, WhatsApp Business y el directorio de colaboradores, y alimenta el KDS de cocina, el panel de Facilities y la reportería.">
+      <defs><marker id="a1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="currentColor"/></marker></defs>
+      <!-- personas -->
+      <text x="20" y="30" class="svg-ink3" font-family="var(--f-mono)" font-size="11" letter-spacing="1.4">5.400 COLABORADORES</text>
+      <rect x="20" y="44" width="180" height="52" rx="3" class="svg-box" stroke-width="1"/>
+      <text x="110" y="68" text-anchor="middle" class="svg-ink" font-size="13" font-family="var(--f-body)">App móvil</text>
+      <text x="110" y="85" text-anchor="middle" class="svg-ink3" font-size="11" font-family="var(--f-mono)">iOS · Android</text>
+      <rect x="20" y="110" width="180" height="52" rx="3" class="svg-box" stroke-width="1"/>
+      <text x="110" y="134" text-anchor="middle" class="svg-ink" font-size="13" font-family="var(--f-body)">App web</text>
+      <text x="110" y="151" text-anchor="middle" class="svg-ink3" font-size="11" font-family="var(--f-mono)">navegador del puesto</text>
+      <line x1="200" y1="70" x2="392" y2="130" class="svg-line" stroke-width="1.4" marker-end="url(#a1)"/>
+      <line x1="200" y1="136" x2="392" y2="150" class="svg-line" stroke-width="1.4" marker-end="url(#a1)"/>
+      <!-- plataforma -->
+      <rect x="400" y="60" width="330" height="190" rx="3" class="svg-box-acc" stroke-width="1.4"/>
+      <text x="565" y="88" text-anchor="middle" class="svg-acc" font-size="11" font-family="var(--f-mono)" letter-spacing="1.4">PLATAFORMA ÚNICA</text>
+      <text x="565" y="116" text-anchor="middle" class="svg-ink" font-size="15" font-family="var(--f-display)" font-weight="700">Una arquitectura,</text>
+      <text x="565" y="138" text-anchor="middle" class="svg-ink" font-size="15" font-family="var(--f-display)" font-weight="700">cuatro operaciones</text>
+      <text x="565" y="172" text-anchor="middle" class="svg-ink2" font-size="12" font-family="var(--f-body)">País · edificio · piso · punto gastronómico</text>
+      <text x="565" y="192" text-anchor="middle" class="svg-ink2" font-size="12" font-family="var(--f-body)">Cada colaborador ve la oferta de su edificio</text>
+      <text x="565" y="222" text-anchor="middle" class="svg-ink3" font-size="11" font-family="var(--f-mono)">Alta de una operación nueva: 5 pasos, sin desarrollo</text>
+      <!-- integraciones -->
+      <text x="400" y="298" class="svg-ink3" font-family="var(--f-mono)" font-size="11" letter-spacing="1.4">INTEGRACIONES OBLIGATORIAS</text>
+      <rect x="400" y="312" width="100" height="44" rx="3" class="svg-box" stroke-width="1"/>
+      <text x="450" y="332" text-anchor="middle" class="svg-ink" font-size="12">Mercado</text><text x="450" y="347" text-anchor="middle" class="svg-ink" font-size="12">Pago</text>
+      <rect x="515" y="312" width="100" height="44" rx="3" class="svg-box" stroke-width="1"/>
+      <text x="565" y="332" text-anchor="middle" class="svg-ink" font-size="12">WhatsApp</text><text x="565" y="347" text-anchor="middle" class="svg-ink" font-size="12">Business</text>
+      <rect x="630" y="312" width="100" height="44" rx="3" class="svg-box" stroke-width="1"/>
+      <text x="680" y="332" text-anchor="middle" class="svg-ink" font-size="12">Directorio</text><text x="680" y="347" text-anchor="middle" class="svg-ink" font-size="12">de RRHH</text>
+      <line x1="450" y1="312" x2="450" y2="256" class="svg-line" stroke-width="1.4" marker-end="url(#a1)"/>
+      <line x1="565" y1="312" x2="565" y2="256" class="svg-line" stroke-width="1.4" marker-end="url(#a1)"/>
+      <line x1="680" y1="312" x2="680" y2="256" class="svg-line" stroke-width="1.4" marker-end="url(#a1)"/>
+      <!-- salidas -->
+      <line x1="730" y1="110" x2="922" y2="70" class="svg-line" stroke-width="1.4" marker-end="url(#a1)"/>
+      <line x1="730" y1="155" x2="922" y2="155" class="svg-line" stroke-width="1.4" marker-end="url(#a1)"/>
+      <line x1="730" y1="200" x2="922" y2="240" class="svg-line" stroke-width="1.4" marker-end="url(#a1)"/>
+      <rect x="930" y="44" width="210" height="52" rx="3" class="svg-box" stroke-width="1"/>
+      <text x="1035" y="68" text-anchor="middle" class="svg-ink" font-size="13">KDS en cocina</text>
+      <text x="1035" y="85" text-anchor="middle" class="svg-ink3" font-size="11" font-family="var(--f-mono)">provisto e instalado por Deenex</text>
+      <rect x="930" y="129" width="210" height="52" rx="3" class="svg-box" stroke-width="1"/>
+      <text x="1035" y="153" text-anchor="middle" class="svg-ink" font-size="13">Panel de Facilities</text>
+      <text x="1035" y="170" text-anchor="middle" class="svg-ink3" font-size="11" font-family="var(--f-mono)">sin intervención técnica</text>
+      <rect x="930" y="214" width="210" height="52" rx="3" class="svg-box" stroke-width="1"/>
+      <text x="1035" y="238" text-anchor="middle" class="svg-ink" font-size="13">Reportería y tablero</text>
+      <text x="1035" y="255" text-anchor="middle" class="svg-ink3" font-size="11" font-family="var(--f-mono)">tiempo real · acceso directo</text>
+    </svg>
+    <figcaption>Una sola plataforma cubre el ciclo completo del punto 6. Lo que cambia entre países es la configuración de mercado de la integración de pagos y la jerarquía de sites — no la arquitectura.</figcaption>
+  </figure>
+  </div>
+</section>
+
+<!-- 04 ─────────────────────────────────────────────────────────── -->
+<section class="slide" id="s4">
+  <span class="slide__no">04 / 17</span>
+  <p class="eyebrow">Qué van a tener · §6.1 a §6.5</p>
+  <h2>El colaborador pide desde su puesto de trabajo y retira mostrando un código.</h2>
+  <div class="g3" style="margin-top:26px">
+    <div><div class="slot slot--phone"><span class="slot__tag">Pendiente</span><p class="slot__t">Menú por edificio y franja, con etiquetas Sin&nbsp;T.A.C.C., sin lactosa y vegano</p></div><h3 style="margin-top:14px">Catálogo</h3><p style="font-size:13.5px">Últimos pedidos con repetir, sugeridos del día y toda la carta. Configurable por edificio y franja de retiro.</p></div>
+    <div><div class="slot slot--phone"><span class="slot__tag">Pendiente</span><p class="slot__t">Ficha del plato con nutricional, ingredientes y calificación</p></div><h3 style="margin-top:14px">Ficha del plato</h3><p style="font-size:13.5px">Calorías, grasas, carbohidratos y proteínas, ingredientes, restricciones y reseñas de colaboradores.</p></div>
+    <div><div class="slot slot--phone"><span class="slot__tag">Pendiente</span><p class="slot__t">Checkout de un paso y comprobante con código QR</p></div><h3 style="margin-top:14px">Pago y comprobante</h3><p style="font-size:13.5px">Punto de retiro, franja y método de pago en una sola pantalla. Mercado Pago sin redirección, con captura tokenizada.</p></div>
+  </div>
+</section>
+
+<!-- 05 ─────────────────────────────────────────────────────────── -->
+<section class="slide" id="s5">
+  <span class="slide__no">05 / 17</span>
+  <p class="eyebrow">Qué van a tener · §6.8</p>
+  <h2>Facilities publica menús, precios y franjas sin abrirnos un ticket.</h2>
+  <div class="g2" style="margin-top:22px">
+    <div class="slot slot--wide"><span class="slot__tag">Pendiente</span><p class="slot__t">Panel de administración: gestión de menús, precios, usuarios y pedidos en tiempo real</p></div>
+    <div>
+      <p class="lead">Es la condición para sostener el indicador de dos horas del punto 9.3 — y es cómo opera hoy un cliente que administra más de ochenta puntos de servicio de forma autónoma.</p>
+      <div class="card" style="margin-top:18px">
+        <p class="card__k">Lo que cuesta del lado de Mercado Libre</p>
+        <p>En régimen, entre <strong>2 y 3 horas semanales por site</strong>, más 2 horas mensuales centralizadas. Durante las cuatro semanas de apertura de cada site, el doble.</p>
+        <p style="margin-top:10px">La variable que hace o rompe ese número es la reutilización de plantillas de plato: un plato recurrente no vuelve a cargarse.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 06 ─────────────────────────────────────────────────────────── -->
+<section class="slide" id="s6">
+  <span class="slide__no">06 / 17</span>
+  <p class="eyebrow">Qué van a tener · §6.8 y §9</p>
+  <h2>Un corte de información nuevo es configuración, no desarrollo.</h2>
+  <p class="lead">El análisis de datos de consumo es una línea de servicio propia de Deenex, no un módulo de este contrato. La reportería de este alcance es esa práctica aplicada al comedor.</p>
+  <div class="slot slot--wide" style="margin-top:20px"><span class="slot__tag">Pendiente</span><p class="slot__t">Tablero real, con los cortes que le importan al comité: consumo por site, por franja horaria y por plato — no capturas genéricas de estadísticas</p></div>
+  <div class="g4" style="margin-top:20px">
+    <div class="card"><p class="card__k">Por site</p><p>Consumo, adopción y repetición, abiertos por país y por edificio.</p></div>
+    <div class="card"><p class="card__k">Por franja</p><p>Distribución de la demanda dentro de la ventana de 11 a 14.</p></div>
+    <div class="card"><p class="card__k">Por plato</p><p>Calificación, rotación y desperdicio evitable.</p></div>
+    <div class="card"><p class="card__k">En tiempo real</p><p>Acceso directo para Facilities, Compras e IT. Sin pedirle nada a Deenex.</p></div>
+  </div>
+</section>
+
+<!-- 07 ─────────────────────────────────────────────────────────── -->
+<section class="slide" id="s7">
+  <span class="slide__no">07 / 17</span>
+  <p class="eyebrow">El giro</p>
+  <div class="g2" style="align-items:center">
+    <div>
+      <blockquote class="quote">Hasta acá les mostramos el pedido. Pero el pedido termina cuando el colaborador retira.<br><br><em>El servicio empieza tres horas antes, cuando el cocinero decide cuánto poner en la olla.</em></blockquote>
+      <p class="attrib">Esto no está en el pliego. Se lo traemos igual.</p>
+    </div>
+    <div>
+      <div class="card">
+        <p class="card__k">Informe de producción · 10:30</p>
+        <h3>Cuántas milanesas.</h3>
+        <p>Sobre los pedidos ya pagos y la curva histórica del site, la cocina sabe antes del servicio cuánto tiene que producir, por plato y por franja.</p>
+        <hr class="rule" style="margin:16px 0">
+        <p><strong>Qué cambia.</strong> El comedor deja de producir contra una estimación y empieza a producir contra un número. Baja el desperdicio, baja el faltante, y la ventana de 11 a 14 deja de ser una apuesta.</p>
+      </div>
+      <p class="foot-note" style="margin-top:14px">El punto 12.2 excluye el servicio de alimentación de este contrato. La plataforma no cocina — le da a quien cocina el dato que hoy no tiene.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 08 ─────────────────────────────────────────────────────────── -->
+<section class="slide" id="s8">
+  <span class="slide__no">08 / 17</span>
+  <p class="eyebrow">Cómo funciona · para IT</p>
+  <h2>Ninguna falla de un componente detiene el servicio de comedor.</h2>
+  <div class="figwrap">
+  <figure>
+    <svg viewBox="0 0 1160 330" role="img" aria-label="El circuito del colaborador de punta a punta: ingreso, menú, pago, comprobante con QR, cocina, retiro y feedback, con el nivel de servicio comprometido en cada tramo y las tres vías alternativas ante falla de pagos, mensajería o dispositivo KDS.">
+      <defs><marker id="a2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="currentColor"/></marker></defs>
+      <!-- integraciones arriba -->
+      <text x="20" y="24" class="svg-ink3" font-family="var(--f-mono)" font-size="10.5" letter-spacing="1.4">INTEGRACIONES</text>
+      <rect x="358" y="34" width="118" height="26" rx="2" class="svg-box" stroke-width="1"/><text x="417" y="51" text-anchor="middle" class="svg-ink2" font-size="11">Mercado Pago</text>
+      <rect x="523" y="34" width="118" height="26" rx="2" class="svg-box" stroke-width="1"/><text x="582" y="51" text-anchor="middle" class="svg-ink2" font-size="11">WhatsApp</text>
+      <rect x="28" y="34" width="118" height="26" rx="2" class="svg-box" stroke-width="1"/><text x="87" y="51" text-anchor="middle" class="svg-ink2" font-size="11">Directorio</text>
+      <line x1="87" y1="60" x2="87" y2="120" class="svg-line" stroke-width="1.2" stroke-dasharray="3 3"/>
+      <line x1="417" y1="60" x2="417" y2="120" class="svg-line" stroke-width="1.2" stroke-dasharray="3 3"/>
+      <line x1="582" y1="60" x2="582" y2="120" class="svg-line" stroke-width="1.2" stroke-dasharray="3 3"/>
+      <!-- etapas -->
+      <g font-family="var(--f-mono)" font-size="10" class="svg-ink3">
+        <text x="87" y="114">§6.1</text><text x="252" y="114">§6.2 · §6.3</text><text x="417" y="114">§6.4</text><text x="582" y="114">§6.5</text><text x="747" y="114">§6.6</text><text x="912" y="114">§6.6</text><text x="1077" y="114">§6.7 · §6.8</text>
+      </g>
+      <g class="svg-box" stroke-width="1.2">
+        <rect x="28" y="122" width="118" height="52" rx="3"/><rect x="193" y="122" width="118" height="52" rx="3"/>
+        <rect x="358" y="122" width="118" height="52" rx="3"/><rect x="523" y="122" width="118" height="52" rx="3"/>
+        <rect x="688" y="122" width="118" height="52" rx="3"/><rect x="853" y="122" width="118" height="52" rx="3"/>
+        <rect x="1018" y="122" width="118" height="52" rx="3"/>
+      </g>
+      <g text-anchor="middle" class="svg-ink" font-size="12.5" font-family="var(--f-body)">
+        <text x="87" y="145">Ingreso</text><text x="252" y="145">Menú y ficha</text><text x="417" y="145">Pago</text><text x="582" y="145">Comprobante</text><text x="747" y="145">Cocina · KDS</text><text x="912" y="145">Retiro</text><text x="1077" y="145">Feedback</text>
+      </g>
+      <g text-anchor="middle" class="svg-ink3" font-size="10" font-family="var(--f-mono)">
+        <text x="87" y="163">código OTP</text><text x="252" y="163">por edificio</text><text x="417" y="163">sin redirección</text><text x="582" y="163">QR por WhatsApp</text><text x="747" y="163">por franja</text><text x="912" y="163">QR validado</text><text x="1077" y="163">y a los reportes</text>
+      </g>
+      <g class="svg-line" stroke-width="1.4" marker-end="url(#a2)">
+        <line x1="146" y1="148" x2="188" y2="148"/><line x1="311" y1="148" x2="353" y2="148"/>
+        <line x1="476" y1="148" x2="518" y2="148"/><line x1="641" y1="148" x2="683" y2="148"/>
+        <line x1="806" y1="148" x2="848" y2="148"/><line x1="971" y1="148" x2="1013" y2="148"/>
+      </g>
+      <!-- SLA -->
+      <g text-anchor="middle" font-family="var(--f-mono)" font-size="11" class="svg-acc">
+        <text x="252" y="196">cambio &lt; 2 h</text><text x="417" y="196">error &lt; 1%</text><text x="582" y="196">&lt; 60 s</text><text x="747" y="196">&lt; 30 s</text><text x="912" y="196">KDS 99%</text>
+      </g>
+      <text x="20" y="196" class="svg-ink3" font-family="var(--f-mono)" font-size="10.5" letter-spacing="1.4">SLA</text>
+      <!-- contingencias -->
+      <line x1="20" y1="216" x2="1140" y2="216" class="svg-line" stroke-width="1" stroke-dasharray="2 4"/>
+      <text x="20" y="240" class="svg-ink3" font-family="var(--f-mono)" font-size="10.5" letter-spacing="1.4">SI FALLA</text>
+      <g class="svg-line" stroke-width="1.1" stroke-dasharray="3 3">
+        <line x1="417" y1="216" x2="417" y2="248"/><line x1="582" y1="216" x2="582" y2="248"/><line x1="747" y1="216" x2="747" y2="248"/>
+      </g>
+      <g stroke-dasharray="4 3" class="svg-line" stroke-width="1.2">
+        <rect x="358" y="250" width="118" height="58" rx="3" fill="none"/>
+        <rect x="523" y="250" width="118" height="58" rx="3" fill="none"/>
+        <rect x="688" y="250" width="118" height="58" rx="3" fill="none"/>
+      </g>
+      <g text-anchor="middle" class="svg-ink2" font-size="11" font-family="var(--f-body)">
+        <text x="417" y="270">Retiro habilitado con</text><text x="417" y="285">pedido registrado y</text><text x="417" y="300">regularización posterior</text>
+        <text x="582" y="270">Canal alternativo en</text><text x="582" y="285">la app: el QR sigue</text><text x="582" y="300">en el detalle del pedido</text>
+        <text x="747" y="270">Comanda impresa en</text><text x="747" y="285">el punto y vista de cocina</text><text x="747" y="300">en otro navegador</text>
+      </g>
+    </svg>
+    <figcaption>Cada tramo tiene su nivel de servicio declarado y su vía alternativa provista por Deenex. Toda la línea corre sobre disponibilidad mensual ≥ 99,5% y respuesta de app &lt; 3 s en P95.</figcaption>
+  </figure>
+  </div>
+</section>
+
+<!-- 09 ─────────────────────────────────────────────────────────── -->
+<section class="slide" id="s9">
+  <span class="slide__no">09 / 17</span>
+  <p class="eyebrow">Cómo funciona · §6</p>
+  <h2>Los ocho módulos, con su estado real.</h2>
+  <p>Todo el desarrollo señalado está incluido en la implementación y <strong>no se factura como desarrollo a medida</strong>.</p>
+  <div class="tw" style="margin-top:16px">
+    <table>
+      <thead><tr><th>§</th><th>Módulo</th><th>Qué falta, si falta</th><th>Estado</th></tr></thead>
+      <tbody>
+        <tr><td class="sec">6.1</td><td class="k">Autenticación y onboarding</td><td>La sincronización con el directorio de colaboradores</td><td><span class="tag tag--partial">Parcial</span></td></tr>
+        <tr><td class="sec">6.2</td><td class="k">Catálogo y menú</td><td>Franja horaria de retiro y etiquetas de preferencia alimentaria</td><td><span class="tag tag--partial">Parcial</span></td></tr>
+        <tr><td class="sec">6.3</td><td class="k">Ficha del plato</td><td>Nutricional, ingredientes, restricciones y reseñas</td><td><span class="tag tag--dev">Desarrollo</span></td></tr>
+        <tr><td class="sec">6.4</td><td class="k">Checkout y pagos</td><td>El pago nativo de Mercado Pago sin redirección</td><td><span class="tag tag--partial">Parcial</span></td></tr>
+        <tr><td class="sec">6.5</td><td class="k">Notificaciones</td><td>El QR, el aviso y la validación en el retiro están en producción</td><td><span class="tag tag--ok">Disponible</span></td></tr>
+        <tr><td class="sec">6.6</td><td class="k">Sistema KDS</td><td>Vista de cocina, más provisión e instalación del hardware</td><td><span class="tag tag--dev">Desarrollo</span></td></tr>
+        <tr><td class="sec">6.7</td><td class="k">Valoración y feedback</td><td>Estrellas y comentario al reingresar, con panel de resultados</td><td><span class="tag tag--dev">Desarrollo</span></td></tr>
+        <tr><td class="sec">6.8</td><td class="k">Panel y reportes</td><td>—</td><td><span class="tag tag--ok">Disponible</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="foot-note" style="margin-top:14px">Lo que ya está construido es el tramo donde se concentra el riesgo: compra, comprobante con QR y validación en el punto de retiro, probado bajo concentración horaria severa.</p>
+</section>
+
+<!-- 10 ────────────────────────────────────────────────────────── -->
+<section class="slide" id="s10">
+  <span class="slide__no">10 / 17</span>
+  <p class="eyebrow">Cómo funciona · §6.4, §7.3 y §12.3</p>
+  <h2>La arquitectura no cambia entre países.</h2>
+  <div class="figwrap">
+  <figure>
+    <svg viewBox="0 0 1160 396" role="img" aria-label="Arquitectura por capas: capa de acceso con app móvil, app web, panel de administración y vista de cocina; capa de servicios con identidad, catálogo, pedidos, notificaciones, comandas, valoración y reportes; integraciones de terceros como encargados de tratamiento; y capa de datos con motor, réplica, aislamiento y copias. La seguridad es transversal a las cuatro capas.">
+      <g font-family="var(--f-mono)" font-size="10.5" letter-spacing="1.4" class="svg-ink3">
+        <text x="20" y="26">CAPA DE ACCESO</text><text x="20" y="112">CAPA DE SERVICIOS · ESCALADO HORIZONTAL EN LOS PICOS</text>
+        <text x="20" y="248">INTEGRACIONES DE TERCEROS · ENCARGADOS BAJO ACUERDO ESCRITO</text><text x="20" y="330">CAPA DE DATOS</text>
+      </g>
+      <g class="svg-box" stroke-width="1.1">
+        <rect x="20" y="36" width="200" height="46" rx="3"/><rect x="234" y="36" width="200" height="46" rx="3"/>
+        <rect x="448" y="36" width="200" height="46" rx="3"/><rect x="662" y="36" width="200" height="46" rx="3"/>
+      </g>
+      <g text-anchor="middle" class="svg-ink" font-size="12.5"><text x="120" y="57">App móvil</text><text x="334" y="57">App web</text><text x="548" y="57">Panel de administración</text><text x="762" y="57">Vista de cocina</text></g>
+      <g text-anchor="middle" class="svg-ink3" font-size="10" font-family="var(--f-mono)"><text x="120" y="73">iOS y Android · §6.1</text><text x="334" y="73">navegador del puesto</text><text x="548" y="73">autogestión · §6.8</text><text x="762" y="73">KDS y respaldo · §6.6</text></g>
+      <g class="svg-box" stroke-width="1.1">
+        <rect x="20" y="122" width="163" height="44" rx="3"/><rect x="193" y="122" width="163" height="44" rx="3"/>
+        <rect x="366" y="122" width="163" height="44" rx="3"/><rect x="539" y="122" width="163" height="44" rx="3"/>
+        <rect x="20" y="176" width="163" height="44" rx="3"/><rect x="193" y="176" width="163" height="44" rx="3"/><rect x="366" y="176" width="336" height="44" rx="3"/>
+      </g>
+      <g text-anchor="middle" class="svg-ink" font-size="12"><text x="101" y="142">Identidad y acceso</text><text x="274" y="142">Catálogo y menú</text><text x="447" y="142">Pedidos y checkout</text><text x="620" y="142">Notificaciones</text><text x="101" y="196">Comandas y KDS</text><text x="274" y="196">Valoración</text><text x="534" y="196">Reportes y analítica</text></g>
+      <g text-anchor="middle" class="svg-ink3" font-size="9.5" font-family="var(--f-mono)"><text x="101" y="158">OTP · §6.1</text><text x="274" y="158">por edificio y franja</text><text x="447" y="158">§6.4</text><text x="620" y="158">tres hitos · §6.5</text><text x="101" y="212">ruteo por estación</text><text x="274" y="212">§6.7</text><text x="534" y="212">§6.8 · §9</text></g>
+      <g class="svg-box" stroke-width="1.1"><rect x="20" y="258" width="220" height="42" rx="3"/><rect x="252" y="258" width="220" height="42" rx="3"/><rect x="484" y="258" width="218" height="42" rx="3"/></g>
+      <g text-anchor="middle" class="svg-ink" font-size="12"><text x="130" y="278">Mercado Pago</text><text x="362" y="278">WhatsApp Business</text><text x="593" y="278">Directorio</text></g>
+      <g text-anchor="middle" class="svg-ink3" font-size="9.5" font-family="var(--f-mono)"><text x="130" y="293">tokenizado · PCI-DSS acotado</text><text x="362" y="293">plantillas y control de entrega</text><text x="593" y="293">protocolo a definir · C-01</text></g>
+      <g class="svg-box" stroke-width="1.1" stroke-dasharray="4 3"><rect x="20" y="340" width="163" height="42" rx="3"/><rect x="193" y="340" width="163" height="42" rx="3"/><rect x="366" y="340" width="163" height="42" rx="3"/><rect x="539" y="340" width="163" height="42" rx="3"/></g>
+      <g text-anchor="middle" class="svg-ink2" font-size="12"><text x="101" y="360">Motor</text><text x="274" y="360">Réplica</text><text x="447" y="360">Aislamiento</text><text x="620" y="360">Copias</text></g>
+      <g text-anchor="middle" class="svg-acc" font-size="9.5" font-family="var(--f-mono)"><text x="101" y="375">a completar</text><text x="274" y="375">a completar</text><text x="447" y="375">a completar</text><text x="620" y="375">a completar</text></g>
+      <rect x="722" y="122" width="418" height="260" rx="3" class="svg-box-acc" stroke-width="1.2"/>
+      <text x="742" y="146" class="svg-acc" font-size="10.5" font-family="var(--f-mono)" letter-spacing="1.4">SEGURIDAD TRANSVERSAL · §7.3</text>
+      <g class="svg-ink2" font-size="12" font-family="var(--f-body)">
+        <text x="742" y="174">Cifrado en tránsito y en reposo</text>
+        <text x="742" y="198">Privilegio mínimo, doble factor y registro de auditoría</text>
+        <text x="742" y="222">Credenciales fuera del código, en gestor de secretos</text>
+        <text x="742" y="246">Incidentes notificados dentro de las 24 horas</text>
+        <text x="742" y="270">Ley 25.326 y los regímenes de CO, CL y UY</text>
+      </g>
+      <text x="742" y="316" class="svg-ink" font-size="12.5" font-family="var(--f-display)" font-weight="700">Los datos de Mercado Libre no alimentan</text>
+      <text x="742" y="334" class="svg-ink" font-size="12.5" font-family="var(--f-display)" font-weight="700">modelos propios de Deenex.</text>
+      <text x="742" y="356" class="svg-ink3" font-size="10" font-family="var(--f-mono)">Propiedad exclusiva de MELI · §12.3</text>
+    </svg>
+    <figcaption>Habilitar una operación nueva cambia la configuración de mercado de la integración de pagos y la jerarquía de sites — no la arquitectura. Los cuatro campos de la capa de datos se completan con IT en la incubación.</figcaption>
+  </figure>
+  </div>
+</section>
+
+<!-- 11 ────────────────────────────────────────────────────────── -->
+<section class="slide" id="s11">
+  <span class="slide__no">11 / 17</span>
+  <p class="eyebrow">Cómo funciona · §8.3</p>
+  <h2>La cocina sigue produciendo aunque falle el dispositivo, la red o la pasarela.</h2>
+  <p class="lead">Cada punto de falla tiene una vía alternativa <strong>ya definida y provista por Deenex</strong>, no un plan pendiente de escribir después de la firma.</p>
+  <div class="g3" style="margin-top:24px">
+    <div class="card"><p class="card__k">Falla el dispositivo KDS</p><h3>La comanda se imprime en el mismo punto.</h3><p>Deenex provee la impresora como parte del equipamiento de cada cocina, y la vista de cocina se abre desde cualquier navegador autorizado del site. El servicio continúa mientras se ejecuta la reposición.</p></div>
+    <div class="card"><p class="card__k">Cae la pasarela de pagos</p><h3>El retiro se habilita igual.</h3><p>Aviso inmediato a Facilities e IT, estado del servicio visible en la aplicación, y retiro con pedido registrado y regularización posterior. El procedimiento se acuerda antes del go-live.</p></div>
+    <div class="card"><p class="card__k">Cae el canal de mensajería</p><h3>El QR no depende del mensaje.</h3><p>Las notificaciones se conmutan a un canal alternativo dentro de la aplicación, y el código sigue accesible desde el detalle del pedido. La validación en el mostrador no cambia.</p></div>
+  </div>
+  <div class="card" style="margin-top:20px; border-color:var(--accent)">
+    <p class="card__k" style="color:var(--accent-ink)">Lo que hace comprometible el plazo urgente de 2 días</p>
+    <p><strong>Stock de repuestos constituido en cada país antes del go-live de esa operación.</strong> Sin stock local, el plazo de reposición del punto 8.2 no es alcanzable con provisión internacional — y el KDS fuera de servicio en horario de comedor es no conformidad crítica.</p>
+  </div>
+</section>
+
+<!-- 12 ────────────────────────────────────────────────────────── -->
+<section class="slide" id="s12">
+  <span class="slide__no">12 / 17</span>
+  <p class="eyebrow">Cómo se opera · §10</p>
+  <h2>Cada etapa cierra contra criterios verificables, no contra el calendario.</h2>
+  <div class="figwrap">
+  <figure>
+    <svg viewBox="0 0 1160 250" role="img" aria-label="Cronograma de 24 semanas: incubación en las semanas 1 a 4, go-live piloto de la 5 a la 8, y rollout regional priorizado por dotación entre las semanas 9 y 24, con Argentina, Colombia, Chile y Uruguay solapados.">
+      <g class="svg-line" stroke-width="1">
+        <line x1="240" y1="42" x2="240" y2="212"/><line x1="393" y1="42" x2="393" y2="212"/>
+        <line x1="546" y1="42" x2="546" y2="212"/><line x1="699" y1="42" x2="699" y2="212"/>
+        <line x1="852" y1="42" x2="852" y2="212"/><line x1="1005" y1="42" x2="1005" y2="212"/><line x1="1158" y1="42" x2="1158" y2="212"/>
+      </g>
+      <g class="svg-ink3" font-family="var(--f-mono)" font-size="10" text-anchor="middle">
+        <text x="240" y="34">SEM 1</text><text x="393" y="34">4</text><text x="546" y="34">8</text><text x="699" y="34">12</text><text x="852" y="34">16</text><text x="1005" y="34">20</text><text x="1140" y="34">24</text>
+      </g>
+      <g class="svg-ink" font-size="12.5" font-family="var(--f-body)">
+        <text x="20" y="62">Incubación</text><text x="20" y="94">Go-live piloto</text><text x="20" y="126">Rollout Argentina</text><text x="20" y="158">Rollout Colombia</text><text x="20" y="190">Rollout Chile · Uruguay</text>
+      </g>
+      <g class="svg-ink3" font-size="9.5" font-family="var(--f-mono)">
+        <text x="20" y="76">5 entregables</text><text x="20" y="108">marcha blanca</text><text x="20" y="140">3.500</text><text x="20" y="172">1.000</text><text x="20" y="204">600 · 300</text>
+      </g>
+      <rect x="240" y="50" width="153" height="18" rx="2" class="svg-box-acc" stroke-width="1.2"/>
+      <rect x="393" y="82" width="153" height="18" rx="2" class="svg-box-acc" stroke-width="1.2"/>
+      <rect x="546" y="114" width="230" height="18" rx="2" class="svg-box" stroke-width="1.2"/>
+      <rect x="699" y="146" width="230" height="18" rx="2" class="svg-box" stroke-width="1.2"/>
+      <rect x="814" y="178" width="153" height="18" rx="2" class="svg-box" stroke-width="1.2"/>
+      <rect x="967" y="178" width="191" height="18" rx="2" class="svg-box" stroke-width="1.2"/>
+      <line x1="546" y1="42" x2="546" y2="228" class="svg-accs" stroke-width="1.6"/>
+      <text x="556" y="228" class="svg-acc" font-size="11" font-family="var(--f-mono)">SEMANA 8 · PUERTA DE DECISIÓN</text>
+      <text x="556" y="243" class="svg-ink3" font-size="10.5" font-family="var(--f-mono)">Sin autorización expresa de Mercado Libre, la etapa 3 no comienza</text>
+    </svg>
+    <figcaption>Las fechas calendario por país se entregan dentro de los primeros 30 días, conforme al punto 10.3. El solapamiento entre países es deliberado: la configuración validada en el piloto opera como plantilla.</figcaption>
+  </figure>
+  </div>
+  <div class="g3" style="margin-top:22px">
+    <div class="card"><p class="card__k">Etapa 1 · Criterio de salida</p><p>Los cinco entregables del punto 10.1 aceptados por Facilities e IT, con las tres integraciones operativas en staging.</p></div>
+    <div class="card"><p class="card__k">Etapa 2 · Criterio de salida</p><p>Evaluación de performance contra los indicadores del punto 9 y <strong>autorización expresa de rollout</strong> por parte de Mercado Libre.</p></div>
+    <div class="card"><p class="card__k">Etapa 3 · Criterio de salida</p><p>Cada site cierra cuando opera un ciclo completo de servicio sin severidad 1 y alcanza el umbral de adopción acordado.</p></div>
+  </div>
+</section>
+
+<!-- 13 ────────────────────────────────────────────────────────── -->
+<section class="slide" id="s13">
+  <span class="slide__no">13 / 17</span>
+  <p class="eyebrow">Cómo se opera · §5 y §8</p>
+  <h2>Un interlocutor con capacidad de decidir, no un comité.</h2>
+  <div class="g2" style="margin-top:20px">
+    <div class="tw">
+      <table style="min-width:0">
+        <thead><tr><th>Rol</th><th>Dedicación</th></tr></thead>
+        <tbody>
+          <tr><td class="k">Account Manager dedicada <span class="sec">§5.2</span></td><td>Exclusiva · 9:00 a 18:00 ART días hábiles. Español, portugués e inglés</td></tr>
+          <tr><td class="k">Líder Técnico de cuenta <span class="sec">§5.3</span></td><td>Exclusiva · horario comercial más escalamiento. Decide sobre arquitectura e integraciones</td></tr>
+          <tr><td class="k">Soporte técnico <span class="sec">§5.4</span></td><td>3 posiciones, incorporadas antes del go-live piloto, con guardia rotativa 24×7 para severidad 1</td></tr>
+          <tr><td class="k">Dirección <span class="sec">§11</span></td><td>Joaquín Lombardi · Alan Tapia. Revisión semestral con Compras e IT</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <div class="g2" style="gap:14px">
+        <div class="card"><p class="card__k">Severidad 1</p><div class="stat__v" style="font-size:26px">30 / 15 min</div><p style="margin-top:8px">Respuesta inicial estándar y en ventana, con cobertura 24×7 los 7 días</p></div>
+        <div class="card"><p class="card__k">Reposición KDS</p><div class="stat__v" style="font-size:26px">5 / 2 días</div><p style="margin-top:8px">El plazo urgente se sostiene con stock de repuestos en cada país</p></div>
+        <div class="card"><p class="card__k">Disponibilidad</p><div class="stat__v" style="font-size:26px">≥ 99,5%</div><p style="margin-top:8px">Mensual, con metodología de medición acordada con IT en la incubación</p></div>
+        <div class="card"><p class="card__k">Reporte mensual</p><div class="stat__v" style="font-size:26px">3° y 5° día</div><p style="margin-top:8px">Borrador e informe final, con el tablero disponible en tiempo real</p></div>
+      </div>
+      <p class="foot-note" style="margin-top:14px">Deenex acepta sin excepciones la tabla del punto 8.2, la clasificación del 8.3 y el régimen del 8.4. El punto 12.1 exige avisar el cambio de Account Manager con quince días: <strong>lo extendemos voluntariamente al Líder Técnico.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- 14 ────────────────────────────────────────────────────────── -->
+<section class="slide" id="s14">
+  <span class="slide__no">14 / 17</span>
+  <p class="eyebrow">Cómo se opera · §9</p>
+  <h2>Medimos y reportamos los catorce. Lo que proponemos acordar es sobre cuáles aplica el régimen de consecuencias.</h2>
+  <div class="tw" style="margin-top:14px">
+    <table>
+      <thead><tr><th>Indicador</th><th>Mínima</th><th>Objetivo</th><th>Clasificación</th><th>Fundamento</th></tr></thead>
+      <tbody>
+        <tr><td class="k">Disponibilidad de plataforma</td><td class="num">99,5%</td><td class="num">99,9%</td><td><span class="tag tag--c">Contractual</span></td><td>Bajo control directo</td></tr>
+        <tr><td class="k">Tiempo de respuesta de la app</td><td class="num">&lt; 3 s</td><td class="num">&lt; 1,5 s</td><td><span class="tag tag--c">Contractual</span></td><td>Telemetría propia</td></tr>
+        <tr><td class="k">Latencia al KDS</td><td class="num">&lt; 30 s</td><td class="num">&lt; 15 s</td><td><span class="tag tag--c">Contractual</span></td><td>Neto de indisponibilidad de red del site</td></tr>
+        <tr><td class="k">Severidad 1 en plazo</td><td class="num">100%</td><td class="num">100%</td><td><span class="tag tag--c">Contractual</span></td><td>Bajo control directo</td></tr>
+        <tr><td class="k">Severidad 2 en plazo</td><td class="num">95%</td><td class="num">100%</td><td><span class="tag tag--c">Contractual</span></td><td>Bajo control directo</td></tr>
+        <tr><td class="k">Reportes en plazo</td><td class="num">100%</td><td class="num">100%</td><td><span class="tag tag--c">Contractual</span></td><td>Bajo control directo</td></tr>
+        <tr><td class="k">Disponibilidad de KDS</td><td class="num">99%</td><td class="num">100%</td><td><span class="tag tag--c">Contractual</span></td><td>Neto de indisponibilidad de red, conforme al §12.2</td></tr>
+        <tr><td class="k">Actualización del catálogo</td><td class="num">&lt; 2 h</td><td class="num">&lt; 30 min</td><td><span class="tag tag--c">Contractual</span></td><td>Tiempo de propagación de la plataforma</td></tr>
+        <tr><td class="k">Tasa de error de pagos</td><td class="num">&lt; 1%</td><td class="num">&lt; 0,3%</td><td><span class="tag tag--s">Compartido</span></td><td>El procesamiento corresponde a Mercado Pago</td></tr>
+        <tr><td class="k">Entrega de notificaciones</td><td class="num">95%</td><td class="num">99%</td><td><span class="tag tag--s">Compartido</span></td><td>La latencia la determina el proveedor de mensajería</td></tr>
+        <tr><td class="k">Calificación promedio de platos</td><td class="num">3,8</td><td class="num">4,5</td><td><span class="tag tag--s">Compartido</span></td><td>Mide la cocina, excluida del alcance por el §12.2</td></tr>
+        <tr><td class="k">NPS de colaboradores</td><td class="num">70</td><td class="num">85</td><td><span class="tag tag--s">Compartido</span></td><td>Integra comida, variedad, tiempos de cocina y experiencia digital</td></tr>
+        <tr><td class="k">Tasa de adopción digital</td><td class="num">80%</td><td class="num">95%</td><td><span class="tag tag--s">Compartido</span></td><td>Depende del respaldo de la comunicación interna</td></tr>
+        <tr><td class="k">Repetición de pedidos</td><td class="num">30%</td><td class="num">50%</td><td><span class="tag tag--s">Compartido</span></td><td>Depende de la variedad y rotación del menú</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="foot-note" style="margin-top:14px">Sobre los compartidos se propone revisión conjunta: se miden y reportan con la misma rigurosidad y, ante un desvío sostenido, se convoca un análisis con las áreas involucradas y se acuerda un plan con responsables de ambas partes.</p>
+</section>
+
+<!-- 15 ────────────────────────────────────────────────────────── -->
+<section class="slide" id="s15">
+  <span class="slide__no">15 / 17</span>
+  <p class="eyebrow">Cómo se opera · §12.3</p>
+  <h2>Pueden terminar este contrato cualquier día sin que el comedor se interrumpa.</h2>
+  <div class="g2" style="margin-top:20px">
+    <div>
+      <p class="lead">El plan de salida se entrega en las primeras cuatro semanas del contrato y se actualiza cada año — no se escribe cuando la relación ya se rompió.</p>
+      <div class="card" style="margin-top:16px">
+        <p class="card__k">Lo que casi nadie ofrece</p>
+        <p>Deenex se compromete a proveer la información de operación, volúmenes y configuración que Mercado Libre necesite para <strong>volver a licitar el servicio</strong>, sin condicionarla a su propia participación en ese proceso.</p>
+      </div>
+    </div>
+    <div class="tw">
+      <table style="min-width:0">
+        <thead><tr><th>Compromiso</th><th>Alcance</th></tr></thead>
+        <tbody>
+          <tr><td class="k">Exportación integral</td><td>CSV o JSON, ejecutable a requerimiento durante toda la vigencia — no solo al terminar</td></tr>
+          <tr><td class="k">Salida ordinaria</td><td>Transición planificada, transferencia de conocimiento y operación en paralelo</td></tr>
+          <tr><td class="k">Salida de emergencia</td><td>Entrega inmediata del paquete, que se mantiene actualizado para ese escenario</td></tr>
+          <tr><td class="k">Entrega final</td><td>30 días hábiles, con eliminación segura y certificado de destrucción</td></tr>
+          <tr><td class="k">Continuidad</td><td>El comedor opera con normalidad durante todo el proceso</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- 16 ────────────────────────────────────────────────────────── -->
+<section class="slide" id="s16">
+  <span class="slide__no">16 / 17</span>
+  <p class="eyebrow eyebrow--q">Cierre</p>
+  <h2>Cuatro cosas que no nos convienen y que iban a aparecer igual en la evaluación.</h2>
+  <p class="lead">Preferimos que aparezcan acá, con su tratamiento al lado.</p>
+  <div style="margin-top:22px">
+    <div class="dec"><div class="dec__n">01</div><div class="dec__b"><h3>De los ocho módulos del punto 6, cuatro se desarrollan.</h3><p>Están incluidos en la implementación y no se facturan como desarrollo a medida. La tabla de la lámina 09 lo dice módulo por módulo.</p></div></div>
+    <div class="dec"><div class="dec__n">02</div><div class="dec__b"><h3>Deenex no cuenta con certificación ISO 27001.</h3><p>Presentamos un plan de adecuación con hitos verificables y auditoría externa de tercera parte al mes 12. El punto 2 admite ISO 27001 <em>o equivalente</em>.</p></div></div>
+    <div class="dec"><div class="dec__n">03</div><div class="dec__b"><h3>Los dos casos de referencia no son comedores corporativos.</h3><p>Son operaciones gastronómicas de escala con la misma exigencia técnica. La comparabilidad que ofrecemos es de exigencia operativa, y se declara como tal para que la ponderen con ese criterio.</p></div></div>
+    <div class="dec"><div class="dec__n">04</div><div class="dec__b"><h3>La operación de más de 15.000 personas corresponde a picos.</h3><p>No es operación diaria sostenida. Lo que acredita es el comportamiento del circuito bajo concentración horaria severa — que es exactamente la condición que define un comedor entre las 11 y las 14.</p></div></div>
+  </div>
+  <p class="lead" style="margin-top:26px"><strong>Un contrato de dos años en cuatro países se sostiene sobre lo que se acordó con precisión, no sobre lo que se prometió sin condiciones.</strong></p>
+</section>
+
+<!-- 17 ────────────────────────────────────────────────────────── -->
+<section class="slide" id="s17">
+  <span class="slide__no">17 / 17</span>
+  <p class="eyebrow">El pedido</p>
+  <div class="g2" style="align-items:start">
+    <div>
+      <h2>Lo único que les pedimos es una hora.</h2>
+      <div class="ask">
+        <p style="color:var(--ink); margin:0"><strong>Una hora con su equipo probando, no mirando:</strong></p>
+        <ol>
+          <li>Cargar un plato y cronometrar cuánto tarda en publicarse.</li>
+          <li>Sacar un plato a las diez de la mañana, con pedidos ya pagos.</li>
+          <li>Dar de baja un agotado desde el KDS.</li>
+        </ol>
+        <p style="margin:14px 0 0; color:var(--ink-2)">Si esas tres cosas funcionan en pantalla, no hace falta que nos crean nada de lo que dijimos hoy.</p>
+      </div>
+      <p class="foot-note" style="margin-top:18px">Ponemos a disposición el contacto directo de los responsables de cada cuenta de referencia y el acceso a los entornos productivos, desde ya y no a requerimiento.</p>
+    </div>
+    <div>
+      <p class="card__k">Dónde se responde cada requisito del punto 2</p>
+      <div class="tw" style="margin-top:8px">
+        <table style="min-width:0">
+          <thead><tr><th>Contenido exigido</th><th>Lámina</th></tr></thead>
+          <tbody>
+            <tr><td>Alcance por site o región</td><td class="num">03 · 09</td></tr>
+            <tr><td>Dimensionamiento del equipo técnico y de soporte</td><td class="num">13</td></tr>
+            <tr><td>Metodología de implementación</td><td class="num">12</td></tr>
+            <tr><td>Modelo de informe de performance</td><td class="num">06 · 14</td></tr>
+            <tr><td>Estructura de equipo con perfiles y certificaciones</td><td class="num">13</td></tr>
+            <tr><td>Casos de referencia corporativos comparables</td><td class="num">16</td></tr>
+            <tr><td>Plan de implementación con cronograma</td><td class="num">12</td></tr>
+            <tr><td>Experiencia en empresas de +500 colaboradores</td><td class="num">16</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <hr class="rule">
+      <div class="lockup" style="margin-bottom:18px">
+        <span class="wordmark" style="font-size:18px">deenex<sup>Technologies</sup></span>
+        <span class="lockup__x">×</span>
+        <span class="logoslot">Logotipo<br>Mercado Libre</span>
+      </div>
+      <p class="foot-note">Deenex Technologies S.A.S. · Propuesta Técnica, Versión 1.0, agosto de 2026 · Confidencial.<br><br>En cumplimiento del punto 2 del Alcance Técnico, este material no contiene precios, tarifas ni valores económicos de ningún tipo. La Propuesta Económica se presenta en documento separado.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<script>
+(function(){
+  var links = Array.prototype.slice.call(document.querySelectorAll('.rail a'));
+  var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+  var byId = {};
+  links.forEach(function(a){ byId[a.getAttribute('href').slice(1)] = a; });
+
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (!e.isIntersecting) return;
+        links.forEach(function(a){ a.classList.remove('is-on'); });
+        var a = byId[e.target.id];
+        if (a) a.classList.add('is-on');
+      });
+    }, { rootMargin: '-45% 0px -45% 0px' });
+    slides.forEach(function(s){ io.observe(s); });
+  }
+
+  document.addEventListener('keydown', function(ev){
+    if (ev.key !== 'ArrowDown' && ev.key !== 'ArrowUp' && ev.key !== 'PageDown' && ev.key !== 'PageUp') return;
+    var target = document.activeElement;
+    if (target && /INPUT|TEXTAREA|SELECT/.test(target.tagName)) return;
+    var mid = window.innerHeight / 2, current = 0;
+    slides.forEach(function(s, i){
+      var r = s.getBoundingClientRect();
+      if (r.top <= mid && r.bottom > mid) current = i;
+    });
+    var next = (ev.key === 'ArrowDown' || ev.key === 'PageDown') ? current + 1 : current - 1;
+    if (next < 0 || next >= slides.length) return;
+    ev.preventDefault();
+    slides[next].scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+})();
+</script>
