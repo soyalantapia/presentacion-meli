@@ -623,7 +623,7 @@ figcaption{
   <span class="slide__no">07 / 19</span>
   <p class="eyebrow">Qué van a tener · §6.6</p>
   <h2>La cocina ve el pedido antes de que el colaborador llegue al mostrador.</h2>
-  <p class="lead">El pedido pagado se transmite al KDS en menos de 30 segundos —15 dentro de la ventana de 11 a 14—, ordenado por franja de retiro y con el estado que la cocina marca en pantalla.</p>
+  <p class="lead">La plataforma habla directo con la pantalla de cocina: el pedido pagado se transmite al KDS en menos de 30 segundos —15 dentro de la ventana de 11 a 14—, <strong>sin recarga manual y sin sistema intermedio</strong>. Nadie vuelve a tipear un pedido.</p>
   <div class="wfbox" style="margin-top:22px; padding:0; overflow:hidden">
     <svg class="wf" viewBox="0 0 1160 420" role="img" aria-label="Esquema de la pantalla de cocina: barra superior con el punto gastronómico y la franja activa, y cinco comandas en columna, cada una con número de pedido, cronómetro, ítems y su estado de preparación.">
       <rect x="0" y="0" width="1160" height="420" fill="var(--surface)"/>
@@ -675,9 +675,20 @@ figcaption{
   </div>
   <p class="wfcap">Esquema de la vista de cocina · pendiente la captura real</p>
   <div class="g3" style="margin-top:24px">
-    <div class="card"><p class="card__k">Cómo llega</p><h3>Pago confirmado, comanda en pantalla.</h3><p>La transmisión al KDS es uno de los tres hitos del punto 6.5 y tiene indicador propio en el punto 9.1: menos de 30 segundos, 15 en la ventana crítica.</p></div>
+    <div class="card"><p class="card__k">Cómo llega</p><h3>Del pago a la comanda, sin intermediarios.</h3><p>Deenex opera los dos extremos —la app y la pantalla de cocina—, así que la comanda no pasa por un sistema de terceros. Es uno de los tres hitos del punto 6.5 y tiene indicador propio en el 9.1.</p></div>
     <div class="card"><p class="card__k">Qué controla la cocina</p><h3>Estado, franja y estación.</h3><p>Los pedidos se ordenan por franja de retiro, el operador marca el estado de preparación, y el sistema admite estaciones diferenciadas dentro de una misma cocina.</p></div>
     <div class="card" style="border-color:var(--accent)"><p class="card__k" style="color:var(--accent-ink)">Si falla el dispositivo</p><h3>La cocina no se detiene.</h3><p>Comanda impresa en el mismo punto —Deenex provee la impresora— y vista de cocina desde cualquier navegador autorizado del site, mientras se ejecuta la reposición.</p></div>
+  </div>
+  <div class="ask" style="margin-top:24px">
+    <p class="card__k" style="color:var(--accent-ink); margin-bottom:10px">El motor de cocina · se desarrolla como parte de la implementación</p>
+    <h3 style="font-size:18px; margin-bottom:14px">El KDS no es una pantalla que lista pedidos en orden de llegada.</h3>
+    <div class="g4" style="gap:20px">
+      <div><h3>Secuencia por franja</h3><p style="font-size:13px">Ordena la producción contra la hora de retiro comprometida, no contra la hora en que entró el pedido. Nada sale frío ni tarde.</p></div>
+      <div><h3>Rutea por estación</h3><p style="font-size:13px">Cada ítem se dirige a la estación que lo produce. Una comanda con plato caliente y ensalada aparece dividida donde corresponde.</p></div>
+      <div><h3>Agrupa por tanda</h3><p style="font-size:13px">Los ítems iguales de pedidos distintos dentro de la misma franja se producen juntos, en vez de uno por uno.</p></div>
+      <div><h3>Avisa antes, no después</h3><p style="font-size:13px">Marca la comanda que está por vencer contra su franja mientras todavía se puede corregir, y no cuando el colaborador ya está esperando.</p></div>
+    </div>
+    <p style="margin:16px 0 0; font-size:13.5px">Es la misma lógica que alimenta el informe de producción de la lámina siguiente: la cocina deja de reaccionar al pedido que llega y pasa a trabajar contra la demanda de la franja completa.</p>
   </div>
 </section>
 
