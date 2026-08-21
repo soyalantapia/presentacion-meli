@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow, noarchive">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Deenex × Mercado Libre</title>
@@ -345,6 +344,49 @@ figcaption{
 .g3 > div > svg.wf{max-width:288px; margin-inline:auto}
 /* Inercia de scroll en iOS para lo que scrollea de costado */
 .tw,.figwrap,.wfbox{-webkit-overflow-scrolling:touch}
+
+/* Casos de exito: reels verticales con reproduccion al tocar */
+.reels{display:grid; grid-template-columns:repeat(3,1fr); gap:26px; margin-top:24px}
+.reel{display:flex; flex-direction:column}
+.reel__phone{
+  position:relative; aspect-ratio:9/16; width:100%; max-width:250px; margin:0 auto 16px;
+  background:var(--surface); border:1.5px solid var(--hair-2); border-radius:22px;
+  overflow:hidden; cursor:pointer; display:block; padding:0;
+}
+.reel__phone::before{
+  content:""; position:absolute; top:9px; left:50%; transform:translateX(-50%);
+  width:46px; height:4px; border-radius:2px; background:var(--wf); z-index:2;
+}
+.reel__phone iframe{position:absolute; inset:0; width:100%; height:100%; border:0}
+.reel__poster{
+  position:absolute; inset:0; display:flex; flex-direction:column;
+  align-items:center; justify-content:center; gap:14px; text-align:center; padding:20px;
+}
+.reel__play{
+  width:54px; height:54px; border-radius:50%; border:1.5px solid var(--accent);
+  display:grid; place-items:center; transition:background .18s ease;
+}
+.reel__play::after{
+  content:""; border-style:solid; border-width:9px 0 9px 15px;
+  border-color:transparent transparent transparent var(--accent); margin-left:4px;
+}
+.reel__phone:hover .reel__play,.reel__phone:focus-visible .reel__play{background:var(--accent-wash)}
+.reel__hint{font-family:var(--f-mono); font-size:9.5px; letter-spacing:.13em; text-transform:uppercase; color:var(--ink-3)}
+.reel__who{font-family:var(--f-mono); font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:var(--accent-ink); margin:0 0 10px}
+.reel h3{margin:0 0 4px}
+.reel__metrics{display:flex; flex-direction:column; gap:11px; margin:14px 0 0; padding-top:14px; border-top:1px solid var(--hair)}
+.reel__metrics div{display:flex; gap:11px; align-items:baseline}
+.reel__metrics b{
+  font-family:var(--f-display); font-weight:900; font-size:19px; line-height:1;
+  color:var(--ink); font-variant-numeric:tabular-nums; flex:0 0 auto; min-width:56px;
+}
+.reel__metrics .pend b{color:var(--ink-3)}
+.reel__metrics span{font-size:12.5px; line-height:1.4; color:var(--ink-2)}
+.reel__contact{
+  margin:14px 0 0; padding-top:12px; border-top:1px solid var(--hair);
+  font-family:var(--f-mono); font-size:10px; letter-spacing:.04em; color:var(--ink-3); line-height:1.5;
+}
+@media (max-width:1080px){ .reels{grid-template-columns:1fr; gap:30px} .reel__phone{max-width:230px} }
 
 @media (min-width:1700px){
   .deck{max-width:1924px}
@@ -1258,34 +1300,7 @@ figcaption{
 <section class="slide" id="s21">
   <span class="slide__no">21 / 25</span>
   <p class="eyebrow">Casos de referencia y experiencia</p>
-  <h2>Dos plataformas en producción que se pueden abrir hoy desde el navegador.</h2>
-  <p class="lead">Los dos casos que presentamos <strong>no son comedores corporativos</strong>. Son operaciones gastronómicas de escala cuya exigencia técnica es la misma que plantea este servicio: muchos puntos gestionados en simultáneo, integración con el sistema de cada punto, autogestión del catálogo por parte del cliente y operación continua con niveles comprometidos. La comparabilidad que ofrecemos es de exigencia operativa, y la declaramos como tal para que la ponderen con ese criterio.</p>
-  <div class="g3" style="margin-top:26px">
-    <div class="card">
-      <p class="card__k">Caso 01</p>
-      <h3>La Fábrica de Sandwiches</h3>
-      <p><strong>Más de 80 puntos de servicio</strong> sobre una única plataforma, cada uno con su catálogo, precios, disponibilidad y horarios propios.</p>
-      <hr class="rule" style="margin:14px 0">
-      <p>El pedido entra al sistema de gestión de cada punto <strong>sin recarga manual</strong> — es exactamente el mismo principio que acá aplica a la pantalla de cocina. Y el cliente administra los más de 80 puntos sin intervención técnica nuestra.</p>
-      <p class="foot-note" style="margin-top:12px">app.lafabrica.com.ar · testimonio en video de la gerencia de marketing disponible a requerimiento</p>
-    </div>
-    <div class="card">
-      <p class="card__k">Caso 02</p>
-      <h3>Monti Bar de Pastas</h3>
-      <p>Aplicación propia con retiro y envío, medios de pago integrados, sistema de puntos y cupones, segmentación de la base y reportería de consumo.</p>
-      <hr class="rule" style="margin:14px 0">
-      <p>Incluye el <strong>plato del día como sección de descubrimiento, en producción</strong> — que es el equivalente exacto de los sugeridos del día que pide este servicio. Cuenta en operación con soporte continuo y gestión de incidentes.</p>
-      <p class="foot-note" style="margin-top:12px">app.monti.deenex.tech · testimonio en video de la propiedad disponible a requerimiento</p>
-    </div>
-    <div class="card" style="border-color:var(--accent)">
-      <p class="card__k" style="color:var(--accent-ink)">Experiencia en +500 colaboradores</p>
-      <h3>Más de 15.000 personas, jornadas de más de 5.000 pedidos.</h3>
-      <p>Con exactamente este flujo: compra desde el dispositivo, comprobante con código QR, validación del código en el punto de retiro y entrega.</p>
-      <hr class="rule" style="margin:14px 0">
-      <p><strong>Son picos de demanda concentrada, no operación diaria sostenida</strong>, y lo decimos con esa precisión. Lo que acredita no es el volumen: es el comportamiento de la plataforma bajo concentración horaria severa, que es la condición que define un comedor entre las once y las dos.</p>
-      <p class="foot-note" style="margin-top:12px">Cliente a nombrar · autorización en trámite</p>
-    </div>
-  </div>
+  <div class="reels"><article class="reel"><button class="reel__phone" data-vimeo="" aria-label="Reproducir el testimonio de La Fábrica de Sandwiches"><span class="reel__poster"><span class="reel__play"></span><span class="reel__hint">Video pendiente de carga</span></span></button><h3>La Fábrica de Sandwiches</h3><p class="reel__who">Gerencia de marketing</p><div class="reel__metrics"><div><b>+80</b><span>puntos de servicio gestionados sobre una sola plataforma</span></div><div><b>100%</b><span>del catálogo administrado por el cliente, sin intervención técnica nuestra</span></div><div class="pend"><b>—</b><span>métrica de resultado pendiente</span></div></div><p class="reel__contact">app.lafabrica.com.ar<br>Contacto del referente: a definir antes de publicar</p></article><article class="reel"><button class="reel__phone" data-vimeo="" aria-label="Reproducir el testimonio de Monti Bar de Pastas"><span class="reel__poster"><span class="reel__play"></span><span class="reel__hint">Video pendiente de carga</span></span></button><h3>Monti Bar de Pastas</h3><p class="reel__who">La propiedad</p><div class="reel__metrics"><div><b>2</b><span>canales sobre la misma app: retiro y envío</span></div><div class="pend"><b>—</b><span>métrica de resultado pendiente</span></div><div class="pend"><b>—</b><span>métrica de resultado pendiente</span></div></div><p class="reel__contact">app.monti.deenex.tech<br>Contacto del referente: a definir antes de publicar</p></article><article class="reel"><button class="reel__phone" data-vimeo="" aria-label="Reproducir el testimonio de Operación de +500 colaboradores"><span class="reel__poster"><span class="reel__play"></span><span class="reel__hint">Video pendiente de carga</span></span></button><h3>Operación de +500 colaboradores</h3><p class="reel__who">Cliente a nombrar · autorización en trámite</p><div class="reel__metrics"><div><b>+15.000</b><span>personas en el entorno de operación</span></div><div><b>+5.000</b><span>pedidos en una misma jornada</span></div><div class="pend"><b>—</b><span>métrica de resultado pendiente</span></div></div><p class="reel__contact">Compra, comprobante con QR y validación en el retiro<br>Contacto del referente: a definir antes de publicar</p></article></div>
   <p class="foot-note" style="margin-top:20px">Las dos plataformas están en producción y son verificables de forma directa. Ponemos a disposición el contacto de los responsables de cada cuenta y el acceso a los entornos productivos <strong>desde ya, no a requerimiento</strong>.</p>
 </section>
 <!-- 19 ─────────────────────────────────────────────────────────── -->
@@ -1526,4 +1541,17 @@ figcaption{
     irA(slides[next]);
   });
 })();
+
+document.querySelectorAll('.reel__phone').forEach(function(b){
+  b.addEventListener('click', function(){
+    var id = b.getAttribute('data-vimeo');
+    if(!id) return;
+    var f = document.createElement('iframe');
+    f.src = 'https://player.vimeo.com/video/'+id+'?autoplay=1&title=0&byline=0&portrait=0&dnt=1';
+    f.setAttribute('allow','autoplay; fullscreen; picture-in-picture');
+    f.setAttribute('allowfullscreen','');
+    f.setAttribute('title', b.getAttribute('aria-label')||'Testimonio');
+    b.innerHTML = ''; b.appendChild(f);
+  });
+});
 </script>
