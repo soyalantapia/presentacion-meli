@@ -130,25 +130,22 @@ strong{color:var(--ink); font-weight:600}
 .cover{display:grid; grid-template-columns:1.3fr .7fr; gap:60px; align-items:stretch}
 .cover__l{display:flex; flex-direction:column; gap:0}
 .cover__hero{
-  font-family:var(--f-display); font-weight:900; font-size:clamp(24px,2.7vw,37px);
-  line-height:1.12; letter-spacing:-.025em; color:var(--ink);
-  margin:14px 0 26px; max-width:27ch; text-wrap:balance;
+  font-family:var(--f-display); font-weight:900; font-size:clamp(38px,5.2vw,74px);
+  line-height:.98; letter-spacing:-.035em; color:var(--ink);
+  margin:44px 0 28px; max-width:14ch; text-wrap:balance;
 }
-.cover__hero em{font-style:normal; color:var(--accent-ink)}
 .cover__doc{
-  border-top:1px solid var(--hair); padding-top:16px; margin-bottom:34px;
-  display:flex; flex-wrap:wrap; gap:6px 26px; align-items:baseline;
+  border-top:1px solid var(--hair); padding-top:18px; margin-bottom:38px;
 }
-.cover__title{
-  font-family:var(--f-display); font-weight:900; font-size:clamp(15px,1.3vw,19px);
-  letter-spacing:.02em; color:var(--accent-ink); margin:34px 0 0; line-height:1;
+.cover__kicker{
+  font-family:var(--f-mono); font-size:11px; letter-spacing:.18em;
+  text-transform:uppercase; color:var(--accent-ink); margin:0 0 8px;
 }
-.cover__doc h1{
-  font-family:var(--f-body); font-weight:600; font-size:14.5px; letter-spacing:0;
-  line-height:1.4; margin:0; max-width:48ch; color:var(--ink-2);
+.cover__sub{
+  font-family:var(--f-body); font-weight:500; font-size:16px; letter-spacing:0;
+  line-height:1.4; margin:0; max-width:44ch; color:var(--ink-2);
 }
-.stat--todo{border-top-color:var(--accent); opacity:.55}
-.stat--todo .stat__v{color:var(--ink-3)}
+.stat__v--long{font-size:clamp(17px,1.75vw,23px)}
 .stats{display:grid; grid-template-columns:repeat(4,1fr); gap:26px; margin-top:auto}
 .stat{border-top:1px solid var(--hair-2); padding-top:13px}
 .stat__v{
@@ -339,16 +336,16 @@ figcaption{
         <span class="lockup__x">×</span>
         <span class="logoslot">Logotipo<br>Mercado Libre</span>
       </div>
-      <p class="cover__title">Mercado Libre App</p>
-      <p class="cover__hero">Este alcance no pide construir una plataforma: pide adaptar una que ya funciona y <em>operarla con disciplina en cuatro países.</em></p>
+      <h1 class="cover__hero">Mercado Libre App</h1>
       <div class="cover__doc">
-        <h1>Propuesta Técnica · Plataforma de Gestión de Experiencia Gastronómica Corporativa</h1>
+        <p class="cover__kicker">Propuesta Técnica</p>
+        <p class="cover__sub">Plataforma de Gestión de Experiencia Gastronómica Corporativa</p>
       </div>
       <div class="stats">
-        <div class="stat"><div class="stat__v">+1.150</div><div class="stat__l">locales operando hoy sobre la plataforma</div></div>
+        <div class="stat"><div class="stat__v">+250</div><div class="stat__l">locales operando hoy sobre la plataforma</div></div>
+        <div class="stat"><div class="stat__v stat__v--long">+1.000.000</div><div class="stat__l">usuarios registrados en la plataforma</div></div>
         <div class="stat"><div class="stat__v">+20.000</div><div class="stat__l">pedidos gestionados por día</div></div>
         <div class="stat"><div class="stat__v">99,7%</div><div class="stat__l">de uptime real, sobre la meta mínima de 99,5% del punto 9.1</div></div>
-        <div class="stat stat--todo"><div class="stat__v">—</div><div class="stat__l">cuarto dato de la actualidad de Deenex · a definir</div></div>
       </div>
     </div>
     <div style="display:flex; flex-direction:column; justify-content:center">
