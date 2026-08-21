@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<meta name="robots" content="noindex, nofollow, noarchive">
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
 <title>Deenex × Mercado Libre</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -720,6 +721,7 @@ figcaption{
   <span class="slide__no">09 / 22</span>
   <p class="eyebrow">Cómo funciona</p>
   <h2>La arquitectura no cambia entre países.</h2>
+  <p class="lead">Tres preguntas definen si esta plataforma aguanta un contrato de dos años en cuatro países: dónde vive la información y cómo está separada, qué pasa entre las once y las dos, y qué hay que tocar para sumar una operación nueva. El resto de este bloque se apoya en lo que sigue.</p>
   <div class="figwrap">
   <figure>
     <svg viewBox="0 0 1160 396" role="img" aria-label="Arquitectura por capas: capa de acceso con app móvil, app web, panel de administración y vista de cocina; capa de servicios con identidad, catálogo, pedidos, notificaciones, comandas, valoración y reportes; integraciones de terceros como encargados de tratamiento; y capa de datos con motor, réplica, aislamiento y copias. La seguridad es transversal a las cuatro capas.">
@@ -746,6 +748,13 @@ figcaption{
       <g class="svg-box" stroke-width="1.1" stroke-dasharray="4 3"><rect x="20" y="340" width="163" height="42" rx="3"/><rect x="193" y="340" width="163" height="42" rx="3"/><rect x="366" y="340" width="163" height="42" rx="3"/><rect x="539" y="340" width="163" height="42" rx="3"/></g>
       <g text-anchor="middle" class="svg-ink2" font-size="12"><text x="101" y="360">Motor</text><text x="274" y="360">Réplica</text><text x="447" y="360">Aislamiento</text><text x="620" y="360">Copias</text></g>
       <g text-anchor="middle" class="svg-acc" font-size="9.5" font-family="var(--f-mono)"><text x="101" y="375">a completar</text><text x="274" y="375">a completar</text><text x="447" y="375">a completar</text><text x="620" y="375">a completar</text></g>
+      <g class="svg-acc" font-family="var(--f-mono)" font-size="10.5" font-weight="700">
+        <circle cx="33" cy="49" r="9" fill="var(--accent)" opacity=".9"/><text x="33" y="53" text-anchor="middle" fill="var(--ground)">1</text>
+        <circle cx="379" cy="135" r="9" fill="var(--accent)" opacity=".9"/><text x="379" y="139" text-anchor="middle" fill="var(--ground)">2</text>
+        <circle cx="33" cy="271" r="9" fill="var(--accent)" opacity=".9"/><text x="33" y="275" text-anchor="middle" fill="var(--ground)">3</text>
+        <circle cx="33" cy="189" r="9" fill="var(--accent)" opacity=".9"/><text x="33" y="193" text-anchor="middle" fill="var(--ground)">4</text>
+        <circle cx="33" cy="353" r="9" fill="var(--accent)" opacity=".9"/><text x="33" y="357" text-anchor="middle" fill="var(--ground)">5</text>
+      </g>
       <rect x="722" y="122" width="418" height="260" rx="3" class="svg-box-acc" stroke-width="1.2"/>
       <text x="742" y="146" class="svg-acc" font-size="10.5" font-family="var(--f-mono)" letter-spacing="1.4">SEGURIDAD TRANSVERSAL</text>
       <g class="svg-ink2" font-size="12" font-family="var(--f-body)">
@@ -759,8 +768,13 @@ figcaption{
       <text x="742" y="334" class="svg-ink" font-size="12.5" font-family="var(--f-display)" font-weight="700">modelos propios de Deenex.</text>
       <text x="742" y="356" class="svg-ink3" font-size="10" font-family="var(--f-mono)">Propiedad exclusiva de MELI</text>
     </svg>
-    <figcaption>Habilitar una operación nueva cambia la configuración de mercado de la integración de pagos y la jerarquía de sites — no la arquitectura. Los cuatro campos de la capa de datos se completan con IT en la incubación.</figcaption>
+    <figcaption>El recorrido de un pedido, numerado sobre las capas: <strong>1</strong> el colaborador pide desde la app · <strong>2</strong> el checkout arma la orden · <strong>3</strong> Mercado Pago confirma el cobro con captura tokenizada · <strong>4</strong> la comanda sale hacia el KDS de la cocina · <strong>5</strong> todo queda persistido y aislado. Habilitar una operación nueva cambia la configuración de mercado de la integración de pagos y la jerarquía de sites — no la arquitectura.</figcaption>
   </figure>
+  </div>
+  <div class="g3" style="margin-top:24px">
+    <div class="card"><p class="card__k">Dónde vive la información</p><h3>Separada de todo otro cliente.</h3><p>La información de Mercado Libre queda aislada del resto de la cartera de Deenex, y es propiedad exclusiva de Mercado Libre por el punto 12.3. <strong>No alimenta modelos propios de Deenex ni ningún agregado</strong>, y lo firmamos. El modelo concreto de aislamiento se acuerda con IT en la incubación.</p></div>
+    <div class="card"><p class="card__k">Qué pasa de 11 a 14</p><h3>La capa de aplicación escala sola.</h3><p>La demanda del comedor se concentra en tres horas. La capa de servicios escala horizontalmente en ese pico y vuelve a bajar después, sin intervención. El dimensionamiento se hizo sobre un techo declarado de 12.000 pedidos diarios, que contempla desayunos, almuerzos y meriendas.</p></div>
+    <div class="card"><p class="card__k">Qué toca sumar un país</p><h3>Configuración, no desarrollo.</h3><p>Cambia la cuenta de mercado de Mercado Pago, las plantillas de mensajería y la jerarquía de sites. <strong>No cambia una línea de código ni el modelo de datos.</strong> Es lo que hace que el punto 4 —escalar sin rediseño— sea una afirmación verificable y no una intención.</p></div>
   </div>
 </section>
 
