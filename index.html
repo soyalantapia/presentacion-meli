@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow, noarchive">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Deenex × Mercado Libre</title>
@@ -780,6 +781,14 @@ figcaption{
 
 @media (max-height:520px) and (orientation:landscape){
   .slide{min-height:auto; padding:28px 22px}
+}
+
+/* -- Accesibilidad: va al final para ganar por orden de cascada --- */
+@media (prefers-reduced-motion:reduce){
+  .pulso,.pulso-halo,.fogonazo{animation:none !important; opacity:0 !important}
+  .ruta{opacity:.4 !important; stroke-dasharray:none !important}
+  .accion span::before{animation:none !important; transform:none !important}
+  .via-alt{animation:none !important}
 }
 </style>
 
