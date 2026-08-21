@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
-<title>Deenex × Mercado Libre</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow, noarchive">
+<title>Deenex × Mercado Libre</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Chivo:wght@400;700;900&family=Chivo+Mono:wght@400;500&display=swap">
@@ -1272,8 +1273,15 @@ figcaption{
     if (!el) return;
     var suave = !matchMedia('(prefers-reduced-motion: reduce)').matches;
     var top = el.getBoundingClientRect().top + window.pageYOffset;
+    var y0 = window.pageYOffset;
     try { window.scrollTo({ top: top, behavior: suave ? 'smooth' : 'auto' }); }
     catch (e) { window.scrollTo(0, top); }
+    // Respaldo: si el motor ignora el scroll suave, saltar directo.
+    setTimeout(function(){
+      if (Math.abs(window.pageYOffset - y0) < 2 && Math.abs(top - y0) > 4) {
+        window.scrollTo(0, top);
+      }
+    }, 220);
   }
 
   links.forEach(function(a){
