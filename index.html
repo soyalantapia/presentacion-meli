@@ -45,11 +45,7 @@ body{
   padding:0 20px 16px; border-bottom:1px solid var(--hair);
   display:flex; align-items:center; flex-wrap:wrap; gap:2px;
 }
-.rail__meta{
-  padding:12px 20px; font-family:var(--f-mono); font-size:10px;
-  letter-spacing:.06em; color:var(--ink-3); text-transform:uppercase;
-}
-.rail__nav{flex:1; overflow-y:auto; padding:4px 10px 0}
+.rail__nav{flex:1; overflow-y:auto; padding:4px 10px 14px}
 .rail__group{
   font-family:var(--f-mono); font-size:9.5px; letter-spacing:.14em;
   text-transform:uppercase; color:var(--ink-3);
@@ -67,12 +63,6 @@ body{
   font-family:var(--f-mono); font-size:10px; color:var(--ink-3);
   font-variant-numeric:tabular-nums; flex:0 0 16px;
 }
-.rail__foot{
-  padding:12px 20px 0; border-top:1px solid var(--hair);
-  font-family:var(--f-mono); font-size:9.5px; letter-spacing:.05em;
-  color:var(--ink-3); line-height:1.5;
-}
-
 /* ── Deck ────────────────────────────────────────────────────────── */
 .deck{margin-left:224px}
 .slide{
@@ -173,6 +163,21 @@ strong{color:var(--ink); font-weight:600}
   background:var(--accent); flex:0 0 5px;
 }
 .wfbox{background:var(--raised); border:1px solid var(--hair); border-radius:4px; padding:14px}
+.stakes{
+  margin:30px 0 0; padding:22px 26px;
+  border:1px solid var(--hair-2); border-left:2px solid var(--accent);
+  border-radius:3px; background:var(--surface);
+  display:flex; flex-wrap:wrap; align-items:center; gap:14px 34px;
+}
+.stakes__eq{display:flex; align-items:baseline; gap:12px; flex:0 0 auto}
+.stakes__n{
+  font-family:var(--f-display); font-weight:900;
+  font-size:clamp(22px,2.2vw,31px); line-height:1; letter-spacing:-.02em;
+  color:var(--ink); font-variant-numeric:tabular-nums; white-space:nowrap;
+}
+.stakes__n--acc{color:var(--accent-ink)}
+.stakes__op{font-family:var(--f-mono); font-size:15px; color:var(--ink-3)}
+.stakes__t{margin:0; flex:1 1 320px; font-size:14px; line-height:1.55; color:var(--ink-2); max-width:54ch}
 .videoframe{
   position:relative; width:100%; aspect-ratio:16/9; border-radius:4px;
   overflow:hidden; background:var(--surface); border:1px solid var(--hair);
@@ -286,7 +291,7 @@ figcaption{
   .rail__brand{border:0; padding:0; flex:0 0 auto; flex-wrap:nowrap}
   .rail__brand .meliplate,.rail__brand .lockup__x{display:none}
   .rail__brand .wordmark{font-size:14px}
-  .rail__meta,.rail__foot,.rail__group{display:none}
+  .rail__group{display:none}
   .rail__nav{display:flex; gap:2px; padding:0; overflow-x:auto}
   .rail a{padding:4px 8px; white-space:nowrap}
   .rail a span:not(.n){display:none}
@@ -306,7 +311,6 @@ figcaption{
     <span class="lockup__x" style="font-size:11px; margin:0 7px">×</span>
     <span class="meliplate" style="padding:5px 7px"><span class="melimark" style="width:65px;height:16px" role="img" aria-label="Mercado Libre"></span></span>
   </div>
-  <div class="rail__meta">Propuesta Técnica · v1<br>Agosto 2026 · Confidencial</div>
   <div class="rail__nav" id="nav">
     <div class="rail__group">Entrada</div>
     <a href="#s1"><i class="n">01</i><span>Portada</span></a>
@@ -334,7 +338,6 @@ figcaption{
     <a href="#s18"><i class="n">18</i><span>Lo que declaramos</span></a>
     <a href="#s19"><i class="n">19</i><span>El pedido</span></a>
   </div>
-  <div class="rail__foot">Sin precios · Punto 2<br>La económica va aparte</div>
 </nav>
 
 <main class="deck">
@@ -390,6 +393,17 @@ figcaption{
   <p class="eyebrow">Quiénes somos · un minuto</p>
   <h2>Mercado Libre define el comedor como un factor de calidad de vida laboral y productividad operativa.</h2>
   <p class="lead">Hoy esa operación se estima. Puede medirse. Un comedor que sabe cuántas personas van a comer antes de que lleguen, que produce contra un número y no contra una intuición, y que le devuelve a cada colaborador los minutos que hoy pierde esperando. <strong>No es un proyecto a construir: es una plataforma que ya está en producción.</strong></p>
+  <div class="stakes">
+    <div class="stakes__eq">
+      <span class="stakes__n">5.400</span>
+      <span class="stakes__op">×</span>
+      <span class="stakes__n">1 minuto</span>
+      <span class="stakes__op">=</span>
+      <span class="stakes__n stakes__n--acc">90 horas</span>
+    </div>
+    <p class="stakes__t">Cada minuto que un colaborador deja de perder esperando son <strong>noventa horas de trabajo devueltas por día</strong> en las cuatro operaciones. En un año hábil, veintidós mil quinientas.</p>
+  </div>
+
   <div class="videoframe" style="margin-top:26px">
     <iframe src="https://player.vimeo.com/video/1216392655?title=0&amp;byline=0&amp;portrait=0&amp;dnt=1"
             title="¿Qué es Deenex? — video institucional, 1:09"
