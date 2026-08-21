@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow, noarchive">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Deenex × Mercado Libre</title>
@@ -543,6 +542,23 @@ figcaption{
   .nocambia__g{grid-template-columns:1fr; gap:14px}
 }
 
+/* Ecosistema: paises a la izquierda, diagrama al costado */
+.eco{display:grid; grid-template-columns:198px 1fr; gap:30px; align-items:start; margin-top:24px}
+.eco__col{display:flex; flex-direction:column}
+.eco .paises{grid-template-columns:1fr; gap:7px; margin-top:0}
+.eco .pais{min-height:0; padding:10px 12px; gap:4px}
+.eco .pais__n{font-size:14px}
+.eco .pais--mas{flex-direction:row; align-items:center; gap:9px; text-align:left; padding:11px 12px}
+.eco .pais__mas{font-size:20px}
+.eco .wfcap{margin-top:13px}
+.eco .figwrap{margin:0}
+@media (max-width:1080px){
+  .eco{grid-template-columns:1fr; gap:20px}
+  .eco .paises{grid-template-columns:repeat(2,1fr)}
+  .eco .pais--mas{justify-content:center}
+}
+@media (max-width:560px){ .eco .paises{grid-template-columns:1fr} }
+
 @media (min-width:1700px){
   .deck{max-width:1924px}
   .slide{padding:76px 92px}
@@ -1066,7 +1082,12 @@ figcaption{
   <p class="eyebrow">Cómo funciona</p>
   <h2>El ecosistema técnico.</h2>
   <p class="lead">Cuatro capas, tres integraciones obligatorias y un modelo de datos único. La aplicación del colaborador, el panel de Facilities, la pantalla de cocina y la reportería corren sobre la misma plataforma, con la seguridad atravesándola de punta a punta.</p>
-  <div class="figwrap">
+  <div class="eco">
+    <div class="eco__col">
+      <div class="paises"><div class="pais pais--act"><span class="pais__n">Argentina</span><span class="pais__e">En alcance</span></div><div class="pais pais--act"><span class="pais__n">Colombia</span><span class="pais__e">En alcance</span></div><div class="pais pais--act"><span class="pais__n">Chile</span><span class="pais__e">En alcance</span></div><div class="pais pais--act"><span class="pais__n">Uruguay</span><span class="pais__e">En alcance</span></div><div class="pais pais--act"><span class="pais__n">México</span><span class="pais__e">En alcance</span></div><div class="pais pais--act"><span class="pais__n">Brasil</span><span class="pais__e">En alcance</span></div><div class="pais pais--mas" role="img" aria-label="Agregar mas paises"><span class="pais__mas" aria-hidden="true">+</span><span class="pais__e">Agregar más países</span></div></div>
+      <p class="wfcap">Podés sumar los países que quieras: la plataforma ya soporta el alcance. Habilitar una operación nueva es un alta de cinco pasos, sin desarrollo.</p>
+    </div>
+    <div class="figwrap">
   <figure>
     <svg viewBox="368 22 792 426" role="img" aria-label="Arquitectura por capas: acceso, servicios con escalado en el pico de 11 a 14, integraciones de terceros como encargados de tratamiento, y capa de datos, con la seguridad atravesando las cuatro capas.">
       <defs><marker id="ax" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="currentColor"/></marker></defs>
@@ -1099,8 +1120,8 @@ figcaption{
     <figcaption>Todas las operaciones entran a la misma plataforma: las capas, las integraciones y el modelo de datos son idénticos en cada una.</figcaption>
   </figure>
   </div>
-  <div class="paises"><div class="pais pais--act"><span class="pais__n">Argentina</span><span class="pais__e">En alcance</span></div><div class="pais pais--act"><span class="pais__n">Colombia</span><span class="pais__e">En alcance</span></div><div class="pais pais--act"><span class="pais__n">Chile</span><span class="pais__e">En alcance</span></div><div class="pais pais--act"><span class="pais__n">Uruguay</span><span class="pais__e">En alcance</span></div><div class="pais pais--act"><span class="pais__n">México</span><span class="pais__e">En alcance</span></div><div class="pais pais--act"><span class="pais__n">Brasil</span><span class="pais__e">En alcance</span></div><div class="pais pais--mas" role="img" aria-label="Agregar mas paises"><span class="pais__mas" aria-hidden="true">+</span><span class="pais__e">Agregar más países</span></div></div>
-  <p class="wfcap">Podés sumar los países que quieras: la plataforma ya soporta el alcance. Habilitar una operación nueva es un alta de cinco pasos, sin desarrollo.</p>
+  </div>
+
   <div class="nocambia">
     <p class="nocambia__t">Lo que no cambia</p>
     <div class="nocambia__g"><div class="fijo"><p class="card__k">Las cuatro capas</p><p>Acceso, servicios, integraciones y datos. La misma pila para cada operación.</p></div><div class="fijo"><p class="card__k">Las tres integraciones</p><p>Mercado Pago, WhatsApp Business y el directorio de colaboradores.</p></div><div class="fijo"><p class="card__k">El modelo de datos</p><p>País, edificio, piso y punto gastronómico. Una sola jerarquía.</p></div><div class="fijo"><p class="card__k">El código</p><p>Ni una línea distinta entre una operación y otra.</p></div></div>
