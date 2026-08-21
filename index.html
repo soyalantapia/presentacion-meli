@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow, noarchive">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Deenex × Mercado Libre</title>
+<meta name="robots" content="noindex, nofollow, noarchive">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Chivo:wght@400;700;900&family=Chivo+Mono:wght@400;500&display=swap">
@@ -601,6 +600,9 @@ figcaption{
   h2{font-size:clamp(22px,5vw,30px)}
   p.lead{font-size:16.5px}
   .figwrap figure svg{min-width:780px}
+  /* A 780px un viewBox de 1160 escala a 0,67 y el texto de 10,5px
+     renderiza a 6,4-7,1px, ilegible. A 1100px queda en ~10px. */
+  .figwrap svg[viewBox^="0 0 1160"]{min-width:1100px}
 
   /* Tipografia movil: el cuerpo venia a 13,5px, por debajo del piso comodo
      de lectura. 84 de 89 elementos de texto estaban bajo 14px. */
@@ -707,8 +709,7 @@ figcaption{
     <a href="#s21"><i class="n">21</i><span>Casos de referencia</span></a>
     <div class="rail__group">Cierre</div>
     <a href="#s22"><i class="n">22</i><span>Seamos pioneros</span></a>
-    <a href="#s23"><i class="n">23</i><span>Lo que firmamos</span></a>
-    <a href="#s24"><i class="n">24</i><span>Cierre</span></a>
+    <a href="#s23"><i class="n">23</i><span>Cierre</span></a>
   </div>
 </nav>
 
@@ -1610,7 +1611,7 @@ figcaption{
   </div>
 </section>
 
-<section class="slide" id="s24">
+<section class="slide" id="s23">
   <span class="slide__no">24 / 24</span>
   <p class="eyebrow">Cierre</p>
   <div class="g2" style="align-items:center; gap:48px">
@@ -1699,10 +1700,10 @@ figcaption{
     <table>
       <thead><tr><th>Contenido exigido</th><th>Lámina</th><th>Contenido exigido</th><th>Lámina</th></tr></thead>
       <tbody>
-        <tr><td>Alcance por site o región</td><td class="num">03 · 09</td><td>Estructura de equipo con perfiles y certificaciones</td><td class="num">13 · 14</td></tr>
-        <tr><td>Dimensionamiento del equipo técnico y de soporte</td><td class="num">13 · 14</td><td>Casos de referencia corporativos comparables</td><td class="num">20</td></tr>
-        <tr><td>Metodología de implementación</td><td class="num">12</td><td>Plan de implementación con cronograma</td><td class="num">12 · 18</td></tr>
-        <tr><td>Modelo de informe de performance</td><td class="num">06 · 15</td><td>Experiencia en empresas de +500 colaboradores</td><td class="num">20</td></tr>
+        <tr><td>Alcance por site o región</td><td class="num">03 · 10</td><td>Estructura de equipo con perfiles y certificaciones</td><td class="num">14 · 15</td></tr>
+        <tr><td>Dimensionamiento del equipo técnico y de soporte</td><td class="num">14 · 15</td><td>Casos de referencia corporativos comparables</td><td class="num">21</td></tr>
+        <tr><td>Metodología de implementación</td><td class="num">13</td><td>Plan de implementación con cronograma</td><td class="num">13 · 19</td></tr>
+        <tr><td>Modelo de informe de performance</td><td class="num">06 · 16</td><td>Experiencia en empresas de +500 colaboradores</td><td class="num">21</td></tr>
       </tbody>
     </table>
   </div>
