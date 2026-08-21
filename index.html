@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Deenex × Mercado Libre</title>
-<meta name="robots" content="noindex, nofollow, noarchive">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Chivo:wght@400;700;900&family=Chivo+Mono:wght@400;500&display=swap">
@@ -333,6 +334,36 @@ figcaption{
 }
 .compromiso__cierre em{font-style:normal; color:var(--accent-ink)}
 @media (max-width:1080px){ .compromiso__g{grid-template-columns:1fr; gap:18px} }
+
+/* -- Motor de cocina -------------------------------------------- */
+.motor{
+  margin-top:28px; padding:30px 32px 28px; border-radius:4px;
+  background:var(--raised); border:1px solid var(--hair);
+  border-top:3px solid var(--accent);
+}
+.motor__k{
+  font-family:var(--f-mono); font-size:10.5px; letter-spacing:.14em;
+  text-transform:uppercase; color:var(--accent-ink); margin:0 0 12px;
+}
+.motor__h{
+  font-family:var(--f-display); font-weight:900;
+  font-size:clamp(21px,2.2vw,31px); line-height:1.12; letter-spacing:-.022em;
+  color:var(--ink); margin:0 0 26px; max-width:30ch;
+}
+.motor__fig{margin:0 0 28px; overflow-x:auto}
+.motor__fig svg{width:100%; min-width:640px; height:auto; display:block; color:var(--ink-2)}
+.motor__g{display:grid; grid-template-columns:repeat(4,1fr); gap:26px; border-top:1px solid var(--hair); padding-top:22px}
+.motor__n{
+  display:block; font-family:var(--f-mono); font-size:11px; letter-spacing:.1em;
+  color:var(--accent-ink); margin-bottom:8px;
+}
+.motor__g h3{font-family:var(--f-display); font-weight:700; font-size:15.5px; margin:0 0 6px; color:var(--ink)}
+.motor__g p{font-size:13px; line-height:1.56; color:var(--ink-2); margin:0}
+@media (max-width:1080px){
+  .motor{padding:22px 20px}
+  .motor__g{grid-template-columns:1fr 1fr; gap:20px}
+}
+@media (max-width:620px){ .motor__g{grid-template-columns:1fr} }
 
 /* -- Logotipos ------------------------------------------------- */
 :root{
@@ -893,14 +924,29 @@ figcaption{
     <div class="card"><p class="card__k">Qué controla la cocina</p><h3>Estado, franja y estación.</h3><p>Los pedidos se ordenan por franja de retiro, el operador marca el estado de preparación, y el sistema admite estaciones diferenciadas dentro de una misma cocina.</p></div>
     <div class="card" style="border-color:var(--accent)"><p class="card__k" style="color:var(--accent-ink)">Si falla el dispositivo</p><h3>La cocina no se detiene.</h3><p>Comanda impresa en el mismo punto, con impresora provista por Deenex, y vista de cocina desde cualquier navegador autorizado del site, mientras se ejecuta la reposición.</p></div>
   </div>
-  <div class="ask" style="margin-top:24px">
-    <p class="card__k" style="color:var(--accent-ink); margin-bottom:10px">El motor de cocina · se desarrolla como parte de la implementación</p>
-    <h3 style="font-size:18px; margin-bottom:14px">El KDS no es una pantalla que lista pedidos en orden de llegada.</h3>
-    <div class="g4" style="gap:20px">
-      <div><h3>Secuencia por franja</h3><p style="font-size:13px">Ordena la producción contra la hora de retiro comprometida, no contra la hora en que entró el pedido. Nada sale frío ni tarde.</p></div>
-      <div><h3>Rutea por estación</h3><p style="font-size:13px">Cada ítem se dirige a la estación que lo produce. Una comanda con plato caliente y ensalada aparece dividida donde corresponde.</p></div>
-      <div><h3>Agrupa por tanda</h3><p style="font-size:13px">Los ítems iguales de pedidos distintos dentro de la misma franja se producen juntos, en vez de uno por uno.</p></div>
-      <div><h3>Avisa antes, no después</h3><p style="font-size:13px">Marca la comanda que está por vencer contra su franja mientras todavía se puede corregir, y no cuando el colaborador ya está esperando.</p></div>
+  <div class="motor">
+    <p class="motor__k">El motor de cocina &#183; se desarrolla como parte de la implementaci&#243;n</p>
+    <h3 class="motor__h">El KDS no es una pantalla que lista pedidos en orden de llegada.</h3>
+    <figure class="motor__fig">
+      <svg viewBox="0 0 960 200" role="img" aria-label="Las comandas entran en el orden en que se pagaron, con franjas de retiro mezcladas. El motor las reordena por franja y agrupa en una misma tanda las que comparten horario.">
+        <defs><marker id="mflecha" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="currentColor"/></marker></defs>
+        <text x="0" y="24" class="svg-ink3" font-family="var(--f-mono)" font-size="10.5" letter-spacing="1.3">COMO ENTRAN &#183; ORDEN DE LLEGADA</text>
+        <rect x="0" y="44" width="248" height="22" rx="3" class="wf-frame" stroke-width="1"/><rect x="12" y="51" width="34" height="8" rx="2" class="wf-blk"/><text x="236" y="59" text-anchor="end" class="svg-ink2" font-size="11" font-family="var(--f-mono)">13:30</text><rect x="0" y="74" width="248" height="22" rx="3" class="wf-frame" stroke-width="1"/><rect x="12" y="81" width="34" height="8" rx="2" class="wf-blk"/><text x="236" y="89" text-anchor="end" class="svg-ink2" font-size="11" font-family="var(--f-mono)">12:00</text><rect x="0" y="104" width="248" height="22" rx="3" class="wf-frame" stroke-width="1"/><rect x="12" y="111" width="34" height="8" rx="2" class="wf-blk"/><text x="236" y="119" text-anchor="end" class="svg-ink2" font-size="11" font-family="var(--f-mono)">13:00</text><rect x="0" y="134" width="248" height="22" rx="3" class="wf-frame" stroke-width="1"/><rect x="12" y="141" width="34" height="8" rx="2" class="wf-blk"/><text x="236" y="149" text-anchor="end" class="svg-ink2" font-size="11" font-family="var(--f-mono)">12:00</text><rect x="0" y="164" width="248" height="22" rx="3" class="wf-frame" stroke-width="1"/><rect x="12" y="171" width="34" height="8" rx="2" class="wf-blk"/><text x="236" y="179" text-anchor="end" class="svg-ink2" font-size="11" font-family="var(--f-mono)">12:30</text>
+        <text x="540" y="24" class="svg-acc" font-family="var(--f-mono)" font-size="10.5" letter-spacing="1.3">COMO SE PRODUCEN &#183; POR FRANJA</text>
+        <rect x="540" y="44" width="248" height="22" rx="3" class="wf-frame" stroke-width="1"/><rect x="552" y="51" width="34" height="8" rx="2" class="wf-acc"/><text x="776" y="59" text-anchor="end" class="svg-ink2" font-size="11" font-family="var(--f-mono)">12:00</text><rect x="540" y="74" width="248" height="22" rx="3" class="wf-frame" stroke-width="1"/><rect x="552" y="81" width="34" height="8" rx="2" class="wf-acc"/><text x="776" y="89" text-anchor="end" class="svg-ink2" font-size="11" font-family="var(--f-mono)">12:00</text><rect x="540" y="104" width="248" height="22" rx="3" class="wf-frame" stroke-width="1"/><rect x="552" y="111" width="34" height="8" rx="2" class="wf-blk"/><text x="776" y="119" text-anchor="end" class="svg-ink2" font-size="11" font-family="var(--f-mono)">12:30</text><rect x="540" y="134" width="248" height="22" rx="3" class="wf-frame" stroke-width="1"/><rect x="552" y="141" width="34" height="8" rx="2" class="wf-blk"/><text x="776" y="149" text-anchor="end" class="svg-ink2" font-size="11" font-family="var(--f-mono)">13:00</text><rect x="540" y="164" width="248" height="22" rx="3" class="wf-frame" stroke-width="1"/><rect x="552" y="171" width="34" height="8" rx="2" class="wf-blk"/><text x="776" y="179" text-anchor="end" class="svg-ink2" font-size="11" font-family="var(--f-mono)">13:30</text>
+        <path d="M800 46 h10 v50 h-10" fill="none" class="svg-accs" stroke-width="1.2"/>
+        <text x="820" y="75" class="svg-acc" font-size="10.5" font-family="var(--f-mono)">misma tanda</text>
+        <rect x="320" y="92" width="140" height="40" rx="20" class="svg-box-acc" stroke-width="1.4"/>
+        <text x="390" y="117" text-anchor="middle" class="svg-acc" font-size="12" font-family="var(--f-mono)" letter-spacing="1.4">MOTOR</text>
+        <line x1="256" y1="112" x2="312" y2="112" class="svg-line" stroke-width="1.4" marker-end="url(#mflecha)"/>
+        <line x1="468" y1="112" x2="532" y2="112" class="svg-accs" stroke-width="1.6" marker-end="url(#mflecha)"/>
+      </svg>
+    </figure>
+    <div class="motor__g">
+      <div><span class="motor__n">01</span><h3>Secuencia por franja</h3><p>Ordena la producci&#243;n contra la hora de retiro comprometida, no contra la hora en que entr&#243; el pedido. Nada sale fr&#237;o ni tarde.</p></div>
+      <div><span class="motor__n">02</span><h3>Rutea por estaci&#243;n</h3><p>Cada &#237;tem se dirige a la estaci&#243;n que lo produce. Una comanda con plato caliente y ensalada aparece dividida donde corresponde.</p></div>
+      <div><span class="motor__n">03</span><h3>Agrupa por tanda</h3><p>Los &#237;tems iguales de pedidos distintos dentro de la misma franja se producen juntos, en vez de uno por uno.</p></div>
+      <div><span class="motor__n">04</span><h3>Avisa antes, no despu&#233;s</h3><p>Marca la comanda que est&#225; por vencer contra su franja mientras todav&#237;a se puede corregir, y no cuando el colaborador ya est&#225; esperando.</p></div>
     </div>
   </div>
 </section>
