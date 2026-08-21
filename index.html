@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow, noarchive">
 <title>Deenex × Mercado Libre</title>
+<meta name="robots" content="noindex, nofollow, noarchive">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Chivo:wght@400;700;900&family=Chivo+Mono:wght@400;500&display=swap">
@@ -164,21 +163,6 @@ strong{color:var(--ink); font-weight:600}
   background:var(--accent); flex:0 0 5px;
 }
 .wfbox{background:var(--raised); border:1px solid var(--hair); border-radius:4px; padding:14px}
-.stakes{
-  margin:30px 0 0; padding:22px 26px;
-  border:1px solid var(--hair-2); border-left:2px solid var(--accent);
-  border-radius:3px; background:var(--surface);
-  display:flex; flex-wrap:wrap; align-items:center; gap:14px 34px;
-}
-.stakes__eq{display:flex; align-items:baseline; gap:12px; flex:0 0 auto}
-.stakes__n{
-  font-family:var(--f-display); font-weight:900;
-  font-size:clamp(22px,2.2vw,31px); line-height:1; letter-spacing:-.02em;
-  color:var(--ink); font-variant-numeric:tabular-nums; white-space:nowrap;
-}
-.stakes__n--acc{color:var(--accent-ink)}
-.stakes__op{font-family:var(--f-mono); font-size:15px; color:var(--ink-3)}
-.stakes__t{margin:0; flex:1 1 320px; font-size:14px; line-height:1.55; color:var(--ink-2); max-width:54ch}
 .videoframe{
   position:relative; width:100%; aspect-ratio:16/9; border-radius:4px;
   overflow:hidden; background:var(--surface); border:1px solid var(--hair);
@@ -320,14 +304,14 @@ figcaption{
     <a href="#s3"><i class="n">03</i><span>El ecosistema</span></a>
     <a href="#s4"><i class="n">04</i><span>La app del colaborador</span></a>
     <a href="#s5"><i class="n">05</i><span>El panel de Facilities</span></a>
-    <a href="#s6"><i class="n">06</i><span>Dashboard de datos</span></a>
+    <a href="#s6"><i class="n">06</i><span>Reportería</span></a>
     <a href="#s7"><i class="n">07</i><span>El KDS en cocina</span></a>
     <div class="rail__group">El giro</div>
     <a href="#s8"><i class="n">08</i><span>El informe de producción</span></a>
     <div class="rail__group">Cómo funciona</div>
-    <a href="#s9"><i class="n">09</i><span>El circuito y sus SLA</span></a>
+    <a href="#s9"><i class="n">09</i><span>Arquitectura general</span></a>
     <a href="#s10"><i class="n">10</i><span>Los ocho módulos</span></a>
-    <a href="#s11"><i class="n">11</i><span>Arquitectura y datos</span></a>
+    <a href="#s11"><i class="n">11</i><span>El circuito y sus SLA</span></a>
     <a href="#s12"><i class="n">12</i><span>Continuidad</span></a>
     <div class="rail__group">Cómo se opera</div>
     <a href="#s13"><i class="n">13</i><span>Implementación</span></a>
@@ -394,17 +378,6 @@ figcaption{
   <p class="eyebrow">Quiénes somos · un minuto</p>
   <h2>Mercado Libre define el comedor como un factor de calidad de vida laboral y productividad operativa.</h2>
   <p class="lead">Hoy esa operación se estima. Puede medirse. Un comedor que sabe cuántas personas van a comer antes de que lleguen, que produce contra un número y no contra una intuición, y que le devuelve a cada colaborador los minutos que hoy pierde esperando. <strong>No es un proyecto a construir: es una plataforma que ya está en producción.</strong></p>
-  <div class="stakes">
-    <div class="stakes__eq">
-      <span class="stakes__n">5.400</span>
-      <span class="stakes__op">×</span>
-      <span class="stakes__n">1 minuto</span>
-      <span class="stakes__op">=</span>
-      <span class="stakes__n stakes__n--acc">90 horas</span>
-    </div>
-    <p class="stakes__t">Cada minuto que un colaborador deja de perder esperando son <strong>noventa horas de trabajo devueltas por día</strong> en las cuatro operaciones. En un año hábil, veintidós mil quinientas.</p>
-  </div>
-
   <div class="videoframe" style="margin-top:26px">
     <iframe src="https://player.vimeo.com/video/1216392655?title=0&amp;byline=0&amp;portrait=0&amp;dnt=1"
             title="¿Qué es Deenex? — video institucional, 1:09"
@@ -709,7 +682,7 @@ figcaption{
   </div>
 </section>
 
-<!-- 07 ─────────────────────────────────────────────────────────── -->
+<!-- 08 ─────────────────────────────────────────────────────────── -->
 <section class="slide" id="s8">
   <span class="slide__no">08 / 19</span>
   <p class="eyebrow">El giro</p>
@@ -738,9 +711,82 @@ figcaption{
   </div>
 </section>
 
-<!-- 08 ─────────────────────────────────────────────────────────── -->
+<!-- 09 ─────────────────────────────────────────────────────────── -->
 <section class="slide" id="s9">
   <span class="slide__no">09 / 19</span>
+  <p class="eyebrow">Cómo funciona</p>
+  <h2>La arquitectura no cambia entre países.</h2>
+  <div class="figwrap">
+  <figure>
+    <svg viewBox="0 0 1160 396" role="img" aria-label="Arquitectura por capas: capa de acceso con app móvil, app web, panel de administración y vista de cocina; capa de servicios con identidad, catálogo, pedidos, notificaciones, comandas, valoración y reportes; integraciones de terceros como encargados de tratamiento; y capa de datos con motor, réplica, aislamiento y copias. La seguridad es transversal a las cuatro capas.">
+      <g font-family="var(--f-mono)" font-size="10.5" letter-spacing="1.4" class="svg-ink3">
+        <text x="20" y="26">CAPA DE ACCESO</text><text x="20" y="112">CAPA DE SERVICIOS · ESCALADO HORIZONTAL EN LOS PICOS</text>
+        <text x="20" y="248">INTEGRACIONES DE TERCEROS · ENCARGADOS BAJO ACUERDO ESCRITO</text><text x="20" y="330">CAPA DE DATOS</text>
+      </g>
+      <g class="svg-box" stroke-width="1.1">
+        <rect x="20" y="36" width="200" height="46" rx="3"/><rect x="234" y="36" width="200" height="46" rx="3"/>
+        <rect x="448" y="36" width="200" height="46" rx="3"/><rect x="662" y="36" width="200" height="46" rx="3"/>
+      </g>
+      <g text-anchor="middle" class="svg-ink" font-size="12.5"><text x="120" y="57">App móvil</text><text x="334" y="57">App web</text><text x="548" y="57">Panel de administración</text><text x="762" y="57">Vista de cocina</text></g>
+      <g text-anchor="middle" class="svg-ink3" font-size="10" font-family="var(--f-mono)"><text x="120" y="73">iOS y Android</text><text x="334" y="73">navegador del puesto</text><text x="548" y="73">autogestión</text><text x="762" y="73">KDS y respaldo</text></g>
+      <g class="svg-box" stroke-width="1.1">
+        <rect x="20" y="122" width="163" height="44" rx="3"/><rect x="193" y="122" width="163" height="44" rx="3"/>
+        <rect x="366" y="122" width="163" height="44" rx="3"/><rect x="539" y="122" width="163" height="44" rx="3"/>
+        <rect x="20" y="176" width="163" height="44" rx="3"/><rect x="193" y="176" width="163" height="44" rx="3"/><rect x="366" y="176" width="336" height="44" rx="3"/>
+      </g>
+      <g text-anchor="middle" class="svg-ink" font-size="12"><text x="101" y="142">Identidad y acceso</text><text x="274" y="142">Catálogo y menú</text><text x="447" y="142">Pedidos y checkout</text><text x="620" y="142">Notificaciones</text><text x="101" y="196">Comandas y KDS</text><text x="274" y="196">Valoración</text><text x="534" y="196">Reportes y analítica</text></g>
+      <g text-anchor="middle" class="svg-ink3" font-size="9.5" font-family="var(--f-mono)"><text x="101" y="158">OTP</text><text x="274" y="158">por edificio y franja</text><text x="620" y="158">tres hitos</text><text x="101" y="212">ruteo por estación</text></g>
+      <g class="svg-box" stroke-width="1.1"><rect x="20" y="258" width="220" height="42" rx="3"/><rect x="252" y="258" width="220" height="42" rx="3"/><rect x="484" y="258" width="218" height="42" rx="3"/></g>
+      <g text-anchor="middle" class="svg-ink" font-size="12"><text x="130" y="278">Mercado Pago</text><text x="362" y="278">WhatsApp Business</text><text x="593" y="278">Directorio</text></g>
+      <g text-anchor="middle" class="svg-ink3" font-size="9.5" font-family="var(--f-mono)"><text x="130" y="293">tokenizado · PCI-DSS acotado</text><text x="362" y="293">plantillas y control de entrega</text><text x="593" y="293">protocolo a definir · C-01</text></g>
+      <g class="svg-box" stroke-width="1.1" stroke-dasharray="4 3"><rect x="20" y="340" width="163" height="42" rx="3"/><rect x="193" y="340" width="163" height="42" rx="3"/><rect x="366" y="340" width="163" height="42" rx="3"/><rect x="539" y="340" width="163" height="42" rx="3"/></g>
+      <g text-anchor="middle" class="svg-ink2" font-size="12"><text x="101" y="360">Motor</text><text x="274" y="360">Réplica</text><text x="447" y="360">Aislamiento</text><text x="620" y="360">Copias</text></g>
+      <g text-anchor="middle" class="svg-acc" font-size="9.5" font-family="var(--f-mono)"><text x="101" y="375">a completar</text><text x="274" y="375">a completar</text><text x="447" y="375">a completar</text><text x="620" y="375">a completar</text></g>
+      <rect x="722" y="122" width="418" height="260" rx="3" class="svg-box-acc" stroke-width="1.2"/>
+      <text x="742" y="146" class="svg-acc" font-size="10.5" font-family="var(--f-mono)" letter-spacing="1.4">SEGURIDAD TRANSVERSAL</text>
+      <g class="svg-ink2" font-size="12" font-family="var(--f-body)">
+        <text x="742" y="174">Cifrado en tránsito y en reposo</text>
+        <text x="742" y="198">Privilegio mínimo, doble factor y registro de auditoría</text>
+        <text x="742" y="222">Credenciales fuera del código, en gestor de secretos</text>
+        <text x="742" y="246">Incidentes notificados dentro de las 24 horas</text>
+        <text x="742" y="270">Ley 25.326 y los regímenes de CO, CL y UY</text>
+      </g>
+      <text x="742" y="316" class="svg-ink" font-size="12.5" font-family="var(--f-display)" font-weight="700">Los datos de Mercado Libre no alimentan</text>
+      <text x="742" y="334" class="svg-ink" font-size="12.5" font-family="var(--f-display)" font-weight="700">modelos propios de Deenex.</text>
+      <text x="742" y="356" class="svg-ink3" font-size="10" font-family="var(--f-mono)">Propiedad exclusiva de MELI</text>
+    </svg>
+    <figcaption>Habilitar una operación nueva cambia la configuración de mercado de la integración de pagos y la jerarquía de sites — no la arquitectura. Los cuatro campos de la capa de datos se completan con IT en la incubación.</figcaption>
+  </figure>
+  </div>
+</section>
+
+<!-- 10 ─────────────────────────────────────────────────────────── -->
+<section class="slide" id="s10">
+  <span class="slide__no">10 / 19</span>
+  <p class="eyebrow">Cómo funciona</p>
+  <h2>Los ocho módulos, con su estado real.</h2>
+  <p>Todo el desarrollo señalado está incluido en la implementación y <strong>no se factura como desarrollo a medida</strong>.</p>
+  <div class="tw" style="margin-top:16px">
+    <table>
+      <thead><tr><th>Módulo</th><th>Qué falta, si falta</th><th>Estado</th></tr></thead>
+      <tbody>
+        <tr><td class="k">Autenticación y onboarding</td><td>La sincronización con el directorio de colaboradores</td><td><span class="tag tag--partial">Parcial</span></td></tr>
+        <tr><td class="k">Catálogo y menú</td><td>Franja horaria de retiro y etiquetas de preferencia alimentaria</td><td><span class="tag tag--partial">Parcial</span></td></tr>
+        <tr><td class="k">Ficha del plato</td><td>Nutricional, ingredientes, restricciones y reseñas</td><td><span class="tag tag--dev">Desarrollo</span></td></tr>
+        <tr><td class="k">Checkout y pagos</td><td>El pago nativo de Mercado Pago sin redirección</td><td><span class="tag tag--partial">Parcial</span></td></tr>
+        <tr><td class="k">Notificaciones</td><td>El QR, el aviso y la validación en el retiro están en producción</td><td><span class="tag tag--ok">Disponible</span></td></tr>
+        <tr><td class="k">Sistema KDS</td><td>Vista de cocina, más provisión e instalación del hardware</td><td><span class="tag tag--dev">Desarrollo</span></td></tr>
+        <tr><td class="k">Valoración y feedback</td><td>Estrellas y comentario al reingresar, con panel de resultados</td><td><span class="tag tag--dev">Desarrollo</span></td></tr>
+        <tr><td class="k">Panel y reportes</td><td>—</td><td><span class="tag tag--ok">Disponible</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="foot-note" style="margin-top:14px">Lo que ya está construido es el tramo donde se concentra el riesgo: compra, comprobante con QR y validación en el punto de retiro, probado bajo concentración horaria severa.</p>
+</section>
+
+<!-- 11 ─────────────────────────────────────────────────────────── -->
+<section class="slide" id="s11">
+  <span class="slide__no">11 / 19</span>
   <p class="eyebrow">Cómo funciona · para IT</p>
   <h2>Ninguna falla de un componente detiene el servicio de comedor.</h2>
   <div class="figwrap">
@@ -801,80 +847,7 @@ figcaption{
   </div>
 </section>
 
-<!-- 09 ─────────────────────────────────────────────────────────── -->
-<section class="slide" id="s10">
-  <span class="slide__no">10 / 19</span>
-  <p class="eyebrow">Cómo funciona</p>
-  <h2>Los ocho módulos, con su estado real.</h2>
-  <p>Todo el desarrollo señalado está incluido en la implementación y <strong>no se factura como desarrollo a medida</strong>.</p>
-  <div class="tw" style="margin-top:16px">
-    <table>
-      <thead><tr><th>Módulo</th><th>Qué falta, si falta</th><th>Estado</th></tr></thead>
-      <tbody>
-        <tr><td class="k">Autenticación y onboarding</td><td>La sincronización con el directorio de colaboradores</td><td><span class="tag tag--partial">Parcial</span></td></tr>
-        <tr><td class="k">Catálogo y menú</td><td>Franja horaria de retiro y etiquetas de preferencia alimentaria</td><td><span class="tag tag--partial">Parcial</span></td></tr>
-        <tr><td class="k">Ficha del plato</td><td>Nutricional, ingredientes, restricciones y reseñas</td><td><span class="tag tag--dev">Desarrollo</span></td></tr>
-        <tr><td class="k">Checkout y pagos</td><td>El pago nativo de Mercado Pago sin redirección</td><td><span class="tag tag--partial">Parcial</span></td></tr>
-        <tr><td class="k">Notificaciones</td><td>El QR, el aviso y la validación en el retiro están en producción</td><td><span class="tag tag--ok">Disponible</span></td></tr>
-        <tr><td class="k">Sistema KDS</td><td>Vista de cocina, más provisión e instalación del hardware</td><td><span class="tag tag--dev">Desarrollo</span></td></tr>
-        <tr><td class="k">Valoración y feedback</td><td>Estrellas y comentario al reingresar, con panel de resultados</td><td><span class="tag tag--dev">Desarrollo</span></td></tr>
-        <tr><td class="k">Panel y reportes</td><td>—</td><td><span class="tag tag--ok">Disponible</span></td></tr>
-      </tbody>
-    </table>
-  </div>
-  <p class="foot-note" style="margin-top:14px">Lo que ya está construido es el tramo donde se concentra el riesgo: compra, comprobante con QR y validación en el punto de retiro, probado bajo concentración horaria severa.</p>
-</section>
-
-<!-- 10 ────────────────────────────────────────────────────────── -->
-<section class="slide" id="s11">
-  <span class="slide__no">11 / 19</span>
-  <p class="eyebrow">Cómo funciona</p>
-  <h2>La arquitectura no cambia entre países.</h2>
-  <div class="figwrap">
-  <figure>
-    <svg viewBox="0 0 1160 396" role="img" aria-label="Arquitectura por capas: capa de acceso con app móvil, app web, panel de administración y vista de cocina; capa de servicios con identidad, catálogo, pedidos, notificaciones, comandas, valoración y reportes; integraciones de terceros como encargados de tratamiento; y capa de datos con motor, réplica, aislamiento y copias. La seguridad es transversal a las cuatro capas.">
-      <g font-family="var(--f-mono)" font-size="10.5" letter-spacing="1.4" class="svg-ink3">
-        <text x="20" y="26">CAPA DE ACCESO</text><text x="20" y="112">CAPA DE SERVICIOS · ESCALADO HORIZONTAL EN LOS PICOS</text>
-        <text x="20" y="248">INTEGRACIONES DE TERCEROS · ENCARGADOS BAJO ACUERDO ESCRITO</text><text x="20" y="330">CAPA DE DATOS</text>
-      </g>
-      <g class="svg-box" stroke-width="1.1">
-        <rect x="20" y="36" width="200" height="46" rx="3"/><rect x="234" y="36" width="200" height="46" rx="3"/>
-        <rect x="448" y="36" width="200" height="46" rx="3"/><rect x="662" y="36" width="200" height="46" rx="3"/>
-      </g>
-      <g text-anchor="middle" class="svg-ink" font-size="12.5"><text x="120" y="57">App móvil</text><text x="334" y="57">App web</text><text x="548" y="57">Panel de administración</text><text x="762" y="57">Vista de cocina</text></g>
-      <g text-anchor="middle" class="svg-ink3" font-size="10" font-family="var(--f-mono)"><text x="120" y="73">iOS y Android</text><text x="334" y="73">navegador del puesto</text><text x="548" y="73">autogestión</text><text x="762" y="73">KDS y respaldo</text></g>
-      <g class="svg-box" stroke-width="1.1">
-        <rect x="20" y="122" width="163" height="44" rx="3"/><rect x="193" y="122" width="163" height="44" rx="3"/>
-        <rect x="366" y="122" width="163" height="44" rx="3"/><rect x="539" y="122" width="163" height="44" rx="3"/>
-        <rect x="20" y="176" width="163" height="44" rx="3"/><rect x="193" y="176" width="163" height="44" rx="3"/><rect x="366" y="176" width="336" height="44" rx="3"/>
-      </g>
-      <g text-anchor="middle" class="svg-ink" font-size="12"><text x="101" y="142">Identidad y acceso</text><text x="274" y="142">Catálogo y menú</text><text x="447" y="142">Pedidos y checkout</text><text x="620" y="142">Notificaciones</text><text x="101" y="196">Comandas y KDS</text><text x="274" y="196">Valoración</text><text x="534" y="196">Reportes y analítica</text></g>
-      <g text-anchor="middle" class="svg-ink3" font-size="9.5" font-family="var(--f-mono)"><text x="101" y="158">OTP</text><text x="274" y="158">por edificio y franja</text><text x="620" y="158">tres hitos</text><text x="101" y="212">ruteo por estación</text></g>
-      <g class="svg-box" stroke-width="1.1"><rect x="20" y="258" width="220" height="42" rx="3"/><rect x="252" y="258" width="220" height="42" rx="3"/><rect x="484" y="258" width="218" height="42" rx="3"/></g>
-      <g text-anchor="middle" class="svg-ink" font-size="12"><text x="130" y="278">Mercado Pago</text><text x="362" y="278">WhatsApp Business</text><text x="593" y="278">Directorio</text></g>
-      <g text-anchor="middle" class="svg-ink3" font-size="9.5" font-family="var(--f-mono)"><text x="130" y="293">tokenizado · PCI-DSS acotado</text><text x="362" y="293">plantillas y control de entrega</text><text x="593" y="293">protocolo a definir · C-01</text></g>
-      <g class="svg-box" stroke-width="1.1" stroke-dasharray="4 3"><rect x="20" y="340" width="163" height="42" rx="3"/><rect x="193" y="340" width="163" height="42" rx="3"/><rect x="366" y="340" width="163" height="42" rx="3"/><rect x="539" y="340" width="163" height="42" rx="3"/></g>
-      <g text-anchor="middle" class="svg-ink2" font-size="12"><text x="101" y="360">Motor</text><text x="274" y="360">Réplica</text><text x="447" y="360">Aislamiento</text><text x="620" y="360">Copias</text></g>
-      <g text-anchor="middle" class="svg-acc" font-size="9.5" font-family="var(--f-mono)"><text x="101" y="375">a completar</text><text x="274" y="375">a completar</text><text x="447" y="375">a completar</text><text x="620" y="375">a completar</text></g>
-      <rect x="722" y="122" width="418" height="260" rx="3" class="svg-box-acc" stroke-width="1.2"/>
-      <text x="742" y="146" class="svg-acc" font-size="10.5" font-family="var(--f-mono)" letter-spacing="1.4">SEGURIDAD TRANSVERSAL</text>
-      <g class="svg-ink2" font-size="12" font-family="var(--f-body)">
-        <text x="742" y="174">Cifrado en tránsito y en reposo</text>
-        <text x="742" y="198">Privilegio mínimo, doble factor y registro de auditoría</text>
-        <text x="742" y="222">Credenciales fuera del código, en gestor de secretos</text>
-        <text x="742" y="246">Incidentes notificados dentro de las 24 horas</text>
-        <text x="742" y="270">Ley 25.326 y los regímenes de CO, CL y UY</text>
-      </g>
-      <text x="742" y="316" class="svg-ink" font-size="12.5" font-family="var(--f-display)" font-weight="700">Los datos de Mercado Libre no alimentan</text>
-      <text x="742" y="334" class="svg-ink" font-size="12.5" font-family="var(--f-display)" font-weight="700">modelos propios de Deenex.</text>
-      <text x="742" y="356" class="svg-ink3" font-size="10" font-family="var(--f-mono)">Propiedad exclusiva de MELI</text>
-    </svg>
-    <figcaption>Habilitar una operación nueva cambia la configuración de mercado de la integración de pagos y la jerarquía de sites — no la arquitectura. Los cuatro campos de la capa de datos se completan con IT en la incubación.</figcaption>
-  </figure>
-  </div>
-</section>
-
-<!-- 11 ────────────────────────────────────────────────────────── -->
+<!-- 12 ─────────────────────────────────────────────────────────── -->
 <section class="slide" id="s12">
   <span class="slide__no">12 / 19</span>
   <p class="eyebrow">Cómo funciona</p>
@@ -891,7 +864,7 @@ figcaption{
   </div>
 </section>
 
-<!-- 12 ────────────────────────────────────────────────────────── -->
+<!-- 13 ─────────────────────────────────────────────────────────── -->
 <section class="slide" id="s13">
   <span class="slide__no">13 / 19</span>
   <p class="eyebrow">Cómo se opera</p>
@@ -933,7 +906,7 @@ figcaption{
   </div>
 </section>
 
-<!-- 13 ────────────────────────────────────────────────────────── -->
+<!-- 14 ─────────────────────────────────────────────────────────── -->
 <section class="slide" id="s14">
   <span class="slide__no">14 / 19</span>
   <p class="eyebrow">Cómo se opera</p>
@@ -962,7 +935,7 @@ figcaption{
   </div>
 </section>
 
-<!-- 14 ────────────────────────────────────────────────────────── -->
+<!-- 15 ─────────────────────────────────────────────────────────── -->
 <section class="slide" id="s15">
   <span class="slide__no">15 / 19</span>
   <p class="eyebrow">Cómo se opera</p>
@@ -1030,7 +1003,7 @@ figcaption{
   </div>
 </section>
 
-<!-- 14 ────────────────────────────────────────────────────────── -->
+<!-- 16 ─────────────────────────────────────────────────────────── -->
 <section class="slide" id="s16">
   <span class="slide__no">16 / 19</span>
   <p class="eyebrow">Cómo se opera</p>
@@ -1059,7 +1032,7 @@ figcaption{
   <p class="foot-note" style="margin-top:14px">Sobre los compartidos se propone revisión conjunta: se miden y reportan con la misma rigurosidad y, ante un desvío sostenido, se convoca un análisis con las áreas involucradas y se acuerda un plan con responsables de ambas partes.</p>
 </section>
 
-<!-- 15 ────────────────────────────────────────────────────────── -->
+<!-- 17 ─────────────────────────────────────────────────────────── -->
 <section class="slide" id="s17">
   <span class="slide__no">17 / 19</span>
   <p class="eyebrow">Cómo se opera</p>
@@ -1087,7 +1060,7 @@ figcaption{
   </div>
 </section>
 
-<!-- 16 ────────────────────────────────────────────────────────── -->
+<!-- 18 ─────────────────────────────────────────────────────────── -->
 <section class="slide" id="s18">
   <span class="slide__no">18 / 19</span>
   <p class="eyebrow eyebrow--q">Cierre</p>
@@ -1102,7 +1075,7 @@ figcaption{
   <p class="lead" style="margin-top:26px"><strong>Un contrato de dos años en cuatro países se sostiene sobre lo que se acordó con precisión, no sobre lo que se prometió sin condiciones.</strong></p>
 </section>
 
-<!-- 17 ────────────────────────────────────────────────────────── -->
+<!-- 19 ─────────────────────────────────────────────────────────── -->
 <section class="slide" id="s19">
   <span class="slide__no">19 / 19</span>
   <p class="eyebrow">El pedido</p>
