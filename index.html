@@ -74,7 +74,7 @@ body{
 /* ── Deck ────────────────────────────────────────────────────────── */
 .deck{margin-left:224px; scroll-snap-type:y proximity; }
 .slide{
-  min-height:100vh; scroll-snap-align:start;
+  min-height:100vh; scroll-margin-top:8px; scroll-snap-align:start;
   padding:64px 68px; border-bottom:1px solid var(--hair);
   display:flex; flex-direction:column; justify-content:center;
   position:relative;
@@ -290,7 +290,7 @@ figcaption{
   .rail a span:not(.n){display:none}
   .rail .n{flex:none; font-size:11px}
   .deck{margin-left:0}
-  .slide{padding:44px 26px; min-height:auto}
+  .slide{padding:44px 26px; min-height:auto; scroll-margin-top:64px}
   .cover{grid-template-columns:1fr; gap:30px}
   .g2,.g3,.g4{grid-template-columns:1fr; gap:18px}
   .stats{grid-template-columns:repeat(2,1fr)}
@@ -313,7 +313,7 @@ figcaption{
     <a href="#s3"><i class="n">03</i><span>El ecosistema</span></a>
     <a href="#s4"><i class="n">04</i><span>La app del colaborador</span></a>
     <a href="#s5"><i class="n">05</i><span>El panel de Facilities</span></a>
-    <a href="#s6"><i class="n">06</i><span>Reportería</span></a>
+    <a href="#s6"><i class="n">06</i><span>Dashboard de datos</span></a>
     <a href="#s7"><i class="n">07</i><span>El KDS en cocina</span></a>
     <div class="rail__group">El giro</div>
     <a href="#s8"><i class="n">08</i><span>El informe de producción</span></a>
@@ -700,19 +700,23 @@ figcaption{
     <div>
       <blockquote class="quote">Hasta acá les mostramos el pedido. Pero el pedido termina cuando el colaborador retira.<br><br><em>El servicio empieza tres horas antes, cuando el cocinero decide cuánto poner en la olla.</em></blockquote>
       <p class="attrib">Esto no está en el pliego. Se lo traemos igual.</p>
+      <div class="card" style="margin-top:28px">
+        <p class="card__k">La diferencia con el tablero</p>
+        <p>El dashboard de la lámina anterior dice <strong>lo que pasó y lo que está pasando</strong>. El informe de producción dice <strong>lo que hay que hacer en las próximas tres horas</strong>. Uno se consulta; el otro se ejecuta.</p>
+      </div>
     </div>
     <div>
       <div class="card">
-        <p class="card__k">Informe de producción · en tiempo real</p>
-        <h3>Cuántas milanesas, actualizado al minuto.</h3>
-        <p>Sobre los pedidos ya pagos y la curva histórica del site, el informe dice cuánto hay que producir <strong>por plato y por franja</strong>, y se recalcula solo a medida que entran pedidos. A las 10:30 hay un número; a las 11:15 hay otro, y los dos son ciertos.</p>
+        <p class="card__k">Informe de producción</p>
+        <h3>Un instrumento para gestionar al operador gastronómico.</h3>
+        <p>El punto 12.2 deja la cocina fuera de este contrato, pero <strong>Facilities sigue respondiendo por el servicio</strong>. Hoy esa conversación se tiene sobre impresiones: faltó, sobró, la gente no come eso. El informe la convierte en una conversación sobre un número que las dos partes ven al mismo tiempo.</p>
         <hr class="rule" style="margin:16px 0">
-        <p class="card__k" style="margin-bottom:9px">Quién lo consulta</p>
-        <p><strong>El operador gastronómico</strong>, para producir contra un número y no contra una estimación. <strong>Y Mercado Libre</strong>, con la misma información y al mismo tiempo — para ver <strong>qué platos están traccionando</strong>, cuáles se caen, y decidir la carta de la semana siguiente sobre demanda real.</p>
+        <p class="card__k" style="margin-bottom:9px">Qué decide</p>
+        <p>Cuántas porciones por plato y por franja. <strong>Qué platos están traccionando y cuáles se caen</strong>, para definir la carta de la semana siguiente sobre demanda real y no sobre histórico. Y el corte de un plato agotado, antes de que alguien lo pida y no esté.</p>
         <hr class="rule" style="margin:16px 0">
-        <p><strong>Qué cambia.</strong> Baja el desperdicio, baja el faltante, y la ventana de 11 a 14 deja de ser una apuesta. Las dos partes miran la misma pantalla, así que la conversación del lunes es sobre el dato y no sobre quién se acuerda mejor.</p>
+        <p class="card__k" style="margin-bottom:9px">De qué depende</p>
+        <p>De que exista <strong>hora de corte por franja</strong>. El número vale en la medida en que a las 10:30 ya haya pedidos cargados, y eso requiere fijar hasta cuándo se puede pedir para cada ventana. Deenex propone acordarla con Facilities en la incubación, site por site. <strong>Sin corte no hay número</strong>, y preferimos decirlo antes de firmar.</p>
       </div>
-      <p class="foot-note" style="margin-top:14px">El punto 12.2 excluye el servicio de alimentación de este contrato. La plataforma no cocina — le da a quien cocina, y a quien lo contrata, el dato que hoy no tienen.</p>
     </div>
   </div>
 </section>
@@ -951,65 +955,58 @@ figcaption{
   <p class="lead">Facilities abre un caso con un botón dentro del panel. Del otro lado no hay una casilla genérica: hay un equipo con niveles, plazos comprometidos y acceso directo a quien escribe el código.</p>
   <div class="figwrap">
   <figure>
-    <svg viewBox="0 0 1160 340" role="img" aria-label="Circuito de soporte: desde el panel de administración, Facilities abre un caso con un botón; el caso entra a Intercom con su contexto y se clasifica en tres niveles — mesa de ayuda con respuesta en 4 horas hábiles, soporte técnico con guardia 24 por 7 y respuesta a severidad 1 en 30 o 15 minutos, y Líder Técnico con dirección que se activa automáticamente — con salida directa al equipo de desarrollo.">
-      <defs><marker id="as" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="currentColor"/></marker></defs>
+    <svg viewBox="0 0 1160 430" role="img" aria-label="Circuito de soporte: Facilities abre un caso con un botón del panel de administración; el caso entra a Intercom como canal único y se clasifica en tres niveles — mesa de ayuda con respuesta en 4 horas hábiles, soporte técnico con guardia 24 por 7 para severidad 2, y Líder Técnico con dirección que se activa automáticamente en severidad 1; el equipo de desarrollo devuelve el diagnóstico al soporte que gestiona el ticket y de ahí vuelve al mismo caso en el panel.">
+      <defs>
+        <marker id="as" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="currentColor"/></marker>
+        <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--accent)"/></marker>
+      </defs>
 
       <g class="svg-ink3" font-family="var(--f-mono)" font-size="10.5" letter-spacing="1.4">
-        <text x="20" y="22">MERCADO LIBRE</text><text x="294" y="22">CANAL</text><text x="518" y="22">NIVELES DE SOPORTE</text><text x="950" y="22">DEENEX</text>
+        <text x="20" y="22">MERCADO LIBRE</text><text x="252" y="22">CANAL ÚNICO</text><text x="438" y="22">SOPORTE TÉCNICO</text><text x="944" y="22">DEENEX</text>
       </g>
 
-      <rect x="20" y="104" width="214" height="150" rx="4" class="svg-box" stroke-width="1.2"/>
-      <text x="36" y="128" class="svg-ink" font-size="12.5" font-family="var(--f-body)">Panel de administración</text>
-      <line x1="36" y1="140" x2="218" y2="140" class="svg-line" stroke-width="1"/>
-      <g fill="var(--wf)"><rect x="36" y="152" width="120" height="6" rx="3"/><rect x="36" y="168" width="150" height="6" rx="3"/><rect x="36" y="184" width="98" height="6" rx="3"/></g>
-      <rect x="36" y="208" width="98" height="26" rx="4" class="svg-box-acc" stroke-width="1.3"/>
-      <text x="85" y="225" text-anchor="middle" class="svg-acc" font-size="11.5" font-family="var(--f-body)">Soporte</text>
-      <text x="146" y="225" class="svg-ink3" font-size="10" font-family="var(--f-mono)">un botón</text>
+      <rect x="20" y="150" width="196" height="140" rx="4" class="svg-box" stroke-width="1.2"/>
+      <text x="36" y="176" class="svg-ink" font-size="12.5" font-family="var(--f-body)">Panel de administración</text>
+      <line x1="36" y1="188" x2="200" y2="188" class="svg-line" stroke-width="1"/>
+      <g fill="var(--wf)"><rect x="36" y="200" width="112" height="6" rx="3"/><rect x="36" y="216" width="140" height="6" rx="3"/><rect x="36" y="232" width="90" height="6" rx="3"/></g>
+      <rect x="36" y="252" width="94" height="26" rx="4" class="svg-box-acc" stroke-width="1.3"/>
+      <text x="83" y="269" text-anchor="middle" class="svg-acc" font-size="11.5" font-family="var(--f-body)">Soporte</text>
+      <text x="140" y="269" class="svg-ink3" font-size="10" font-family="var(--f-mono)">un botón</text>
 
-      <line x1="234" y1="179" x2="288" y2="179" class="svg-line" stroke-width="1.5" marker-end="url(#as)"/>
+      <line x1="216" y1="220" x2="246" y2="220" class="svg-line" stroke-width="1.5" marker-end="url(#as)"/>
 
-      <rect x="294" y="146" width="164" height="66" rx="4" class="svg-box-acc" stroke-width="1.3"/>
-      <text x="376" y="172" text-anchor="middle" class="svg-ink" font-size="14" font-family="var(--f-display)" font-weight="700">Intercom</text>
-      <text x="376" y="192" text-anchor="middle" class="svg-ink3" font-size="10" font-family="var(--f-mono)">ticketing del punto 5.5</text>
-      <text x="376" y="238" text-anchor="middle" class="svg-ink2" font-size="11" font-family="var(--f-body)">El caso entra con su contexto:</text>
-      <text x="376" y="254" text-anchor="middle" class="svg-ink2" font-size="11" font-family="var(--f-body)">site, usuario, pantalla y pedido</text>
+      <rect x="252" y="186" width="150" height="68" rx="4" class="svg-box-acc" stroke-width="1.3"/>
+      <text x="327" y="214" text-anchor="middle" class="svg-ink" font-size="14" font-family="var(--f-display)" font-weight="700">Intercom</text>
+      <text x="327" y="234" text-anchor="middle" class="svg-ink3" font-size="9.5" font-family="var(--f-mono)">ticketing del punto 5.5</text>
+      <text x="327" y="278" text-anchor="middle" class="svg-ink2" font-size="10.5" font-family="var(--f-body)">Entra con su contexto:</text>
+      <text x="327" y="294" text-anchor="middle" class="svg-ink2" font-size="10.5" font-family="var(--f-body)">site, usuario, pantalla y pedido</text>
 
       <g class="svg-line" stroke-width="1.4" marker-end="url(#as)">
-        <line x1="458" y1="170" x2="512" y2="80"/><line x1="458" y1="179" x2="512" y2="172"/><line x1="458" y1="188" x2="512" y2="264"/>
+        <line x1="402" y1="210" x2="432" y2="106"/><line x1="402" y1="220" x2="432" y2="220"/><line x1="402" y1="230" x2="432" y2="334"/>
       </g>
 
-      <rect x="518" y="46" width="372" height="68" rx="4" class="svg-box" stroke-width="1.2"/>
-      <rect x="534" y="66" width="26" height="18" rx="3" class="svg-box-acc" stroke-width="1"/>
-      <text x="547" y="79" text-anchor="middle" class="svg-acc" font-size="10.5" font-family="var(--f-mono)">N1</text>
-      <text x="574" y="72" class="svg-ink" font-size="12.5" font-family="var(--f-body)">Mesa de ayuda</text>
-      <text x="574" y="91" class="svg-ink3" font-size="10.5" font-family="var(--f-mono)">consultas de administración y del colaborador</text>
-      <text x="874" y="79" text-anchor="end" class="svg-acc" font-size="12" font-family="var(--f-mono)">4 h hábiles</text>
+      <g class="svg-box" stroke-width="1.2"><rect x="438" y="58" width="470" height="88" rx="4"/><rect x="438" y="176" width="470" height="88" rx="4"/><rect x="438" y="294" width="470" height="88" rx="4"/></g>
+      <g class="svg-box-acc" stroke-width="1"><rect x="456" y="80" width="30" height="20" rx="3"/><rect x="456" y="198" width="30" height="20" rx="3"/><rect x="456" y="316" width="30" height="20" rx="3"/></g>
+      <g class="svg-acc" text-anchor="middle" font-size="10.5" font-family="var(--f-mono)"><text x="471" y="94">N1</text><text x="471" y="212">N2</text><text x="471" y="330">N3</text></g>
+      <g class="svg-ink" font-size="13" font-family="var(--f-body)"><text x="500" y="90">Mesa de ayuda</text><text x="500" y="208">Soporte técnico · guardia 24×7</text><text x="500" y="326">Líder Técnico y dirección</text></g>
+      <g class="svg-ink3" font-size="10.5" font-family="var(--f-mono)"><text x="500" y="110">consultas de administración y de uso</text><text x="500" y="228">incidencias, KDS e integraciones</text><text x="500" y="346">activación automática, sin pedirlo</text></g>
+      <g class="svg-line" stroke-width="1"><line x1="756" y1="74" x2="756" y2="130"/><line x1="756" y1="192" x2="756" y2="248"/><line x1="756" y1="310" x2="756" y2="366"/></g>
+      <g class="svg-ink3" font-size="9.5" font-family="var(--f-mono)" letter-spacing="1.1"><text x="776" y="88">RESPUESTA</text><text x="776" y="206">SEVERIDAD 2</text><text x="776" y="324">SEVERIDAD 1</text></g>
+      <g class="svg-acc" font-size="13" font-family="var(--f-mono)"><text x="776" y="110">4 h hábiles</text><text x="776" y="228">2 h hábiles</text><text x="776" y="346">30 min · 24×7</text></g>
+      <g class="svg-ink3" font-size="10" font-family="var(--f-mono)"><text x="776" y="128">2 h en ventana</text><text x="776" y="246">resolución 8 h</text><text x="776" y="364">resolución 4 h</text></g>
 
-      <rect x="518" y="138" width="372" height="68" rx="4" class="svg-box" stroke-width="1.2"/>
-      <rect x="534" y="158" width="26" height="18" rx="3" class="svg-box-acc" stroke-width="1"/>
-      <text x="547" y="171" text-anchor="middle" class="svg-acc" font-size="10.5" font-family="var(--f-mono)">N2</text>
-      <text x="574" y="164" class="svg-ink" font-size="12.5" font-family="var(--f-body)">Soporte técnico · guardia rotativa 24×7</text>
-      <text x="574" y="183" class="svg-ink3" font-size="10.5" font-family="var(--f-mono)">incidencias, fallas de KDS, integraciones y contingencia</text>
-      <text x="874" y="171" text-anchor="end" class="svg-acc" font-size="12" font-family="var(--f-mono)">Sev. 1 · 30 / 15 min</text>
+      <g class="svg-line" stroke-width="1.4" marker-end="url(#as)"><line x1="908" y1="216" x2="938" y2="212"/><line x1="908" y1="334" x2="938" y2="246"/></g>
 
-      <rect x="518" y="230" width="372" height="68" rx="4" class="svg-box" stroke-width="1.2"/>
-      <rect x="534" y="250" width="26" height="18" rx="3" class="svg-box-acc" stroke-width="1"/>
-      <text x="547" y="263" text-anchor="middle" class="svg-acc" font-size="10.5" font-family="var(--f-mono)">N3</text>
-      <text x="574" y="256" class="svg-ink" font-size="12.5" font-family="var(--f-body)">Líder Técnico y dirección</text>
-      <text x="574" y="275" class="svg-ink3" font-size="10.5" font-family="var(--f-mono)">se activa solo en todo incidente de severidad 1</text>
-      <text x="874" y="263" text-anchor="end" class="svg-acc" font-size="12" font-family="var(--f-mono)">automático</text>
+      <rect x="944" y="176" width="196" height="88" rx="4" class="svg-box" stroke-width="1.2"/>
+      <text x="1042" y="212" text-anchor="middle" class="svg-ink" font-size="13" font-family="var(--f-body)">Equipo de desarrollo</text>
+      <text x="1042" y="232" text-anchor="middle" class="svg-ink3" font-size="10" font-family="var(--f-mono)">sin capas intermedias</text>
 
-      <g class="svg-line" stroke-width="1.4" marker-end="url(#as)">
-        <line x1="890" y1="172" x2="944" y2="188"/><line x1="890" y1="264" x2="944" y2="228"/>
+      <g stroke="var(--accent)" fill="none" stroke-width="1.3" stroke-dasharray="5 4">
+        <path d="M1042 264 V 404 H 128"/><path d="M673 404 V 390" marker-end="url(#ar)"/><path d="M128 404 V 296" marker-end="url(#ar)"/>
       </g>
-
-      <rect x="950" y="172" width="190" height="72" rx="4" class="svg-box" stroke-width="1.2"/>
-      <text x="1045" y="200" text-anchor="middle" class="svg-ink" font-size="13" font-family="var(--f-body)">Equipo de desarrollo</text>
-      <text x="1045" y="220" text-anchor="middle" class="svg-ink3" font-size="10" font-family="var(--f-mono)">sin capas intermedias</text>
-      <text x="1045" y="266" text-anchor="middle" class="svg-ink3" font-size="10" font-family="var(--f-mono)">Releases bajo</text>
-      <text x="1045" y="280" text-anchor="middle" class="svg-ink3" font-size="10" font-family="var(--f-mono)">aprobación de IT</text>
+      <text x="700" y="396" class="svg-acc" font-size="10.5" font-family="var(--f-mono)">DESARROLLO INFORMA AL SOPORTE QUE GESTIONA EL TICKET · DEVOLUCIÓN SOBRE EL MISMO CASO</text>
     </svg>
-    <figcaption>El canal del punto 5.5 —correo corporativo más herramienta de ticketing— se instrumenta sobre Intercom. La severidad 1 tiene vía directa a la guardia y escala a N3 sin que Mercado Libre tenga que pedirlo.</figcaption>
+    <figcaption>Todos los plazos son los de la tabla del punto 8.2 del Alcance Técnico. En la ventana crítica de 11:00 a 14:00 rige la columna urgente, que los reduce a la mitad. El canal del punto 5.5 —correo corporativo más herramienta de ticketing— se instrumenta sobre Intercom.</figcaption>
   </figure>
   </div>
   <div class="g3" style="margin-top:24px">
