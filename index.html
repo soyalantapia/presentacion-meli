@@ -579,7 +579,7 @@ figcaption{
   <span class="slide__no">06 / 17</span>
   <p class="eyebrow">Qué van a tener</p>
   <h2>Dashboard de datos en tiempo real.</h2>
-  <p class="lead">El análisis de datos de consumo es una línea de servicio propia de Deenex, no un módulo de este contrato. La consecuencia práctica: <strong>un corte de información nuevo es configuración, no desarrollo.</strong></p>
+  <p class="lead">No es un informe que se genera y se manda: es <strong>acceso permanente a toda la información del negocio</strong>, actualizada al minuto. El análisis de datos de consumo es una línea de servicio propia de Deenex, no un módulo de este contrato, y la consecuencia práctica es que <strong>un corte de información nuevo es configuración, no desarrollo.</strong></p>
   <div class="wfbox" style="margin-top:22px; padding:0; overflow:hidden">
     <svg class="wf" viewBox="0 0 1160 330" role="img" aria-label="Esquema del tablero: cuatro indicadores destacados, distribución de pedidos por franja horaria dentro de la ventana de 11 a 14, y ranking de platos por consumo.">
       <rect x="0" y="0" width="1160" height="330" fill="var(--surface)"/>
@@ -605,12 +605,11 @@ figcaption{
       <g class="wf-blk"><rect x="1092" y="168" width="30" height="7" rx="2"/><rect x="1092" y="198" width="30" height="7" rx="2"/><rect x="1092" y="228" width="30" height="7" rx="2"/><rect x="1092" y="258" width="30" height="7" rx="2"/><rect x="1092" y="288" width="30" height="7" rx="2"/></g>
     </svg>
   </div>
-  <p class="wfcap">Esquema del tablero · los cortes que le importan al comité: consumo por site, por franja horaria y por plato</p>
   <div class="g4" style="margin-top:20px">
-    <div class="card"><p class="card__k">Por site</p><p>Consumo, adopción y repetición, abiertos por país y por edificio.</p></div>
-    <div class="card"><p class="card__k">Por franja</p><p>Distribución de la demanda dentro de la ventana de 11 a 14.</p></div>
-    <div class="card"><p class="card__k">Por plato</p><p>Calificación, rotación y desperdicio evitable.</p></div>
-    <div class="card"><p class="card__k">En tiempo real</p><p>Acceso directo para Facilities, Compras e IT. Sin pedirle nada a Deenex.</p></div>
+    <div class="card"><p class="card__k">Acceso total</p><p>Toda la operación abierta: pedidos, consumo, adopción, satisfacción y estado del equipamiento. Facilities, Compras e IT entran directo, según el perfil de cada uno, <strong>sin pedirle nada a Deenex ni esperar a fin de mes</strong>.</p></div>
+    <div class="card"><p class="card__k">En tiempo real</p><p>El tablero no se genera: se consulta. Lo que pasó hace un minuto en la cocina de un site ya está en la pantalla, y las series históricas se exportan cuando haga falta.</p></div>
+    <div class="card"><p class="card__k">Los cortes que ya vienen</p><p>Por país, site y edificio. Por franja horaria dentro de la ventana de 11 a 14. Por plato y por categoría. Por período, contra el mes anterior.</p></div>
+    <div class="card"><p class="card__k">Estadísticas nuevas cada semana</p><p><strong>El tablero crece con la operación.</strong> Si en la reunión del lunes aparece una pregunta que hoy ningún reporte contesta, el corte nuevo se configura y queda disponible — sin ciclo de desarrollo, sin cambio de alcance y sin costo adicional.</p></div>
   </div>
 </section>
 
@@ -625,13 +624,16 @@ figcaption{
     </div>
     <div>
       <div class="card">
-        <p class="card__k">Informe de producción · 10:30</p>
-        <h3>Cuántas milanesas.</h3>
-        <p>Sobre los pedidos ya pagos y la curva histórica del site, la cocina sabe antes del servicio cuánto tiene que producir, por plato y por franja.</p>
+        <p class="card__k">Informe de producción · en tiempo real</p>
+        <h3>Cuántas milanesas, actualizado al minuto.</h3>
+        <p>Sobre los pedidos ya pagos y la curva histórica del site, el informe dice cuánto hay que producir <strong>por plato y por franja</strong>, y se recalcula solo a medida que entran pedidos. A las 10:30 hay un número; a las 11:15 hay otro, y los dos son ciertos.</p>
         <hr class="rule" style="margin:16px 0">
-        <p><strong>Qué cambia.</strong> El comedor deja de producir contra una estimación y empieza a producir contra un número. Baja el desperdicio, baja el faltante, y la ventana de 11 a 14 deja de ser una apuesta.</p>
+        <p class="card__k" style="margin-bottom:9px">Quién lo consulta</p>
+        <p><strong>El operador gastronómico</strong>, para producir contra un número y no contra una estimación. <strong>Y Mercado Libre</strong>, con la misma información y al mismo tiempo — para ver <strong>qué platos están traccionando</strong>, cuáles se caen, y decidir la carta de la semana siguiente sobre demanda real.</p>
+        <hr class="rule" style="margin:16px 0">
+        <p><strong>Qué cambia.</strong> Baja el desperdicio, baja el faltante, y la ventana de 11 a 14 deja de ser una apuesta. Las dos partes miran la misma pantalla, así que la conversación del lunes es sobre el dato y no sobre quién se acuerda mejor.</p>
       </div>
-      <p class="foot-note" style="margin-top:14px">El punto 12.2 excluye el servicio de alimentación de este contrato. La plataforma no cocina — le da a quien cocina el dato que hoy no tiene.</p>
+      <p class="foot-note" style="margin-top:14px">El punto 12.2 excluye el servicio de alimentación de este contrato. La plataforma no cocina — le da a quien cocina, y a quien lo contrata, el dato que hoy no tienen.</p>
     </div>
   </div>
 </section>
