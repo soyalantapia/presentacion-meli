@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Deenex × Mercado Libre</title>
-<meta name="robots" content="noindex, nofollow, noarchive">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Chivo:wght@400;700;900&family=Chivo+Mono:wght@400;500&display=swap">
@@ -410,6 +411,18 @@ figcaption{
 .via-tenue{opacity:.35; stroke-dasharray:3 3}
 .via-alt{stroke:var(--accent); stroke-width:1.8; color:var(--accent); marker-end:url(#viaflecha); stroke-dasharray:5 4}
 .via-alt-t{fill:var(--accent-ink); font-size:10px; font-family:var(--f-mono); letter-spacing:.6px}
+
+.accion{
+  margin-top:14px; padding-top:12px; border-top:1px solid var(--hair);
+  display:flex; flex-direction:column; gap:5px;
+}
+.accion span{font-family:var(--f-mono); font-size:10.5px; line-height:1.45; color:var(--ink-2)}
+.accion span::before{content:"92 a0"; color:var(--accent-ink)}
+.accion-k{
+  font-size:9.5px !important; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--ink-3) !important; margin-bottom:2px;
+}
+.accion-k::before{content:"" !important}
 
 /* -- Logotipos ------------------------------------------------- */
 :root{
@@ -1241,7 +1254,7 @@ figcaption{
 <!-- 12 ─────────────────────────────────────────────────────────── -->
 <section class="slide" id="s11">
   <span class="slide__no">11 / 23</span>
-  <p class="eyebrow">Cómo funciona</p>
+  <p class="eyebrow">Cómo funciona · plan de mitigación</p>
   <h2>La cocina sigue produciendo aunque falle el dispositivo, la red o la pasarela.</h2>
   <p class="lead">Cada punto de falla tiene su v&#237;a alternativa <strong>ya definida y provista por Deenex</strong>, no un plan pendiente de escribir despu&#233;s de la firma. El plazo urgente de reposici&#243;n se sostiene con <strong>stock de repuestos constituido en cada pa&#237;s</strong> antes de la puesta en producci&#243;n de esa operaci&#243;n.</p>
   <div class="g3" style="margin-top:24px">
@@ -1257,7 +1270,7 @@ figcaption{
         <line x1="191" y1="24" x2="212" y2="24" class="via-flecha via-tenue"/>
         <path d="M41,44 C41,86 259,86 259,48" fill="none" class="via-alt"/>
         <text x="150" y="106" text-anchor="middle" class="via-alt-t">impresora en el punto</text>
-      </svg><p>Deenex provee la impresora. La vista de cocina tambi&#233;n se abre desde cualquier navegador autorizado del site.</p></div>
+      </svg><p>Deenex provee la impresora. La vista de cocina tambi&#233;n se abre desde cualquier navegador autorizado del site.</p><div class="accion"><span class="accion-k">Qu&#233; pasa</span><span>Deenex provee la impresora</span><span>ya instalada en cada cocina</span><span>reposici&#243;n del equipo en 2 d&#237;as h&#225;biles</span></div></div>
     <div class="card"><p class="card__k">Cae la pasarela de pagos</p><h3>El retiro se habilita igual.</h3><svg class="via fig-angosta" viewBox="0 0 300 112" role="img" aria-label="El pedido pasa por el pago antes del retiro; si la pasarela cae, el pedido queda registrado y se regulariza el cobro despu&#233;s.">
         <rect x="0" y="8" width="82" height="32" rx="3" class="via-caja"/>
         <text x="41" y="28" text-anchor="middle" class="via-t">Pedido</text>
@@ -1270,7 +1283,7 @@ figcaption{
         <line x1="191" y1="24" x2="212" y2="24" class="via-flecha via-tenue"/>
         <path d="M41,44 C41,86 259,86 259,48" fill="none" class="via-alt"/>
         <text x="150" y="106" text-anchor="middle" class="via-alt-t">pedido registrado, cobro posterior</text>
-      </svg><p>Aviso inmediato a Facilities e IT, con el estado del servicio visible en la aplicaci&#243;n.</p></div>
+      </svg><p>Aviso inmediato a Facilities e IT, con el estado del servicio visible en la aplicaci&#243;n.</p><div class="accion"><span class="accion-k">Qu&#233; pasa</span><span>Aviso inmediato a Facilities e IT</span><span>procedimiento acordado antes de la puesta en producci&#243;n</span><span>regularizaci&#243;n del cobro posterior</span></div></div>
     <div class="card"><p class="card__k">Cae el canal de mensajer&#237;a</p><h3>El QR no depende del mensaje.</h3><svg class="via fig-angosta" viewBox="0 0 300 112" role="img" aria-label="El comprobante con QR viaja por WhatsApp; si el canal cae, el c&#243;digo sigue accesible desde el detalle del pedido en la aplicaci&#243;n.">
         <rect x="0" y="8" width="82" height="32" rx="3" class="via-caja"/>
         <text x="41" y="28" text-anchor="middle" class="via-t">Pago</text>
@@ -1283,9 +1296,8 @@ figcaption{
         <line x1="191" y1="24" x2="212" y2="24" class="via-flecha via-tenue"/>
         <path d="M41,44 C41,86 259,86 259,48" fill="none" class="via-alt"/>
         <text x="150" y="106" text-anchor="middle" class="via-alt-t">detalle del pedido en la app</text>
-      </svg><p>La validaci&#243;n en el mostrador no cambia.</p></div>
+      </svg><p>La validaci&#243;n en el mostrador no cambia.</p><div class="accion"><span class="accion-k">Qu&#233; pasa</span><span>Conmutaci&#243;n autom&#225;tica</span><span>sin acci&#243;n del colaborador ni del mostrador</span><span>el c&#243;digo ya est&#225; en el pedido</span></div></div>
   </div>
-  <p class="foot-note" style="margin-top:18px">Sin stock local ese plazo no es alcanzable con provisi&#243;n internacional, y el KDS fuera de servicio en horario de comedor es no conformidad cr&#237;tica.</p>
 </section>
 
 <!-- 13 ─────────────────────────────────────────────────────────── -->
