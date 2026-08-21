@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
-<title>Deenex × Mercado Libre</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow, noarchive">
+<title>Deenex × Mercado Libre</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Chivo:wght@400;700;900&family=Chivo+Mono:wght@400;500&display=swap">
@@ -163,6 +164,16 @@ strong{color:var(--ink); font-weight:600}
   background:var(--accent); flex:0 0 5px;
 }
 .wfbox{background:var(--raised); border:1px solid var(--hair); border-radius:4px; padding:14px}
+.logo-meli{
+  height:52px; width:auto; display:block; background:#fff;
+  border-radius:4px; padding:9px 14px; box-sizing:border-box;
+}
+.logo-meli--sm{height:34px; padding:6px 9px; border-radius:3px}
+.shot{margin:0}
+.shot img{
+  width:100%; height:auto; display:block; border-radius:4px;
+  border:1px solid var(--hair);
+}
 .videoframe{
   position:relative; width:100%; aspect-ratio:16/9; border-radius:4px;
   overflow:hidden; background:var(--surface); border:1px solid var(--hair);
@@ -575,31 +586,9 @@ figcaption{
   <p class="eyebrow">Qué van a tener</p>
   <h2>Dashboard de datos en tiempo real.</h2>
   <p class="lead">No es un informe que se genera y se manda: es <strong>acceso permanente a toda la información del negocio</strong>, actualizada al minuto. El análisis de datos de consumo es una línea de servicio propia de Deenex, no un módulo de este contrato, y la consecuencia práctica es que <strong>un corte de información nuevo es configuración, no desarrollo.</strong></p>
-  <div class="wfbox" style="margin-top:22px; padding:0; overflow:hidden">
-    <svg class="wf" viewBox="0 0 1160 330" role="img" aria-label="Esquema del tablero: cuatro indicadores destacados, distribución de pedidos por franja horaria dentro de la ventana de 11 a 14, y ranking de platos por consumo.">
-      <rect x="0" y="0" width="1160" height="330" fill="var(--surface)"/>
-      <g class="wf-line" stroke-width="1"><line x1="286" y1="20" x2="286" y2="96"/><line x1="572" y1="20" x2="572" y2="96"/><line x1="858" y1="20" x2="858" y2="96"/><line x1="0" y1="118" x2="1160" y2="118"/><line x1="748" y1="118" x2="748" y2="330"/></g>
-      <g class="wf-blk"><rect x="28" y="30" width="86" height="6" rx="2"/><rect x="314" y="30" width="72" height="6" rx="2"/><rect x="600" y="30" width="94" height="6" rx="2"/><rect x="886" y="30" width="80" height="6" rx="2"/></g>
-      <g class="wf-blk2"><rect x="28" y="48" width="104" height="20" rx="3"/><rect x="314" y="48" width="86" height="20" rx="3"/><rect x="600" y="48" width="118" height="20" rx="3"/><rect x="886" y="48" width="94" height="20" rx="3"/></g>
-      <g class="wf-acc" opacity=".8"><rect x="28" y="78" width="40" height="6" rx="2"/><rect x="314" y="78" width="34" height="6" rx="2"/><rect x="600" y="78" width="44" height="6" rx="2"/><rect x="886" y="78" width="30" height="6" rx="2"/></g>
-      <rect x="28" y="140" width="118" height="7" rx="2" class="wf-blk2"/>
-      <g class="wf-acc" opacity=".85">
-        <rect x="28" y="272" width="34" height="26" rx="3"/><rect x="72" y="258" width="34" height="40" rx="3"/><rect x="116" y="236" width="34" height="62" rx="3"/>
-        <rect x="160" y="206" width="34" height="92" rx="3"/><rect x="204" y="180" width="34" height="118" rx="3"/><rect x="248" y="172" width="34" height="126" rx="3"/>
-        <rect x="292" y="186" width="34" height="112" rx="3"/><rect x="336" y="214" width="34" height="84" rx="3"/><rect x="380" y="244" width="34" height="54" rx="3"/>
-      </g>
-      <g class="wf-blk"><rect x="424" y="266" width="34" height="32" rx="3"/><rect x="468" y="278" width="34" height="20" rx="3"/><rect x="512" y="284" width="34" height="14" rx="3"/><rect x="556" y="288" width="34" height="10" rx="3"/><rect x="600" y="290" width="34" height="8" rx="3"/><rect x="644" y="292" width="34" height="6" rx="3"/></g>
-      <line x1="28" y1="300" x2="700" y2="300" class="wf-line" stroke-width="1"/>
-      <g class="wf-blk"><rect x="28" y="312" width="26" height="5" rx="2"/><rect x="238" y="312" width="26" height="5" rx="2"/><rect x="448" y="312" width="26" height="5" rx="2"/><rect x="658" y="312" width="26" height="5" rx="2"/></g>
-      <rect x="784" y="140" width="96" height="7" rx="2" class="wf-blk2"/>
-      <g><rect x="784" y="168" width="290" height="8" rx="4" class="wf-blk"/><rect x="784" y="168" width="252" height="8" rx="4" class="wf-acc" opacity=".85"/>
-         <rect x="784" y="198" width="290" height="8" rx="4" class="wf-blk"/><rect x="784" y="198" width="204" height="8" rx="4" class="wf-acc" opacity=".7"/>
-         <rect x="784" y="228" width="290" height="8" rx="4" class="wf-blk"/><rect x="784" y="228" width="166" height="8" rx="4" class="wf-acc" opacity=".55"/>
-         <rect x="784" y="258" width="290" height="8" rx="4" class="wf-blk"/><rect x="784" y="258" width="118" height="8" rx="4" class="wf-acc" opacity=".4"/>
-         <rect x="784" y="288" width="290" height="8" rx="4" class="wf-blk"/><rect x="784" y="288" width="84" height="8" rx="4" class="wf-acc" opacity=".3"/></g>
-      <g class="wf-blk"><rect x="1092" y="168" width="30" height="7" rx="2"/><rect x="1092" y="198" width="30" height="7" rx="2"/><rect x="1092" y="228" width="30" height="7" rx="2"/><rect x="1092" y="258" width="30" height="7" rx="2"/><rect x="1092" y="288" width="30" height="7" rx="2"/></g>
-    </svg>
-  </div>
+  <figure class="shot" style="margin-top:22px">
+    <img src="img/panel-deenex.jpg" alt="Panel de administración de Deenex: ranking de sucursales por desempeño, con pedidos por canal y totales de la operación." loading="lazy" width="1600" height="918">
+  </figure>
   <div class="g4" style="margin-top:20px">
     <div class="card"><p class="card__k">Acceso total</p><p>Toda la operación abierta: pedidos, consumo, adopción, satisfacción y estado del equipamiento. Facilities, Compras e IT entran directo, según el perfil de cada uno, <strong>sin pedirle nada a Deenex ni esperar a fin de mes</strong>.</p></div>
     <div class="card"><p class="card__k">En tiempo real</p><p>El tablero no se genera: se consulta. Lo que pasó hace un minuto en la cocina de un site ya está en la pantalla, y las series históricas se exportan cuando haga falta.</p></div>
@@ -689,51 +678,64 @@ figcaption{
   <p class="lead">Tres preguntas definen si esta plataforma aguanta un contrato de dos años en cuatro países: dónde vive la información y cómo está separada, qué pasa entre las once y las dos, y qué hay que tocar para sumar una operación nueva. El resto de este bloque se apoya en lo que sigue.</p>
   <div class="figwrap">
   <figure>
-    <svg viewBox="0 0 1160 396" role="img" aria-label="Arquitectura por capas: capa de acceso con app móvil, app web, panel de administración y vista de cocina; capa de servicios con identidad, catálogo, pedidos, notificaciones, comandas, valoración y reportes; integraciones de terceros como encargados de tratamiento; y capa de datos con motor, réplica, aislamiento y copias. La seguridad es transversal a las cuatro capas.">
-      <g font-family="var(--f-mono)" font-size="10.5" letter-spacing="1.4" class="svg-ink3">
-        <text x="20" y="26">CAPA DE ACCESO</text><text x="20" y="112">CAPA DE SERVICIOS · ESCALADO HORIZONTAL EN LOS PICOS</text>
-        <text x="20" y="248">INTEGRACIONES DE TERCEROS · ENCARGADOS BAJO ACUERDO ESCRITO</text><text x="20" y="330">CAPA DE DATOS</text>
-      </g>
+    <svg viewBox="0 0 1160 448" role="img" aria-label="Una sola arquitectura para las cuatro operaciones. A la izquierda, lo que cambia en cada país: la cuenta de mercado de la pasarela, la moneda, las plantillas de mensajería y la jerarquía de edificios. A la derecha, lo que no cambia: las capas de acceso, servicios, integraciones y datos, idénticas en los cuatro países, con la seguridad como banda transversal.">
+      <defs><marker id="ax" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="currentColor"/></marker></defs>
+
+      <text x="8" y="26" class="svg-ink3" font-family="var(--f-mono)" font-size="10.5" letter-spacing="1.4">LO QUE CAMBIA POR OPERACIÓN</text>
       <g class="svg-box" stroke-width="1.1">
-        <rect x="20" y="36" width="200" height="46" rx="3"/><rect x="234" y="36" width="200" height="46" rx="3"/>
-        <rect x="448" y="36" width="200" height="46" rx="3"/><rect x="662" y="36" width="200" height="46" rx="3"/>
+        <rect x="8" y="44" width="236" height="46" rx="3"/><rect x="8" y="100" width="236" height="46" rx="3"/>
+        <rect x="8" y="156" width="236" height="46" rx="3"/><rect x="8" y="212" width="236" height="46" rx="3"/>
       </g>
-      <g text-anchor="middle" class="svg-ink" font-size="12.5"><text x="120" y="57">App móvil</text><text x="334" y="57">App web</text><text x="548" y="57">Panel de administración</text><text x="762" y="57">Vista de cocina</text></g>
-      <g text-anchor="middle" class="svg-ink3" font-size="10" font-family="var(--f-mono)"><text x="120" y="73">iOS y Android</text><text x="334" y="73">navegador del puesto</text><text x="548" y="73">autogestión</text><text x="762" y="73">KDS y respaldo</text></g>
-      <g class="svg-box" stroke-width="1.1">
-        <rect x="20" y="122" width="163" height="44" rx="3"/><rect x="193" y="122" width="163" height="44" rx="3"/>
-        <rect x="366" y="122" width="163" height="44" rx="3"/><rect x="539" y="122" width="163" height="44" rx="3"/>
-        <rect x="20" y="176" width="163" height="44" rx="3"/><rect x="193" y="176" width="163" height="44" rx="3"/><rect x="366" y="176" width="336" height="44" rx="3"/>
+      <g class="svg-ink" font-size="13.5" font-family="var(--f-body)">
+        <text x="26" y="66">Argentina</text><text x="26" y="122">Colombia</text><text x="26" y="178">Chile</text><text x="26" y="234">Uruguay</text>
       </g>
-      <g text-anchor="middle" class="svg-ink" font-size="12"><text x="101" y="142">Identidad y acceso</text><text x="274" y="142">Catálogo y menú</text><text x="447" y="142">Pedidos y checkout</text><text x="620" y="142">Notificaciones</text><text x="101" y="196">Comandas y KDS</text><text x="274" y="196">Valoración</text><text x="534" y="196">Reportes y analítica</text></g>
-      <g text-anchor="middle" class="svg-ink3" font-size="9.5" font-family="var(--f-mono)"><text x="101" y="158">OTP</text><text x="274" y="158">por edificio y franja</text><text x="620" y="158">tres hitos</text><text x="101" y="212">ruteo por estación</text></g>
-      <g class="svg-box" stroke-width="1.1"><rect x="20" y="258" width="220" height="42" rx="3"/><rect x="252" y="258" width="220" height="42" rx="3"/><rect x="484" y="258" width="218" height="42" rx="3"/></g>
-      <g text-anchor="middle" class="svg-ink" font-size="12"><text x="130" y="278">Mercado Pago</text><text x="362" y="278">WhatsApp Business</text><text x="593" y="278">Directorio</text></g>
-      <g text-anchor="middle" class="svg-ink3" font-size="9.5" font-family="var(--f-mono)"><text x="130" y="293">tokenizado · PCI DSS acotado</text><text x="362" y="293">plantillas y control de entrega</text><text x="593" y="293">protocolo a definir · C-01</text></g>
-      <g class="svg-box" stroke-width="1.1" stroke-dasharray="4 3"><rect x="20" y="340" width="163" height="42" rx="3"/><rect x="193" y="340" width="163" height="42" rx="3"/><rect x="366" y="340" width="163" height="42" rx="3"/><rect x="539" y="340" width="163" height="42" rx="3"/></g>
-      <g text-anchor="middle" class="svg-ink2" font-size="12"><text x="101" y="360">Motor</text><text x="274" y="360">Réplica</text><text x="447" y="360">Aislamiento</text><text x="620" y="360">Copias</text></g>
-      <g text-anchor="middle" class="svg-acc" font-size="9.5" font-family="var(--f-mono)"><text x="101" y="375">a completar</text><text x="274" y="375">a completar</text><text x="447" y="375">a completar</text><text x="620" y="375">a completar</text></g>
-      <g class="svg-acc" font-family="var(--f-mono)" font-size="10.5" font-weight="700">
-        <circle cx="33" cy="49" r="9" fill="var(--accent)" opacity=".9"/><text x="33" y="53" text-anchor="middle" fill="var(--ground)">1</text>
-        <circle cx="379" cy="135" r="9" fill="var(--accent)" opacity=".9"/><text x="379" y="139" text-anchor="middle" fill="var(--ground)">2</text>
-        <circle cx="33" cy="271" r="9" fill="var(--accent)" opacity=".9"/><text x="33" y="275" text-anchor="middle" fill="var(--ground)">3</text>
-        <circle cx="33" cy="189" r="9" fill="var(--accent)" opacity=".9"/><text x="33" y="193" text-anchor="middle" fill="var(--ground)">4</text>
-        <circle cx="33" cy="353" r="9" fill="var(--accent)" opacity=".9"/><text x="33" y="357" text-anchor="middle" fill="var(--ground)">5</text>
+      <g class="svg-ink3" font-size="11" font-family="var(--f-mono)">
+        <text x="26" y="82">3.500 colaboradores</text><text x="26" y="138">1.000 colaboradores</text>
+        <text x="26" y="194">600 colaboradores</text><text x="26" y="250">300 colaboradores</text>
       </g>
-      <rect x="722" y="122" width="418" height="260" rx="3" class="svg-box-acc" stroke-width="1.2"/>
-      <text x="742" y="146" class="svg-acc" font-size="10.5" font-family="var(--f-mono)" letter-spacing="1.4">SEGURIDAD TRANSVERSAL</text>
+      <g class="svg-line" stroke-width="1.2" stroke-dasharray="3 3">
+        <path d="M244 67 H300 V212" fill="none"/><path d="M244 123 H300" fill="none"/>
+        <path d="M244 179 H300" fill="none"/><path d="M244 235 H300 V212" fill="none"/>
+      </g>
+      <line x1="300" y1="212" x2="368" y2="212" class="svg-accs" stroke-width="1.8" marker-end="url(#ax)"/>
+
+      <rect x="8" y="290" width="236" height="150" rx="3" class="svg-box" stroke-width="1" stroke-dasharray="4 3"/>
+      <text x="26" y="314" class="svg-acc" font-family="var(--f-mono)" font-size="10" letter-spacing="1.2">CONFIGURACIÓN, NO CÓDIGO</text>
       <g class="svg-ink2" font-size="12" font-family="var(--f-body)">
-        <text x="742" y="174">Cifrado en tránsito y en reposo</text>
-        <text x="742" y="198">Privilegio mínimo, doble factor y registro de auditoría</text>
-        <text x="742" y="222">Credenciales fuera del código, en gestor de secretos</text>
-        <text x="742" y="246">Incidentes notificados dentro de las 24 horas</text>
-        <text x="742" y="270">Ley 25.326 y los regímenes de CO, CL y UY</text>
+        <text x="26" y="340">Cuenta de mercado de la pasarela</text>
+        <text x="26" y="362">Moneda del país</text>
+        <text x="26" y="384">Plantillas de mensajería</text>
+        <text x="26" y="406">Jerarquía de edificios y puntos</text>
       </g>
-      <text x="742" y="316" class="svg-ink" font-size="12.5" font-family="var(--f-display)" font-weight="700">Los datos de Mercado Libre no alimentan</text>
-      <text x="742" y="334" class="svg-ink" font-size="12.5" font-family="var(--f-display)" font-weight="700">modelos propios de Deenex.</text>
-      <text x="742" y="356" class="svg-ink3" font-size="10" font-family="var(--f-mono)">Propiedad exclusiva de MELI</text>
+      <text x="26" y="430" class="svg-ink3" font-size="11" font-family="var(--f-mono)">Alta de una operación: 5 pasos</text>
+
+      <rect x="376" y="30" width="776" height="410" rx="4" class="svg-box-acc" stroke-width="1.4"/>
+      <text x="396" y="52" class="svg-acc" font-family="var(--f-mono)" font-size="10.5" letter-spacing="1.4">LO QUE NO CAMBIA · UNA SOLA ARQUITECTURA PARA LAS CUATRO</text>
+
+      <text x="396" y="78" class="svg-ink3" font-family="var(--f-mono)" font-size="10" letter-spacing="1.2">ACCESO</text>
+      <g class="svg-box" stroke-width="1"><rect x="396" y="86" width="178" height="40" rx="3"/><rect x="586" y="86" width="178" height="40" rx="3"/><rect x="776" y="86" width="178" height="40" rx="3"/><rect x="966" y="86" width="166" height="40" rx="3"/></g>
+      <g class="svg-ink" font-size="12" text-anchor="middle"><text x="485" y="111">App móvil</text><text x="675" y="111">App web</text><text x="865" y="111">Panel de Facilities</text><text x="1049" y="111">Vista de cocina</text></g>
+
+      <text x="396" y="150" class="svg-ink3" font-family="var(--f-mono)" font-size="10" letter-spacing="1.2">SERVICIOS · ESCALA EN EL PICO DE 11 A 14</text>
+      <g class="svg-box" stroke-width="1"><rect x="396" y="158" width="178" height="36" rx="3"/><rect x="586" y="158" width="178" height="36" rx="3"/><rect x="776" y="158" width="178" height="36" rx="3"/><rect x="966" y="158" width="166" height="36" rx="3"/>
+      <rect x="396" y="202" width="178" height="36" rx="3"/><rect x="586" y="202" width="178" height="36" rx="3"/><rect x="776" y="202" width="356" height="36" rx="3"/></g>
+      <g class="svg-ink" font-size="12" text-anchor="middle"><text x="485" y="181">Identidad</text><text x="675" y="181">Catálogo</text><text x="865" y="181">Pedidos y checkout</text><text x="1049" y="181">Notificaciones</text>
+      <text x="485" y="225">Comandas y KDS</text><text x="675" y="225">Valoración</text><text x="954" y="225">Reportes y analítica</text></g>
+
+      <text x="396" y="262" class="svg-ink3" font-family="var(--f-mono)" font-size="10" letter-spacing="1.2">INTEGRACIONES · ENCARGADOS BAJO ACUERDO ESCRITO</text>
+      <g class="svg-box" stroke-width="1"><rect x="396" y="270" width="240" height="40" rx="3"/><rect x="648" y="270" width="240" height="40" rx="3"/><rect x="900" y="270" width="232" height="40" rx="3"/></g>
+      <g class="svg-ink" font-size="12" text-anchor="middle"><text x="516" y="288">Mercado Pago</text><text x="768" y="288">WhatsApp Business</text><text x="1016" y="288">Directorio</text></g>
+      <g class="svg-ink3" font-size="10" font-family="var(--f-mono)" text-anchor="middle"><text x="516" y="302">tarjeta tokenizada, fuera de Deenex</text><text x="768" y="302">plantillas y control de entrega</text><text x="1016" y="302">alta y baja atadas al vínculo</text></g>
+
+      <text x="396" y="334" class="svg-ink3" font-family="var(--f-mono)" font-size="10" letter-spacing="1.2">DATOS</text>
+      <g class="svg-box" stroke-width="1"><rect x="396" y="342" width="178" height="38" rx="3"/><rect x="586" y="342" width="178" height="38" rx="3"/><rect x="776" y="342" width="178" height="38" rx="3"/><rect x="966" y="342" width="166" height="38" rx="3"/></g>
+      <g class="svg-ink" font-size="12" text-anchor="middle"><text x="485" y="360">Base primaria</text><text x="675" y="360">Réplica</text><text x="865" y="360">Aislamiento</text><text x="1049" y="360">Copias</text></g>
+      <g class="svg-ink3" font-size="10" font-family="var(--f-mono)" text-anchor="middle"><text x="485" y="373">persistencia</text><text x="675" y="373">continuidad</text><text x="865" y="373">separado de otros clientes</text><text x="1049" y="373">con restauración probada</text></g>
+
+      <rect x="396" y="394" width="736" height="34" rx="3" class="svg-box" stroke-width="1" stroke-dasharray="4 3"/>
+      <text x="412" y="415" class="svg-ink2" font-size="12" font-family="var(--f-body)">Seguridad transversal · cifrado en tránsito y en reposo · privilegio mínimo con doble factor · incidentes notificados dentro de las 24 horas</text>
     </svg>
-    <figcaption>El recorrido de un pedido, numerado sobre las capas: <strong>1</strong> el colaborador pide desde la app · <strong>2</strong> el checkout arma la orden · <strong>3</strong> Mercado Pago confirma el cobro con captura tokenizada · <strong>4</strong> la comanda sale hacia el KDS de la cocina · <strong>5</strong> todo queda persistido y aislado. Habilitar una operación nueva cambia la configuración de mercado de la integración de pagos y la jerarquía de sites, no la arquitectura.</figcaption>
+    <figcaption>Las cuatro operaciones entran a la misma plataforma. Lo que se configura por país es la cuenta de mercado de la pasarela, la moneda, las plantillas de mensajería y la jerarquía de edificios; las cuatro capas y las tres integraciones son idénticas. Por eso sumar una operación es un alta de cinco pasos y no un proyecto nuevo.</figcaption>
   </figure>
   </div>
   <div class="g3" style="margin-top:24px">
@@ -1172,7 +1174,7 @@ figcaption{
 <section class="slide" id="s21">
   <span class="slide__no">21 / 21</span>
   <p class="eyebrow">El pedido</p>
-  <div class="g2" style="align-items:start">
+  <div class="g2" style="align-items:center; gap:48px">
     <div>
       <h2>Lo único que les pedimos es una hora.</h2>
       <div class="ask">
@@ -1185,33 +1187,81 @@ figcaption{
         <p style="margin:14px 0 0; color:var(--ink-2)">Si esas tres cosas funcionan en pantalla, no hace falta que nos crean nada de lo que dijimos hoy.</p>
       </div>
       <p class="foot-note" style="margin-top:18px">Ponemos a disposición el contacto directo de los responsables de cada cuenta de referencia y el acceso a los entornos productivos, desde ya y no a requerimiento.</p>
-    </div>
-    <div>
-      <p class="card__k">Dónde se responde cada requisito</p>
-      <div class="tw" style="margin-top:8px">
-        <table style="min-width:0">
-          <thead><tr><th>Contenido exigido</th><th>Lámina</th></tr></thead>
-          <tbody>
-            <tr><td>Alcance por site o región</td><td class="num">03 · 10</td></tr>
-            <tr><td>Dimensionamiento del equipo técnico y de soporte</td><td class="num">14 · 15</td></tr>
-            <tr><td>Metodología de implementación</td><td class="num">13</td></tr>
-            <tr><td>Modelo de informe de performance</td><td class="num">06 · 16</td></tr>
-            <tr><td>Estructura de equipo con perfiles y certificaciones</td><td class="num">14 · 15</td></tr>
-            <tr><td>Casos de referencia corporativos comparables</td><td class="num">—</td></tr>
-            <tr><td>Plan de implementación con cronograma</td><td class="num">13 · 19</td></tr>
-            <tr><td>Experiencia en empresas de +500 colaboradores</td><td class="num">—</td></tr>
-          </tbody>
-        </table>
-      </div>
       <hr class="rule">
-      <div class="lockup" style="margin-bottom:18px">
+      <div class="lockup">
         <span class="brandmark" style="width:105px;height:29px" role="img" aria-label="Deenex Technologies"></span>
         <span class="lockup__x">×</span>
         <span class="meliplate" style="padding:7px 10px"><span class="melimark" style="width:102px;height:25px" role="img" aria-label="Mercado Libre"></span></span>
       </div>
-      <p class="foot-note">Deenex Technologies S.A.S. · Propuesta Técnica, Versión 1.0, agosto de 2026 · Confidencial.<br><br>Este material no contiene precios, tarifas ni valores económicos de ningún tipo. La Propuesta Económica se presenta en documento separado.</p>
+    </div>
+    <div>
+      <figure>
+        <svg class="wf" viewBox="0 0 640 500" role="img" aria-label="El ecosistema completo en una imagen: el panel de administración de Facilities al fondo, la pantalla de cocina KDS al frente y la aplicación del colaborador en el teléfono, las tres sobre una misma plataforma.">
+          <g fill="var(--ground)">
+            <rect x="20" y="20" width="430" height="280" rx="6"/>
+            <rect x="56" y="236" width="330" height="190" rx="5"/>
+            <rect x="422" y="96" width="180" height="376" rx="24"/>
+          </g>
+
+          <rect x="16" y="16" width="430" height="280" rx="6" class="wf-frame" stroke-width="1.4"/>
+          <rect x="16" y="16" width="98" height="280" rx="6" fill="var(--raised)"/>
+          <rect x="30" y="34" width="52" height="8" rx="2" class="wf-blk2"/>
+          <rect x="24" y="60" width="82" height="18" rx="3" class="wf-acc" opacity=".18"/>
+          <rect x="30" y="66" width="54" height="6" rx="2" class="wf-acc" opacity=".8"/>
+          <g class="wf-blk"><rect x="30" y="92" width="64" height="6" rx="2"/><rect x="30" y="114" width="48" height="6" rx="2"/><rect x="30" y="136" width="70" height="6" rx="2"/><rect x="30" y="158" width="44" height="6" rx="2"/></g>
+          <line x1="114" y1="52" x2="446" y2="52" class="wf-line" stroke-width="1"/>
+          <rect x="130" y="28" width="96" height="9" rx="2" class="wf-blk2"/>
+          <rect x="352" y="26" width="76" height="16" rx="4" class="wf-acc" opacity=".7"/>
+          <g class="wf-line" stroke-width="1"><line x1="130" y1="96" x2="430" y2="96"/><line x1="130" y1="130" x2="430" y2="130"/><line x1="130" y1="164" x2="430" y2="164"/><line x1="130" y1="198" x2="430" y2="198"/><line x1="130" y1="232" x2="430" y2="232"/></g>
+          <g class="wf-blk2"><rect x="130" y="72" width="86" height="7" rx="2"/><rect x="130" y="108" width="74" height="7" rx="2"/><rect x="130" y="142" width="96" height="7" rx="2"/><rect x="130" y="176" width="68" height="7" rx="2"/><rect x="130" y="210" width="88" height="7" rx="2"/></g>
+          <g class="wf-blk"><rect x="252" y="73" width="52" height="5" rx="2"/><rect x="252" y="109" width="44" height="5" rx="2"/><rect x="252" y="143" width="56" height="5" rx="2"/><rect x="252" y="177" width="40" height="5" rx="2"/><rect x="252" y="211" width="50" height="5" rx="2"/></g>
+          <g class="wf-acc"><rect x="344" y="71" width="34" height="7" rx="2"/><rect x="344" y="107" width="30" height="7" rx="2"/><rect x="344" y="141" width="36" height="7" rx="2"/><rect x="344" y="175" width="28" height="7" rx="2"/><rect x="344" y="209" width="32" height="7" rx="2"/></g>
+
+          <rect x="52" y="232" width="330" height="190" rx="5" class="wf-frame" stroke-width="1.4"/>
+          <rect x="52" y="232" width="330" height="28" rx="5" fill="var(--raised)"/>
+          <rect x="66" y="241" width="72" height="8" rx="2" class="wf-blk2"/>
+          <rect x="330" y="241" width="38" height="8" rx="2" class="wf-acc" opacity=".8"/>
+          <g class="wf-frame" stroke-width="1"><rect x="66" y="274" width="96" height="132" rx="4"/><rect x="174" y="274" width="96" height="132" rx="4"/><rect x="282" y="274" width="96" height="132" rx="4"/></g>
+          <g class="wf-blk2"><rect x="78" y="286" width="40" height="9" rx="2"/><rect x="186" y="286" width="40" height="9" rx="2"/><rect x="294" y="286" width="40" height="9" rx="2"/></g>
+          <g class="wf-acc"><rect x="128" y="287" width="22" height="7" rx="2"/><rect x="236" y="287" width="22" height="7" rx="2"/></g>
+          <rect x="344" y="287" width="22" height="7" rx="2" fill="var(--partial)"/>
+          <g class="wf-line" stroke-width="1"><line x1="78" y1="306" x2="150" y2="306"/><line x1="186" y1="306" x2="258" y2="306"/><line x1="294" y1="306" x2="366" y2="306"/></g>
+          <g class="wf-blk"><rect x="78" y="318" width="62" height="6" rx="2"/><rect x="78" y="332" width="48" height="6" rx="2"/><rect x="78" y="346" width="56" height="6" rx="2"/><rect x="186" y="318" width="54" height="6" rx="2"/><rect x="186" y="332" width="64" height="6" rx="2"/><rect x="294" y="318" width="58" height="6" rx="2"/><rect x="294" y="332" width="44" height="6" rx="2"/><rect x="294" y="346" width="60" height="6" rx="2"/></g>
+          <g class="wf-acc" opacity=".7"><rect x="78" y="380" width="72" height="14" rx="3"/><rect x="186" y="380" width="72" height="14" rx="3"/></g>
+          <rect x="294" y="380" width="72" height="14" rx="3" fill="var(--ok)" opacity=".7"/>
+
+          <rect x="418" y="92" width="180" height="376" rx="24" class="wf-frame" stroke-width="1.6"/>
+          <rect x="478" y="102" width="60" height="5" rx="2.5" class="wf-blk"/>
+          <rect x="438" y="126" width="72" height="8" rx="2" class="wf-blk2"/>
+          <rect x="438" y="140" width="50" height="5" rx="2" class="wf-blk"/>
+          <rect x="438" y="160" width="46" height="15" rx="7.5" class="wf-acc" opacity=".5"/>
+          <rect x="490" y="160" width="38" height="15" rx="7.5" class="wf-blk"/>
+          <rect x="534" y="160" width="42" height="15" rx="7.5" class="wf-blk"/>
+          <g class="wf-frame" stroke-width="1"><rect x="438" y="192" width="140" height="62" rx="4"/><rect x="438" y="262" width="140" height="62" rx="4"/><rect x="438" y="332" width="140" height="62" rx="4"/></g>
+          <g class="wf-blk"><rect x="446" y="200" width="46" height="46" rx="3"/><rect x="446" y="270" width="46" height="46" rx="3"/><rect x="446" y="340" width="46" height="46" rx="3"/></g>
+          <g class="wf-blk2"><rect x="500" y="206" width="62" height="6" rx="2"/><rect x="500" y="276" width="54" height="6" rx="2"/><rect x="500" y="346" width="66" height="6" rx="2"/></g>
+          <g class="wf-blk"><rect x="500" y="218" width="70" height="4" rx="2"/><rect x="500" y="288" width="64" height="4" rx="2"/><rect x="500" y="358" width="72" height="4" rx="2"/></g>
+          <g class="wf-acc"><rect x="500" y="232" width="28" height="7" rx="2"/><rect x="500" y="302" width="24" height="7" rx="2"/><rect x="500" y="372" width="30" height="7" rx="2"/></g>
+          <line x1="430" y1="424" x2="586" y2="424" class="wf-line" stroke-width="1"/>
+          <g class="wf-blk"><rect x="452" y="438" width="12" height="12" rx="3"/><rect x="488" y="438" width="12" height="12" rx="3"/><rect x="524" y="438" width="12" height="12" rx="3"/><rect x="560" y="438" width="12" height="12" rx="3"/></g>
+        </svg>
+        <figcaption>Panel de Facilities, pantalla de cocina y app del colaborador. Una sola plataforma, la misma en los cuatro países.</figcaption>
+      </figure>
     </div>
   </div>
+  <hr class="rule">
+  <div class="tw">
+    <table>
+      <thead><tr><th>Contenido exigido por el punto 2</th><th>Lámina</th><th>Contenido exigido por el punto 2</th><th>Lámina</th></tr></thead>
+      <tbody>
+        <tr><td>Alcance por site o región</td><td class="num">03 · 10</td><td>Estructura de equipo con perfiles y certificaciones</td><td class="num">14 · 15</td></tr>
+        <tr><td>Dimensionamiento del equipo técnico y de soporte</td><td class="num">14 · 15</td><td>Casos de referencia corporativos comparables</td><td class="num">—</td></tr>
+        <tr><td>Metodología de implementación</td><td class="num">13</td><td>Plan de implementación con cronograma</td><td class="num">13 · 19</td></tr>
+        <tr><td>Modelo de informe de performance</td><td class="num">06 · 16</td><td>Experiencia en empresas de +500 colaboradores</td><td class="num">—</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="foot-note" style="margin-top:16px">Deenex Technologies S.A.S. · Propuesta Técnica, Versión 1.0, agosto de 2026 · Confidencial. Este material no contiene precios, tarifas ni valores económicos de ningún tipo. La Propuesta Económica se presenta en documento separado.</p>
 </section>
 
 </main>
