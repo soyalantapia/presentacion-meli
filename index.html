@@ -169,6 +169,11 @@ strong{color:var(--ink); font-weight:600}
   background:var(--accent); flex:0 0 5px;
 }
 .wfbox{background:var(--raised); border:1px solid var(--hair); border-radius:4px; padding:14px}
+.videoframe{
+  position:relative; width:100%; aspect-ratio:16/9; border-radius:4px;
+  overflow:hidden; background:var(--surface); border:1px solid var(--hair);
+}
+.videoframe iframe{position:absolute; inset:0; width:100%; height:100%; border:0}
 
 /* ── Slots (lo que aún no se puede dibujar) ──────────────────────── */
 .slot{
@@ -367,29 +372,17 @@ figcaption{
 <!-- 02 ─────────────────────────────────────────────────────────── -->
 <section class="slide" id="s2">
   <span class="slide__no">02 / 17</span>
-  <p class="eyebrow">El servicio, en un minuto</p>
+  <p class="eyebrow">Quiénes somos · un minuto</p>
   <h2>Mercado Libre define el comedor como un factor de calidad de vida laboral y productividad operativa.</h2>
-  <p class="lead">Hoy esa operación se estima. Lo que sigue es cómo se mide.</p>
-  <div class="wfbox" style="margin-top:26px; padding:0; overflow:hidden">
-    <svg class="wf" viewBox="0 0 1160 480" role="img" aria-label="Marco de reproducción del video de presentación: el circuito completo de punta a punta, del pedido al retiro, en 45 a 60 segundos.">
-      <rect x="0" y="0" width="1160" height="480" fill="var(--surface)"/>
-      <circle cx="580" cy="222" r="46" fill="none" class="wf-line" stroke-width="1.5"/>
-      <polygon points="568,204 610,222 568,240" class="wf-acc"/>
-      <rect x="470" y="296" width="220" height="8" rx="4" class="wf-blk2"/>
-      <rect x="518" y="318" width="124" height="6" rx="3" class="wf-blk"/>
-      <line x1="60" y1="410" x2="1100" y2="410" class="wf-line" stroke-width="1"/>
-      <rect x="60" y="407" width="196" height="6" rx="3" class="wf-acc"/>
-      <g class="wf-blk" font-family="var(--f-mono)" font-size="13">
-        <rect x="60" y="432" width="34" height="6" rx="3"/><rect x="1066" y="432" width="34" height="6" rx="3"/>
-      </g>
-      <g class="wf-blk3" fill="var(--ink-3)" font-family="var(--f-mono)" font-size="12" letter-spacing="1.2">
-        <text x="60" y="70">01 · INGRESO</text><text x="248" y="70">02 · MENÚ</text><text x="418" y="70">03 · PAGO</text>
-        <text x="590" y="70">04 · QR</text><text x="740" y="70">05 · COCINA</text><text x="920" y="70">06 · RETIRO</text>
-      </g>
-      <line x1="60" y1="86" x2="1100" y2="86" class="wf-line" stroke-width="1" stroke-dasharray="3 4"/>
-    </svg>
+  <p class="lead">Hoy esa operación se estima. Deenex opera una plataforma de gestión gastronómica en producción, y a partir de la lámina 08 se recorre el circuito completo del comedor, tramo por tramo, con el nivel de servicio comprometido en cada uno.</p>
+  <div class="videoframe" style="margin-top:26px">
+    <iframe src="https://player.vimeo.com/video/1216392655?title=0&amp;byline=0&amp;portrait=0&amp;dnt=1"
+            title="¿Qué es Deenex? — video institucional, 1:09"
+            allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen loading="lazy"></iframe>
   </div>
-  <p class="wfcap">Video de 45 a 60 segundos · pendiente de producción. Recomendado reproducirlo desde tu equipo en la sala, a calidad completa.</p>
+  <p class="wfcap">¿Qué es Deenex? · 1:09</p>
 </section>
 
 <!-- 03 ─────────────────────────────────────────────────────────── -->
