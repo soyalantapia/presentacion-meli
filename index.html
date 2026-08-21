@@ -395,12 +395,12 @@ figcaption{
 .melimark{display:block; background:var(--logo-meli) no-repeat center/contain}
 
 /* ── Banda de clientes ───────────────────────────────────────────── */
-.clients{margin-top:24px; border-top:1px solid var(--hair); padding-top:15px}
+.clients{margin-top:20px; border-top:1px solid var(--hair); padding-top:14px}
 .clients__k{font-family:var(--f-mono); font-size:9.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-3); margin:0 0 12px}
-.clients__row{display:flex; flex-wrap:wrap; gap:10px; align-items:center}
+.clients__row{display:grid; grid-template-columns:repeat(5,1fr); gap:8px}
 .clientslot{
   display:inline-flex; align-items:center; justify-content:center;
-  height:38px; min-width:102px; padding:0 12px;
+  height:34px; min-width:0; padding:0 8px;
   border:1px dashed var(--hair-2); border-radius:3px;
   font-family:var(--f-mono); font-size:8px; letter-spacing:.12em;
   text-transform:uppercase; color:var(--ink-3); text-align:center; line-height:1.3;
@@ -693,19 +693,19 @@ figcaption{
     <a href="#s8"><i class="n">08</i><span>KDS inteligente</span></a>
     <div class="rail__group">C&#243;mo funciona</div>
     <a href="#s9"><i class="n">09</i><span>Arquitectura y datos</span></a>
-    <a href="#s10"><i class="n">10</i><span>Los ocho módulos</span></a>
-    <a href="#s11"><i class="n">11</i><span>El circuito y sus SLA</span></a>
-    <a href="#s12"><i class="n">12</i><span>Continuidad</span></a>
+    <a href="#s10"><i class="n">10</i><span>El circuito</span></a>
+    <a href="#s11"><i class="n">11</i><span>Continuidad</span></a>
     <div class="rail__group">C&#243;mo se opera</div>
-    <a href="#s13"><i class="n">13</i><span>Implementación</span></a>
-    <a href="#s14"><i class="n">14</i><span>Equipo y niveles de servicio</span></a>
-    <a href="#s15"><i class="n">15</i><span>Soporte técnico</span></a>
-    <a href="#s16"><i class="n">16</i><span>Los catorce indicadores</span></a>
-    <a href="#s17"><i class="n">17</i><span>Reversibilidad</span></a>
+    <a href="#s12"><i class="n">12</i><span>Implementación</span></a>
+    <a href="#s13"><i class="n">13</i><span>Equipo y niveles de servicio</span></a>
+    <a href="#s14"><i class="n">14</i><span>Soporte técnico</span></a>
+    <a href="#s15"><i class="n">15</i><span>Los catorce indicadores</span></a>
+    <a href="#s16"><i class="n">16</i><span>Reversibilidad</span></a>
     <div class="rail__group">Siguientes pasos</div>
-    <a href="#s18"><i class="n">18</i><span>Inversión</span></a>
-    <a href="#s19"><i class="n">19</i><span>Tiempos</span></a>
-    <a href="#s20"><i class="n">20</i><span>Onboarding</span></a>
+    <a href="#s17"><i class="n">17</i><span>Inversión</span></a>
+    <a href="#s18"><i class="n">18</i><span>Tiempos</span></a>
+    <a href="#s19"><i class="n">19</i><span>Onboarding</span></a>
+    <a href="#s20"><i class="n">20</i><span>Los ocho módulos</span></a>
     <a href="#s21"><i class="n">21</i><span>Casos de referencia</span></a>
     <div class="rail__group">Cierre</div>
     <a href="#s22"><i class="n">22</i><span>Seamos pioneros</span></a>
@@ -745,6 +745,10 @@ figcaption{
           <span class="clientslot">Logo 04</span>
           <span class="clientslot">Logo 05</span>
           <span class="clientslot">Logo 06</span>
+          <span class="clientslot">Logo 07</span>
+          <span class="clientslot">Logo 08</span>
+          <span class="clientslot">Logo 09</span>
+          <span class="clientslot">Logo 10</span>
         </div>
       </div>
     </div>
@@ -1093,31 +1097,6 @@ figcaption{
 <!-- 10 ─────────────────────────────────────────────────────────── -->
 <section class="slide" id="s10">
   <span class="slide__no">10 / 23</span>
-  <p class="eyebrow">Cómo funciona</p>
-  <h2>Los ocho módulos, con su estado real.</h2>
-  <p>Todo el desarrollo señalado está incluido en la implementación y <strong>no se factura como desarrollo a medida</strong>.</p>
-  <div class="tw" style="margin-top:16px">
-    <table>
-      <thead><tr><th>Módulo</th><th>Qué falta, si falta</th><th>Estado</th></tr></thead>
-      <tbody>
-        <tr><td class="k">Autenticación y onboarding</td><td>La sincronización con el directorio de colaboradores</td><td><span class="tag tag--partial">Parcial</span></td></tr>
-        <tr><td class="k">Catálogo y menú</td><td>Franja horaria de retiro y etiquetas de preferencia alimentaria</td><td><span class="tag tag--partial">Parcial</span></td></tr>
-        <tr><td class="k">Ficha del plato</td><td>Nutricional, ingredientes, restricciónes y reseñas</td><td><span class="tag tag--dev">Desarrollo</span></td></tr>
-        <tr><td class="k">Checkout y pagos</td><td>El pago nativo de Mercado Pago sin redirección</td><td><span class="tag tag--partial">Parcial</span></td></tr>
-        <tr><td class="k">Notificaciones</td><td>El QR, el aviso y la validación en el retiro están en producción</td><td><span class="tag tag--ok">Disponible</span></td></tr>
-        <tr><td class="k">Sistema KDS</td><td>Vista de cocina, más provisión e instalación del hardware</td><td><span class="tag tag--dev">Desarrollo</span></td></tr>
-        <tr><td class="k">Valoración y feedback</td><td>Estrellas y comentario al reingresar, con panel de resultados</td><td><span class="tag tag--dev">Desarrollo</span></td></tr>
-        <tr><td class="k">Panel y reportes</td><td>Nada pendiente</td><td><span class="tag tag--ok">Disponible</span></td></tr>
-      </tbody>
-    </table>
-  </div>
-  <p class="panhint">Deslizá para ver la tabla completa</p>
-  <p class="foot-note" style="margin-top:14px">Lo que ya está construido es el tramo donde se concentra el riesgo: compra, comprobante con QR y validación en el punto de retiro, probado bajo concentración horaria severa.</p>
-</section>
-
-<!-- 11 ─────────────────────────────────────────────────────────── -->
-<section class="slide" id="s11">
-  <span class="slide__no">11 / 23</span>
   <p class="eyebrow">Cómo funciona · para IT</p>
   <h2>Ninguna falla de un componente detiene el servicio de comedor.</h2>
   <div class="figwrap">
@@ -1179,8 +1158,8 @@ figcaption{
 </section>
 
 <!-- 12 ─────────────────────────────────────────────────────────── -->
-<section class="slide" id="s12">
-  <span class="slide__no">12 / 23</span>
+<section class="slide" id="s11">
+  <span class="slide__no">11 / 23</span>
   <p class="eyebrow">Cómo funciona</p>
   <h2>La cocina sigue produciendo aunque falle el dispositivo, la red o la pasarela.</h2>
   <p class="lead">Cada punto de falla tiene una vía alternativa <strong>ya definida y provista por Deenex</strong>, no un plan pendiente de escribir después de la firma.</p>
@@ -1196,8 +1175,8 @@ figcaption{
 </section>
 
 <!-- 13 ─────────────────────────────────────────────────────────── -->
-<section class="slide" id="s13">
-  <span class="slide__no">13 / 23</span>
+<section class="slide" id="s12">
+  <span class="slide__no">12 / 23</span>
   <p class="eyebrow">Cómo se opera</p>
   <h2>Cada etapa cierra contra criterios verificables, no contra el calendario.</h2>
   <div class="figwrap">
@@ -1238,8 +1217,8 @@ figcaption{
 </section>
 
 <!-- 14 ─────────────────────────────────────────────────────────── -->
-<section class="slide" id="s14">
-  <span class="slide__no">14 / 23</span>
+<section class="slide" id="s13">
+  <span class="slide__no">13 / 23</span>
   <p class="eyebrow">Cómo se opera</p>
   <h2>Un interlocutor con capacidad de decidir, no un comité.</h2>
   <div class="g2" style="margin-top:20px">
@@ -1268,8 +1247,8 @@ figcaption{
 </section>
 
 <!-- 15 ─────────────────────────────────────────────────────────── -->
-<section class="slide" id="s15">
-  <span class="slide__no">15 / 23</span>
+<section class="slide" id="s14">
+  <span class="slide__no">14 / 23</span>
   <p class="eyebrow">Cómo se opera</p>
   <h2>Soporte técnico</h2>
   <p class="lead">Facilities abre un caso con un botón dentro del panel. Del otro lado no hay una casilla genérica: hay un equipo con niveles, plazos comprometidos y acceso directo a quien escribe el código.</p>
@@ -1336,8 +1315,8 @@ figcaption{
 </section>
 
 <!-- 16 ─────────────────────────────────────────────────────────── -->
-<section class="slide" id="s16">
-  <span class="slide__no">16 / 23</span>
+<section class="slide" id="s15">
+  <span class="slide__no">15 / 23</span>
   <p class="eyebrow">Cómo se opera</p>
   <h2>Medimos y reportamos los catorce. Lo que proponemos acordar es sobre cuáles aplica el régimen de consecuencias.</h2>
   <div class="tw" style="margin-top:14px">
@@ -1366,8 +1345,8 @@ figcaption{
 </section>
 
 <!-- 17 ─────────────────────────────────────────────────────────── -->
-<section class="slide" id="s17">
-  <span class="slide__no">17 / 23</span>
+<section class="slide" id="s16">
+  <span class="slide__no">16 / 23</span>
   <p class="eyebrow">Cómo se opera</p>
   <h2>Pueden terminar este contrato cualquier día sin que el comedor se interrumpa.</h2>
   <div class="g2" style="margin-top:20px">
@@ -1395,8 +1374,8 @@ figcaption{
 </section>
 
 <!-- Siguientes pasos - Inversion -->
-<section class="slide" id="s18">
-  <span class="slide__no">18 / 23</span>
+<section class="slide" id="s17">
+  <span class="slide__no">17 / 23</span>
   <p class="eyebrow">Siguientes pasos</p>
   <h2>Qu&eacute; incluye el servicio y qu&eacute; se factura aparte.</h2>
   <p class="lead">La estructura de la inversi&oacute;n, para que Compras y Finanzas sepan qu&eacute; est&aacute;n comprando antes de abrir el sobre econ&oacute;mico.</p>
@@ -1428,8 +1407,8 @@ figcaption{
 </section>
 
 <!-- Siguientes pasos - Tiempos -->
-<section class="slide" id="s19">
-  <span class="slide__no">19 / 23</span>
+<section class="slide" id="s18">
+  <span class="slide__no">18 / 23</span>
   <p class="eyebrow">Siguientes pasos</p>
   <h2>De la firma al r&eacute;gimen en 24 semanas, y qu&eacute; necesitamos de ustedes en cada tramo.</h2>
   <p class="lead">Los plazos que comprometemos dependen de definiciones que solo Mercado Libre puede tomar. Las declaramos con su fecha y su consecuencia, para que puedan planificarse en vez de descubrirse.</p>
@@ -1456,8 +1435,8 @@ figcaption{
 </section>
 
 <!-- Siguientes pasos - Onboarding -->
-<section class="slide" id="s20">
-  <span class="slide__no">20 / 23</span>
+<section class="slide" id="s19">
+  <span class="slide__no">19 / 23</span>
   <p class="eyebrow">Siguientes pasos</p>
   <h2>La adopci&oacute;n se define en cuatro semanas por site, no en una campa&ntilde;a regional.</h2>
   <p class="lead">El objetivo depende del cambio de h&aacute;bito de miles de personas, no de la tecnolog&iacute;a. Por eso se trata como un plan con actividades, responsables y medici&oacute;n propia, concentrado en la ventana donde el h&aacute;bito se forma y repetido en cada apertura.</p>
@@ -1489,6 +1468,31 @@ figcaption{
 </section>
 
 <!-- 18 ─────────────────────────────────────────────────────────── -->
+<section class="slide" id="s20">
+  <span class="slide__no">20 / 23</span>
+  <p class="eyebrow">Cómo funciona</p>
+  <h2>Los ocho módulos, con su estado real.</h2>
+  <p>Todo el desarrollo señalado está incluido en la implementación y <strong>no se factura como desarrollo a medida</strong>.</p>
+  <div class="tw" style="margin-top:16px">
+    <table>
+      <thead><tr><th>Módulo</th><th>Qué falta, si falta</th><th>Estado</th></tr></thead>
+      <tbody>
+        <tr><td class="k">Autenticación y onboarding</td><td>La sincronización con el directorio de colaboradores</td><td><span class="tag tag--partial">Parcial</span></td></tr>
+        <tr><td class="k">Catálogo y menú</td><td>Franja horaria de retiro y etiquetas de preferencia alimentaria</td><td><span class="tag tag--partial">Parcial</span></td></tr>
+        <tr><td class="k">Ficha del plato</td><td>Nutricional, ingredientes, restricciónes y reseñas</td><td><span class="tag tag--dev">Desarrollo</span></td></tr>
+        <tr><td class="k">Checkout y pagos</td><td>El pago nativo de Mercado Pago sin redirección</td><td><span class="tag tag--partial">Parcial</span></td></tr>
+        <tr><td class="k">Notificaciones</td><td>El QR, el aviso y la validación en el retiro están en producción</td><td><span class="tag tag--ok">Disponible</span></td></tr>
+        <tr><td class="k">Sistema KDS</td><td>Vista de cocina, más provisión e instalación del hardware</td><td><span class="tag tag--dev">Desarrollo</span></td></tr>
+        <tr><td class="k">Valoración y feedback</td><td>Estrellas y comentario al reingresar, con panel de resultados</td><td><span class="tag tag--dev">Desarrollo</span></td></tr>
+        <tr><td class="k">Panel y reportes</td><td>Nada pendiente</td><td><span class="tag tag--ok">Disponible</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="panhint">Deslizá para ver la tabla completa</p>
+  <p class="foot-note" style="margin-top:14px">Lo que ya está construido es el tramo donde se concentra el riesgo: compra, comprobante con QR y validación en el punto de retiro, probado bajo concentración horaria severa.</p>
+</section>
+
+<!-- 11 ─────────────────────────────────────────────────────────── -->
 <section class="slide" id="s21">
   <span class="slide__no">21 / 23</span>
   <p class="eyebrow">Casos de referencia y experiencia</p>
