@@ -5,35 +5,19 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Chivo:wght@400;700;900&family=Chivo+Mono:wght@400;500&display=swap">
 
 <style>
-/* ── Tokens · dark-first ─────────────────────────────────────────── */
+/* ── Tokens · un solo mundo visual, oscuro y deliberado ──────────── */
 :root{
-  --ground:#12151A; --surface:#171B21; --raised:#1D222A;
-  --hair:#262D36; --hair-2:#36414F;
-  --ink:#F4F2EF; --ink-2:#A6AFB9; --ink-3:#808A96;
-  --accent:#FF6A13; --accent-ink:#FF8438; --accent-wash:rgba(255,106,19,.10);
+  --ground:#0C0E11; --surface:#14171C; --raised:#1B1F25;
+  --hair:#23282F; --hair-2:#333B45;
+  --ink:#F5F3F0; --ink-2:#A8B1BB; --ink-3:#7E8894;
+  --accent:#FF6A13; --accent-ink:#FF8438; --accent-wash:rgba(255,106,19,.09);
   --ok:#6FCF97; --partial:#F0B429; --pending:#7E8FA6;
+  --wf:#2C333C; --wf-2:#3D4650;
   --shadow:0 1px 0 rgba(255,255,255,.03) inset;
   --f-display:"Chivo","Archivo",system-ui,sans-serif;
   --f-body:"Archivo",system-ui,-apple-system,sans-serif;
   --f-mono:"Chivo Mono",ui-monospace,"SFMono-Regular",monospace;
-}
-@media (prefers-color-scheme:light){
-  :root:not([data-theme="dark"]){
-    --ground:#FBFAF8; --surface:#FFFFFF; --raised:#F5F3EF;
-    --hair:#E4E0D9; --hair-2:#C8C2B7;
-    --ink:#14181D; --ink-2:#5A636D; --ink-3:#666E77;
-    --accent:#D9530A; --accent-ink:#B8440A; --accent-wash:rgba(217,83,10,.07);
-    --ok:#2E8B5C; --partial:#A9761A; --pending:#5E6E88;
-    --shadow:0 1px 0 rgba(0,0,0,.02) inset;
-  }
-}
-:root[data-theme="light"]{
-  --ground:#FBFAF8; --surface:#FFFFFF; --raised:#F5F3EF;
-  --hair:#E4E0D9; --hair-2:#C8C2B7;
-  --ink:#14181D; --ink-2:#5A636D; --ink-3:#666E77;
-  --accent:#D9530A; --accent-ink:#B8440A; --accent-wash:rgba(217,83,10,.07);
-  --ok:#2E8B5C; --partial:#A9761A; --pending:#5E6E88;
-  --shadow:0 1px 0 rgba(0,0,0,.02) inset;
+  color-scheme:dark;
 }
 
 *,*::before,*::after{box-sizing:border-box}
@@ -168,7 +152,25 @@ strong{color:var(--ink); font-weight:600}
 }
 .stat__l{font-family:var(--f-mono); font-size:9.5px; line-height:1.45; color:var(--ink-3); margin-top:9px; letter-spacing:.02em}
 
-/* ── Slots (pendientes) ──────────────────────────────────────────── */
+/* ── Wireframes ──────────────────────────────────────────────────── */
+.wf{display:block; width:100%; height:auto}
+.wf-frame{fill:var(--surface); stroke:var(--hair-2)}
+.wf-blk{fill:var(--wf)}
+.wf-blk2{fill:var(--wf-2)}
+.wf-acc{fill:var(--accent)}
+.wf-line{stroke:var(--hair-2)}
+.wfcap{
+  font-family:var(--f-mono); font-size:9.5px; letter-spacing:.11em;
+  text-transform:uppercase; color:var(--ink-3); margin-top:11px;
+  display:flex; align-items:center; gap:8px; line-height:1.4;
+}
+.wfcap::before{
+  content:""; width:5px; height:5px; border-radius:50%;
+  background:var(--accent); flex:0 0 5px;
+}
+.wfbox{background:var(--raised); border:1px solid var(--hair); border-radius:4px; padding:14px}
+
+/* ── Slots (lo que aún no se puede dibujar) ──────────────────────── */
 .slot{
   border:1px dashed var(--hair-2); border-radius:3px; background:var(--surface);
   display:flex; flex-direction:column; align-items:center; justify-content:center;
@@ -180,9 +182,7 @@ strong{color:var(--ink); font-weight:600}
   border:1px solid var(--accent-ink); border-radius:2px; padding:2px 7px;
 }
 .slot__t{font-family:var(--f-body); font-size:13px; color:var(--ink-2); max-width:34ch; line-height:1.45}
-.slot--phone{aspect-ratio:9/17; min-height:0; padding:20px 14px}
 .slot--wide{min-height:260px}
-.slot--video{min-height:0; aspect-ratio:16/9}
 
 /* ── Grids & cards ───────────────────────────────────────────────── */
 .g2{display:grid; grid-template-columns:1fr 1fr; gap:34px; align-items:start}
@@ -341,9 +341,25 @@ figcaption{
         <div class="stat"><div class="stat__v">4</div><div class="stat__l">países sobre una misma integración de pagos y una sola arquitectura</div></div>
       </div>
     </div>
-    <div class="slot slot--phone">
-      <span class="slot__tag">Pendiente</span>
-      <p class="slot__t">Mockup de la app en un teléfono. Pantalla de menú por edificio y franja.</p>
+    <div style="display:flex; flex-direction:column; justify-content:center">
+      <svg class="wf" viewBox="0 0 260 520" role="img" aria-label="Esquema de la pantalla de catálogo en el teléfono: encabezado con el edificio del colaborador, filtros por franja y categoría, y tarjetas de plato con imagen, nombre y precio.">
+        <rect x="10" y="10" width="240" height="500" rx="26" class="wf-frame" stroke-width="1.5"/>
+        <rect x="106" y="20" width="48" height="5" rx="2.5" class="wf-blk"/>
+        <rect x="34" y="46" width="92" height="9" rx="2" class="wf-blk2"/>
+        <rect x="34" y="61" width="62" height="6" rx="2" class="wf-blk"/>
+        <rect x="34" y="84" width="56" height="18" rx="9" class="wf-acc" opacity=".5"/>
+        <rect x="96" y="84" width="46" height="18" rx="9" class="wf-blk"/>
+        <rect x="148" y="84" width="52" height="18" rx="9" class="wf-blk"/>
+        <rect x="34" y="118" width="72" height="7" rx="2" class="wf-blk2"/>
+        <g class="wf-frame" stroke-width="1"><rect x="34" y="134" width="192" height="72" rx="4"/><rect x="34" y="216" width="192" height="72" rx="4"/><rect x="34" y="298" width="192" height="72" rx="4"/><rect x="34" y="380" width="192" height="72" rx="4"/></g>
+        <g class="wf-blk"><rect x="42" y="142" width="56" height="56" rx="3"/><rect x="42" y="224" width="56" height="56" rx="3"/><rect x="42" y="306" width="56" height="56" rx="3"/><rect x="42" y="388" width="56" height="56" rx="3"/></g>
+        <g class="wf-blk2"><rect x="108" y="150" width="84" height="7" rx="2"/><rect x="108" y="232" width="76" height="7" rx="2"/><rect x="108" y="314" width="88" height="7" rx="2"/><rect x="108" y="396" width="70" height="7" rx="2"/></g>
+        <g class="wf-blk"><rect x="108" y="163" width="100" height="5" rx="2"/><rect x="108" y="174" width="62" height="5" rx="2"/><rect x="108" y="245" width="96" height="5" rx="2"/><rect x="108" y="256" width="70" height="5" rx="2"/><rect x="108" y="327" width="102" height="5" rx="2"/><rect x="108" y="338" width="58" height="5" rx="2"/><rect x="108" y="409" width="94" height="5" rx="2"/><rect x="108" y="420" width="66" height="5" rx="2"/></g>
+        <g class="wf-acc"><rect x="108" y="188" width="34" height="8" rx="2"/><rect x="108" y="270" width="30" height="8" rx="2"/><rect x="108" y="352" width="36" height="8" rx="2"/><rect x="108" y="434" width="32" height="8" rx="2"/></g>
+        <line x1="22" y1="464" x2="238" y2="464" class="wf-line" stroke-width="1"/>
+        <g class="wf-blk"><rect x="52" y="476" width="14" height="14" rx="3"/><rect x="102" y="476" width="14" height="14" rx="3"/><rect x="152" y="476" width="14" height="14" rx="3"/><rect x="202" y="476" width="14" height="14" rx="3"/></g>
+      </svg>
+      <p class="wfcap">Esquema · pendiente la captura real</p>
     </div>
   </div>
 </section>
@@ -354,10 +370,26 @@ figcaption{
   <p class="eyebrow">El servicio, en un minuto</p>
   <h2>Mercado Libre define el comedor como un factor de calidad de vida laboral y productividad operativa.</h2>
   <p class="lead">Hoy esa operación se estima. Lo que sigue es cómo se mide.</p>
-  <div class="slot slot--video" style="margin-top:22px">
-    <span class="slot__tag">Pendiente</span>
-    <p class="slot__t">Video de 45 a 60 segundos: el circuito completo de punta a punta, del pedido al retiro.<br><strong>Recomendado:</strong> reproducirlo desde tu equipo en la sala, a calidad completa, y dejar acá solo la versión comprimida.</p>
+  <div class="wfbox" style="margin-top:26px; padding:0; overflow:hidden">
+    <svg class="wf" viewBox="0 0 1160 480" role="img" aria-label="Marco de reproducción del video de presentación: el circuito completo de punta a punta, del pedido al retiro, en 45 a 60 segundos.">
+      <rect x="0" y="0" width="1160" height="480" fill="var(--surface)"/>
+      <circle cx="580" cy="222" r="46" fill="none" class="wf-line" stroke-width="1.5"/>
+      <polygon points="568,204 610,222 568,240" class="wf-acc"/>
+      <rect x="470" y="296" width="220" height="8" rx="4" class="wf-blk2"/>
+      <rect x="518" y="318" width="124" height="6" rx="3" class="wf-blk"/>
+      <line x1="60" y1="410" x2="1100" y2="410" class="wf-line" stroke-width="1"/>
+      <rect x="60" y="407" width="196" height="6" rx="3" class="wf-acc"/>
+      <g class="wf-blk" font-family="var(--f-mono)" font-size="13">
+        <rect x="60" y="432" width="34" height="6" rx="3"/><rect x="1066" y="432" width="34" height="6" rx="3"/>
+      </g>
+      <g class="wf-blk3" fill="var(--ink-3)" font-family="var(--f-mono)" font-size="12" letter-spacing="1.2">
+        <text x="60" y="70">01 · INGRESO</text><text x="248" y="70">02 · MENÚ</text><text x="418" y="70">03 · PAGO</text>
+        <text x="590" y="70">04 · QR</text><text x="740" y="70">05 · COCINA</text><text x="920" y="70">06 · RETIRO</text>
+      </g>
+      <line x1="60" y1="86" x2="1100" y2="86" class="wf-line" stroke-width="1" stroke-dasharray="3 4"/>
+    </svg>
   </div>
+  <p class="wfcap">Video de 45 a 60 segundos · pendiente de producción. Recomendado reproducirlo desde tu equipo en la sala, a calidad completa.</p>
 </section>
 
 <!-- 03 ─────────────────────────────────────────────────────────── -->
@@ -423,10 +455,74 @@ figcaption{
   <p class="eyebrow">Qué van a tener · §6.1 a §6.5</p>
   <h2>El colaborador pide desde su puesto de trabajo y retira mostrando un código.</h2>
   <div class="g3" style="margin-top:26px">
-    <div><div class="slot slot--phone"><span class="slot__tag">Pendiente</span><p class="slot__t">Menú por edificio y franja, con etiquetas Sin&nbsp;T.A.C.C., sin lactosa y vegano</p></div><h3 style="margin-top:14px">Catálogo</h3><p style="font-size:13.5px">Últimos pedidos con repetir, sugeridos del día y toda la carta. Configurable por edificio y franja de retiro.</p></div>
-    <div><div class="slot slot--phone"><span class="slot__tag">Pendiente</span><p class="slot__t">Ficha del plato con nutricional, ingredientes y calificación</p></div><h3 style="margin-top:14px">Ficha del plato</h3><p style="font-size:13.5px">Calorías, grasas, carbohidratos y proteínas, ingredientes, restricciones y reseñas de colaboradores.</p></div>
-    <div><div class="slot slot--phone"><span class="slot__tag">Pendiente</span><p class="slot__t">Checkout de un paso y comprobante con código QR</p></div><h3 style="margin-top:14px">Pago y comprobante</h3><p style="font-size:13.5px">Punto de retiro, franja y método de pago en una sola pantalla. Mercado Pago sin redirección, con captura tokenizada.</p></div>
+    <div>
+      <svg class="wf" viewBox="0 0 220 420" role="img" aria-label="Esquema del catálogo: filtros por franja y categoría, y tarjetas de plato con precio.">
+        <rect x="8" y="8" width="204" height="404" rx="22" class="wf-frame" stroke-width="1.5"/>
+        <rect x="86" y="17" width="48" height="4" rx="2" class="wf-blk"/>
+        <rect x="26" y="40" width="84" height="8" rx="2" class="wf-blk2"/><rect x="26" y="54" width="54" height="5" rx="2" class="wf-blk"/>
+        <rect x="26" y="74" width="50" height="16" rx="8" class="wf-acc" opacity=".5"/><rect x="82" y="74" width="42" height="16" rx="8" class="wf-blk"/><rect x="130" y="74" width="46" height="16" rx="8" class="wf-blk"/>
+        <g class="wf-frame" stroke-width="1"><rect x="26" y="104" width="168" height="66" rx="4"/><rect x="26" y="178" width="168" height="66" rx="4"/><rect x="26" y="252" width="168" height="66" rx="4"/><rect x="26" y="326" width="168" height="66" rx="4"/></g>
+        <g class="wf-blk"><rect x="34" y="112" width="50" height="50" rx="3"/><rect x="34" y="186" width="50" height="50" rx="3"/><rect x="34" y="260" width="50" height="50" rx="3"/><rect x="34" y="334" width="50" height="50" rx="3"/></g>
+        <g class="wf-blk2"><rect x="94" y="120" width="72" height="6" rx="2"/><rect x="94" y="194" width="64" height="6" rx="2"/><rect x="94" y="268" width="78" height="6" rx="2"/><rect x="94" y="342" width="60" height="6" rx="2"/></g>
+        <g class="wf-blk"><rect x="94" y="132" width="86" height="4" rx="2"/><rect x="94" y="141" width="52" height="4" rx="2"/><rect x="94" y="206" width="80" height="4" rx="2"/><rect x="94" y="215" width="58" height="4" rx="2"/><rect x="94" y="280" width="88" height="4" rx="2"/><rect x="94" y="289" width="48" height="4" rx="2"/><rect x="94" y="354" width="76" height="4" rx="2"/><rect x="94" y="363" width="56" height="4" rx="2"/></g>
+        <g class="wf-acc"><rect x="94" y="152" width="30" height="7" rx="2"/><rect x="94" y="226" width="26" height="7" rx="2"/><rect x="94" y="300" width="32" height="7" rx="2"/><rect x="94" y="374" width="28" height="7" rx="2"/></g>
+      </svg>
+      <h3 style="margin-top:16px">Catálogo</h3><p style="font-size:13.5px">Últimos pedidos con repetir, sugeridos del día y toda la carta. Configurable por edificio y franja de retiro, con etiquetas Sin T.A.C.C., sin lactosa y vegano.</p>
+    </div>
+    <div>
+      <svg class="wf" viewBox="0 0 220 420" role="img" aria-label="Esquema de la ficha del plato: foto, calificación, etiquetas de restricción, información nutricional en cuatro valores, ingredientes y botón de pedido.">
+        <rect x="8" y="8" width="204" height="404" rx="22" class="wf-frame" stroke-width="1.5"/>
+        <rect x="18" y="20" width="184" height="100" rx="4" class="wf-blk"/>
+        <circle cx="36" cy="38" r="9" fill="var(--surface)" opacity=".8"/>
+        <rect x="18" y="134" width="106" height="9" rx="2" class="wf-blk2"/>
+        <g class="wf-acc"><rect x="18" y="152" width="9" height="9" rx="1.5"/><rect x="31" y="152" width="9" height="9" rx="1.5"/><rect x="44" y="152" width="9" height="9" rx="1.5"/><rect x="57" y="152" width="9" height="9" rx="1.5"/></g>
+        <rect x="70" y="152" width="9" height="9" rx="1.5" class="wf-blk"/><rect x="86" y="153" width="34" height="6" rx="2" class="wf-blk"/>
+        <g class="wf-blk"><rect x="18" y="174" width="48" height="15" rx="7.5"/><rect x="72" y="174" width="42" height="15" rx="7.5"/><rect x="120" y="174" width="52" height="15" rx="7.5"/></g>
+        <g class="wf-frame" stroke-width="1"><rect x="18" y="202" width="42" height="44" rx="3"/><rect x="65" y="202" width="42" height="44" rx="3"/><rect x="112" y="202" width="42" height="44" rx="3"/><rect x="159" y="202" width="43" height="44" rx="3"/></g>
+        <g class="wf-blk2"><rect x="26" y="214" width="26" height="9" rx="2"/><rect x="73" y="214" width="26" height="9" rx="2"/><rect x="120" y="214" width="26" height="9" rx="2"/><rect x="167" y="214" width="26" height="9" rx="2"/></g>
+        <g class="wf-blk"><rect x="26" y="230" width="20" height="4" rx="2"/><rect x="73" y="230" width="20" height="4" rx="2"/><rect x="120" y="230" width="20" height="4" rx="2"/><rect x="167" y="230" width="20" height="4" rx="2"/></g>
+        <rect x="18" y="262" width="62" height="6" rx="2" class="wf-blk2"/>
+        <g class="wf-blk"><rect x="18" y="278" width="176" height="4" rx="2"/><rect x="18" y="289" width="164" height="4" rx="2"/><rect x="18" y="300" width="140" height="4" rx="2"/><rect x="18" y="311" width="170" height="4" rx="2"/><rect x="18" y="322" width="98" height="4" rx="2"/></g>
+        <line x1="18" y1="342" x2="202" y2="342" class="wf-line" stroke-width="1"/>
+        <g class="wf-blk"><rect x="18" y="354" width="120" height="5" rx="2"/><rect x="18" y="366" width="90" height="4" rx="2"/></g>
+        <rect x="18" y="384" width="184" height="16" rx="8" class="wf-acc" opacity=".75"/>
+      </svg>
+      <h3 style="margin-top:16px">Ficha del plato</h3><p style="font-size:13.5px">Calorías, grasas, carbohidratos y proteínas, ingredientes, etiquetas de restricción y calificación promedio con reseñas.</p>
+    </div>
+    <div>
+      <svg class="wf" viewBox="0 0 220 420" role="img" aria-label="Esquema del comprobante: código QR, número de pedido, punto de retiro y franja horaria, con el estado del pedido.">
+        <rect x="8" y="8" width="204" height="404" rx="22" class="wf-frame" stroke-width="1.5"/>
+        <rect x="86" y="17" width="48" height="4" rx="2" class="wf-blk"/>
+        <rect x="60" y="40" width="100" height="8" rx="2" class="wf-blk2"/>
+        <rect x="48" y="66" width="124" height="124" rx="3" fill="var(--ink)"/>
+        <g fill="var(--surface)">
+          <rect x="54" y="72" width="26" height="26"/><rect x="140" y="72" width="26" height="26"/><rect x="54" y="158" width="26" height="26"/>
+        </g>
+        <g fill="var(--ink)">
+          <rect x="60" y="78" width="14" height="14"/><rect x="146" y="78" width="14" height="14"/><rect x="60" y="164" width="14" height="14"/>
+        </g>
+        <g fill="var(--surface)">
+          <rect x="64" y="82" width="6" height="6"/><rect x="150" y="82" width="6" height="6"/><rect x="64" y="168" width="6" height="6"/>
+          <rect x="90" y="72" width="7" height="7"/><rect x="104" y="79" width="7" height="7"/><rect x="118" y="72" width="7" height="7"/>
+          <rect x="90" y="93" width="7" height="7"/><rect x="111" y="93" width="7" height="7"/><rect x="125" y="86" width="7" height="7"/>
+          <rect x="54" y="107" width="7" height="7"/><rect x="68" y="114" width="7" height="7"/><rect x="82" y="107" width="7" height="7"/>
+          <rect x="96" y="114" width="7" height="7"/><rect x="110" y="107" width="7" height="7"/><rect x="131" y="114" width="7" height="7"/>
+          <rect x="145" y="107" width="7" height="7"/><rect x="159" y="121" width="7" height="7"/><rect x="145" y="135" width="7" height="7"/>
+          <rect x="90" y="128" width="7" height="7"/><rect x="104" y="142" width="7" height="7"/><rect x="118" y="128" width="7" height="7"/>
+          <rect x="90" y="156" width="7" height="7"/><rect x="111" y="163" width="7" height="7"/><rect x="132" y="156" width="7" height="7"/>
+          <rect x="97" y="177" width="7" height="7"/><rect x="125" y="170" width="7" height="7"/><rect x="153" y="170" width="7" height="7"/>
+        </g>
+        <rect x="70" y="206" width="80" height="9" rx="2" class="wf-blk2"/>
+        <line x1="18" y1="234" x2="202" y2="234" class="wf-line" stroke-width="1"/>
+        <g class="wf-blk"><rect x="18" y="248" width="52" height="5" rx="2"/><rect x="18" y="262" width="96" height="6" rx="2"/></g>
+        <g class="wf-blk"><rect x="18" y="286" width="46" height="5" rx="2"/><rect x="18" y="300" width="78" height="6" rx="2"/></g>
+        <g class="wf-blk"><rect x="18" y="324" width="58" height="5" rx="2"/><rect x="18" y="338" width="88" height="6" rx="2"/></g>
+        <rect x="18" y="368" width="110" height="18" rx="9" class="wf-acc" opacity=".5"/>
+      </svg>
+      <h3 style="margin-top:16px">Pago y comprobante</h3><p style="font-size:13.5px">Punto de retiro, franja y método de pago en una sola pantalla. Mercado Pago sin redirección, con captura tokenizada, y el QR que se valida en el mostrador.</p>
+    </div>
   </div>
+  <p class="wfcap" style="margin-top:20px">Esquemas de pantalla · pendientes las capturas reales del producto en operación</p>
 </section>
 
 <!-- 05 ─────────────────────────────────────────────────────────── -->
@@ -435,7 +531,34 @@ figcaption{
   <p class="eyebrow">Qué van a tener · §6.8</p>
   <h2>Facilities publica menús, precios y franjas sin abrirnos un ticket.</h2>
   <div class="g2" style="margin-top:22px">
-    <div class="slot slot--wide"><span class="slot__tag">Pendiente</span><p class="slot__t">Panel de administración: gestión de menús, precios, usuarios y pedidos en tiempo real</p></div>
+    <div>
+      <div class="wfbox" style="padding:0; overflow:hidden">
+        <svg class="wf" viewBox="0 0 640 400" role="img" aria-label="Esquema del panel de administración: navegación lateral, barra de herramientas con búsqueda y acción de publicar, y tabla de menús con estado por fila.">
+          <rect x="0" y="0" width="640" height="400" fill="var(--surface)"/>
+          <rect x="0" y="0" width="132" height="400" fill="var(--raised)"/>
+          <rect x="16" y="18" width="56" height="10" rx="2" class="wf-blk2"/>
+          <rect x="8" y="50" width="116" height="24" rx="4" class="wf-acc" opacity=".16"/>
+          <rect x="16" y="59" width="72" height="7" rx="2" class="wf-acc" opacity=".8"/>
+          <g class="wf-blk"><rect x="16" y="87" width="88" height="7" rx="2"/><rect x="16" y="115" width="66" height="7" rx="2"/><rect x="16" y="143" width="94" height="7" rx="2"/><rect x="16" y="171" width="58" height="7" rx="2"/><rect x="16" y="199" width="80" height="7" rx="2"/></g>
+          <line x1="0" y1="52" x2="640" y2="52" class="wf-line" stroke-width="1"/>
+          <rect x="152" y="20" width="128" height="11" rx="2" class="wf-blk2"/>
+          <rect x="376" y="16" width="140" height="20" rx="10" class="wf-frame" stroke-width="1"/>
+          <rect x="388" y="23" width="56" height="6" rx="2" class="wf-blk"/>
+          <rect x="532" y="16" width="88" height="20" rx="4" class="wf-acc" opacity=".75"/>
+          <g class="wf-blk"><rect x="152" y="70" width="60" height="16" rx="8"/><rect x="220" y="70" width="76" height="16" rx="8"/><rect x="304" y="70" width="54" height="16" rx="8"/></g>
+          <line x1="152" y1="104" x2="620" y2="104" class="wf-line" stroke-width="1"/>
+          <g class="wf-blk"><rect x="152" y="93" width="52" height="5" rx="2"/><rect x="300" y="93" width="40" height="5" rx="2"/><rect x="400" y="93" width="44" height="5" rx="2"/><rect x="490" y="93" width="36" height="5" rx="2"/><rect x="570" y="93" width="34" height="5" rx="2"/></g>
+          <g class="wf-line" stroke-width="1"><line x1="152" y1="140" x2="620" y2="140"/><line x1="152" y1="176" x2="620" y2="176"/><line x1="152" y1="212" x2="620" y2="212"/><line x1="152" y1="248" x2="620" y2="248"/><line x1="152" y1="284" x2="620" y2="284"/><line x1="152" y1="320" x2="620" y2="320"/><line x1="152" y1="356" x2="620" y2="356"/></g>
+          <g class="wf-blk2"><rect x="152" y="118" width="104" height="6" rx="2"/><rect x="152" y="154" width="88" height="6" rx="2"/><rect x="152" y="190" width="116" height="6" rx="2"/><rect x="152" y="226" width="94" height="6" rx="2"/><rect x="152" y="262" width="108" height="6" rx="2"/><rect x="152" y="298" width="82" height="6" rx="2"/><rect x="152" y="334" width="100" height="6" rx="2"/></g>
+          <g class="wf-blk"><rect x="300" y="118" width="52" height="5" rx="2"/><rect x="300" y="154" width="44" height="5" rx="2"/><rect x="300" y="190" width="56" height="5" rx="2"/><rect x="300" y="226" width="48" height="5" rx="2"/><rect x="300" y="262" width="52" height="5" rx="2"/><rect x="300" y="298" width="40" height="5" rx="2"/><rect x="300" y="334" width="50" height="5" rx="2"/>
+          <rect x="400" y="118" width="40" height="5" rx="2"/><rect x="400" y="154" width="40" height="5" rx="2"/><rect x="400" y="190" width="40" height="5" rx="2"/><rect x="400" y="226" width="40" height="5" rx="2"/><rect x="400" y="262" width="40" height="5" rx="2"/><rect x="400" y="298" width="40" height="5" rx="2"/><rect x="400" y="334" width="40" height="5" rx="2"/></g>
+          <g class="wf-acc"><rect x="490" y="117" width="34" height="7" rx="2"/><rect x="490" y="153" width="30" height="7" rx="2"/><rect x="490" y="189" width="36" height="7" rx="2"/><rect x="490" y="225" width="32" height="7" rx="2"/><rect x="490" y="261" width="34" height="7" rx="2"/><rect x="490" y="297" width="28" height="7" rx="2"/><rect x="490" y="333" width="32" height="7" rx="2"/></g>
+          <g fill="var(--ok)"><rect x="570" y="116" width="9" height="9" rx="4.5"/><rect x="570" y="152" width="9" height="9" rx="4.5"/><rect x="570" y="224" width="9" height="9" rx="4.5"/><rect x="570" y="296" width="9" height="9" rx="4.5"/><rect x="570" y="332" width="9" height="9" rx="4.5"/></g>
+          <g fill="var(--partial)"><rect x="570" y="188" width="9" height="9" rx="4.5"/><rect x="570" y="260" width="9" height="9" rx="4.5"/></g>
+        </svg>
+      </div>
+      <p class="wfcap">Esquema · pendiente la captura real</p>
+    </div>
     <div>
       <p class="lead">Es la condición para sostener el indicador de dos horas del punto 9.3 — y es cómo opera hoy un cliente que administra más de ochenta puntos de servicio de forma autónoma.</p>
       <div class="card" style="margin-top:18px">
@@ -453,7 +576,32 @@ figcaption{
   <p class="eyebrow">Qué van a tener · §6.8 y §9</p>
   <h2>Un corte de información nuevo es configuración, no desarrollo.</h2>
   <p class="lead">El análisis de datos de consumo es una línea de servicio propia de Deenex, no un módulo de este contrato. La reportería de este alcance es esa práctica aplicada al comedor.</p>
-  <div class="slot slot--wide" style="margin-top:20px"><span class="slot__tag">Pendiente</span><p class="slot__t">Tablero real, con los cortes que le importan al comité: consumo por site, por franja horaria y por plato — no capturas genéricas de estadísticas</p></div>
+  <div class="wfbox" style="margin-top:22px; padding:0; overflow:hidden">
+    <svg class="wf" viewBox="0 0 1160 330" role="img" aria-label="Esquema del tablero: cuatro indicadores destacados, distribución de pedidos por franja horaria dentro de la ventana de 11 a 14, y ranking de platos por consumo.">
+      <rect x="0" y="0" width="1160" height="330" fill="var(--surface)"/>
+      <g class="wf-line" stroke-width="1"><line x1="286" y1="20" x2="286" y2="96"/><line x1="572" y1="20" x2="572" y2="96"/><line x1="858" y1="20" x2="858" y2="96"/><line x1="0" y1="118" x2="1160" y2="118"/><line x1="748" y1="118" x2="748" y2="330"/></g>
+      <g class="wf-blk"><rect x="28" y="30" width="86" height="6" rx="2"/><rect x="314" y="30" width="72" height="6" rx="2"/><rect x="600" y="30" width="94" height="6" rx="2"/><rect x="886" y="30" width="80" height="6" rx="2"/></g>
+      <g class="wf-blk2"><rect x="28" y="48" width="104" height="20" rx="3"/><rect x="314" y="48" width="86" height="20" rx="3"/><rect x="600" y="48" width="118" height="20" rx="3"/><rect x="886" y="48" width="94" height="20" rx="3"/></g>
+      <g class="wf-acc" opacity=".8"><rect x="28" y="78" width="40" height="6" rx="2"/><rect x="314" y="78" width="34" height="6" rx="2"/><rect x="600" y="78" width="44" height="6" rx="2"/><rect x="886" y="78" width="30" height="6" rx="2"/></g>
+      <rect x="28" y="140" width="118" height="7" rx="2" class="wf-blk2"/>
+      <g class="wf-acc" opacity=".85">
+        <rect x="28" y="272" width="34" height="26" rx="3"/><rect x="72" y="258" width="34" height="40" rx="3"/><rect x="116" y="236" width="34" height="62" rx="3"/>
+        <rect x="160" y="206" width="34" height="92" rx="3"/><rect x="204" y="180" width="34" height="118" rx="3"/><rect x="248" y="172" width="34" height="126" rx="3"/>
+        <rect x="292" y="186" width="34" height="112" rx="3"/><rect x="336" y="214" width="34" height="84" rx="3"/><rect x="380" y="244" width="34" height="54" rx="3"/>
+      </g>
+      <g class="wf-blk"><rect x="424" y="266" width="34" height="32" rx="3"/><rect x="468" y="278" width="34" height="20" rx="3"/><rect x="512" y="284" width="34" height="14" rx="3"/><rect x="556" y="288" width="34" height="10" rx="3"/><rect x="600" y="290" width="34" height="8" rx="3"/><rect x="644" y="292" width="34" height="6" rx="3"/></g>
+      <line x1="28" y1="300" x2="700" y2="300" class="wf-line" stroke-width="1"/>
+      <g class="wf-blk"><rect x="28" y="312" width="26" height="5" rx="2"/><rect x="238" y="312" width="26" height="5" rx="2"/><rect x="448" y="312" width="26" height="5" rx="2"/><rect x="658" y="312" width="26" height="5" rx="2"/></g>
+      <rect x="784" y="140" width="96" height="7" rx="2" class="wf-blk2"/>
+      <g><rect x="784" y="168" width="290" height="8" rx="4" class="wf-blk"/><rect x="784" y="168" width="252" height="8" rx="4" class="wf-acc" opacity=".85"/>
+         <rect x="784" y="198" width="290" height="8" rx="4" class="wf-blk"/><rect x="784" y="198" width="204" height="8" rx="4" class="wf-acc" opacity=".7"/>
+         <rect x="784" y="228" width="290" height="8" rx="4" class="wf-blk"/><rect x="784" y="228" width="166" height="8" rx="4" class="wf-acc" opacity=".55"/>
+         <rect x="784" y="258" width="290" height="8" rx="4" class="wf-blk"/><rect x="784" y="258" width="118" height="8" rx="4" class="wf-acc" opacity=".4"/>
+         <rect x="784" y="288" width="290" height="8" rx="4" class="wf-blk"/><rect x="784" y="288" width="84" height="8" rx="4" class="wf-acc" opacity=".3"/></g>
+      <g class="wf-blk"><rect x="1092" y="168" width="30" height="7" rx="2"/><rect x="1092" y="198" width="30" height="7" rx="2"/><rect x="1092" y="228" width="30" height="7" rx="2"/><rect x="1092" y="258" width="30" height="7" rx="2"/><rect x="1092" y="288" width="30" height="7" rx="2"/></g>
+    </svg>
+  </div>
+  <p class="wfcap">Esquema del tablero · los cortes que le importan al comité: consumo por site, por franja horaria y por plato</p>
   <div class="g4" style="margin-top:20px">
     <div class="card"><p class="card__k">Por site</p><p>Consumo, adopción y repetición, abiertos por país y por edificio.</p></div>
     <div class="card"><p class="card__k">Por franja</p><p>Distribución de la demanda dentro de la ventana de 11 a 14.</p></div>
