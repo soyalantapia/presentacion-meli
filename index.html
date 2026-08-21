@@ -417,7 +417,7 @@ figcaption{
   display:flex; flex-direction:column; gap:5px;
 }
 .accion span{font-family:var(--f-mono); font-size:10.5px; line-height:1.45; color:var(--ink-2)}
-.accion span::before{content:"92 a0"; color:var(--accent-ink)}
+.accion span::before{content:"→ "; color:var(--accent-ink)}
 .accion-k{
   font-size:9.5px !important; letter-spacing:.14em; text-transform:uppercase;
   color:var(--ink-3) !important; margin-bottom:2px;
@@ -603,6 +603,16 @@ figcaption{
   .eco .pais--mas{justify-content:center}
 }
 @media (max-width:560px){ .eco .paises{grid-template-columns:1fr} }
+
+/* Leyenda de ampliacion: centrada, de punta a punta y sin vineta */
+.sumar{
+  display:block; width:100%; max-width:none; text-align:center;
+  margin:18px 0 0; padding-top:16px; border-top:1px solid var(--hair);
+  font-family:var(--f-mono); font-size:11px; line-height:1.6;
+  letter-spacing:.05em; color:var(--ink-2);
+}
+.sumar::before{content:none; display:none}
+@media (max-width:560px){ .sumar{font-size:10px; letter-spacing:.03em} }
 
 @media (min-width:1700px){
   .deck{max-width:1924px}
@@ -1164,7 +1174,7 @@ figcaption{
   <div class="eco">
     <div class="eco__col">
       <div class="paises"><div class="pais pais--act"><span class="pais__n">Argentina</span><span class="pais__e">En alcance</span></div><div class="pais pais--act"><span class="pais__n">Colombia</span><span class="pais__e">En alcance</span></div><div class="pais pais--act"><span class="pais__n">Chile</span><span class="pais__e">En alcance</span></div><div class="pais pais--act"><span class="pais__n">Uruguay</span><span class="pais__e">En alcance</span></div><div class="pais pais--act"><span class="pais__n">México</span><span class="pais__e">En alcance</span></div><div class="pais pais--act"><span class="pais__n">Brasil</span><span class="pais__e">En alcance</span></div><div class="pais pais--mas" role="img" aria-label="Agregar mas paises"><span class="pais__mas" aria-hidden="true">+</span><span class="pais__e">Agregar más países</span></div></div>
-      <p class="wfcap">Podés sumar los países que quieras: la plataforma ya soporta el alcance. Habilitar una operación nueva es un alta de cinco pasos, sin desarrollo.</p>
+      <p class="sumar">Podés sumar los países que quieras: la plataforma ya soporta el alcance. Habilitar una operación nueva es un alta de cinco pasos, sin desarrollo.</p>
     </div>
     <div class="figwrap">
   <figure>
