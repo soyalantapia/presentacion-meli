@@ -271,6 +271,14 @@ figcaption{
 .ask ol{margin:12px 0 0; padding-left:20px; color:var(--ink-2); font-size:14px}
 .ask li{margin-bottom:6px}
 
+.fill{
+  color:var(--ink-3); border-bottom:1px dotted var(--hair-2);
+  padding-bottom:1px; font-family:var(--f-mono); font-size:.92em;
+}
+.contacto{margin-top:18px}
+.contacto p{margin:0; font-size:13.5px; line-height:1.6}
+.contacto a{color:var(--accent-ink); text-decoration:none; border-bottom:1px solid rgba(255,132,56,.35)}
+.contacto a:hover{border-bottom-color:var(--accent-ink)}
 .foot-note{font-family:var(--f-mono); font-size:10.5px; color:var(--ink-3); line-height:1.6; letter-spacing:.02em}
 
 /* -- Logotipos ------------------------------------------------- */
@@ -533,17 +541,9 @@ figcaption{
   <h2>El colaborador pide desde su puesto de trabajo y retira mostrando un código.</h2>
   <div class="g3" style="margin-top:26px">
     <div>
-      <svg class="wf" viewBox="0 0 220 420" role="img" aria-label="Esquema del catálogo: filtros por franja y categoría, y tarjetas de plato con precio.">
-        <rect x="8" y="8" width="204" height="404" rx="22" class="wf-frame" stroke-width="1.5"/>
-        <rect x="86" y="17" width="48" height="4" rx="2" class="wf-blk"/>
-        <rect x="26" y="40" width="84" height="8" rx="2" class="wf-blk2"/><rect x="26" y="54" width="54" height="5" rx="2" class="wf-blk"/>
-        <rect x="26" y="74" width="50" height="16" rx="8" class="wf-acc" opacity=".5"/><rect x="82" y="74" width="42" height="16" rx="8" class="wf-blk"/><rect x="130" y="74" width="46" height="16" rx="8" class="wf-blk"/>
-        <g class="wf-frame" stroke-width="1"><rect x="26" y="104" width="168" height="66" rx="4"/><rect x="26" y="178" width="168" height="66" rx="4"/><rect x="26" y="252" width="168" height="66" rx="4"/><rect x="26" y="326" width="168" height="66" rx="4"/></g>
-        <g class="wf-blk"><rect x="34" y="112" width="50" height="50" rx="3"/><rect x="34" y="186" width="50" height="50" rx="3"/><rect x="34" y="260" width="50" height="50" rx="3"/><rect x="34" y="334" width="50" height="50" rx="3"/></g>
-        <g class="wf-blk2"><rect x="94" y="120" width="72" height="6" rx="2"/><rect x="94" y="194" width="64" height="6" rx="2"/><rect x="94" y="268" width="78" height="6" rx="2"/><rect x="94" y="342" width="60" height="6" rx="2"/></g>
-        <g class="wf-blk"><rect x="94" y="132" width="86" height="4" rx="2"/><rect x="94" y="141" width="52" height="4" rx="2"/><rect x="94" y="206" width="80" height="4" rx="2"/><rect x="94" y="215" width="58" height="4" rx="2"/><rect x="94" y="280" width="88" height="4" rx="2"/><rect x="94" y="289" width="48" height="4" rx="2"/><rect x="94" y="354" width="76" height="4" rx="2"/><rect x="94" y="363" width="56" height="4" rx="2"/></g>
-        <g class="wf-acc"><rect x="94" y="152" width="30" height="7" rx="2"/><rect x="94" y="226" width="26" height="7" rx="2"/><rect x="94" y="300" width="32" height="7" rx="2"/><rect x="94" y="374" width="28" height="7" rx="2"/></g>
-      </svg>
+      <figure class="shot">
+        <img src="img/app-catalogo.webp" alt="Aplicacion Deenex en produccion: catalogo por categorias, con foto, descripcion y precio en cada plato.">
+      </figure>
       <h3 style="margin-top:16px">Catálogo</h3><p style="font-size:13.5px">Últimos pedidos con repetir, sugeridos del día y toda la carta. Configurable por edificio y franja de retiro, con etiquetas Sin T.A.C.C., sin lactosa y vegano.</p>
     </div>
     <div>
@@ -1280,7 +1280,7 @@ figcaption{
 
 <section class="slide" id="s23">
   <span class="slide__no">23 / 24</span>
-  <p class="eyebrow eyebrow--q">Cierre</p>
+  <p class="eyebrow eyebrow--q">Lo que declaramos</p>
   <h2>Cuatro cosas que no nos convienen y que iban a aparecer igual en la evaluación.</h2>
   <p class="lead">Preferimos que aparezcan acá, con su tratamiento al lado.</p>
   <div style="margin-top:22px">
@@ -1296,12 +1296,13 @@ figcaption{
 
 <section class="slide" id="s24">
   <span class="slide__no">24 / 24</span>
-  <p class="eyebrow">El pedido</p>
+  <p class="eyebrow">Cierre</p>
   <div class="g2" style="align-items:center; gap:48px">
     <div>
-      <h2>Lo único que les pedimos es una hora.</h2>
+      <h2>Este alcance no pide construir una plataforma: pide operar una que ya funciona.</h2>
+      <p class="lead">Deenex la tiene en producción, y señala las brechas donde existen. Un contrato de dos años en cuatro países se sostiene sobre lo que se acordó con precisión, no sobre lo que se prometió sin condiciones.</p>
       <div class="ask">
-        <p style="color:var(--ink); margin:0"><strong>Una hora con su equipo probando, no mirando:</strong></p>
+        <p style="color:var(--ink); margin:0"><strong>Lo único que les pedimos es una hora con su equipo probando, no mirando:</strong></p>
         <ol>
           <li>Cargar un plato y cronometrar cuánto tarda en publicarse.</li>
           <li>Sacar un plato a las diez de la mañana, con pedidos ya pagos.</li>
@@ -1309,12 +1310,17 @@ figcaption{
         </ol>
         <p style="margin:14px 0 0; color:var(--ink-2)">Si esas tres cosas funcionan en pantalla, no hace falta que nos crean nada de lo que dijimos hoy.</p>
       </div>
-      <p class="foot-note" style="margin-top:18px">Ponemos a disposición el contacto directo de los responsables de cada cuenta de referencia y el acceso a los entornos productivos, desde ya y no a requerimiento.</p>
+      <p class="foot-note" style="margin-top:18px">Las dos referencias se abren hoy desde el navegador, sin pedirnos nada: <a href="https://app.lafabrica.com.ar" target="_blank" rel="noopener">app.lafabrica.com.ar</a> y <a href="https://app.monti.deenex.tech" target="_blank" rel="noopener">app.monti.deenex.tech</a>. El contacto directo de los responsables de cada cuenta está disponible desde ya y no a requerimiento.</p>
       <hr class="rule">
       <div class="lockup">
         <span class="brandmark" style="width:105px;height:29px" role="img" aria-label="Deenex Technologies"></span>
         <span class="lockup__x">×</span>
         <span class="meliplate" style="padding:7px 10px"><span class="melimark" style="width:102px;height:25px" role="img" aria-label="Mercado Libre"></span></span>
+      </div>
+      <div class="contacto">
+        <p class="card__k" style="margin-bottom:6px">Contacto</p>
+        <p><strong>Alan Tapia</strong> · <strong>Joaquín Lombardi</strong> — Dirección<br>
+        <span class="fill">correo</span> · <span class="fill">teléfono</span> · <a href="https://deenex.tech" target="_blank" rel="noopener">deenex.tech</a></p>
       </div>
     </div>
     <div>
