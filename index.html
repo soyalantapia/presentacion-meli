@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Deenex × Mercado Libre</title>
-<meta name="robots" content="noindex, nofollow, noarchive">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Chivo:wght@400;700;900&family=Chivo+Mono:wght@400;500&display=swap">
@@ -476,6 +477,20 @@ figcaption{
 .sp8{offset-path:path("M710 330 L710 264"); animation-delay:1.15s}
 .pl8{animation:platform 3.4s ease-in-out infinite}
 @keyframes platform{0%,100%{opacity:.06}50%{opacity:.16}}
+
+/* -- Equipo ------------------------------------------------------- */
+.team{display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-top:24px}
+.member{background:var(--surface); border:1px solid var(--hair); border-radius:4px; padding:20px 18px 18px; display:flex; flex-direction:column}
+.avatar{
+  width:74px; height:74px; border-radius:50%; margin-bottom:15px; overflow:hidden;
+  background:var(--raised); border:1px dashed var(--hair-2);
+  display:flex; align-items:center; justify-content:center; flex:0 0 auto;
+}
+.avatar img{width:100%; height:100%; object-fit:cover; display:block}
+.avatar svg{width:32px; height:32px; color:var(--ink-3)}
+.member__rol{font-family:var(--f-display); font-weight:700; font-size:15px; line-height:1.2; margin:0 0 5px; color:var(--ink)}
+.member__nom{font-family:var(--f-mono); font-size:10px; letter-spacing:.09em; text-transform:uppercase; color:var(--accent-ink); margin:0 0 11px}
+.member p{font-size:12.8px; line-height:1.5; margin:0; color:var(--ink-2)}
 
 /* ── Responsive ──────────────────────────────────────────────────── */
 /* ── Responsive ──────────────────────────────────────────────────── */
@@ -1379,29 +1394,39 @@ figcaption{
   <span class="slide__no">13 / 23</span>
   <p class="eyebrow">Cómo se opera</p>
   <h2>Un interlocutor con capacidad de decidir, no un comité.</h2>
-  <div class="g2" style="margin-top:20px">
-    <div class="tw">
-      <table style="min-width:0">
-        <thead><tr><th>Rol</th><th>Dedicación</th></tr></thead>
-        <tbody>
-          <tr><td class="k">Account Manager dedicada</td><td>Exclusiva · 9:00 a 18:00 ART días hábiles. Español, portugués e inglés</td></tr>
-          <tr><td class="k">Líder Técnico de cuenta</td><td>Exclusiva · horario comercial más escalamiento. Decide sobre arquitectura e integraciones</td></tr>
-          <tr><td class="k">Soporte técnico</td><td>3 posiciones, incorporadas antes de la puesta en producción piloto, con guardia rotativa 24×7 para severidad 1</td></tr>
-          <tr><td class="k">Dirección</td><td>Joaquín Lombardi · Alan Tapia. Revisión semestral con Compras e IT</td></tr>
-        </tbody>
-      </table>
-    </div>
-  <p class="panhint">Deslizá para ver la tabla completa</p>
-    <div>
-      <div class="g2" style="gap:14px">
+  <div class="team">
+      <div class="member">
+        <div class="avatar" role="img" aria-label="Fotografía pendiente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="8.5" r="4"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0"/></svg></div>
+        <h3 class="member__rol">Account Manager dedicada</h3>
+        <p class="member__nom">Nombre a completar</p>
+        <p>Punto único de contacto comercial, operativo y de performance. Conduce la reunión mensual y la revisión semestral, y responde por la entrega en plazo del reporte. Español, portugués e inglés.</p>
+      </div>
+      <div class="member">
+        <div class="avatar" role="img" aria-label="Fotografía pendiente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="8.5" r="4"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0"/></svg></div>
+        <h3 class="member__rol">Líder Técnico de cuenta</h3>
+        <p class="member__nom">Nombre a completar</p>
+        <p>Interlocutor principal con IT, con capacidad de decidir sobre arquitectura e integraciones. Responde por el cumplimiento de los niveles de servicio y conduce los incidentes de severidad 1.</p>
+      </div>
+      <div class="member">
+        <div class="avatar" role="img" aria-label="Fotografía pendiente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="8.5" r="4"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0"/></svg></div>
+        <h3 class="member__rol">Soporte técnico</h3>
+        <p class="member__nom">Tres posiciones</p>
+        <p>Atienden incidentes de plataforma y de hardware de cocina cubriendo los husos de los cuatro países, con guardia rotativa 24×7 para severidad 1. Se incorporan antes del piloto.</p>
+      </div>
+      <div class="member">
+        <div class="avatar" role="img" aria-label="Fotografía pendiente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="8.5" r="4"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0"/></svg></div>
+        <h3 class="member__rol">Dirección</h3>
+        <p class="member__nom">Joaquín Lombardi · Alan Tapia</p>
+        <p>Participan de la revisión semestral de performance junto a Compras e IT, y deciden sobre los planes de acción de mejora continua.</p>
+      </div>
+  </div>
+  <div class="g4" style="margin-top:22px">
         <div class="card"><p class="card__k">Severidad 1</p><div class="stat__v" style="font-size:26px">30 / 15 min</div><p style="margin-top:8px">Respuesta inicial estándar y en ventana, con cobertura 24×7 los 7 días</p></div>
         <div class="card"><p class="card__k">Reposición KDS</p><div class="stat__v" style="font-size:26px">5 / 2 días</div><p style="margin-top:8px">El plazo urgente se sostiene con stock de repuestos en cada país</p></div>
         <div class="card"><p class="card__k">Disponibilidad</p><div class="stat__v" style="font-size:26px">≥ 99,5%</div><p style="margin-top:8px">Mensual, con métodología de medición acordada con IT en la incubación</p></div>
         <div class="card"><p class="card__k">Reporte mensual</p><div class="stat__v" style="font-size:26px">3° y 5° día</div><p style="margin-top:8px">Borrador e informe final, con el tablero disponible en tiempo real</p></div>
-      </div>
-      <p class="foot-note" style="margin-top:14px">Deenex acepta sin excepciones la tabla de niveles de servicio, la clasificación de no conformidades y el régimen de penalidades. El contrato exige avisar el cambio de Account Manager con quince días: <strong>lo extendemos voluntariamente al Líder Técnico.</strong></p>
-    </div>
-  </div>
+  <p class="foot-note" style="margin-top:14px">Deenex acepta sin excepciones la tabla de niveles de servicio, la clasificación de no conformidades y el régimen de penalidades. El contrato exige avisar el cambio de Account Manager con quince días: <strong>lo extendemos voluntariamente al Líder Técnico.</strong></p>
+
 </section>
 
 <!-- 15 ─────────────────────────────────────────────────────────── -->
