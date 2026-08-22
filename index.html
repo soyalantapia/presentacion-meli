@@ -297,6 +297,10 @@ figcaption{
 .dec:last-child{border-bottom:1px solid var(--hair)}
 .dec__n{font-family:var(--f-mono); font-size:11px; color:var(--accent-ink); flex:0 0 22px; padding-top:3px}
 .dec__b{flex:1}
+/* La quinta declaracion es la puerta de salida: se marca aparte */
+.dec--salida{border-top:1px solid var(--accent); background:var(--accent-wash);
+  padding:16px 15px; border-radius:0 0 3px 3px}
+.dec--salida .dec__n{color:var(--accent-ink)}
 .dec__b h3{margin-bottom:4px}
 .dec__b p{font-size:13.5px; margin:0}
 
@@ -1009,8 +1013,9 @@ figcaption{
     <a href="#s17"><i class="n">17</i><span>Tiempos</span></a>
     <a href="#s18"><i class="n">18</i><span>Adopción</span></a>
     <div class="rail__group">Cierre</div>
-    <a href="#s19"><i class="n">19</i><span>Mejora continua</span></a>
-    <a href="#s20"><i class="n">20</i><span>Cierre</span></a>
+    <a href="#s19"><i class="n">19</i><span>Lo que declaramos</span></a>
+    <a href="#s20"><i class="n">20</i><span>Mejora continua</span></a>
+    <a href="#s21"><i class="n">21</i><span>Cierre</span></a>
   </div>
 </nav>
 
@@ -1022,7 +1027,7 @@ figcaption{
 
 <!-- 01 ─────────────────────────────────────────────────────── -->
 <section class="slide" id="s1">
-  <span class="slide__no">01 / 20</span>
+  <span class="slide__no">01 / 21</span>
   <div class="cover">
     <div class="cover__l">
       <div class="lockup">
@@ -1060,7 +1065,7 @@ figcaption{
 </section>
 <!-- 02 ─────────────────────────────────────────────────────── -->
 <section class="slide" id="s2">
-  <span class="slide__no">02 / 20</span>
+  <span class="slide__no">02 / 21</span>
   <p class="eyebrow">Entrada</p>
   <h2>Mercado Libre define el comedor como un factor de calidad de vida laboral y productividad operativa.</h2>
   <p class="lead">Hoy esa operación se estima. Puede medirse. Un comedor que sabe cuántas personas van a comer antes de que lleguen, que produce contra un número y no contra una intuición, y que le devuelve a cada colaborador los minutos que hoy pierde esperando. <strong>No arrancamos de cero: la plataforma ya está en producción.</strong> De los ocho módulos que este alcance necesita, dos no tienen nada pendiente, tres se completan sobre lo que ya opera y tres se construyen dentro de la implementación, sin facturarse como desarrollo a medida.</p>
@@ -1075,7 +1080,7 @@ figcaption{
 </section>
 <!-- 03 ─────────────────────────────────────────────────────── -->
 <section class="slide" id="s3">
-  <span class="slide__no">03 / 20</span>
+  <span class="slide__no">03 / 21</span>
   <p class="eyebrow">El producto</p>
   <h2>Todo esto es una sola plataforma, y es la misma en todos los países.</h2>
   <p class="lead">Entre países cambia la configuración: la cuenta de mercado de la integración de pagos y la jerarquía de sites. <strong>Lo que no cambia es la arquitectura, el modelo de datos ni el código</strong>, y por eso poner en marcha el cuarto país es un alta de configuración y lleva una fracción del trabajo que llevó el primero.</p>
@@ -1154,7 +1159,7 @@ figcaption{
 </section>
 <!-- 04 ─────────────────────────────────────────────────────── -->
 <section class="slide" id="s4">
-  <span class="slide__no">04 / 20</span>
+  <span class="slide__no">04 / 21</span>
   <p class="eyebrow">El producto &#183; el colaborador</p>
   <h2>El colaborador pide desde su puesto de trabajo y retira mostrando un código.</h2>
   <div class="flow">
@@ -1233,7 +1238,7 @@ figcaption{
 </section>
 <!-- 05 ─────────────────────────────────────────────────────── -->
 <section class="slide" id="s5">
-  <span class="slide__no">05 / 20</span>
+  <span class="slide__no">05 / 21</span>
   <p class="eyebrow">El producto &#183; autogestión</p>
   <h2>Facilities publica menús, precios y franjas sin abrirnos un caso.</h2>
   <div class="g2" style="margin-top:22px">
@@ -1254,7 +1259,7 @@ figcaption{
 </section>
 <!-- 06 ─────────────────────────────────────────────────────── -->
 <section class="slide" id="s6">
-  <span class="slide__no">06 / 20</span>
+  <span class="slide__no">06 / 21</span>
   <p class="eyebrow">El producto &#183; los datos</p>
   <h2>No es un informe que se manda: es acceso permanente.</h2>
   <p class="lead">El tablero está abierto todo el tiempo y actualizado al minuto: <strong>toda la información del negocio</strong>, sin pedirla. Deenex tiene un equipo dedicado al análisis de datos de consumo, que trabaja más allá de este contrato, y la consecuencia práctica acá es concreta: <strong>un corte de información nuevo se configura, no se desarrolla, y está incluido en el abono.</strong></p>
@@ -1270,7 +1275,7 @@ figcaption{
 </section>
 <!-- 07 ─────────────────────────────────────────────────────── -->
 <section class="slide" id="s7">
-  <span class="slide__no">07 / 20</span>
+  <span class="slide__no">07 / 21</span>
   <p class="eyebrow">La cocina</p>
   <h2>La cocina ve el pedido antes de que el colaborador llegue al mostrador.</h2>
   <p class="lead">La plataforma habla directo con el KDS —<em>Kitchen Display System</em>: la pantalla donde la cocina ve y despacha las comandas—. El pedido pagado llega a esa pantalla en menos de 30 segundos, y en menos de 15 dentro de la ventana de servicio de 11 a 14, <strong>sin recarga manual y sin sistema intermedio</strong>. Nadie vuelve a tipear un pedido.</p>
@@ -1332,7 +1337,7 @@ figcaption{
 </section>
 <!-- 08 ─────────────────────────────────────────────────────── -->
 <section class="slide" id="s8">
-  <span class="slide__no">08 / 20</span>
+  <span class="slide__no">08 / 21</span>
   <p class="eyebrow">La cocina &#183; el motor</p>
   <h2>El KDS se construye para secuenciar contra la hora de retiro comprometida, no contra el orden de llegada.</h2>
   <p class="lead"><strong>El motor de cocina se desarrolla dentro de la implementación, sin costo adicional</strong>, y queda operativo antes de la puesta en producción del site piloto. Figura con ese estado en la tabla de los ocho módulos. La cocina no decide sola en qué orden producir: éstas son las cuatro funciones que se están construyendo y que una pantalla de comandas no tiene.</p>
@@ -1362,7 +1367,7 @@ figcaption{
 </section>
 <!-- 09 ─────────────────────────────────────────────────────── -->
 <section class="slide" id="s9">
-  <span class="slide__no">09 / 20</span>
+  <span class="slide__no">09 / 21</span>
   <p class="eyebrow">Cómo funciona</p>
   <h2>Una sola arquitectura sostiene las cuatro operaciones del alcance.</h2>
   <p class="lead">Cuatro capas, tres integraciones obligatorias y un modelo de datos único. La aplicación del colaborador, el panel de Facilities, la pantalla de cocina y la reportería corren sobre la misma plataforma, con un modelo de permisos por perfil y por país.</p>
@@ -1414,7 +1419,7 @@ figcaption{
 </section>
 <!-- 10 ─────────────────────────────────────────────────────── -->
 <section class="slide" id="s10">
-  <span class="slide__no">10 / 20</span>
+  <span class="slide__no">10 / 21</span>
   <p class="eyebrow">Cómo funciona &#183; estado real</p>
   <h2>Dos módulos ya no tienen nada pendiente. Los otros seis los terminamos nosotros.</h2>
   <p class="lead">El tramo donde se concentra el riesgo —cobrar, emitir el comprobante con QR y validarlo en el punto de retiro— <strong>ya opera hoy en producción, bajo concentración horaria severa</strong>. Lo que falta es periferia, corre por nuestra cuenta y <strong>no se factura como desarrollo a medida</strong>.</p>
@@ -1442,7 +1447,7 @@ figcaption{
 </section>
 <!-- 11 ─────────────────────────────────────────────────────── -->
 <section class="slide" id="s11">
-  <span class="slide__no">11 / 20</span>
+  <span class="slide__no">11 / 21</span>
   <p class="eyebrow">Cómo funciona &#183; el circuito</p>
   <h2>El pedido cruza tres actores y vuelve al colaborador validado.</h2>
   <p class="lead">La ruta completa de un pedido, desde que el colaborador lo confirma hasta que lo retira validado en el mostrador.</p>
@@ -1485,7 +1490,7 @@ figcaption{
 </section>
 <!-- 12 ─────────────────────────────────────────────────────── -->
 <section class="slide" id="s12">
-  <span class="slide__no">12 / 20</span>
+  <span class="slide__no">12 / 21</span>
   <p class="eyebrow">Cómo funciona &#183; plan de mitigación</p>
   <h2>La cocina sigue produciendo aunque falle el dispositivo, la red o la pasarela.</h2>
   <p class="lead">Cada punto de falla tiene su v&#237;a alternativa <strong>ya definida y provista por Deenex</strong>, no un plan pendiente de escribir despu&#233;s de la firma. El plazo urgente de reposici&#243;n se sostiene con <strong>stock de repuestos constituido en cada pa&#237;s</strong> antes de la puesta en producci&#243;n de esa operaci&#243;n. Lo único que queda por acordar es el procedimiento de conciliación de cobros del modo contingencia de pagos, porque involucra a Finanzas de Mercado Libre: se firma antes de la puesta en producción del site piloto.</p>
@@ -1533,7 +1538,7 @@ figcaption{
 </section>
 <!-- 13 ─────────────────────────────────────────────────────── -->
 <section class="slide" id="s13">
-  <span class="slide__no">13 / 20</span>
+  <span class="slide__no">13 / 21</span>
   <p class="eyebrow">Cómo se opera &#183; plan de implementación</p>
   <h2>Cada etapa cierra contra criterios verificables, no contra el calendario.</h2>
   <div class="figwrap">
@@ -1574,7 +1579,7 @@ figcaption{
 </section>
 <!-- 14 ─────────────────────────────────────────────────────── -->
 <section class="slide" id="s14">
-  <span class="slide__no">14 / 20</span>
+  <span class="slide__no">14 / 21</span>
   <p class="eyebrow">Cómo se opera &#183; el equipo de cuenta</p>
   <h2>Dos interlocutores con capacidad de decidir, no un comité.</h2>
   <div class="team">
@@ -1607,7 +1612,7 @@ figcaption{
 </section>
 <!-- 15 ─────────────────────────────────────────────────────── -->
 <section class="slide" id="s15">
-  <span class="slide__no">15 / 20</span>
+  <span class="slide__no">15 / 21</span>
   <p class="eyebrow">Cómo se opera &#183; soporte y escalamiento</p>
   <h2>Del otro lado no hay una casilla genérica.</h2>
   <p class="lead">Facilities abre un caso con un botón dentro del panel, y lo atiende un equipo con niveles, plazos comprometidos y <strong>acceso directo a quien escribe el código</strong>.</p>
@@ -1674,7 +1679,7 @@ figcaption{
 </section>
 <!-- 16 ─────────────────────────────────────────────────────── -->
 <section class="slide" id="s16">
-  <span class="slide__no">16 / 20</span>
+  <span class="slide__no">16 / 21</span>
   <p class="eyebrow">La evidencia</p>
   <h2>Tres operaciones en producción. Dos las pueden abrir hoy desde el navegador.</h2>
   <p class="lead">La tercera es la que acredita el comportamiento del circuito bajo concentración horaria. Su nombre se incorpora al cerrarse la autorización del cliente.</p>
@@ -1683,7 +1688,7 @@ figcaption{
 </section>
 <!-- 17 ─────────────────────────────────────────────────────── -->
 <section class="slide" id="s17">
-  <span class="slide__no">17 / 20</span>
+  <span class="slide__no">17 / 21</span>
   <p class="eyebrow">Siguientes pasos &#183; cronograma y dependencias</p>
   <h2>De la firma al r&eacute;gimen en 24 semanas, y qu&eacute; necesitamos de ustedes en cada tramo.</h2>
   <p class="lead">Los plazos que comprometemos dependen de definiciones que solo Mercado Libre puede tomar. Las declaramos con su fecha y su consecuencia, para que puedan planificarse en vez de descubrirse.</p>
@@ -1710,7 +1715,7 @@ figcaption{
 </section>
 <!-- 18 ─────────────────────────────────────────────────────── -->
 <section class="slide" id="s18">
-  <span class="slide__no">18 / 20</span>
+  <span class="slide__no">18 / 21</span>
   <p class="eyebrow">Siguientes pasos &#183; plan de adopción</p>
   <h2>La adopci&oacute;n se define en 4 semanas por site, no en una campa&ntilde;a regional.</h2>
   <p class="lead">El objetivo depende del cambio de h&aacute;bito de <strong>5.400 personas</strong>, no de la tecnolog&iacute;a. Por eso se trata como un plan con actividades, responsables y medici&oacute;n propia, concentrado en la ventana donde el h&aacute;bito se forma y repetido en cada apertura.</p>
@@ -1742,7 +1747,22 @@ figcaption{
 </section>
 <!-- 19 ─────────────────────────────────────────────────────── -->
 <section class="slide" id="s19">
-  <span class="slide__no">19 / 20</span>
+  <span class="slide__no">19 / 21</span>
+  <p class="eyebrow eyebrow--q">Lo que declaramos</p>
+  <h2>Cinco cosas que no nos convienen. Preferimos decirlas nosotros.</h2>
+  <p class="lead">Cuatro son límites nuestros y la quinta es la puerta de salida. Las cinco iban a aparecer igual en la evaluación: van acá, con su tratamiento al lado.</p>
+  <div style="margin-top:20px">
+    <div class="dec"><div class="dec__n">01</div><div class="dec__b"><h3>De los ocho módulos funcionales, seis tienen trabajo por delante.</h3><p>Tres se construyen completos y tres se completan sobre lo que ya opera; los dos restantes no tienen nada pendiente. Todo ese desarrollo está incluido en la implementación y <strong>no se factura como desarrollo a medida</strong>. El motor de cocina se construye además de esos ocho, y también corre por nuestra cuenta.</p></div></div>
+    <div class="dec"><div class="dec__n">02</div><div class="dec__b"><h3>Deenex no cuenta con certificación ISO 27001.</h3><p>Presentamos en su lugar un plan de adecuación con hitos verificables y auditoría externa de tercera parte al mes doce. Un compromiso con fecha es más útil que una declaración genérica de cumplimiento.</p></div></div>
+    <div class="dec"><div class="dec__n">03</div><div class="dec__b"><h3>Los casos de referencia no son comedores corporativos.</h3><p>Son operaciones gastronómicas de escala con la misma exigencia técnica: muchos puntos en simultáneo, integración con el sistema de cada uno, autogestión del catálogo y niveles de servicio comprometidos. La comparabilidad que ofrecemos es de exigencia operativa, y la declaramos como tal.</p></div></div>
+    <div class="dec"><div class="dec__n">04</div><div class="dec__b"><h3>La operación de más de 15.000 personas corresponde a picos.</h3><p>No es operación diaria sostenida. Lo que acredita no es el volumen: es el comportamiento del circuito bajo concentración horaria severa, que es exactamente la condición que define un comedor entre las once y las dos.</p></div></div>
+    <div class="dec dec--salida"><div class="dec__n">05</div><div class="dec__b"><h3>Pueden terminar este contrato cualquier día sin que el comedor se interrumpa.</h3><p>El plan de salida se entrega en las primeras cuatro semanas y se actualiza cada año: no se escribe cuando la relación ya se rompió. La exportación es integral, en CSV o JSON, <strong>ejecutable cuando la pidan durante toda la vigencia</strong> y no sólo al terminar. Y si vuelven a licitar, entregamos la información de operación, volúmenes y configuración que necesiten, <strong>sin condicionarla a nuestra propia participación en ese proceso</strong>.</p></div></div>
+  </div>
+  <p class="lead" style="margin-top:24px"><strong>Un contrato de dos años en cuatro países se sostiene sobre lo que se acordó con precisión, no sobre lo que se prometió sin condiciones.</strong></p>
+</section>
+
+<section class="slide" id="s20">
+  <span class="slide__no">20 / 21</span>
   <p class="eyebrow">Siguientes pasos &#183; mejora continua</p>
   <h2>Un paso más sobre la adopción: la ficha del plato en movimiento.</h2>
   <p class="lead">La ficha de plato lleva foto. Proponemos ir un paso más, no por innovar, sino porque es la palanca más directa sobre el indicador que menos depende de la tecnología: <strong>la tasa de adopción digital del 80%</strong>.</p>
@@ -1753,8 +1773,8 @@ figcaption{
   </div>
 </section>
 <!-- 20 ─────────────────────────────────────────────────────── -->
-<section class="slide slide--final" id="s20">
-  <span class="slide__no">20 / 20</span>
+<section class="slide slide--final" id="s21">
+  <span class="slide__no">21 / 21</span>
   <div class="final">
     <div class="lockup final__marca">
       <span class="brandmark" style="width:140px;height:38px" role="img" aria-label="Deenex Technologies"></span>
