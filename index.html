@@ -720,6 +720,81 @@ figcaption{
   [data-reveal],[data-reveal].is-in{opacity:1; transform:none; transition:none}
 }
 
+/* ── Animacion con proposito ────────────────────────────────────────
+   Todo cuelga de [data-anim], que lo agrega el script. Sin JavaScript
+   no existe el atributo y nada queda oculto.                        */
+
+/* Los iconos se dibujan solos: son de trazo, asi que se trazan */
+[data-anim] .ico{stroke-dasharray:120; stroke-dashoffset:120}
+[data-anim].vista .ico{
+  stroke-dashoffset:0;
+  transition:stroke-dashoffset 1s cubic-bezier(.65,0,.35,1) .25s;
+}
+.card:hover .ico,.fijo:hover .ico{opacity:1; transform:scale(1.08)}
+.ico{transition:opacity .2s ease, transform .2s ease}
+
+/* Los paises entran en cascada: refuerza que la lista puede seguir */
+[data-anim] .pais{opacity:0; transform:translateY(9px)}
+[data-anim].vista .pais{
+  opacity:1; transform:none;
+  transition:opacity .42s ease, transform .42s ease;
+}
+[data-anim].vista .pais:nth-child(1){transition-delay:40ms}
+[data-anim].vista .pais:nth-child(2){transition-delay:105ms}
+[data-anim].vista .pais:nth-child(3){transition-delay:170ms}
+[data-anim].vista .pais:nth-child(4){transition-delay:235ms}
+[data-anim].vista .pais:nth-child(5){transition-delay:300ms}
+[data-anim].vista .pais:nth-child(6){transition-delay:365ms}
+[data-anim].vista .pais:nth-child(7){transition-delay:430ms}
+
+/* Las filas de tabla bajan de a una, en el orden en que se leen */
+[data-anim] tbody tr{opacity:0; transform:translateY(7px)}
+[data-anim].vista tbody tr{
+  opacity:1; transform:none;
+  transition:opacity .38s ease, transform .38s ease;
+}
+[data-anim].vista tbody tr:nth-child(1){transition-delay:30ms}
+[data-anim].vista tbody tr:nth-child(2){transition-delay:75ms}
+[data-anim].vista tbody tr:nth-child(3){transition-delay:120ms}
+[data-anim].vista tbody tr:nth-child(4){transition-delay:165ms}
+[data-anim].vista tbody tr:nth-child(5){transition-delay:210ms}
+[data-anim].vista tbody tr:nth-child(6){transition-delay:255ms}
+[data-anim].vista tbody tr:nth-child(7){transition-delay:300ms}
+[data-anim].vista tbody tr:nth-child(8){transition-delay:345ms}
+[data-anim].vista tbody tr:nth-child(9){transition-delay:390ms}
+[data-anim].vista tbody tr:nth-child(10){transition-delay:435ms}
+[data-anim].vista tbody tr:nth-child(11){transition-delay:480ms}
+[data-anim].vista tbody tr:nth-child(12){transition-delay:525ms}
+[data-anim].vista tbody tr:nth-child(13){transition-delay:570ms}
+[data-anim].vista tbody tr:nth-child(14){transition-delay:615ms}
+
+/* Las tarjetas de una grilla entran de izquierda a derecha */
+[data-anim] .g3 > *,[data-anim] .g4 > *,[data-anim] .nocambia__g > *{opacity:0; transform:translateY(10px)}
+[data-anim].vista .g3 > *,[data-anim].vista .g4 > *,[data-anim].vista .nocambia__g > *{
+  opacity:1; transform:none;
+  transition:opacity .45s ease, transform .45s ease;
+}
+[data-anim].vista .g3 > *:nth-child(1){transition-delay:40ms}
+[data-anim].vista .g3 > *:nth-child(2){transition-delay:130ms}
+[data-anim].vista .g3 > *:nth-child(3){transition-delay:220ms}
+[data-anim].vista .g3 > *:nth-child(4){transition-delay:310ms}
+[data-anim].vista .g4 > *:nth-child(1){transition-delay:40ms}
+[data-anim].vista .g4 > *:nth-child(2){transition-delay:130ms}
+[data-anim].vista .g4 > *:nth-child(3){transition-delay:220ms}
+[data-anim].vista .g4 > *:nth-child(4){transition-delay:310ms}
+[data-anim].vista .nocambia__g > *:nth-child(1){transition-delay:40ms}
+[data-anim].vista .nocambia__g > *:nth-child(2){transition-delay:130ms}
+[data-anim].vista .nocambia__g > *:nth-child(3){transition-delay:220ms}
+[data-anim].vista .nocambia__g > *:nth-child(4){transition-delay:310ms}
+
+@media (prefers-reduced-motion:reduce){
+  [data-anim] .ico,[data-anim] .pais,[data-anim] tbody tr,
+  [data-anim] .g3 > *,[data-anim] .g4 > *,[data-anim] .nocambia__g > *{
+    opacity:1 !important; transform:none !important;
+    stroke-dashoffset:0 !important; transition:none !important;
+  }
+}
+
 @media (min-width:1700px){
   .deck{max-width:1924px}
   .slide{padding:76px 92px}
@@ -1926,5 +2001,20 @@ document.querySelectorAll('.reel__phone').forEach(function(b){
     }, { threshold: 0.6 });
     cifras.forEach(function(c){ obs2.observe(c); });
   }
+})();
+
+/* Anima cada lamina cuando entra. El atributo lo pone el script:
+   si esto no corre, el CSS no aplica y nada queda oculto. */
+(function(){
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!('IntersectionObserver' in window)) return;
+  var laminas = document.querySelectorAll('.slide');
+  laminas.forEach(function(sl){ sl.setAttribute('data-anim',''); });
+  var obs = new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if (e.isIntersecting){ e.target.classList.add('vista'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -5% 0px' });
+  laminas.forEach(function(sl){ obs.observe(sl); });
 })();
 </script>
