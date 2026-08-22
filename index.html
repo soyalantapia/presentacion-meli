@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow, noarchive">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Deenex × Mercado Libre</title>
@@ -250,8 +249,24 @@ td.num{font-family:var(--f-mono); font-variant-numeric:tabular-nums; white-space
   letter-spacing:.1em; text-transform:uppercase; padding:2px 7px;
   border-radius:2px; border:1px solid currentColor; white-space:nowrap;
 }
-.tag--ok{color:var(--ok)} .tag--partial{color:var(--partial)} .tag--dev{color:var(--pending)}
+.tag--ok{color:var(--ok); background:rgba(111,207,151,.10)} .tag--partial{color:var(--partial); background:rgba(240,180,41,.10)} .tag--dev{color:var(--accent-ink); background:var(--accent-wash)}
 .tag--c{color:var(--accent-ink)} .tag--s{color:var(--pending)}
+
+/* Barra de proporcion — lectura de diez segundos */
+.prop{display:flex; gap:4px; margin:22px 0 2px}
+.prop__t{border-radius:2px; padding:11px 15px 12px; border:1px solid;
+  display:flex; flex-direction:column; gap:4px; min-width:0}
+.prop__n{font-family:var(--f-mono); font-size:27px; line-height:1; font-weight:700}
+.prop__l{font-family:var(--f-mono); font-size:9.5px; letter-spacing:.09em;
+  text-transform:uppercase; color:var(--ink-3); line-height:1.35}
+.prop--ok{flex:2 1 0; color:var(--ok); border-color:rgba(111,207,151,.34); background:rgba(111,207,151,.07)}
+.prop--partial{flex:3 1 0; color:var(--partial); border-color:rgba(240,180,41,.34); background:rgba(240,180,41,.07)}
+.prop--dev{flex:3 1 0; color:var(--accent-ink); border-color:rgba(255,106,19,.36); background:var(--accent-wash)}
+@media (max-width:720px){
+  .prop{flex-wrap:wrap; gap:6px}
+  .prop__t{flex:1 1 100%; flex-direction:row; align-items:baseline; gap:10px}
+  .prop__n{font-size:21px}
+}
 
 /* ── Figures ─────────────────────────────────────────────────────── */
 figure{margin:0}
@@ -1295,24 +1310,29 @@ figcaption{
 <section class="slide" id="s10">
   <span class="slide__no">10 / 20</span>
   <p class="eyebrow">Cómo funciona &#183; estado real</p>
-  <h2>Los ocho módulos, con su estado real.</h2>
-  <p>Todo el desarrollo señalado está incluido en la implementación y <strong>no se factura como desarrollo a medida</strong>.</p>
+  <h2>Dos módulos ya no tienen nada pendiente. Los otros seis los terminamos nosotros.</h2>
+  <p class="lead">El tramo donde se concentra el riesgo —cobrar, emitir el comprobante con QR y validarlo en el punto de retiro— <strong>ya opera hoy en producción, bajo concentración horaria severa</strong>. Lo que falta es periferia, corre por nuestra cuenta y <strong>no se factura como desarrollo a medida</strong>.</p>
+  <div class="prop">
+    <div class="prop__t prop--ok"><span class="prop__n">2</span><span class="prop__l">Sin nada<br>pendiente</span></div>
+    <div class="prop__t prop--partial"><span class="prop__n">3</span><span class="prop__l">Parcialmente<br>construidos</span></div>
+    <div class="prop__t prop--dev"><span class="prop__n">3</span><span class="prop__l">Los construimos<br>nosotros</span></div>
+  </div>
   <div class="tw" style="margin-top:16px">
     <table>
-      <thead><tr><th>Módulo</th><th>Qué falta, si falta</th><th>Estado</th></tr></thead>
+      <thead><tr><th>Módulo</th><th>Qué falta</th><th>Estado</th></tr></thead>
       <tbody>
-        <tr><td class="k">Autenticación y onboarding</td><td>La sincronización con el directorio de colaboradores</td><td><span class="tag tag--partial">Parcial</span></td></tr>
-        <tr><td class="k">Catálogo y menú</td><td>Franja horaria de retiro y etiquetas de preferencia alimentaria</td><td><span class="tag tag--partial">Parcial</span></td></tr>
-        <tr><td class="k">Ficha del plato</td><td>Falta nutricional, ingredientes, restricciones y reseñas</td><td><span class="tag tag--dev">Desarrollo</span></td></tr>
-        <tr><td class="k">Checkout y pagos</td><td>El pago nativo de Mercado Pago sin redirección</td><td><span class="tag tag--partial">Parcial</span></td></tr>
-        <tr><td class="k">Notificaciones</td><td>Nada pendiente. El QR, el aviso y la validación en el retiro operan hoy en producción</td><td><span class="tag tag--ok">Disponible</span></td></tr>
-        <tr><td class="k">KDS</td><td>Falta el motor de secuenciación —secuencia por franja, ruteo por estación, agrupamiento por tanda y aviso anticipado—, más la provisión e instalación del equipo</td><td><span class="tag tag--dev">Desarrollo</span></td></tr>
-        <tr><td class="k">Valoración y feedback</td><td>Falta construir estrellas y comentario al reingresar, y el panel de resultados</td><td><span class="tag tag--dev">Desarrollo</span></td></tr>
-        <tr><td class="k">Panel y reportes</td><td>Nada pendiente</td><td><span class="tag tag--ok">Disponible</span></td></tr>
+        <tr><td class="k"><span class="sec">§6.1</span><br>Autenticación y onboarding</td><td>La sincronización con el directorio de colaboradores</td><td><span class="tag tag--partial">Parcial</span></td></tr>
+        <tr><td class="k"><span class="sec">§6.2</span><br>Catálogo y menú</td><td>Franja horaria de retiro y etiquetas de preferencia alimentaria</td><td><span class="tag tag--partial">Parcial</span></td></tr>
+        <tr><td class="k"><span class="sec">§6.3</span><br>Ficha del plato</td><td>Falta nutricional, ingredientes, restricciones y reseñas</td><td><span class="tag tag--dev">Desarrollo</span></td></tr>
+        <tr><td class="k"><span class="sec">§6.4</span><br>Checkout y pagos</td><td>El pago nativo de Mercado Pago sin redirección, y la confirmación de retiro, franja y pago en un solo paso</td><td><span class="tag tag--partial">Parcial</span></td></tr>
+        <tr><td class="k"><span class="sec">§6.5</span><br>Notificaciones</td><td>Nada pendiente. El QR, el aviso y la validación en el retiro operan hoy en producción</td><td><span class="tag tag--ok">Disponible</span></td></tr>
+        <tr><td class="k"><span class="sec">§6.6</span><br>KDS</td><td>Falta el motor de secuenciación —secuencia por franja, ruteo por estación, agrupamiento por tanda y aviso anticipado—, más la provisión e instalación del equipo</td><td><span class="tag tag--dev">Desarrollo</span></td></tr>
+        <tr><td class="k"><span class="sec">§6.7</span><br>Valoración y feedback</td><td>Falta construir estrellas y comentario al reingresar, y el panel de resultados</td><td><span class="tag tag--dev">Desarrollo</span></td></tr>
+        <tr><td class="k"><span class="sec">§6.8</span><br>Panel y reportes</td><td>Nada pendiente</td><td><span class="tag tag--ok">Disponible</span></td></tr>
       </tbody>
     </table>
   </div>
-  <p class="foot-note" style="margin-top:14px">El detalle módulo por módulo, con lo que falta en cada uno, está en el documento escrito. Lo que ya está construido es el tramo donde se concentra el riesgo: compra, comprobante con QR y validación en el punto de retiro, que <strong>ya opera bajo concentración horaria severa</strong>.</p>
+  <p class="foot-note" style="margin-top:14px">El detalle módulo por módulo, con lo que falta en cada uno, está en el documento escrito. Mantener la integración con Mercado Pago al día ante cambios de su API corre por nuestra cuenta durante toda la vigencia del contrato, y la prueba de carga contra el volumen proyectado se ejecuta antes del piloto.</p>
 </section>
 <!-- 11 ─────────────────────────────────────────────────────── -->
 <section class="slide" id="s11">
