@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow, noarchive">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Deenex × Mercado Libre</title>
+<meta name="robots" content="noindex, nofollow, noarchive">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Chivo:wght@400;700;900&family=Chivo+Mono:wght@400;500&display=swap">
@@ -98,6 +97,10 @@ h3{
 p{margin:0 0 14px; max-width:66ch; color:var(--ink-2)}
 p.lead{font-size:19px; line-height:1.5; color:var(--ink); max-width:62ch}
 strong{color:var(--ink); font-weight:600}
+/* Ningun texto empuja la lamina: se permite el quiebre en palabras largas */
+p, li, td, th, h1, h2, h3, figcaption, .card p, .stat__l{
+  overflow-wrap:anywhere; word-break:normal; hyphens:auto;
+}
 .rule{height:1px; background:var(--hair); border:0; margin:26px 0}
 
 /* ── Lockup ──────────────────────────────────────────────────────── */
