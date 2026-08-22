@@ -101,6 +101,12 @@ strong{color:var(--ink); font-weight:600}
 p, li, td, th, h1, h2, h3, figcaption, .card p, .stat__l{
   overflow-wrap:anywhere; word-break:normal; hyphens:auto;
 }
+/* Piso de legibilidad en escritorio: una figura servida por debajo de su
+   viewBox encoge el texto. A 0,92 de escala un 9,5 caia a 8,7. */
+.figwrap{overflow-x:auto}
+.figwrap figure svg.fig-ancha{min-width:1160px}
+.wfbox{overflow-x:auto}
+.wfbox figure svg{min-width:620px}
 .rule{height:1px; background:var(--hair); border:0; margin:26px 0}
 
 /* ── Lockup ──────────────────────────────────────────────────────── */
@@ -516,7 +522,7 @@ figcaption{
 .avatar svg{width:32px; height:32px; color:var(--ink-3)}
 .member__rol{font-family:var(--f-display); font-weight:700; font-size:15px; line-height:1.2; margin:0 0 5px; color:var(--ink)}
 .member__nom{font-family:var(--f-mono); font-size:10px; letter-spacing:.09em; text-transform:uppercase; color:var(--accent-ink); margin:0 0 11px}
-.member p{font-size:12.8px; line-height:1.5; margin:0; color:var(--ink-2)}
+.member p{font-size:13.5px; line-height:1.5; margin:0; color:var(--ink-2)}
 
 /* -- Progreso de lectura ------------------------------------------ */
 #leyendo{position:fixed; top:0; left:0; height:2px; width:0; z-index:60;
